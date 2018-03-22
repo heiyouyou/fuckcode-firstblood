@@ -1,3 +1,3 @@
 # fuckcode-firstblood
-firstblood is codes<br>
+firstblood is code code<br>
 code！code！code！
