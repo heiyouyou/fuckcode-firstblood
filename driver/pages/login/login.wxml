@@ -1,5 +1,8 @@
 <!--pages/login/login.wxml-->
-<view>
-  <view><image></image></view>
-  <view></view>
+<view class="w h">
+  <view class="w h"><image class="w h displayb" src="../images/bj.png"></image></view>
+  <view class="pa login-box displayf altend jscsend">
+    <button class="login-btn order2">注册</button>  
+    <button class="login-btn order1 active">登录</button>  
+  </view>
 </view>

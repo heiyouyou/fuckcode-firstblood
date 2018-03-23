@@ -1,6 +1,9 @@
 @import './pages/common/base.wxss';
 
 /**app.wxss**/
+page{
+  font-family:'PingFang-SC-Bold'
+}
 .container {
   height: 100%;
   display: flex;
