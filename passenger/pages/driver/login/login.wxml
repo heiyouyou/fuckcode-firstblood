@@ -1,0 +1,10 @@
+<!--pages/driver/login/login.wxml-->
+<view class="displayf jscc altc flexdirec">
+  <view class="">
+    <image class="h" src='../../images/login/bj@2x.png' mode=""></image>
+  </view>
+  <view class="displayf jscsend altc pa" style="bottom:0;right:0;">
+    <button class="">登录</button>
+    <button class="">注册</button>
+  </view>
+</view>
