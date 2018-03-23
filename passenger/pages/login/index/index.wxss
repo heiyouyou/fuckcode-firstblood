@@ -1,0 +1,30 @@
+/* pages/login/index/index.wxss */
+.login-index-bg {
+  width: 100%;
+  height: 100%;
+  background-image: url('https://pic.lanhuapp.com/FsJvjGfMP3Ns-qN3xZM5l_vWAXH-');
+  background-size: cover; 
+}
+.login-index-nav {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  font-size: 36rpx;
+  color: #333;
+  position: absolute;
+  bottom: 0;
+  z-index: 9;
+}
+
+.login-index-nav > view {
+  background: #fff;
+  padding: 50rpx 100rpx;
+  margin-top: 50rpx;
+}
+
+.login-index-nav > .active {
+  color: #fff;
+  background: #FF1313;
+  padding: 75rpx 120rpx;
+  margin-top: 0;  
+}

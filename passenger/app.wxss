@@ -1,6 +1,11 @@
-@import './pages/common/base.wxss';
+/* @import './pages/styles/base.wxss'; */
+ @import './pages/styles/main.wxss'; 
 
 /**app.wxss**/
+page {
+  width: 100%;
+  height: 100%;
+}
 .container {
   height: 100%;
   display: flex;
