@@ -1,4 +1,34 @@
 <!--index.wxml-->
 <view class="container">
-
+  <view class='main-warp'>
+    <!-- 轮播图 -->
+    <swiper indicator-dots autoplay interval="5000" duration="500" indicator-active-color="#fff">
+      <block wx:for="{{imgUrls}}">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" width="355" height="150" />
+        </swiper-item>
+      </block>
+    </swiper>
+    <!-- 轮播图end -->
+    <!-- 首页导航区 -->
+    <view class='home-nav'>
+      <view data-url='' bindtap='go'>
+        <image src='/pages/imgs/home_nav/airplan.png'></image>
+        <view>机场接送</view>
+      </view>
+      <view data-url='' bindtap='go'>
+        <image src='/pages/imgs/home_nav/airplan.png'></image>
+        <view>预约用车</view>
+      </view>
+      <view data-url='' bindtap='go'>
+        <image src='/pages/imgs/home_nav/airplan.png'></image>
+        <view>结伴班车</view>
+      </view>
+      <view data-url='' bindtap='go'>
+        <image src='/pages/imgs/home_nav/airplan.png'></image>
+        <view>结伴班车</view>
+      </view>
+    </view>
+    <!-- 首页导航区end -->
+  </view>
 </view>
