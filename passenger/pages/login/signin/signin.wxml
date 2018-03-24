@@ -1,2 +1,3 @@
 <!--pages/login/signin/signin.wxml-->
-<text>pages/login/signin/signin.wxml</text>
+<import src="../../templates/navigation" />
+<template is="navigation"></template>

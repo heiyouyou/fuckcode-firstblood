@@ -1,14 +1,14 @@
 {
   "pages":[
+    "pages/login/login/login",
     "pages/login/index/index",
     "pages/index/index",
-    "pages/login/login/login",
     "pages/login/signin/signin"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "Skycar",
     "navigationBarTextStyle":"black"
   }
 }

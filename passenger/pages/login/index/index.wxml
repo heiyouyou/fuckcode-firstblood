@@ -1,8 +1,8 @@
 <!--pages/login/index/index.wxml-->
-<view class='login-index-bg'></view>
-<view class='login-index-nav'>
-  <view class="{{flag == index ? 'active' : ''}}"
-        wx:for="{{nav}}"
-        data-i='{{index}}'
-        bindtap='onNav'>{{item}}</view>
+<view class="w h">
+  <view class="w h"><image class="w h displayb" src="../../images/bj.png"></image></view>
+  <view class="pa login-box displayf altend jscsend">
+    <button class="login-btn order2 {{flag==0?'active':''}}" data-index='0' bindtap="onNav">注册</button>  
+    <button class="login-btn order1 {{flag==1?'active':''}}" data-index='1' bindtap="onNav">登录</button>  
+  </view>
 </view>

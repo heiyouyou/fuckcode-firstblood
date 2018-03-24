@@ -5,13 +5,16 @@ Page({
    * 页面的初始数据
    */
   data: {
-    flag: 0,
-    nav: ['登录', '注册']
+    flag:1,
   },
   onNav (e) {
-    let i = e.target.dataset.i
+    let i = e.target.dataset.index
     this.setData({
       flag: i
+    })
+    let url = i==0?"../signin/signin":"../login/login"
+    wx.navigateTo({
+      url: url
     })
   },
   /**
@@ -32,7 +35,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    this.setData({
+      flag: 1
+    })
   },
 
   /**
