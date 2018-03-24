@@ -8,14 +8,11 @@ swiper image {
   width: 100%;
 }
 .home-nav {
-  display: flex;
-  align-items: center;
   color: #666;
   padding: 57rpx 40rpx 37rpx;
 }
 
 .home-nav > view {
-  flex: 1;
   font-size: 24rpx;
   text-align: center;
 }
@@ -28,4 +25,13 @@ swiper image {
   width: 60rpx;
   height: 28rpx;
   margin-bottom: 25rpx;
+}
+
+.home-sub-nav > view image {
+  width: 32rpx;
+  height: 28rpx;
+}
+
+.home-sub-nav > view:last-of-type image {
+  width: 38rpx;
 }

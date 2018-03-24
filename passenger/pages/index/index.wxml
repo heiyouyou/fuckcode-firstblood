@@ -11,7 +11,7 @@
     </swiper>
     <!-- 轮播图end -->
     <!-- 首页导航区 -->
-    <view class='home-nav'>
+    <view class='home-nav dp-flex flex-one'>
       <view data-url='' bindtap='go'>
         <image src='/pages/imgs/home_nav/airplan.png'></image>
         <view>机场接送</view>
@@ -30,5 +30,23 @@
       </view>
     </view>
     <!-- 首页导航区end -->
+  </view>
+  <view class='main-wrap'>
+    <view class='home-sub-nav dp-flex flex-one'>
+      <view class='dp-flex' data-url='' bindtap='go'>
+        <image src='/pages/imgs/home_nav/flight.png'></image>
+        <view>
+          <view>查询航班</view>
+          <text>查询航班信息</text>
+        </view>
+      </view>
+      <view class='dp-flex' data-url='' bindtap='go'>
+        <image src='/pages/imgs/home_nav/translate.png'></image>
+        <view>
+          <view>驾照翻译</view>
+          <text>驾照全球通行</text>
+        </view>
+      </view>
+    </view>
   </view>
 </view>
