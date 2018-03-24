@@ -19,11 +19,14 @@ page {
 /* 公用最外层end */
 
 /* 公用外层 */
-.main-warp {
+.main-wrap {
   background: #fff;
   border-radius: 4px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.06);
   overflow: hidden;
+}
+.main-wrap + .main-wrap {
+  margin-top: 20rpx;
 }
 /* 公用外层end */
 
