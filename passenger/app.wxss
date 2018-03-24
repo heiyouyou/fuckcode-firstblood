@@ -7,12 +7,21 @@ page {
   height: 100%;
   font-family:'PingFang-SC-Regular';
 }
+
+/* 公用最外层 */
 .container {
+  width: 100%;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 200rpx 0;
+  padding: 20rpx;
   box-sizing: border-box;
 } 
+/* 公用最外层end */
+
+/* 公用块 */
+.main-warp {
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+/* 公用块end */
