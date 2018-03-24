@@ -31,5 +31,7 @@ page {
   display: flex;
   align-items: center;
 }
-
+.dp-flex.flex-one > view {
+  flex: 1;
+}
 /* 公用样式end */
