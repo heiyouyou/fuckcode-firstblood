@@ -1,7 +1,4 @@
 <!--pages/login/login/login.wxml-->
-<!-- <import src="../../templates/navigation" />
-<template is="navigation" data="{{text:'test'}}"></template>-->
-
 <view class="displayf flexdirec altc jsccs">
 	<view class="login-wrap">
 		<view class="w">

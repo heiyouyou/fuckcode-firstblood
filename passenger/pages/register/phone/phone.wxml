@@ -21,7 +21,7 @@
 					<input class="login-form-input" type="number" placeholder-class="login-placeholder"/>
 				</view>
 				<view>
-					<button formType="submit" class="login-form-btn register-next-btn">下一步</button>
+					<button formType="submit" class="login-form-btn register-next-btn" bind:tap="next">下一步</button>
 				</view>
 			</form>
 		</view>

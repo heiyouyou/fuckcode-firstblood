@@ -1,4 +1,6 @@
 // pages/register/code/code.js
+let util = require('../../../utils/util')
+
 Page({
 
   /**
@@ -7,7 +9,9 @@ Page({
   data: {
   
   },
-
+  next(){
+    util.goto('../info/info',1)
+  },
   /**
    * 生命周期函数--监听页面加载
    */

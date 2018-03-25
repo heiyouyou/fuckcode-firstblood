@@ -1,4 +1,5 @@
 // pages/register/info/info.js
+let util = require('../../../utils/util')
 Page({
 
   /**
@@ -8,6 +9,9 @@ Page({
     male_src:'../../imgs/male_selected@2x.png',
     female_src:'../../imgs/female_unchecked@2x.png',
     sex:1,
+  },
+  next(){
+    util.goto('../password/password',1)
   },
   /**
    * 选择性别

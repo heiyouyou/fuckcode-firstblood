@@ -12,7 +12,7 @@ Page({
     this.setData({
       flag: i
     })
-    let url = i==0?"../signin/signin":"../login/login"
+    let url = i==0?"../../register/phone/phone":"../login/login"
     wx.navigateTo({
       url: url
     })

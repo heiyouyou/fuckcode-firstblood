@@ -1,11 +1,11 @@
 {
   "pages": [
+    "pages/login/index/index",
+    "pages/login/login/login",
     "pages/register/phone/phone",
     "pages/register/info/info",
     "pages/register/password/password",
-    "pages/login/login/login",
     "pages/register/code/code",
-    "pages/login/index/index",
     "pages/index/index",
     "pages/bybus/index/index",
     "pages/trip/index/index",

@@ -1,4 +1,5 @@
 // pages/register/phone/phone.js
+let util = require('../../../utils/util')
 Page({
 
   /**
@@ -33,6 +34,9 @@ Page({
       country:this.data.countryArray[e.detail.value].name,
       country_code:this.data.countryArray[e.detail.value].code
     })
+  },
+  next(){
+    util.goto('../code/code',1)
   },
   /**
    * 生命周期函数--监听页面加载

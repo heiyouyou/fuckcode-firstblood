@@ -1,4 +1,6 @@
 // pages/register/password/password.js
+let util = require('../../../utils/util')
+
 Page({
 
   /**
@@ -7,7 +9,6 @@ Page({
   data: {
   
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
