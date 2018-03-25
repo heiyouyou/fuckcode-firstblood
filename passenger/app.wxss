@@ -25,19 +25,4 @@ page {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.06);
   overflow: hidden;
 }
-.main-wrap + .main-wrap {
-  margin-top: 20rpx;
-}
-/* 公用外层end */
-
-.dp-flex {
-  display: flex;
-  align-items: center;
-}
-.dp-flex.flex-one > view {
-  flex: 1;
-}
-.dp-flex.jc-sb {
-  justify-content: space-between;
-}
-/* 公用样式end */
+/* 公用块end */
