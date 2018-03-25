@@ -1,0 +1,29 @@
+<!--pages/register/phone/phone.wxml-->
+<view class="displayf flexdirec altc jsccs">
+	<view class="login-wrap">
+		<view class="w mb50">
+			<text class="fwb login-form-title displayb">输入手机号</text>
+			<text class="fz12 displayb color-333" style="width:292px;">注册即代表阅读并同意<text class="highlight-text">使用条款</text>和<text class="highlight-text">隐私政策</text></text>
+		</view>
+		<view>
+			<form bindsubmit="getData">
+				<view class="pr mb35">
+					<text class="login-placeholder fz12 placeholder-text">国家/地区</text>
+					<picker bindchange="bindPickerChange" value="{{index}}" range="{{countryArray}}"  range-key="name">
+						<input class="login-form-input mb5" placeholder-class="login-placeholder" name="code" value="{{country}}" disabled/>
+						<view class="choice-box">
+							<image src="../../imgs/common/choice@2x.png"></image>
+						</view>
+					</picker>
+				</view>
+				<view class="pr mb50">
+					<text class="login-placeholder placeholder-text tr" style="left:15px;border-right:1px solid #F1604F;padding-right:5px;width:45px">{{country_code}}</text>
+					<input class="login-form-input" type="number" placeholder-class="login-placeholder"/>
+				</view>
+				<view>
+					<button formType="submit" class="login-form-btn register-next-btn">下一步</button>
+				</view>
+			</form>
+		</view>
+	</view>
+</view>

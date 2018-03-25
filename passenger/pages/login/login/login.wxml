@@ -3,9 +3,9 @@
 <template is="navigation" data="{{text:'test'}}"></template>-->
 
 <view class="displayf flexdirec altc jsccs">
-	<view style="width:550rpx;margin-top:110rpx;">
+	<view class="login-wrap">
 		<view class="w">
-			<text class="fwb" style="color:#333;font-size:80rpx;">登录</text>
+			<text class="fwb login-form-title">登录</text>
 		</view>
 		<view class="wechat-login displayf jscc altc pr">
 			<image class="wechat-img" src="../../imgs/common/wechat@2x.png" style="width:36rpx;height:30rpx;" />
@@ -18,15 +18,15 @@
 		</view>
 		<view>
 			<form bindsubmit="getData">
-				<view class="mb25">
-					<input class="form-input" type="number" placeholder="输入手机号" name="phone"/>
+				<view class="mb35">
+					<input class="login-form-input" type="number" placeholder="输入手机号"  placeholder-class="login-placeholder" name="phone"/>
 				</view>
-				<view class="pr mb50 mt45">
-					<input class="form-input" placeholder="输入密码" password name="pwd"/>
+				<view class="pr mb50">
+					<input class="login-form-input" placeholder="输入密码" placeholder-class="login-placeholder" password name="pwd"/>
 					<text class="forget-pwd">忘记密码？</text>
 				</view>
 				<view>
-					<button formType="submit" class="form-btn">登录</button>
+					<button formType="submit" class="login-form-btn">登录</button>
 				</view>
 			</form>
 		</view>

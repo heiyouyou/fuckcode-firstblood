@@ -1,18 +1,21 @@
 {
-  "pages":[
+  "pages": [
+    "pages/register/phone/phone",
+    "pages/register/info/info",
+    "pages/register/password/password",
     "pages/login/login/login",
-    "pages/index/index",
+    "pages/register/code/code",
     "pages/login/index/index",
-    "pages/login/signin/signin",
+    "pages/index/index",
     "pages/bybus/index/index",
     "pages/trip/index/index",
     "pages/my/index/index"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "Skycar",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
   "tabBar": {
     "color": "#909090",
