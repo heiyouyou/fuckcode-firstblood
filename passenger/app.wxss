@@ -8,7 +8,6 @@ page {
   font-family:'PingFang-SC-Regular';
 }
 
-/* 公用样式 */
 /* 公用最外层 */
 .container {
   width: 100%;
@@ -19,8 +18,8 @@ page {
 } 
 /* 公用最外层end */
 
-/* 公用外层 */
-.main-wrap {
+/* 公用块 */
+.main-warp {
   background: #fff;
   border-radius: 4px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.06);
