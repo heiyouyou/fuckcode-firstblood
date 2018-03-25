@@ -15,6 +15,7 @@ page {
   height: 100%;
   padding: 20rpx;
   box-sizing: border-box;
+  color: #333;
 } 
 /* 公用最外层end */
 
@@ -36,5 +37,8 @@ page {
 }
 .dp-flex.flex-one > view {
   flex: 1;
+}
+.dp-flex.jc-sb {
+  justify-content: space-between;
 }
 /* 公用样式end */
