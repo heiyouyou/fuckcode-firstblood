@@ -25,6 +25,7 @@ page {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.06);
   overflow: hidden;
 }
+<<<<<<< HEAD
 .main-wrap + .main-wrap {
   margin-top: 20rpx;
 }
@@ -41,3 +42,6 @@ page {
   justify-content: space-between;
 }
 /* 公用样式end */
+=======
+/* 公用块end */
+>>>>>>> parent of 73ecbe8... 增加登录和注册页面
