@@ -8,7 +8,7 @@
 			<text class="fwb" style="color:#333;font-size:80rpx;">登录</text>
 		</view>
 		<view class="wechat-login displayf jscc altc pr">
-			<image class="wechat-img" src="../../images/wechat@2x.png" style="width:36rpx;height:30rpx;" />
+			<image class="wechat-img" src="../../imgs/common/wechat@2x.png" style="width:36rpx;height:30rpx;" />
 			<text class="fwb fz18">微信登录</text>
 		</view>
 		<view class="pr displayf altc jscc or-box">

@@ -1,6 +1,6 @@
 <!-- 顶部导航栏自定义模板 -->
 <template name="navigation">
     <view class="navigator-view">
-        <navigator class="displayib pl20 pr10 color-333" open-type="redirect" url="../index/index" hover-class="navigator-active"><image class="navigation-return-back mr10 vm" src="{{url?url:'../../images/return@2x.png'}}"></image>{{text}}</navigator>
+        <navigator class="displayib pl20 pr10 color-333" open-type="redirect" url="../index/index" hover-class="navigator-active"><image class="navigation-return-back mr10 vm" src="{{url?url:'../../imgs/common/return@2x.png'}}"></image>{{text}}</navigator>
     </view>
 </template>
