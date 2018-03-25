@@ -27,9 +27,24 @@ swiper image {
   margin-bottom: 25rpx;
 }
 
+.home-sub-nav {
+  padding: 32rpx 70rpx;
+  font-size: 30rpx;
+  color: #333;
+}
+
+.home-sub-nav text {
+  color: #999;
+  font-size: 24rpx;  
+}
+.home-sub-nav > view:last-of-type {
+  border-left: 1px solid #ccc;
+  justify-content: flex-end;
+}
 .home-sub-nav > view image {
   width: 32rpx;
   height: 28rpx;
+  margin-right: 30rpx;
 }
 
 .home-sub-nav > view:last-of-type image {
