@@ -1,2 +1,47 @@
-<!--pages/air/index/index.wxml-->
-<text>机场接送</text>
+<!-- 机场接送 -->
+<view class='container'>
+  <view class='main-wrap'>
+    <view class='banner'>
+      <image src="{{banner}}"></image>
+    </view>
+    <view class='main-nav dp-flex flex-one air-nav'>
+      <view data-url='/pages/air/index/index' bindtap='go'>
+        <image src='/pages/imgs/home_nav/air.png'></image>
+        <view>接机</view>
+      </view>
+      <view data-url='/pages/air/index/index' bindtap='go'>
+        <image src='/pages/imgs/home_nav/air.png'></image>
+        <view>送机</view>
+      </view>
+      <view data-url='/pages/air/index/index' bindtap='go'>
+        <image src='/pages/imgs/home_nav/air.png'></image>
+        <view>往返</view>
+      </view>
+    </view>
+  </view>
+  <view class='main-wrap ad-pad'>
+    <view class='dp-flex jc-sb'>
+      <view class='air-tit'>填写用车信息</view>
+      <view class='search'>
+        <input placeholder='按航班查询' placeholder-class="ph"></input>
+      </view>
+    </view>
+    <view>
+      <view class="section">
+        <picker bindchange="bindPickerChange" value="{{index}}" range="{{airplan}}" range-key="name">
+          <view class="picker">
+            机场 {{airplan[index].name}}
+          </view>
+        </picker>
+      </view>
+      <view>
+        <text>送达</text>
+        <input placeholder='请输入送达地'></input>
+      </view>
+    </view>
+  </view>
+  <view class='btn-wrap'>
+    <view class='tips'>以实际降落时间开始计算，免费等待90分钟</view>
+    <button class='main-btn'>立即查询</button>
+  </view>
+</view>

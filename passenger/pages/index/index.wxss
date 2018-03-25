@@ -8,28 +8,6 @@ swiper image {
   width: 100%;
 }
 
-/* 导航区 */
-.home-nav {
-  color: #666;
-  padding: 57rpx 40rpx 37rpx;
-}
-
-.home-nav > view {
-  font-size: 24rpx;
-  text-align: center;
-}
-
-.home-nav > view:not(:last-of-type) {
-  margin-right: 80rpx;
-}
-
-.home-nav > view image {
-  width: 60rpx;
-  height: 28rpx;
-  margin-bottom: 25rpx;
-}
-/* 导航区end */
-
 /* 副导航区 */
 .home-sub-nav {
   padding: 32rpx 70rpx;

@@ -1,13 +1,13 @@
 {
   "pages":[
-    "pages/login/login/login",
+    "pages/air/index/index",    
     "pages/index/index",
+    "pages/login/login/login",
     "pages/login/index/index",
     "pages/login/signin/signin",
     "pages/bybus/index/index",
     "pages/trip/index/index",
     "pages/my/index/index",
-    "pages/air/index/index",    
     "pages/car/index/index",
     "pages/bus/index/index",
     "pages/travel/index/index",
