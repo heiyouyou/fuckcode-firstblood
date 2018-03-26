@@ -1,29 +1,32 @@
-// pages/air/index/index.js
-const util = require('../../../utils/util.js')
-
+// pages/air/check/check.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    banner: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
-    airplan: [{
-      name: '墨尔本',
-      id: 1212
-    }, {
-      name: '悉尼',
-      id: 1213
-    }],
-    index: 0
+    showMask: false,
+    list: [{
+      num: '3U601',
+      date: '9月28日  周四',
+      planCo: '四川航空',
+      start: '12:30',
+      startPlan: '双流机场',
+      end: '15:30',
+      endPlan: '墨尔本机场'
+    }]
   },
-  go(e) {
-    let url = e.currentTarget.dataset.url
-    util.go(url)
-  },
-  bindPickerChange (e) {
+  toggle (e) {
+    let elem = e.currentTarget.dataset.elem
+    let selem = this.data[elem]
     this.setData({
-      index: e.detail.value
+      [elem]: !selem
+    })
+  },
+  onCheck () {
+    let sm = this.data.showMask
+    this.setData({
+      showMask: !sm
     })
   },
   /**

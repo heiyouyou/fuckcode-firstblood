@@ -1,6 +1,7 @@
 {
   "pages":[
-    "pages/air/index/index",    
+    "pages/air/check/check",
+    "pages/air/index/index",
     "pages/index/index",
     "pages/login/login/login",
     "pages/login/index/index",

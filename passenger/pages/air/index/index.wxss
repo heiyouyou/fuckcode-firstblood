@@ -9,32 +9,22 @@
   height: 100%;
 }
 
-.ad-pad {
-  padding: 30rpx 30rpx 22rpx;
-}
-
 .air-nav {
   padding: 24rpx 40rpx 18rpx;
 }
 
-.air-tit {
-  font-size: 32rpx;
-  font-weight: bold;
-  color: #333;
+.air-sub {
+  color: #bbb;
+  margin-top: 20rpx;
 }
-
-
-.tips {
-  font-size: 28rpx;
-  color: #666;
-  text-align: center;
-  margin-bottom: 30rpx;
+.air-sub .dp-flex {
+  justify-content: center;
 }
-.btn-wrap {
-  width: 100%;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  padding: 20rpx;
-  box-sizing: border-box;
+.air-sub .dp-flex:not(:last-of-type) {
+  border-right: 1px solid #CCC;
+}
+.air-sub image {
+  width: 19rpx;
+  height: 28rpx;
+  margin-right: 20rpx;
 }

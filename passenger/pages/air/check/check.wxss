@@ -1,0 +1,34 @@
+/* pages/air/check/check.wxss */
+
+.check-res > view {
+  background: #fff;
+}
+
+.check-res text {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.plan-info {
+  width: 200rpx;
+  padding: 9rpx 0 6rpx 25rpx;
+  box-sizing: border-box;
+  border-radius: 44rpx 44rpx 44rpx 4rpx;
+}
+
+.plan-info text {
+  font-size: 24rpx;
+}
+
+.plan-detail {
+  padding: 20rpx;
+  border-radius: 4rpx;
+  margin: 10rpx auto 20rpx;
+}
+
+.plan-detail-txt > view:first-of-type {
+  font-size: 36rpx;
+}
+.plan-detail-txt > view:last-of-type {
+  font-size: 24rpx;
+}

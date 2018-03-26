@@ -21,27 +21,42 @@
   </view>
   <view class='main-wrap ad-pad'>
     <view class='dp-flex jc-sb'>
-      <view class='air-tit'>填写用车信息</view>
-      <view class='search'>
+      <view class='main-tit'>填写用车信息</view>
+      <view class='search' data-url='/pages/air/check/check' bindtap='go'>
         <input placeholder='按航班查询' placeholder-class="ph"></input>
       </view>
     </view>
-    <view>
-      <view class="section">
+    <view class='main-form'>
+      <view class="item">
         <picker bindchange="bindPickerChange" value="{{index}}" range="{{airplan}}" range-key="name">
-          <view class="picker">
-            机场 {{airplan[index].name}}
+          <view class="dp-flex">
+            <text class="lab">机场</text>
+            <view class='info'>{{airplan[index].name}}</view>
           </view>
         </picker>
       </view>
-      <view>
-        <text>送达</text>
+      <view class='dp-flex item'>
+        <text class='lab'>送达</text>
         <input placeholder='请输入送达地'></input>
+      </view>
+    </view>
+    <view class='dp-flex flex-one air-sub'>
+      <view class='dp-flex'>
+        <image src='/pages/imgs/airplan_nav/num.png'></image>
+        <text>乘车人数</text>
+      </view>
+      <view class='dp-flex'>
+        <image src='/pages/imgs/airplan_nav/baggage.png' style='height: 22rpx;'></image>
+        <text>行李数量</text>
+      </view>
+      <view class='dp-flex'>
+        <image src='/pages/imgs/airplan_nav/time.png' style='height: 20rpx;'></image>
+        <text>降落时间</text>
       </view>
     </view>
   </view>
   <view class='btn-wrap'>
     <view class='tips'>以实际降落时间开始计算，免费等待90分钟</view>
-    <button class='main-btn'>立即查询</button>
+    <button class='main-btn' bindtap='onCheck'>立即查询</button>
   </view>
 </view>
