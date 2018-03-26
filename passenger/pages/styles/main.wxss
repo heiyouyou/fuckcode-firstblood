@@ -1,3 +1,4 @@
+/*应用的公用基础样式*/
 .navigator-view{
     position:fixed;
     right:0;
@@ -17,6 +18,52 @@
 .color-333{
     color:#333333;
 }
+.color-666{
+    color:#666666;
+}
+.color-999{
+    color:#999999;
+}
 .highlight-text{
     color:#F1604F;
+}
+.w710{
+    width:710rpx;
+}
+.w750{
+    width:750rpx;
+}
+.page-bg{
+    background:rgba(242,244,245,1);
+}
+.bg-F1604F{
+    background:#F1604F;
+}
+.start-img{
+    width:18rpx;
+    height:18rpx;
+}
+.choice-size{
+    width:12rpx;
+    height:22rpx;
+}
+.navigator-choice{
+    padding:2px 10px;
+}
+.icon-size{
+    width:28rpx;
+    height:28rpx;
+}
+.my-box-shadow{
+    box-shadow:2px 0 4px rgba(0,0,0,0.1) 
+}
+.border-bottom-ccc{
+    border-bottom:1px solid #ccc;
+}
+.save-btn{
+    height:100rpx;
+    line-height:100rpx;
+    color:#fff;
+    background:rgba(241,96,79,1);
+    border-radius: 4px; 
 }

@@ -1,5 +1,6 @@
 @import './pages/styles/base.wxss';
 @import './pages/styles/main.wxss'; 
+@import './pages/fonts/iconfont.wxss'; 
 
 /**app.wxss**/
 page {
@@ -26,6 +27,7 @@ page {
 }
 /* 公用块end */
 
+/* 登录、注册 start */
 .login-wrap{
   width:550rpx;
   margin-top:110rpx;
@@ -59,3 +61,4 @@ page {
   color:#BBBBBB;
   font-size:14px;
 }
+/* 登录、注册 end */
