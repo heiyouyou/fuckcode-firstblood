@@ -19,7 +19,8 @@
   </view>
 </view>
 <view class='mask' wx:if="{{showMask}}" data-elem='showMask' bindtap='toggle'>
-  <scroll-view scroll-y style="height: 200px;" bindscrolltolower="lower">
+  <view class='tips sub'>已显示全部航班</view>
+  <scroll-view scroll-y style="height: 90%;" bindscrolltolower="lower">
     <view wx:for="{{list}}" class='check-res'>
       <view class='plan-info'>
         <view>{{item.num}}</view>
@@ -40,5 +41,4 @@
       </view>
     </view>
   </scroll-view>
-  <view class='tips sub'>已显示全部航班</view>
 </view>

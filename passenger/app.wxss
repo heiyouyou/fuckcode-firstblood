@@ -80,10 +80,13 @@ page {
 }
 /* 登录、注册 end */
 
+.dp-flex {
+  display: flex;
+  align-items: center;
+}
 .dp-flex.flex-one > view {
   flex: 1;
 }
-
 .dp-flex.jc-sb {
   justify-content: space-between;
 }
@@ -124,7 +127,10 @@ page {
   font-weight: bold;
   color: #333;
 }
-
+.main-tit.ad-b-bor {
+  padding-bottom: 30rpx;
+  border-bottom: 1px solid #ccc;
+}
 .main-form {
 }
 
@@ -132,7 +138,9 @@ page {
   padding: 25rpx 0;
   border-bottom: 1px solid #ccc;
 }
-
+.main-form .item.no-bor-b {
+  border-bottom: 0;
+}
 .main-form .lab {
   width: 140rpx;
   color: #666;
