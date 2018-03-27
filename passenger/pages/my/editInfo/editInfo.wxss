@@ -1,0 +1,8 @@
+/* pages/my/editInfo/editInfo.wxss */
+.edit-name{
+    width:112rpx;
+}
+.edit-avator{
+    width:112rpx;
+    height:112rpx; 
+}

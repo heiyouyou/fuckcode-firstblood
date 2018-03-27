@@ -1,0 +1,42 @@
+<!--pages/my/editInfo/editInfo.wxml-->
+<view class="displayf altc flexdirec page-bg h">
+    <view class="w750">
+        <view class="bgw my-box-shadow mb10 pl15">
+            <view class="fz14 color-666 border-bottom-ccc boxb displayf altc" style="height:160rpx;">
+                <image class="bg-F1604F br50 edit-avator mr20" src=""></image>
+                <text class="color-999">修改头像</text>
+            </view>
+            <view class="fz14 border-bottom-ccc h50 boxb displayf altc pr">
+                <text class="color-666 edit-name mr20">昵称</text>
+                <input class="displayib color-333" placeholder="" value="Kevin"/>
+            </view>
+            <picker bindchange="bindPickerChangeSex" value="{{sexIndex}}" range="{{sexArry}}">
+                <view class="fz14 border-bottom-ccc h50 boxb displayf altc pr">
+                    <text class="color-666 edit-name mr20">性别</text>
+                    <input class="displayib color-333" disabled value="{{sex}}"/>
+                    <view class="pa navigator-choice" style="right:15px;">
+                        <image class="choice-size" src="../../imgs/common/choice@2x.png"></image>
+                    </view>
+                </view>
+            </picker>
+            <view class="fz14 h50 boxb displayf altc pr">
+                <text class="color-666 edit-name mr20">手机号</text>
+                <input class="displayib color-333" type="number" value="12345678909"/>
+            </view>
+        </view>
+        <view class="bgw my-box-shadow mb10 pl15">
+            <picker bindchange="bindPickerChangeCity" value="{{cityIndex}}" range="{{cityArry}}">
+                <view class="fz14 h50 boxb displayf altc pr">
+                    <text class="color-666 edit-name mr20">城市</text>
+                    <input class="displayib color-333" disabled value="{{city}}"/>
+                    <view class="pa navigator-choice" style="right:15px;">
+                        <image class="choice-size" src="../../imgs/common/choice@2x.png"></image>
+                    </view>
+                </view>
+            </picker>
+        </view>
+    </view>
+    <view class="w710 mb10" style="margin-top:406rpx;">
+        <button class="save-btn">保存</button>
+    </view>
+</view>

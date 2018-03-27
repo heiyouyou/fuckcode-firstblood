@@ -1,2 +1,129 @@
 <!--pages/my/index/index.wxml-->
-<text>我的</text>
+<view class="displayf jscc page-bg">
+    <view class="w710 mt10">
+        <view class="bgw patrbl15 br4 my-box-shadow mb10">
+            <view class="displayf altc">
+                <image class="my-avatar bg-F1604F br50" src=""></image>
+                <view class="displayf jscc ml20 flexdirec flex1">
+                    <view class="displayf altc pr">
+                        <image src="../../imgs/male_unchecked@2x.png" style="width:26rpx;height:26rpx;"></image>
+                        <text class="fz18 ml10 thiddennb100">Kevin</text>
+                        <text class="fz12 color-666" style="margin-left:35rpx;">（普通会员）</text>
+                        <navigator class="pa navigator-choice" url="../editInfo/editInfo" style="right:0px;">
+                            <image class="choice-size" src="../../imgs/common/choice@2x.png"></image>
+                        </navigator>
+                    </view>
+                    <view class="lh10">
+                        <text class="bg-F1604F br50 start-img displayib"></text>
+                        <text class="bg-F1604F br50 start-img displayib"></text>
+                        <text class="bg-F1604F br50 start-img displayib"></text>
+                    </view>
+                </view>
+            </view>
+            <view class="mt30 lh10">
+                <image class="bg-F1604F icon-size" src=""></image>
+                <text class="fz15 color-333 ml10">可用余额：10元</text>
+            </view>
+        </view>
+        <view class="bgw br4 my-box-shadow mb10">
+            <view class="fz14 color-666 border-bottom-ccc h50 boxb">
+                <navigator class="patrbl15" src="">
+                    <image class="bg-F1604F icon-size" src=""></image>
+                    <text class="ml15">我的钱包</text>
+                    <view class="fr navigator-choice">
+                        <image class="choice-size" src="../../imgs/common/choice@2x.png"></image>
+                    </view>
+                </navigator>
+            </view>
+            <view class="fz14 color-666 border-bottom-ccc h50 boxb">
+                <navigator class="patrbl15" src="">
+                    <image class="bg-F1604F icon-size" src=""></image>
+                    <text class="ml15">我的评价</text>
+                    <view class="fr navigator-choice">
+                        <image class="choice-size" src="../../imgs/common/choice@2x.png"></image>
+                    </view>
+                </navigator>
+            </view>
+            <view class="fz14 color-666 h50 boxb">
+                <navigator class="patrbl15" src="">
+                    <image class="bg-F1604F icon-size" src=""></image>
+                    <text class="ml15">优惠券</text>
+                    <view class="fr navigator-choice">
+                        <image class="choice-size" src="../../imgs/common/choice@2x.png"></image>
+                    </view>
+                </navigator>
+            </view>
+        </view>
+        <view class="bgw br4 my-box-shadow mb10">
+            <view class="fz14 color-666 border-bottom-ccc h50 boxb">
+                <navigator class="patrbl15" src="">
+                    <image class="bg-F1604F icon-size" src=""></image>
+                    <text class="ml15">车主认证</text>
+                    <view class="fr navigator-choice">
+                        <image class="choice-size" src="../../imgs/common/choice@2x.png"></image>
+                    </view>
+                </navigator>
+            </view>
+            <view class="fz14 color-666 h50 boxb">
+                <navigator class="patrbl15" src="">
+                    <image class="bg-F1604F icon-size" src=""></image>
+                    <text class="ml15">商务合作</text>
+                    <view class="fr navigator-choice">
+                        <image class="choice-size" src="../../imgs/common/choice@2x.png"></image>
+                    </view>
+                </navigator>
+            </view>
+        </view>
+        <view class="bgw br4 my-box-shadow mb10">
+            <view class="fz14 color-666 border-bottom-ccc h50 boxb">
+                <navigator class="patrbl15" src="">
+                    <image class="bg-F1604F icon-size" src=""></image>
+                    <text class="ml15">地址、联系人管理</text>
+                    <view class="fr navigator-choice">
+                        <image class="choice-size" src="../../imgs/common/choice@2x.png"></image>
+                    </view>
+                </navigator>
+            </view>
+            <view class="fz14 color-666 h50 boxb">
+                <navigator class="patrbl15" src="">
+                    <image class="bg-F1604F icon-size" src=""></image>
+                    <text class="ml15">会员管理</text>
+                    <view class="fr navigator-choice">
+                        <image class="choice-size" src="../../imgs/common/choice@2x.png"></image>
+                    </view>
+                </navigator>
+            </view>
+        </view>
+        <view class="bgw br4 my-box-shadow mb10">
+            <view class="fz14 color-666 border-bottom-ccc h50 boxb">
+                <navigator class="patrbl15" src="">
+                    <image class="bg-F1604F icon-size" src=""></image>
+                    <text class="ml15">常见问题</text>
+                    <view class="fr navigator-choice">
+                        <image class="choice-size" src="../../imgs/common/choice@2x.png"></image>
+                    </view>
+                </navigator>
+            </view>
+            <view class="fz14 color-666 h50 boxb">
+                <navigator class="patrbl15" src="">
+                    <image class="bg-F1604F icon-size" src=""></image>
+                    <text class="ml15">关于我们</text>
+                    <view class="fr navigator-choice">
+                        <image class="choice-size" src="../../imgs/common/choice@2x.png"></image>
+                    </view>
+                </navigator>
+            </view>
+        </view>
+        <view class="bgw br4 my-box-shadow mb15">
+            <view class="fz14 color-666 h50 boxb">
+                <navigator class="patrbl15" src="">
+                    <image class="bg-F1604F icon-size" src=""></image>
+                    <text class="ml15">联系客服</text>
+                    <view class="fr navigator-choice">
+                        <image class="choice-size" src="../../imgs/common/choice@2x.png"></image>
+                    </view>
+                </navigator>
+            </view>
+        </view>
+    </view>
+</view>

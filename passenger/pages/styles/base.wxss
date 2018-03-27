@@ -120,7 +120,7 @@
 .mt10{margin-top: 10px;}
 .mt15{margin-top: 15px;}
 .mt20{margin-top: 20px;}
-.mt25{margin-top: 20px;}
+.mt25{margin-top: 25px;}
 .mt30{margin-top: 30px;}
 .mt35{margin-top: 35px;}
 .mt40{margin-top: 40px;}
@@ -130,7 +130,9 @@
 .mb10{margin-bottom: 10px;}
 .mb15{margin-bottom: 15px;}
 .mb20{margin-bottom: 20px;}
+.mb25{margin-bottom: 25px;}
 .mb30{margin-bottom: 30px;}
+.mb35{margin-bottom: 35px;}
 .mb50{margin-bottom: 50px;}
 .mb60{margin-bottom: 60px;}
 .mb70{margin-bottom: 70px;}

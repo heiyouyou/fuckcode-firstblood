@@ -1,5 +1,6 @@
 @import './pages/styles/base.wxss';
-@import './pages/styles/main.wxss';
+@import './pages/styles/main.wxss'; 
+@import './pages/fonts/iconfont.wxss'; 
 
 /**app.wxss**/
 
@@ -43,10 +44,41 @@ page {
 
 /* 公用外层end */
 
-.dp-flex {
-  display: flex;
-  align-items: center;
+/* 登录、注册 start */
+.login-wrap{
+  width:550rpx;
+  margin-top:110rpx;
 }
+.login-form-title{
+  color:#333;
+  font-size:80rpx;
+}
+.login-form-btn{
+  width:550rpx;
+  height:100rpx; 
+  line-height:100rpx;
+  font-weight:bold;
+  border-radius: 50rpx; 
+  font-size:36rpx;
+  color:#fff;
+}
+.login-form-input{
+  border-bottom:1px solid #CCCCCC;
+  font-size:28rpx;
+  color:#333333;
+  line-height:18px;
+}
+.register-next-btn{
+  background:#fff;
+  color:#F1604F;
+  border:1px solid #F1604F;
+}
+.login-placeholder{
+  text-indent:15px;
+  color:#BBBBBB;
+  font-size:14px;
+}
+/* 登录、注册 end */
 
 .dp-flex.flex-one > view {
   flex: 1;
