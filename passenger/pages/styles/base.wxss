@@ -5,6 +5,7 @@
 **/
 
 /*文字排版、颜色配置、行高等*/
+.fz10{font-size:10px!important;}
 .fz12{font-size:12px!important;}
 .fz13{font-size:13px!important;}
 .fz14{font-size:14px!important;}
@@ -144,12 +145,14 @@
 .ml15{margin-left: 15px;}
 .ml20{margin-left: 20px;}
 .ml30{margin-left: 30px;}
+.ml40{margin-left: 40px;}
 .mr5{margin-right: 5px;}
 .mr10{margin-right: 10px;}
 .mr15{margin-right: 15px;}
 .mr20{margin-right: 20px;}
 .mr25{margin-right: 25px;}
 .mr30{margin-right: 30px;}
+.mr40{margin-right: 40px;}
 .mrl5{margin:0 5px;}
 .mrl10{margin:0 10px;}
 .mrl15{margin:0 15px;}
@@ -178,21 +181,25 @@
 .pt10{padding-top: 10px;}
 .pt15{padding-top: 15px;}
 .pt20{padding-top: 20px;}
+.pt25{padding-top: 25px;}
 .pt30{padding-top: 30px;}
 .pb5{padding-bottom: 5px;}
 .pb10{padding-bottom: 10px;}
 .pb15{padding-bottom: 15px;}
 .pb20{padding-bottom: 20px;}
+.pb25{padding-bottom: 25px;}
 .pb30{padding-bottom: 30px;}
 .pl5{padding-left: 5px;}
 .pl10{padding-left: 10px;}
 .pl15{padding-left: 15px;}
 .pl20{padding-left: 20px;}
+.pl25{padding-left: 25px;}
 .pl30{padding-left: 30px;}
 .pr5{padding-right: 5px;}
 .pr10{padding-right: 10px;}
 .pr15{padding-right: 15px;}
 .pr20{padding-right: 20px;}
+.pr25{padding-right: 25px;}
 .pr30{padding-right: 30px;}
 .patb5{padding:5px 0;}
 .parl5{padding:0 5px;}

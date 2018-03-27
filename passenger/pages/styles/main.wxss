@@ -1,4 +1,9 @@
 /*应用的公用基础样式*/
+
+/* 文本颜色 start */
+.color-ccc{
+    color:#ccc;
+}
 .color-333{
     color:#333333;
 }
@@ -8,21 +13,36 @@
 .color-999{
     color:#999999;
 }
+.color-F1604F{
+    color:#F1604F;
+}
 .highlight-text{
     color:#F1604F;
 }
+/* 文本颜色 end */
+
+/* 宽度、高度 start */
 .w710{
     width:710rpx;
 }
 .w750{
     width:750rpx;
 }
+.h150{
+    height:150rpx;
+}
+/* 宽度、高度 end */
+
+/* 背景色 start */
 .page-bg{
     background:rgba(242,244,245,1);
 }
 .bg-F1604F{
     background:#F1604F;
 }
+/* 背景色 end */
+
+/* 图标大小 start */
 .start-img{
     width:18rpx;
     height:18rpx;
@@ -38,11 +58,16 @@
     width:28rpx;
     height:28rpx;
 }
-.my-box-shadow{
-    box-shadow:2px 0 4px rgba(0,0,0,0.1) 
-}
+/* 图标大小 end */
+
+/* 边框颜色 start */
 .border-bottom-ccc{
     border-bottom:1px solid #ccc;
+}
+/* 边框颜色 end */
+
+.my-box-shadow{
+    box-shadow:2px 0 4px rgba(0,0,0,0.1) 
 }
 .save-btn{
     height:100rpx;

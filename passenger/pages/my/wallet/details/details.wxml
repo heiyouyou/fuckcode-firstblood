@@ -1,0 +1,55 @@
+<!--pages/my/wallet/details/details.wxml-->
+<view>
+    <view class="border-bottom-ccc h60 boxb bgw displayf altc parl15">
+        <view class="mr15 tc">
+            <text class="color-333 fz15">收入</text>
+        </view>
+        <view class="mr30 lh20">
+            <text class="displayb color-666 fz12 thidden200 w200">完成接送机任务，订单编号：完成接送机任务，订单编号：完成接送机任务，订单编号：完成接送机任务，订单编号：</text>
+            <text class="displayb color-999 fz10">2017-08-09 19:34:54</text>
+        </view>
+        <view class="lh20">
+            <text class="displayb color-F1604F fz15 fwb">+200.00</text>
+            <text class="displayb color-999 fz10">余额：5000</text>
+        </view>
+    </view>
+    <view class="border-bottom-ccc h60 boxb bgw displayf altc parl15">
+        <view class="mr15 tc">
+            <text class="color-333 fz15">提现</text>
+        </view>
+        <view class="mr30 lh20">
+            <text class="displayb color-666 fz12 thidden200 w200">提现失败</text>
+            <text class="displayb color-999 fz10">2017-08-09 19:34:54</text>
+        </view>
+        <view class="lh20">
+            <text class="displayb color-F1604F fz15 fwb">+200.00</text>
+            <text class="displayb color-999 fz10">余额：5000</text>
+        </view>
+    </view>
+    <view class="border-bottom-ccc h60 boxb bgw displayf altc parl15">
+        <view class="mr15 tc">
+            <text class="color-333 fz15">支出</text>
+        </view>
+        <view class="mr30 lh20">
+            <text class="displayb color-666 fz12 thidden200 w200">预约用车，订单编号：434468...</text>
+            <text class="displayb color-999 fz10">2017-08-09 19:34:54</text>
+        </view>
+        <view class="lh20">
+            <text class="displayb color-F1604F fz15 fwb">+200.00</text>
+            <text class="displayb color-999 fz10">余额：5000</text>
+        </view>
+    </view>
+    <view class="h60 boxb bgw displayf altc parl15">
+        <view class="mr15 tc">
+            <text class="color-333 fz15">充值</text>
+        </view>
+        <view class="mr30 lh20">
+            <text class="displayb color-666 fz12 thidden200 w200">充值成功</text>
+            <text class="displayb color-999 fz10">2017-08-09 19:34:54</text>
+        </view>
+        <view class="lh20">
+            <text class="displayb color-F1604F fz15 fwb">+200.00</text>
+            <text class="displayb color-999 fz10">余额：5000</text>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,66 @@
+<!--pages/my/wallet/index/index.wxml-->
+<view class="">
+    <view class="bg-F1604F colorf pl20 pr10 pt15" style="height:352rpx;">
+        <view class="fz14">
+            <text>余额（元）</text>
+            <navigator class="fr parl10" url="../details/details">
+                <text>明细</text>
+            </navigator>
+        </view>
+        <view class="mt15">
+            <text class="fwb" style="font-size:100rpx;">0.00</text>
+        </view>
+        <view>
+            <text class="fz12" style="margin-top:35rpx;">即将到账 0.00元</text>            
+        </view>
+    </view>
+    <view class="pr">
+        <view class="w710 br4 my-box-shadow h150 pa mauto bgw displayf" style="top:-80rpx;right:0;left:0;">
+            <view class="displayf flexdirec jscc altc flexgrow1">
+                <text class="color-F1604F fwb fz20">0.00</text>
+                <text class="color-999 fz12">充值</text>
+            </view>
+            <view class="displayf flexdirec jscc altc flexgrow1">
+                <text class="color-F1604F fwb fz20">0.00</text>
+                <text class="color-999 fz12">收入</text>
+            </view>
+            <view class="displayf flexdirec jscc altc flexgrow1">
+                <text class="color-F1604F fwb fz20">0.00</text>
+                <text class="color-999 fz12">提现</text>
+            </view>
+        </view>
+    </view>
+    <view class="mt35">
+        <view class="bgw mb10">
+            <view class="fz14 color-666 border-bottom-ccc h50 boxb">
+                <navigator class="patrbl15" url="../recharge/recharge">
+                    <image class="bg-F1604F icon-size" src=""></image>
+                    <text class="ml15">充值</text>
+                    <view class="fr">
+                        <image class="choice-size" src="../../../imgs/common/choice@2x.png"></image>
+                    </view>
+                </navigator>
+            </view>
+            <view class="fz14 color-666 h50 boxb">
+                <navigator class="patrbl15" url="">
+                    <image class="bg-F1604F icon-size" src=""></image>
+                    <text class="ml15">提现</text>
+                    <view class="fr">
+                        <image class="choice-size" src="../../../imgs/common/choice@2x.png"></image>
+                    </view>
+                </navigator>
+            </view>
+        </view>
+        <view class="bgw mb10">
+            <view class="fz14 color-666 h50 boxb">
+                <navigator class="patrbl15" url="">
+                    <image class="bg-F1604F icon-size" src=""></image>
+                    <text class="ml15">绑定提现账号</text>
+                    <view class="fr">
+                        <image class="choice-size" src="../../../imgs/common/choice@2x.png"></image>
+                    </view>
+                </navigator>
+            </view>
+        </view>
+    </view>
+</view>
