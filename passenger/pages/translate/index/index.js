@@ -1,22 +1,13 @@
-// pages/login/index/index.js
+// pages/translate/index/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    flag:1,
+  
   },
-  onNav (e) {
-    let i = e.currentTarget.dataset.index
-    this.setData({
-      flag: i
-    })
-    let url = i==0?"../signin/signin":"../login/login"
-    wx.navigateTo({
-      url: url
-    })
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -35,9 +26,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.setData({
-      flag: 1
-    })
+  
   },
 
   /**

@@ -14,6 +14,7 @@ page {
   height: 100%;
   padding: 20rpx;
   box-sizing: border-box;
+  color: #333;
 } 
 /* 公用最外层end */
 
@@ -24,4 +25,23 @@ page {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.06);
   overflow: hidden;
 }
+<<<<<<< HEAD
+.main-wrap + .main-wrap {
+  margin-top: 20rpx;
+}
+/* 公用外层end */
+
+.dp-flex {
+  display: flex;
+  align-items: center;
+}
+.dp-flex.flex-one > view {
+  flex: 1;
+}
+.dp-flex.jc-sb {
+  justify-content: space-between;
+}
+/* 公用样式end */
+=======
 /* 公用块end */
+>>>>>>> parent of 73ecbe8... 增加登录和注册页面

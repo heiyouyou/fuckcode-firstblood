@@ -12,35 +12,35 @@
     <!-- 轮播图end -->
     <!-- 首页导航区 -->
     <view class='home-nav dp-flex flex-one'>
-      <view data-url='' bindtap='go'>
-        <image src='/pages/imgs/home_nav/airplan.png'></image>
+      <view data-url='/pages/air/index/index' bindtap='go'>
+        <image src='/pages/imgs/home_nav/air.png'></image>
         <view>机场接送</view>
       </view>
-      <view data-url='' bindtap='go'>
-        <image src='/pages/imgs/home_nav/airplan.png'></image>
+      <view data-url='/pages/car/index/index' bindtap='go'>
+        <image src='/pages/imgs/home_nav/car.png' style='width: 55rpx;'></image>
         <view>预约用车</view>
       </view>
-      <view data-url='' bindtap='go'>
-        <image src='/pages/imgs/home_nav/airplan.png'></image>
+      <view data-url='/pages/bus/index/index' bindtap='go'>
+        <image src='/pages/imgs/home_nav/bus.png' style='width: 44rpx;'></image>
         <view>结伴班车</view>
       </view>
-      <view data-url='' bindtap='go'>
-        <image src='/pages/imgs/home_nav/airplan.png'></image>
-        <view>结伴班车</view>
+      <view data-url='/pages/travel/index/index' bindtap='go'>
+        <image src='/pages/imgs/home_nav/travel.png' style='width: 33rpx;'></image>
+        <view>包车旅游</view>
       </view>
     </view>
     <!-- 首页导航区end -->
   </view>
   <view class='main-wrap'>
     <view class='home-sub-nav dp-flex flex-one'>
-      <view class='dp-flex' data-url='' bindtap='go'>
+      <view class='dp-flex' data-url='/pages/flight/index/index' bindtap='go'>
         <image src='/pages/imgs/home_nav/flight.png'></image>
         <view>
           <view>查询航班</view>
           <text>查询航班信息</text>
         </view>
       </view>
-      <view class='dp-flex' data-url='' bindtap='go'>
+      <view class='dp-flex' data-url='/pages/translate/index/index' bindtap='go'>
         <image src='/pages/imgs/home_nav/translate.png'></image>
         <view>
           <view>驾照翻译</view>
@@ -48,5 +48,25 @@
         </view>
       </view>
     </view>
+  </view>
+  <view class='main-wrap home-comments-wrap'>
+    <view class='home-comments-tit'>用户实时评价</view>
+    <scroll-view scroll-y style="height: 200px;" bindscrolltolower="lower">
+      <view class='home-comments' wx:for="{{list}}">
+        <view class='dp-flex jc-sb home-comments-user'>
+          <view class='user-info dp-flex'>
+            <image src="{{item.avatar}}"></image>
+            <view>
+              <view>{{item.name}}</view>
+              <text>{{item.creTime}}</text>
+            </view>
+          </view>
+          <view class='dp-flex star'>
+            <image wx:for="{{item.star}}" src="/pages/imgs/home_comments/star.png"></image>
+          </view>
+        </view>
+        <view class='home-comments-info'>{{item.txt}}</view>
+      </view>
+    </scroll-view>
   </view>
 </view>
