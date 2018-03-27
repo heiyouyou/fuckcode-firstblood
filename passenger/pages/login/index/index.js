@@ -8,7 +8,7 @@ Page({
     flag:1,
   },
   onNav (e) {
-    let i = e.currentTarget.dataset.index
+    let i = e.target.dataset.index
     this.setData({
       flag: i
     })

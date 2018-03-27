@@ -7,8 +7,6 @@ swiper {
 swiper image {
   width: 100%;
 }
-
-/* 导航区 */
 .home-nav {
   color: #666;
   padding: 57rpx 40rpx 37rpx;
@@ -28,9 +26,7 @@ swiper image {
   height: 28rpx;
   margin-bottom: 25rpx;
 }
-/* 导航区end */
 
-/* 副导航区 */
 .home-sub-nav {
   padding: 32rpx 70rpx;
   font-size: 30rpx;
@@ -54,40 +50,3 @@ swiper image {
 .home-sub-nav > view:last-of-type image {
   width: 38rpx;
 }
-/* 副导航区end */
-
-/* 用户评价 */
-.home-comments-wrap {
-  padding: 0 50rpx;
-  font-size: 28rpx;
-  margin-bottom: 20rpx;
-}
-.home-comments-tit {
-  padding: 30rpx 0;
-  border-bottom: 1px solid #CCC;
-}
-.home-comments {
-  margin: 30rpx auto 20rpx;
-}
-.home-comments-user image {
-  width: 74rpx;
-  height: 74rpx;
-  margin-right: 30rpx;
-  border-radius: 50%;
-}
-.user-info view {
-  color: #666;
-}
-.user-info text {
-  font-size: 20rpx;
-  color: #909090;
-}
-.star image {
-  width: 18rpx;
-  height: 18rpx;
-  margin: 0;
-}
-.home-comments-info {
-  margin: 20rpx 0 0 10rpx;
-}
-/* 用户评价end */

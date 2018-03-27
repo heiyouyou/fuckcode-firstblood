@@ -6,13 +6,7 @@
     "pages/login/signin/signin",
     "pages/bybus/index/index",
     "pages/trip/index/index",
-    "pages/my/index/index",
-    "pages/air/index/index",    
-    "pages/car/index/index",
-    "pages/bus/index/index",
-    "pages/travel/index/index",
-    "pages/flight/index/index",
-    "pages/translate/index/index"
+    "pages/my/index/index"
   ],
   "window":{
     "backgroundTextStyle":"light",

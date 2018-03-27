@@ -51,8 +51,7 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
-const go = (url, t) => {
-  let type = t ? t : 1
+const goto = (url, type) => {
   if (type == 1) {
     wx.navigateTo({
       url: url
@@ -180,7 +179,7 @@ const delEmptyKey = obj => {
 module.exports = {
   formatTime: formatTime,
   formatNumber: formatNumber,
-  go: go,
+  goto: goto,
   ajax: ajax,
   getUserInfo: getUserInfo,
   updImg: updImg,
