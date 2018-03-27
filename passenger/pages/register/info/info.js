@@ -11,7 +11,7 @@ Page({
     sex:1,
   },
   next(){
-    util.goto('../password/password',1)
+    util.go('../password/password',1)
   },
   /**
    * 选择性别

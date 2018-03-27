@@ -36,7 +36,7 @@ Page({
     })
   },
   next(){
-    util.goto('../code/code',1)
+    util.go('../code/code',1)
   },
   /**
    * 生命周期函数--监听页面加载

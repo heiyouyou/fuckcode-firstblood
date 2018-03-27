@@ -16,7 +16,7 @@ Page({
   
   },
   next(){
-    util.goto('../../login/login/login?v=1.0',4)
+    util.go('../../login/login/login?v=1.0',4)
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
