@@ -10,7 +10,14 @@
     "pages/register/password/password",
     "pages/register/code/code",
     "pages/index/index",
-    "pages/trip/index/index"
+    "pages/bybus/index/index",
+    "pages/trip/index/index",
+    "pages/air/index/index",    
+    "pages/car/index/index",
+    "pages/bus/index/index",
+    "pages/travel/index/index",
+    "pages/flight/index/index",
+    "pages/translate/index/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

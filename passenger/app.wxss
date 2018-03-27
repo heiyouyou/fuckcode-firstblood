@@ -15,6 +15,7 @@ page {
   height: 100%;
   padding: 20rpx;
   box-sizing: border-box;
+  color: #333;
 } 
 /* 公用最外层end */
 
