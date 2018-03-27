@@ -1,1 +1,30 @@
 /* pages/air/index/index.wxss */
+
+.banner {
+  height: 200rpx;
+}
+
+.banner image {
+  width: 100%;
+  height: 100%;
+}
+
+.air-nav {
+  padding: 24rpx 40rpx 18rpx;
+}
+
+.air-sub {
+  color: #bbb;
+  margin-top: 20rpx;
+}
+.air-sub .dp-flex {
+  justify-content: center;
+}
+.air-sub .dp-flex:not(:last-of-type) {
+  border-right: 1px solid #CCC;
+}
+.air-sub image {
+  width: 19rpx;
+  height: 28rpx;
+  margin-right: 20rpx;
+}

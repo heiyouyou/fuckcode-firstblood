@@ -1,0 +1,44 @@
+<!--pages/air/check/check.wxml-->
+<view class='container'>
+  <view class='main-wrap ad-pad'>
+    <view class='main-tit'>填写航班信息</view>
+    <view class='main-form'>
+      <view class='item'>
+        <view class='sub-lab'>航班号</view>
+        <input placeholder='请输入航班号，如3U601' placeholder-class='ph'></input>
+      </view>
+      <view class='item'>
+        <view class='sub-lab'>起飞时间（当地）</view>
+        <input></input>
+      </view>
+    </view>
+  </view>
+  <view class='btn-wrap'>
+    <view class='tips'>如有中转，请填写末班航班的信息</view>
+    <button class='main-btn' bindtap='onCheck'>查询航班</button>
+  </view>
+</view>
+<view class='mask' wx:if="{{showMask}}" data-elem='showMask' bindtap='toggle'>
+  <scroll-view scroll-y style="height: 200px;" bindscrolltolower="lower">
+    <view wx:for="{{list}}" class='check-res'>
+      <view class='plan-info'>
+        <view>{{item.num}}</view>
+        <text>{{item.date}}</text>
+      </view>
+      <view class='plan-detail'>
+        <text>{{item.planCo}}</text>
+        <view class='dp-flex jc-cen'>
+          <view class='plan-detail-txt'>
+            <view>{{item.start}}</view>
+            <view>{{item.startPlan}}</view>
+          </view>
+          <view class='plan-detail-txt'>
+            <view>{{item.end}}</view>
+            <view>{{item.endPlan}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <view class='tips sub'>已显示全部航班</view>
+</view>

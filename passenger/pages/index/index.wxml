@@ -11,7 +11,7 @@
     </swiper>
     <!-- 轮播图end -->
     <!-- 首页导航区 -->
-    <view class='home-nav dp-flex flex-one'>
+    <view class='main-nav dp-flex flex-one'>
       <view data-url='/pages/air/index/index' bindtap='go'>
         <image src='/pages/imgs/home_nav/air.png'></image>
         <view>机场接送</view>

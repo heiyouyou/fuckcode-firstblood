@@ -3,30 +3,46 @@
 @import './pages/fonts/iconfont.wxss'; 
 
 /**app.wxss**/
+
 page {
   width: 100%;
   height: 100%;
-  font-family:'PingFang-SC-Regular';
+  font-family: 'PingFang-SC-Regular';
+  font-size: 28rpx;
+  background: #f2f4f5;
 }
 
 /* 公用最外层 */
+
 .container {
   width: 100%;
   height: 100%;
-  padding: 20rpx;
-  box-sizing: border-box;
   color: #333;
-} 
+  box-sizing: border-box;
+  padding: 20rpx;
+  position: relative;
+}
+
 /* 公用最外层end */
 
 /* 公用块 */
-.main-warp {
+
+.main-wrap {
   background: #fff;
-  border-radius: 4px;
+  border-radius: 4rpx;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.06);
   overflow: hidden;
 }
-/* 公用块end */
+
+.main-wrap.ad-pad {
+  padding: 30rpx 30rpx 22rpx;
+}
+
+.main-wrap + .main-wrap {
+  margin-top: 20rpx;
+}
+
+/* 公用外层end */
 
 /* 登录、注册 start */
 .login-wrap{
@@ -63,3 +79,141 @@ page {
   font-size:14px;
 }
 /* 登录、注册 end */
+
+.dp-flex.flex-one > view {
+  flex: 1;
+}
+
+.dp-flex.jc-sb {
+  justify-content: space-between;
+}
+.dp-flex.jc-cen {
+  justify-content: center;
+}
+
+/* 公用样式end */
+
+/* 导航区 */
+
+.main-nav {
+  color: #666;
+  padding: 57rpx 40rpx 37rpx;
+}
+
+.main-nav > view {
+  font-size: 24rpx;
+  text-align: center;
+}
+
+.main-nav > view:not(:last-of-type) {
+  margin-right: 80rpx;
+}
+
+.main-nav > view image {
+  width: 60rpx;
+  height: 28rpx;
+  margin-bottom: 25rpx;
+}
+
+/* 导航区end */
+
+/* 表单样式 */
+
+.main-tit {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.main-form {
+}
+
+.main-form .item {
+  padding: 25rpx 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.main-form .lab {
+  width: 140rpx;
+  color: #666;
+  margin-right: 40rpx;
+}
+
+.main-form .sub-lab {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.main-form input {
+}
+
+.main-form .info {
+  /* color: #BBB; */
+}
+
+/* 搜索框 */
+
+.search {
+  position: relative;
+}
+
+.search input {
+  text-align: center;
+  background: #f2f2f2;
+  border-radius: 30rpx;
+}
+
+/* placeholder */
+
+.ph {
+  color: #bbb;
+}
+
+/* 搜索框end */
+
+/* 主按钮 */
+
+.btn-wrap {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+
+.main-btn {
+  width: 100%;
+  font-size: 32rpx;
+  color: #fff;
+  text-align: center;
+  background: #f1604f;
+  border-radius: 4rpx;
+  padding: 10rpx;
+}
+
+.tips {
+  font-size: 24rpx;
+  color: #666;
+  text-align: center;
+  margin-bottom: 30rpx;
+}
+.tips.sub {
+  color: #fff;
+}
+/* 主按钮end */
+
+/* 遮罩 */
+.mask {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, .5);
+  padding: 20rpx;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 500;
+}
+/* 遮罩end */
+/* 表单样式end */
