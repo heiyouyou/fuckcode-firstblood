@@ -1,20 +1,4 @@
 /*应用的公用基础样式*/
-.navigator-view{
-    position:fixed;
-    right:0;
-    left:0;
-    height:32px;
-    top:28px;
-    line-height:32px;
-    background:#fff;
-}
-.navigation-return-back{
-    width:20rpx;
-    height:34rpx;
-}
-.navigator-active{
-    background:#ccc;
-}
 .color-333{
     color:#333333;
 }

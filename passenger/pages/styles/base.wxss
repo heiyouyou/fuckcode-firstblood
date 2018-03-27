@@ -88,6 +88,7 @@
 .whites-pre{white-space: pre;}
 .whites-pl{white-space: pre-line;}
 .whites-pw{white-space: pre-wrap;}
+
 /*单行指定宽度的省略号*/
 .text-ellipsis{display:block;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;}
 .thidden50{display:block;max-width:50px !important;overflow:hidden !important;white-space:nowrap !important;text-overflow:ellipsis !important;}
@@ -101,6 +102,7 @@
 .thidden250{display:block;max-width:250px !important;overflow:hidden !important;white-space:nowrap !important;text-overflow:ellipsis !important;}
 .thidden300{display:block;max-width:300px !important;overflow:hidden !important;white-space:nowrap !important;text-overflow:ellipsis !important;}
 .thidden350{display:block;max-width:350px !important;overflow:hidden !important;white-space:nowrap !important;text-overflow:ellipsis !important;}
+/*单行指定宽度的省略号，不升级为块级元素的*/
 .thiddennb50{max-width:50px !important;overflow:hidden !important;white-space:nowrap !important;text-overflow:ellipsis !important;}
 .thiddennb100{max-width:100px !important;overflow:hidden !important;white-space:nowrap !important;text-overflow:ellipsis !important;}
 .thiddennb150{max-width:150px !important;overflow:hidden !important;white-space:nowrap !important;text-overflow:ellipsis !important;}
@@ -168,7 +170,7 @@
 .mtblr20{margin:20px;}
 .mtblr25{margin:25px;}
 
-/*.pd10{padding: 10px;}
+.pd10{padding: 10px;}
 .pd15{padding: 15px;}
 .pd20{padding: 20px;}
 .pr30{padding: 30px;}*/
@@ -420,6 +422,7 @@
 .order6{order:6;}
 .order7{order:7;}
 .order8{order:8;}
+
 /*弹性box布局相关属性*/
 .bdirectionr{-webkit-box-direction:reverse;-moz-box-direction:reverse;}
 .borientz{-webkit-box-orient:horizontal;}
