@@ -1,0 +1,21 @@
+/* pages/register/phone/phone.wxss */
+.placeholder-text{
+    position:absolute;
+    left:0;
+    top:0;
+}
+.login-form-input{
+    padding-left:80px;
+}
+.choice-box{
+    position:absolute;
+    right:10px;
+    top:-7px;
+    padding:2px 6px;
+    background:#fff;
+    z-index:2;
+}
+.choice-box image{
+    width:12rpx;
+    height:22rpx;
+}

@@ -1,21 +1,42 @@
-// pages/login/index/index.js
+// pages/register/phone/phone.js
+let util = require('../../../utils/util')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    flag:1,
+    country:'中国',
+    country_code:'+86',
+    countryArray: [
+      {
+        code: '+86',
+        name: '中国'
+      },
+      {
+        code: 0,
+        name: '美国'
+      },
+      {
+        code: 2,
+        name: '巴西'
+      },
+      {
+        code: 3,
+        name: '日本'
+      }
+    ],
+    index: 0,
   },
-  onNav (e) {
-    let i = e.currentTarget.dataset.index
+  bindPickerChange: function(e) {
     this.setData({
-      flag: i
+      index: e.detail.value,
+      country:this.data.countryArray[e.detail.value].name,
+      country_code:this.data.countryArray[e.detail.value].code
     })
-    let url = i==0?"../../register/phone/phone":"../login/login"
-    wx.navigateTo({
-      url: url
-    })
+  },
+  next(){
+    util.go('../code/code',1)
   },
   /**
    * 生命周期函数--监听页面加载
@@ -35,9 +56,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.setData({
-      flag: 1
-    })
+  
   },
 
   /**

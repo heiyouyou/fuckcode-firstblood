@@ -1,20 +1,32 @@
-// pages/login/index/index.js
+// pages/air/check/check.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    flag:1,
+    showMask: false,
+    list: [{
+      num: '3U601',
+      date: '9月28日  周四',
+      planCo: '四川航空',
+      start: '12:30',
+      startPlan: '双流机场',
+      end: '15:30',
+      endPlan: '墨尔本机场'
+    }]
   },
-  onNav (e) {
-    let i = e.currentTarget.dataset.index
+  toggle (e) {
+    let elem = e.currentTarget.dataset.elem
+    let selem = this.data[elem]
     this.setData({
-      flag: i
+      [elem]: !selem
     })
-    let url = i==0?"../../register/phone/phone":"../login/login"
-    wx.navigateTo({
-      url: url
+  },
+  onCheck () {
+    let sm = this.data.showMask
+    this.setData({
+      showMask: !sm
     })
   },
   /**
@@ -35,9 +47,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.setData({
-      flag: 1
-    })
+  
   },
 
   /**

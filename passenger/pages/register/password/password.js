@@ -1,21 +1,13 @@
-// pages/login/index/index.js
+// pages/register/password/password.js
+let util = require('../../../utils/util')
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    flag:1,
-  },
-  onNav (e) {
-    let i = e.currentTarget.dataset.index
-    this.setData({
-      flag: i
-    })
-    let url = i==0?"../../register/phone/phone":"../login/login"
-    wx.navigateTo({
-      url: url
-    })
+  
   },
   /**
    * 生命周期函数--监听页面加载
@@ -23,7 +15,9 @@ Page({
   onLoad: function (options) {
   
   },
-
+  next(){
+    util.go('../../login/login/login?v=1.0',4)
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -35,9 +29,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.setData({
-      flag: 1
-    })
+  
   },
 
   /**

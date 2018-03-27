@@ -1,24 +1,29 @@
 {
-  "pages":[
-    "pages/login/login/login",
+  "pages": [
+    "pages/my/index/index",
+    "pages/my/editInfo/editInfo",
+    "pages/air/check/check",
+    "pages/air/index/index",
     "pages/index/index",
+    "pages/login/login/login",
     "pages/login/index/index",
-    "pages/login/signin/signin",
     "pages/bybus/index/index",
     "pages/trip/index/index",
-    "pages/my/index/index",
-    "pages/air/index/index",    
+    "pages/register/phone/phone",
+    "pages/register/info/info",
+    "pages/register/password/password",
+    "pages/register/code/code",
     "pages/car/index/index",
     "pages/bus/index/index",
     "pages/travel/index/index",
     "pages/flight/index/index",
     "pages/translate/index/index"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "Skycar",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
   "tabBar": {
     "color": "#909090",
