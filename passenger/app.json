@@ -1,12 +1,12 @@
 {
   "pages": [
+    "pages/air/index/index",
+    "pages/air/check/check",
     "pages/my/index/index",
     "pages/my/wallet/recharge/recharge",
     "pages/my/wallet/details/details",
     "pages/my/wallet/index/index",
     "pages/my/editInfo/editInfo",
-    "pages/air/index/index",
-    "pages/air/check/check",
     "pages/login/index/index",
     "pages/login/login/login",
     "pages/register/phone/phone",
