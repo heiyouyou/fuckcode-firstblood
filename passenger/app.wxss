@@ -1,6 +1,5 @@
 @import './pages/styles/base.wxss';
 @import './pages/styles/main.wxss'; 
-@import './pages/fonts/iconfont.wxss'; 
 
 /**app.wxss**/
 
@@ -44,6 +43,24 @@ page {
 
 /* 公用外层end */
 
+.dp-flex {
+  display: flex;
+  align-items: center;
+}
+
+.dp-flex.flex-one > view {
+  flex: 1;
+}
+
+.dp-flex.jc-sb {
+  justify-content: space-between;
+}
+.dp-flex.jc-cen {
+  justify-content: center;
+}
+
+/* 公用样式end */
+
 /* 登录、注册 start */
 .login-wrap{
   width:550rpx;
@@ -79,22 +96,6 @@ page {
   font-size:14px;
 }
 /* 登录、注册 end */
-
-.dp-flex {
-  display: flex;
-  align-items: center;
-}
-.dp-flex.flex-one > view {
-  flex: 1;
-}
-.dp-flex.jc-sb {
-  justify-content: space-between;
-}
-.dp-flex.jc-cen {
-  justify-content: center;
-}
-
-/* 公用样式end */
 
 /* 导航区 */
 
@@ -224,4 +225,5 @@ page {
   z-index: 500;
 }
 /* 遮罩end */
+
 /* 表单样式end */
