@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/air/index/index",
+    "pages/air/next/next",
     "pages/air/check/check",
     "pages/my/index/index",
     "pages/my/wallet/recharge/recharge",
