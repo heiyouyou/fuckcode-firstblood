@@ -1,26 +1,36 @@
-// pages/login/login/login.js
-let util = require('../../../utils/util')
-
+// pages/my/wallet/binding/binding.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    
+    hide:true,
+    bindingType:1,
+    bindingText:'澳币提现账号'
   },
-  getData(e){
-    util.go('../../index/index',5)
-    console.log(e.detail.value)
+  // 弹出层的显示与隐藏
+  maskToggle(){
+    this.setData({
+      ['hide']:!this.data.hide
+    })
   },
-  wechatLogin(){
-    util.go('../../index/index',5)
+  // 选择绑定方式
+  chooseWay(e){
+    this.maskToggle()
+    let bindingType = e.currentTarget.dataset.way
+    let bindingText = bindingType==1?"澳币提现账号":"微信提现账号"
+    this.setData({
+      ['bindingType']:bindingType,
+      ['bindingText']:bindingText
+    })
   },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
+  
   },
 
   /**

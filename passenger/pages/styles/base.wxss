@@ -228,6 +228,7 @@
 .w50{width:50px;}
 .w60{width:60px;}
 .w70{width:70px;}
+.w75{width:75px;}
 .w80{width:80px;}
 .w90{width:90px;}
 .w100{width:100px;}
@@ -287,6 +288,7 @@
 .h50{height:50px;}
 .h60{height:60px;}
 .h70{height:70px;}
+.h75{height:75px;}
 .h80{height:80px;}
 .h100{height:100px;}
 .h150{height:150px;}

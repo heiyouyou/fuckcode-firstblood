@@ -1,0 +1,59 @@
+<!--pages/my/wallet/binding/binding.wxml-->
+<view class="displayf flexdirec altc">
+    <view class="w710 boxb bgw my-box-shadow mt15" style="padding:0 55rpx;">
+        <view class="binding-title fz14 padding-left-15rpx" bindtap="maskToggle">
+            <text class="color-333 fl">绑定类型</text>
+            <text class="color-3CBCA3 ml40 fl">{{bindingText}}</text>
+            <view class="fr">
+                <image class="choice-size" src="../../../imgs/common/choice@2x.png"></image>
+            </view>
+        </view>
+        <block wx:if="{{bindingType==1}}">
+            <view class="binding-item border-bottom-ccc boxb padding-left-15rpx displayf pt20 flexdirec">
+                <text class="color-333 fwb">Account Name</text>
+                <input class="color-333 mt10" placeholder="请输入Account Name" placeholder-class="color-BBB" />
+            </view>
+            <view class="binding-item border-bottom-ccc boxb padding-left-15rpx displayf pt20 flexdirec">
+                <text class="color-333 fwb">Account No.</text>
+                <input class="color-333 mt10" placeholder="请输入Account Number" placeholder-class="color-BBB" />
+            </view>
+            <view class="binding-item border-bottom-ccc boxb padding-left-15rpx displayf pt20 flexdirec">
+                <text class="color-333 fwb">BSB</text>
+                <input class="color-333 mt10" placeholder="请输入BSB" placeholder-class="color-BBB" />
+            </view>
+            <view class="binding-item boxb padding-left-15rpx displayf pt20 flexdirec">
+                <text class="color-333 fwb">ABN</text>
+                <input class="color-333 mt10" placeholder="请输入ABN" placeholder-class="color-BBB" />
+            </view>
+        </block>
+        <block wx:else>
+            <view class="binding-item boxb padding-left-15rpx displayf pt20 flexdirec">
+                <text class="color-333 fwb">微信号</text>
+                <input class="color-333 mt10" placeholder="请输入微信提现账号" placeholder-class="color-BBB" />
+            </view>
+        </block>
+    </view>
+     <view class="w710 mb10 mt15">
+        <button class="save-btn">立即绑定</button>
+    </view>
+    <view class="mask-no-padding displayf altend" hidden="{{hide}}">
+        <view class="bgw w">
+            <view class="mask-title border-bottom-ccc tc">
+                <text class="fz15 color-333">选择绑定提现账号</text>
+                <image class="icon-size-32 fr" src="../../../imgs/common/close@2x.png" bindtap="maskToggle"></image>
+            </view>
+            <view class="mask-item displayf altc border-bottom-ccc {{bindingType==1?'active':''}}" style="padding-top:0;" data-way="1" bindtap="chooseWay">
+                <view>
+                    <text class="fz15 color-333">澳币提现账号</text>
+                </view>
+            </view>
+            <view class="mask-item displayf altc border-bottom-ccc {{bindingType==2?'active':''}}" style="padding-top:0;" data-way="2" bindtap="chooseWay">
+                <view>
+                    <text class="fz15 color-333">微信提现账号</text>
+                </view>
+            </view>
+            <view class="mask-item">
+            </view>
+        </view>
+    </view>
+</view>

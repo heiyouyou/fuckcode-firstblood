@@ -1,4 +1,6 @@
 // pages/my/editInfo/editInfo.js
+let util = require('../../../utils/util')
+
 Page({
 
   /**
@@ -23,6 +25,10 @@ Page({
       sexIndex: e.detail.value,
       sex:this.data.sexArry[e.detail.value]
     })
+  },
+  // 头像修改
+  editAvator(){
+    util.updImg()
   },
   /**
    * 生命周期函数--监听页面加载

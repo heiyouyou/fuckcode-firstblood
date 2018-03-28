@@ -1,4 +1,7 @@
 /* pages/register/info/info.wxss */
+page{
+	background:#fff;
+}
 .sex-box{
     position:absolute;
     right:0;

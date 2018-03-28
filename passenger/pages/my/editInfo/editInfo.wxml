@@ -2,7 +2,7 @@
 <view class="displayf altc flexdirec page-bg h">
     <view class="w750">
         <view class="bgw my-box-shadow mb10 pl15">
-            <view class="fz14 color-666 border-bottom-ccc boxb displayf altc" style="height:160rpx;">
+            <view class="fz14 color-666 border-bottom-ccc boxb displayf altc" style="height:160rpx;" bindtap="editAvator">
                 <image class="bg-F1604F br50 edit-avator mr20" src=""></image>
                 <text class="color-999">修改头像</text>
             </view>

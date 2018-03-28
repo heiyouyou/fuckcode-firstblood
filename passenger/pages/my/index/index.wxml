@@ -125,5 +125,9 @@
                 </navigator>
             </view>
         </view>
+        <view class="h50 w50 br50 bg-F1604F pa displayf altc jscc flexdirec message-circle">
+            <image class="icon-size bgw displayb mb5" src="" ></image>
+            <text class="fwb fz14 colorf">消息</text>
+        </view>
     </view>
 </view>
