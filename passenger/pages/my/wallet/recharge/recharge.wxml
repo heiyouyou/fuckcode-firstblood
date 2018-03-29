@@ -1,0 +1,12 @@
+<!--pages/my/wallet/recharge/recharge.wxml-->
+<view>
+    <view class="mauto mt15 w710 bgw pt25 pb25 boxb my-box-shadow" style="padding-left:72rpx;">
+        <text class="fz14 color-333">充值金额</text>
+        <view class="mt25 fz15 fwb lh30">
+            <view class="clearfix"><text class="fl vm mr15">￥</text><input class="h30 fl color-F1604F" type="digit" placeholder-class="color-F1604F" /></view>
+        </view>
+    </view>
+    <view class="mauto w710 mt15">
+        <button class="save-btn">立即充值</button>
+    </view>
+</view>

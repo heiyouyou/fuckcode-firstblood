@@ -4,7 +4,7 @@
 		<view class="w">
 			<text class="fwb login-form-title">登录</text>
 		</view>
-		<view class="wechat-login displayf jscc altc pr">
+		<view class="wechat-login displayf jscc altc pr" bindtap="wechatLogin">
 			<image class="wechat-img" src="../../imgs/common/wechat@2x.png" style="width:36rpx;height:30rpx;" />
 			<text class="fwb fz18">微信登录</text>
 		</view>

@@ -1,1 +1,4 @@
 /* pages/register/code/code.wxss */
+page{
+	background:#fff;
+}

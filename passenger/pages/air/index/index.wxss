@@ -11,8 +11,11 @@
 
 .air-nav {
   padding: 24rpx 40rpx 18rpx;
+  color: #bbb;
 }
-
+.air-nav .active {
+  color: #666;
+}
 .air-sub {
   color: #bbb;
   margin-top: 20rpx;
@@ -27,4 +30,16 @@
   width: 19rpx;
   height: 28rpx;
   margin-right: 20rpx;
+}
+
+.located {
+  width: 80%;
+}
+.to-back {
+  width: 20%;
+  height: 120rpx;
+  line-height: 120rpx;
+  text-align: center;
+  border-left: 1px solid #CCC;
+  margin-left: 30rpx;
 }
