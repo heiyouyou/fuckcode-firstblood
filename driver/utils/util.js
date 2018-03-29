@@ -51,7 +51,7 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
-const goto = (url, type) => {
+const go = (url, type) => {
   if (type == 1) {
     wx.navigateTo({
       url: url
