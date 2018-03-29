@@ -5,21 +5,13 @@
       <image src="{{banner}}"></image>
     </view>
     <view class='main-nav dp-flex flex-one air-nav'>
-      <view data-url='/pages/air/index/index' bindtap='go'>
-        <image src='/pages/imgs/home_nav/air.png'></image>
-        <view>接机</view>
-      </view>
-      <view data-url='/pages/air/index/index' bindtap='go'>
-        <image src='/pages/imgs/home_nav/air.png'></image>
-        <view>送机</view>
-      </view>
-      <view data-url='/pages/air/index/index' bindtap='go'>
-        <image src='/pages/imgs/home_nav/air.png'></image>
-        <view>往返</view>
+      <view wx:for="{{nav}}" class="{{flag==index ? 'active': ''}}" data-i="{{index}}" bindtap='onNav'>
+        <image src='{{item.src}}'></image>
+        <view>{{item.name}}</view>
       </view>
     </view>
   </view>
-  <view class='main-wrap ad-pad'>
+  <view class='main-wrap ad-pad' wx:if="{{flag != 2}}">
     <view class='dp-flex jc-sb'>
       <view class='main-tit'>填写用车信息</view>
       <view class='search' data-url='/pages/air/check/check' bindtap='go'>
@@ -55,8 +47,55 @@
       </view>
     </view>
   </view>
+
+  <view class='main-wrap ad-pad' wx:if="{{flag==2}}">
+    <view class='main-tit ad-b-bor'>往返</view>
+    <view class='dp-flex'>
+      <view class='main-form located'>
+        <view class='item'>
+          <view class='sub-lab'>从机场</view>
+          <picker bindchange="bindPickerChange" value="{{index}}" range="{{airplan}}" range-key="name">
+            <view class="dp-flex">
+              <view class='info'>{{airplan[index].name}}</view>
+            </view>
+          </picker>
+        </view>
+        <view class='item no-bor-b'>
+          <view class='sub-lab'>到地点</view>
+          <input placeholder='您往返的地点' placeholder-class='ph'></input>
+        </view>
+      </view>
+      <view class='to-back'>wf</view>
+    </view>
+  </view>
+
+  <view class='main-wrap ad-pad' wx:if="{{flag==2}}">
+    <view class='main-tit' wx:if="{{!showBack}}" data-elem='showBack' bindtap='toggle'>往返地点不同</view>
+    <view wx:else>
+      <view class='main-tit'>返程</view>
+      <view class='dp-flex'>
+        <view class='main-form located'>
+          <view class='item'>
+            <view class='sub-lab'>从机场</view>
+            <picker bindchange="bindPickerChange" value="{{index}}" range="{{airplan}}" range-key="name">
+              <view class="dp-flex">
+                <view class='info'>{{airplan[index].name}}</view>
+              </view>
+            </picker>
+          </view>
+          <view class='item no-bor-b'>
+            <view class='sub-lab'>到地点</view>
+            <input placeholder='您往返的地点' placeholder-class='ph'></input>
+          </view>
+        </view>
+        <view class='to-back'>wf</view>
+      </view>
+    </view>
+  </view>
+
   <view class='btn-wrap'>
-    <view class='tips'>以实际降落时间开始计算，免费等待90分钟</view>
-    <button class='main-btn' bindtap='onCheck'>立即查询</button>
+    <view class='tips' wx:if="{{flag==0}}">以实际降落时间开始计算，免费等待90分钟</view>
+    <button class='main-btn' bindtap='onCheck' wx:if="{{flag==0}}">立即查询</button>
+    <button class='main-btn' wx:if="{{flag==2}}">继续</button>
   </view>
 </view>

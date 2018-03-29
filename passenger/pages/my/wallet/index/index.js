@@ -1,26 +1,18 @@
-// pages/login/login/login.js
-let util = require('../../../utils/util')
-
+// pages/my/wallet/index/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    
+  
   },
-  getData(e){
-    util.go('../../index/index',5)
-    console.log(e.detail.value)
-  },
-  wechatLogin(){
-    util.go('../../index/index',5)
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
+  
   },
 
   /**
