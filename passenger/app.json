@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/my/evaluate/evaluate",
     "pages/my/index/index",
     "pages/my/wallet/binding/binding",
-    "pages/my/evaluate/evaluate",
     "pages/my/wallet/withdraw/withdraw",
     "pages/my/wallet/recharge/recharge",
     "pages/my/wallet/details/details",
