@@ -33,6 +33,13 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    hide:true
+  },
+  // 弹出层的显示与隐藏
+  maskToggle(obj){
+    obj.setData({
+      ['hide']:!obj.data.hide
+    })
   },
 })

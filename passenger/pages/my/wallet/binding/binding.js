@@ -1,4 +1,5 @@
 // pages/my/wallet/binding/binding.js
+let app = getApp()
 Page({
 
   /**
@@ -11,9 +12,7 @@ Page({
   },
   // 弹出层的显示与隐藏
   maskToggle(){
-    this.setData({
-      ['hide']:!this.data.hide
-    })
+    app.maskToggle(this)
   },
   // 选择绑定方式
   chooseWay(e){

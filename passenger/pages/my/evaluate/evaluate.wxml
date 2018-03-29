@@ -1,2 +1,51 @@
 <!--pages/my/evaluate/evaluate.wxml-->
-<text>pages/my/evaluate/evaluate.wxml</text>
+<view>
+    <view class="displayf jscc">
+        <view class="tab-head displayf altc jsca">
+            <view>
+                <text class="{{current==1?'color-F1604F':''}} fwb fz14" data-type='1' bindtap="chooseWay">我给司机的评价</text> 
+            </view>
+            <view>
+                <text class="{{current==2?'color-F1604F':''}} fwb fz14" data-type='2' bindtap="chooseWay">司机给我的评价</text> 
+            </view>
+        </view>
+        <view class="tab-body w710 mt10">
+            <view class="bgw patrbl15 mb10">
+                <view class="displayf altc">
+                    <image class="h-70rpx w-70rpx bg-F1604F br50" src=""></image>
+                    <text class="fz14 color-666 mr5 ml10">赵师傅</text>
+                    <view>
+                        <image class="start-img displayib" src="../../imgs/home_comments/star.png"></image>
+                        <image class="start-img displayib" src="../../imgs/home_comments/star.png"></image>
+                        <image class="start-img displayib" src="../../imgs/home_comments/star.png"></image>
+                    </view>
+                </view>
+                <view class="fz12 color-999 mt15 margin-bottom-28rpx">
+                    <text class="mr10">2小时前</text>
+                    <text>订单编号:201708257485963</text>
+                </view>
+                <view>
+                    <text class="color-333 fz15 lh-45rpx">还顺路把我直接送回家我说给车主补钱还有高速费车主都不要特别实在的大哥！</text>
+                </view>
+            </view>
+            <view class="bgw patrbl15 mb10">
+                <view class="displayf altc">
+                    <image class="h-70rpx w-70rpx bg-F1604F br50" src=""></image>
+                    <text class="fz14 color-666 mr5 ml10">赵师傅</text>
+                    <view>
+                        <image class="start-img displayib" src="../../imgs/home_comments/star.png"></image>
+                        <image class="start-img displayib" src="../../imgs/home_comments/star.png"></image>
+                        <image class="start-img displayib" src="../../imgs/home_comments/star.png"></image>
+                    </view>
+                </view>
+                <view class="fz12 color-999 mt15 margin-bottom-28rpx">
+                    <text class="mr10">2小时前</text>
+                    <text>订单编号:201708257485963</text>
+                </view>
+                <view>
+                    <text class="color-333 fz15 lh-45rpx">还顺路把我直接送回家我说给车主补钱还有高速费车主都不要特别实在的大哥！</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

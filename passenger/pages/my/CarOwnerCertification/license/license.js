@@ -1,32 +1,13 @@
-// pages/my/wallet/withdraw/withdraw.js
-let app = getApp()
+// pages/my/CarOwnerCertification/license/license.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    hide:true,
-    way:1,
-    withdrawWay:'人民币（RMB）',
-    disabled:true
+  
   },
-  // 弹出层的显示与隐藏
-  maskToggle(){
-    app.maskToggle(this)
-  },
-  // 选择提现方式
-  chooseWay(e){
-    this.maskToggle()
-    let way = e.currentTarget.dataset.way
-    let withdrawWay = way==1?"人民币（RMB）":"澳币（AUD）"
-    let disabled = way==1?true:false
-    this.setData({
-      ['way']:way,
-      ['withdrawWay']:withdrawWay,
-      ['disabled']:disabled
-    })
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */

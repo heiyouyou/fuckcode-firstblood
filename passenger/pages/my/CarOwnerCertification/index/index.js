@@ -1,32 +1,40 @@
-// pages/my/wallet/withdraw/withdraw.js
-let app = getApp()
+// pages/my/CarOwnerCertification/index/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    hide:true,
-    way:1,
-    withdrawWay:'人民币（RMB）',
-    disabled:true
+    country:'中国',
+    country_code:'+86',
+    countryArray: [
+      {
+        code: '+86',
+        name: '中国'
+      },
+      {
+        code: 0,
+        name: '美国'
+      },
+      {
+        code: 2,
+        name: '巴西'
+      },
+      {
+        code: 3,
+        name: '日本'
+      }
+    ],
+    index: 0,
   },
-  // 弹出层的显示与隐藏
-  maskToggle(){
-    app.maskToggle(this)
-  },
-  // 选择提现方式
-  chooseWay(e){
-    this.maskToggle()
-    let way = e.currentTarget.dataset.way
-    let withdrawWay = way==1?"人民币（RMB）":"澳币（AUD）"
-    let disabled = way==1?true:false
+  bindPickerChange: function(e) {
     this.setData({
-      ['way']:way,
-      ['withdrawWay']:withdrawWay,
-      ['disabled']:disabled
+      index: e.detail.value,
+      country:this.data.countryArray[e.detail.value].name,
+      country_code:this.data.countryArray[e.detail.value].code
     })
   },
+
   /**
    * 生命周期函数--监听页面加载
    */
