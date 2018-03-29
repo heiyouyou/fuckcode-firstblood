@@ -37,7 +37,7 @@
       </view>
     </view>
     <view class='dp-flex flex-one air-sub'>
-      <view class='dp-flex'>
+      <view class='dp-flex' bindtap='show'>
         <image src='/pages/imgs/airplan_nav/num.png'></image>
         <text>乘车人数</text>
       </view>
@@ -50,6 +50,7 @@
         <text>降落时间</text>
       </view>
     </view>
+    <cusPick id="cusPick" title="乘客人数" firstItme="{{fi}}"></cusPick>
   </view>
 
   <view class='main-wrap ad-pad' wx:if="{{flag==2}}">
