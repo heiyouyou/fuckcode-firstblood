@@ -1,13 +1,5 @@
 {
   "pages": [
-<<<<<<< HEAD
-    "pages/index/index",
-    "pages/translate/index/index",
-    
-    "pages/air/index/index",
-    "pages/air/check/check",
-=======
->>>>>>> cfba2bced2f50c9cfcd3abb9c04486d2691fb4e8
     "pages/my/index/index",
     "pages/my/wallet/binding/binding",
     "pages/my/evaluate/evaluate",
@@ -16,16 +8,12 @@
     "pages/my/wallet/details/details",
     "pages/my/wallet/index/index",
     "pages/my/editInfo/editInfo",
-    "pages/login/index/index",
-    "pages/login/login/login",
-<<<<<<< HEAD
-    "pages/bybus/index/index",
-    "pages/trip/index/index",
-=======
-    "pages/index/index",
+    "pages/translate/index/index",
     "pages/air/index/index",
     "pages/air/check/check",
->>>>>>> cfba2bced2f50c9cfcd3abb9c04486d2691fb4e8
+    "pages/login/index/index",
+    "pages/login/login/login",
+    "pages/index/index",
     "pages/register/phone/phone",
     "pages/register/info/info",
     "pages/register/password/password",

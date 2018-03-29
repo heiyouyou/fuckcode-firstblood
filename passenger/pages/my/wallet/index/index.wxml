@@ -42,7 +42,7 @@
                 </navigator>
             </view>
             <view class="fz14 color-666 h50 boxb">
-                <navigator class="patrbl15" url="">
+                <navigator class="patrbl15" url="../withdraw/withdraw">
                     <image class="bg-F1604F icon-size" src=""></image>
                     <text class="ml15">提现</text>
                     <view class="fr">
@@ -53,7 +53,7 @@
         </view>
         <view class="bgw mb10">
             <view class="fz14 color-666 h50 boxb">
-                <navigator class="patrbl15" url="">
+                <navigator class="patrbl15" url="../binding/binding">
                     <image class="bg-F1604F icon-size" src=""></image>
                     <text class="ml15">绑定提现账号</text>
                     <view class="fr">
