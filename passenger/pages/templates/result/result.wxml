@@ -1,0 +1,21 @@
+<!--pages/templates/result/result.wxml-->
+<!-- 结果信息模板，result_url：图片url， -->
+
+<template name="result">
+    <view class="displayf jscb altc flexdirec bgw h">
+        <view class="mt-150 tc">
+            <image class="result-img" src="{{result_url||'../../imgs/common/success@2x.png'}}"></image>
+            <view class="mt45">
+                <text class="fz14 color-333 whites-pl" style="line-height:24px;">
+                    {{result_content}}
+                </text>
+            </view>
+        </view>
+        <view class="mb25">
+            <view class="color-999 whites-pl tc fz12">
+                有任何问题请<text class="color-F1604F">联系客服，</text>
+                Sky-car车来了将竭诚为您服务。
+            </view>
+        </view>
+    </view>
+</template>

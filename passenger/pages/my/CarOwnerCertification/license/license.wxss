@@ -1,0 +1,8 @@
+/* pages/my/CarOwnerCertification/license/license.wxss */
+input{
+    width:200px;
+}
+.license-size{
+    width:100%;
+    height:230rpx;
+}

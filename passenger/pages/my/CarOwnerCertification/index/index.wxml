@@ -1,0 +1,32 @@
+<!--pages/my/CarOwnerCertification/index/index.wxml-->
+<view>
+    <view class="tc patb20 my-box-shadow bgw mb15">
+        <text>欢迎申请成为Skycar-车来了车主</text>
+    </view>
+    <view>
+        <view class="bgw my-box-shadow mb10">
+            <view class="h50 lh50 border-bottom-ccc color-333 parl20">
+                    <text class="fz15 input-des-text">国家/地区</text>
+                    <text class="fz15">{{country}}</text>
+                    <view class="fr">
+                        <image class="choice-size" src="../../../imgs/common/choice@2x.png"></image>
+                    </view>
+            </view>
+            <view class="h50 displayf altc color-333 pl20">
+                <text class="fz15 input-des-text border-right-ccc h lh50">{{country_code}}</text>
+                <input class="fz14" type="number" placeholder="请输入手机号" placeholder-class="color-BBB"/>
+                <text class="fz12 color-999 get-code ml10">获取验证码</text>      
+            </view>
+        </view>
+        <view class="bgw my-box-shadow">
+            <view class="h50 displayf altc color-333 pl20">
+                <text class="fz15 input-des-text">验证码</text>
+                <input class="fz14" type="number" placeholder="请输入验证码" placeholder-class="color-BBB"/>
+                <text class="fz12 color-ccc get-code ml10" hidden>46s重新发送</text> 
+            </view>
+        </view>
+        <view class="w710 mb10 mt15 mauto">
+            <button class="save-btn" bindtap="next">确定</button>
+        </view>
+    </view>
+</view>

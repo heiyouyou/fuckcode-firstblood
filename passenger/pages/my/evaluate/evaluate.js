@@ -5,9 +5,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    current:1
   },
-
+  chooseWay(e){
+    let type = e.currentTarget.dataset.type
+    this.setData({
+      ['current']:type
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

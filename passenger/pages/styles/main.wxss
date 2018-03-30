@@ -1,11 +1,20 @@
 /*应用的公用基础样式*/
 /** by youyou start **/
 /* 内外边距 start */
+.margin-top-28rpx{
+    margin-top:28rpx;
+}
+.margin-bottom-28rpx{
+    margin-bottom:28rpx;
+}
 .padding-left-15rpx{
     padding-left:15rpx;
 }
 .padding-right-15rpx{
     padding-left:15rpx;
+}
+.mt-150{
+    margin-top:150rpx;
 }
 /* 内外边距 end */
 
@@ -37,17 +46,30 @@
 }
 /* 文本颜色 end */
 
-/* 宽度、高度 start */
+/* 宽度、高度、行高 start */
 .w710{
     width:710rpx;
 }
 .w750{
     width:750rpx;
 }
+.w-70rpx{
+    width:70rpx;
+}
+
 .h150{
     height:150rpx;
 }
-/* 宽度、高度 end */
+.h-70rpx{
+    height:70rpx;
+}
+
+.lh-45rpx{
+    line-height:45rpx;
+}
+
+
+/* 宽度、高度、行高 end */
 
 /* 背景色 start */
 .page-bg{
@@ -55,6 +77,9 @@
 }
 .bg-F1604F{
     background:#F1604F;
+}
+.bg-ccc{
+    background:#CCCCCC;
 }
 /* 背景色 end */
 
@@ -84,11 +109,30 @@
     width:32rpx;
     height:32rpx;
 }
+.icon-size-40{
+    width:40rpx;
+    height:40rpx;
+}
 /* 图标大小 end */
 
 /* 边框颜色 start */
 .border-bottom-ccc{
-    border-bottom:1px solid #ccc;
+    border-bottom:1rpx solid #ccc;
+}
+.border-right-ccc{
+    border-right:1rpx solid #ccc;
+}
+.border-left-ccc{
+    border-right:1rpx solid #ccc;
+}
+.border-top-ccc{
+    border-right:1rpx solid #ccc;
+}
+.border-ccc{
+    border:1rpx solid #ccc;
+}
+.border-dashed-ccc{
+    border:2rpx dashed #ccc;
 }
 /* 边框颜色 end */
 
@@ -100,11 +144,22 @@
     line-height:100rpx;
     color:#fff;
     background:rgba(241,96,79,1);
-    border-radius: 4px; 
+    border-radius: 4rpx; 
+    border:none !important;
+    overflow:hidden;
+    width:710rpx;
 }
 .message-circle{
     position:fixed;
     right:60rpx;
     bottom:100rpx;
+}
+.border-radius-4rpx{
+    border-radius:4rpx;
+}
+.preview-img-box{
+    height:474rpx; 
+    background:rgba(143,130,188,1);
+    border-radius: 4rpx 
 }
 /** by youyou end **/
