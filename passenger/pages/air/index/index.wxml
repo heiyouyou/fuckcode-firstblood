@@ -27,13 +27,17 @@
           </view>
         </picker>
       </view>
-      <view class='dp-flex item'>
+      <view class='dp-flex item' wx:if="{{flag == 0}}">
         <text class='lab'>送达</text>
         <input placeholder='请输入送达地'></input>
       </view>
+      <view class='dp-flex item' wx:else>
+        <text class='lab'>出发</text>
+        <input placeholder='您从哪上车？'></input>
+      </view>
     </view>
     <view class='dp-flex flex-one air-sub'>
-      <view class='dp-flex'>
+      <view class='dp-flex' bindtap='show'>
         <image src='/pages/imgs/airplan_nav/num.png'></image>
         <text>乘车人数</text>
       </view>
@@ -46,6 +50,7 @@
         <text>降落时间</text>
       </view>
     </view>
+    <cusPick id="cusPick" title="乘客人数" firstItme="{{fi}}"></cusPick>
   </view>
 
   <view class='main-wrap ad-pad' wx:if="{{flag==2}}">
@@ -95,7 +100,7 @@
 
   <view class='btn-wrap'>
     <view class='tips' wx:if="{{flag==0}}">以实际降落时间开始计算，免费等待90分钟</view>
-    <button class='main-btn' bindtap='onCheck' wx:if="{{flag==0}}">立即查询</button>
-    <button class='main-btn' wx:if="{{flag==2}}">继续</button>
+    <button class='main-btn' wx:if="{{flag != 2}}" bindtap='onCheck'>立即查询</button>
+    <button class='main-btn' wx:if="{{flag==2}}" data-url='/pages/air/next/next' bindtap='go'>继续</button>
   </view>
 </view>

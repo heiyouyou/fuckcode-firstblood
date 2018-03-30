@@ -1,5 +1,8 @@
 {
-    "navigationBarBackgroundColor": "#F1604F",
-    "navigationBarTextStyle":"white",	
-    "navigationBarTitleText":"接送机"
+  "usingComponents": {
+    "cusPick": "/pages/components/cus-pick/cus-pick"
+  }
+  "navigationBarBackgroundColor": "#F1604F",
+  "navigationBarTextStyle":"white",	
+  "navigationBarTitleText":"接送机"
 }
