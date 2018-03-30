@@ -76,7 +76,7 @@
         </view>
         <view class="bgw br4 my-box-shadow mb10">
             <view class="fz14 color-666 border-bottom-ccc h50 boxb">
-                <navigator class="patrbl15" src="">
+                <navigator class="patrbl15" url="../addressAndContact/addressAndContact">
                     <image class="bg-F1604F icon-size" src=""></image>
                     <text class="ml15">地址、联系人管理</text>
                     <view class="fr navigator-choice">

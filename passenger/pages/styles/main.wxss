@@ -81,6 +81,9 @@
 .bg-ccc{
     background:#CCCCCC;
 }
+.bg-494C5B{
+    background:#494C5B;
+}
 /* 背景色 end */
 
 /* 图标大小 start */
@@ -108,6 +111,10 @@
 .icon-size-32{
     width:32rpx;
     height:32rpx;
+}
+.icon-size-30{
+    width:30rpx;
+    height:30rpx;
 }
 .icon-size-40{
     width:40rpx;
