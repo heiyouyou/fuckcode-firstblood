@@ -1,13 +1,11 @@
-// pages/my/CarOwnerCertification/info/info.js
-let util = require('../../../../utils/util')
-
+// pages/templates/result/result.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    
   },
 
   /**
@@ -15,9 +13,6 @@ Page({
    */
   onLoad: function (options) {
   
-  },
-  next(){
-    util.go('../license/license')
   },
 
   /**

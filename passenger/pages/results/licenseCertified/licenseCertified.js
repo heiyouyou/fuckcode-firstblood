@@ -1,6 +1,4 @@
-// pages/my/CarOwnerCertification/info/info.js
-let util = require('../../../../utils/util')
-
+// pages/results/licenseCertified/licenseCertified.js
 Page({
 
   /**
@@ -15,9 +13,6 @@ Page({
    */
   onLoad: function (options) {
   
-  },
-  next(){
-    util.go('../license/license')
   },
 
   /**

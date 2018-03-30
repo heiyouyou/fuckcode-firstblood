@@ -1,4 +1,6 @@
 // pages/my/CarOwnerCertification/index/index.js
+let util = require('../../../../utils/util')
+
 Page({
 
   /**
@@ -34,7 +36,9 @@ Page({
       country_code:this.data.countryArray[e.detail.value].code
     })
   },
-
+  next(){
+    util.go('../info/info')
+  },
   /**
    * 生命周期函数--监听页面加载
    */

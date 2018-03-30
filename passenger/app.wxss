@@ -90,11 +90,16 @@ page {
 }
 
 .input-des-text{
-  width:130rpx;
+  min-width:130rpx;
   box-sizing:border-box;
   margin-right:37rpx;
   display:inline-block;
 
+}
+
+.result-img{
+  width:388rpx;
+  height:295rpx;
 }
 /** by youyou end **/
 

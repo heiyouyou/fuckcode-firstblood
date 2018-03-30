@@ -35,6 +35,6 @@
             和
             <text class="color-F1604F">隐私条款</text>
         </view>
-        <button class="save-btn">下一步</button>
+        <button class="save-btn" bindtap="next">下一步</button>
     </view>
 </view>

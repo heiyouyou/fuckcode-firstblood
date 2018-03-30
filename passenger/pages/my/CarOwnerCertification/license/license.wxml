@@ -27,18 +27,22 @@
         </view>
         <view class="bgw my-box-shadow mb10">
             <view class="h50 lh50 border-bottom-ccc color-666 parl20">
-                <text class="fz14 input-des-text">车辆类型</text>
-                <text class="fz14 color-333">舒适型</text>
-                <view class="fr">
-                    <image class="choice-size" src="../../../imgs/common/choice@2x.png"></image>
-                </view>
+                <picker bindchange="bindPickerCarChange" value="{{carIndex}}" range="{{carTypeArray}}">
+                    <text class="fz14 input-des-text">车辆类型</text>
+                    <text class="fz14 color-333">{{c_type}}</text>
+                    <view class="fr">
+                        <image class="choice-size" src="../../../imgs/common/choice@2x.png"></image>
+                    </view>
+                </picker>
             </view>
             <view class="h50 lh50 border-bottom-ccc color-666 parl20">
-                <text class="fz14 input-des-text">儿童座椅</text>
-                <text class="fz14 color-333">舒适型</text>
-                <view class="fr">
-                    <image class="choice-size" src="../../../imgs/common/choice@2x.png"></image>
-                </view>
+                <picker bindchange="bindPickerSeatChange" value="{{seatIndex}}" range="{{seatArray}}">
+                    <text class="fz14 input-des-text">儿童座椅</text>
+                    <text class="fz14 color-333">{{seat}}</text>
+                    <view class="fr">
+                        <image class="choice-size" src="../../../imgs/common/choice@2x.png"></image>
+                    </view>
+                </picker>
             </view>
             <view class="h50 displayf altc color-666 pl20 border-bottom-ccc">
                 <text class="fz14 input-des-text">乘客上限</text>
@@ -53,54 +57,90 @@
             <view class="displayf jscb mb45">
                 <view class="flex1 mr5">
                     <text class="fz14 color-666">手持护照实例</text>
-                    <view class="mt15">
-                        <image class="license-img bg-F1604F"></image>
+                    <view class="mt15 border-ccc" bindtap="maskToggle">
+                        <image src="" class="license-size displayb bg-F1604F"></image>
                     </view>
                 </view>
                 <view class="flex1 ml5">
                     <text class="fz14 color-666">上传手持护照</text>
-                    <view class="mt15 border-dashed-ccc">
-                        <image class="license-img"></image>
+                    <view class="mt15 border-dashed-ccc" bindtap="maskToggle">
+                        <view class="license-size displayf jscc flexdirec altc">
+                            <image class="icon-size-40 bg-F1604F mb10"></image>
+                            <text class="color-999 fz12">点击上传</text>
+                        </view>
                     </view>
                 </view>
             </view>
             <view class="displayf jscb mb45">
                 <view class="flex1 mr5">
                     <text class="fz14 color-666">上传全险</text>
-                    <view class="mt15">
-                        <image class="license-img bg-F1604F"></image>
+                    <view class="mt15 border-ccc" bindtap="maskToggle">
+                        <image class="license-size displayb bg-F1604F"></image>
                     </view>
                 </view>
                 <view class="flex1 ml5">
                     <text class="fz14 color-666">上传驾照</text>
-                    <view class="mt15 border-dashed-ccc">
-                        <image class="license-img"></image>
+                    <view class="mt15 border-dashed-ccc" bindtap="maskToggle">
+                        <view class="license-size displayf jscc flexdirec altc">
+                            <image class="icon-size-40 bg-F1604F mb10"></image>
+                            <text class="color-999 fz12">点击上传</text>
+                        </view>
                     </view>
                 </view>
             </view>
             <view class="displayf jscb mb45">
                 <view class="flex1 mr5">
-                    <text class="fz14 color-666">上传全险</text>
-                    <view class="mt15">
-                        <image class="license-img bg-F1604F"></image>
+                    <text class="fz14 color-666">上传汽车正面</text>
+                    <view class="mt15 border-dashed-ccc" bindtap="maskToggle">
+                        <view class="license-size displayf jscc flexdirec altc">
+                            <image class="icon-size-40 bg-F1604F mb10"></image>
+                            <text class="color-999 fz12">点击上传</text>
+                        </view>
                     </view>
                 </view>
                 <view class="flex1 ml5">
-                    <text class="fz14 color-666">上传驾照</text>
-                    <view class="mt15 border-dashed-ccc">
-                        <image class="license-img"></image>
+                    <text class="fz14 color-666">上传汽车侧面</text>
+                    <view class="mt15 border-dashed-ccc" bindtap="maskToggle">
+                        <view class="license-size displayf jscc flexdirec altc">
+                            <image class="icon-size-40 bg-F1604F mb10"></image>
+                            <text class="color-999 fz12">点击上传</text>
+                        </view>
                     </view>
                 </view>
             </view>
         </view>
     </view>
     <view class="w710 mb10 mt15 mauto">
-        <view class="tc mb15 color-666">
-            提交资料代表同意
-            <text class="color-F1604F">Meet使用协议</text>
-            和
-            <text class="color-F1604F">隐私条款</text>
+        <view class="tc mb15 color-333">
+            <view>
+                <icon class="vm" type="success" size="14" color="#999999"/>
+                我已阅读并且同意
+                <text class="color-F1604F">《Skycar基本使用条例》</text>
+            </view>
+            <view>
+                <icon class="vm" type="success" size="14" color="#F1604F"/>
+                我接受并同意履行
+                <text class="color-F1604F">《Skycar车主服务条例》</text>
+            </view>
         </view>
-        <button class="save-btn">下一步</button>
+        <button class="save-btn" bindtap="uploadInfo">提交资料</button>
+    </view>
+    <view class="mask-no-padding displayf altend" hidden="{{hide}}" bind:tap="maskToggle" catchtouchmove="preventTouchMove">
+        <view class="bgw w patb10" catch:tap="stopBubble">
+            <view class="w710 mauto">
+                <view class="preview-img-box">
+                    
+                </view>
+                <view class="mb20 mt25">
+                    <text class="fz14 color-666">请提交驾驶证正面照片，确保文字清晰、无反光、无遮挡</text>
+                </view>
+                <view class="mb10">
+                    <button class="h50 border-radius-4rpx fz15 color-333 lh50" type="default">拍照</button>
+                </view>
+                <view>
+                    <button class="h50 border-radius-4rpx fz15 color-333 lh50" type="default">从相册选择</button>
+                </view>
+            </view>
+        </view>
     </view>
 </view>

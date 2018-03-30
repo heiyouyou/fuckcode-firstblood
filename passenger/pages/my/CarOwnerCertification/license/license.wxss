@@ -2,8 +2,7 @@
 input{
     width:200px;
 }
-.license-img{
+.license-size{
     width:100%;
     height:230rpx;
-    display:block;
 }

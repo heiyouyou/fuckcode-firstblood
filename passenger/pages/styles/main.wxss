@@ -13,6 +13,9 @@
 .padding-right-15rpx{
     padding-left:15rpx;
 }
+.mt-150{
+    margin-top:150rpx;
+}
 /* 内外边距 end */
 
 
@@ -106,6 +109,10 @@
     width:32rpx;
     height:32rpx;
 }
+.icon-size-40{
+    width:40rpx;
+    height:40rpx;
+}
 /* 图标大小 end */
 
 /* 边框颜色 start */
@@ -146,5 +153,13 @@
     position:fixed;
     right:60rpx;
     bottom:100rpx;
+}
+.border-radius-4rpx{
+    border-radius:4rpx;
+}
+.preview-img-box{
+    height:474rpx; 
+    background:rgba(143,130,188,1);
+    border-radius: 4rpx 
 }
 /** by youyou end **/
