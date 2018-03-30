@@ -1,0 +1,29 @@
+<!--pages/components/cus-pick.wxml-->
+<view class='custom-picker-wrap' wx:if="{{show}}">
+  <view class='mask'></view>
+  <view class='custom-picker {{show ? "enter" : "leave"}}'>
+    <view class='custom-picker-head'>
+      <text class='cancle' bindtap='_onCancel'>{{cancelTxt}}</text>
+      <text>{{title}}</text>
+      <text class='confirm' bindtap='_onConfirm'>{{confirmTxt}}</text>
+    </view>
+    <view class='custom-picker-content'>
+      <view class='dp-flex jc-sp'>
+        <view>{{firstItme.name}}</view>
+        <view class='dp-flex'>
+          <text data-t='minus' data-val='firstItme.val' bindtap='onBtn'>-</text>
+          <view>{{firstItme.val}}</view>
+          <text data-t='add' data-val='firstItme.val' bindtap='onBtn'>+</text>
+        </view>
+      </view>
+      <view class='dp-flex jc-sp'>
+        <view>{{lastItme.name}}</view>
+        <view class='dp-flex'>
+          <text data-t='minus' data-val='lastItem.val' bindtap='onBtn'>-</text>
+          <view>{{lastItme.val}}</view>
+          <text data-t='add' data-val='lastItem.val' bindtap='onBtn'>+</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -33,7 +33,9 @@ Page({
       name: '悉尼',
       id: 1213
     }],
-    index: 0
+    index: 0,
+    fi: { name: '成人>7岁', val: 0 },
+    li: { name: '儿童<7岁', val: 0}
   },
   go(e) {
     let url = e.currentTarget.dataset.url
@@ -57,6 +59,9 @@ Page({
       index: e.detail.value
     })
   },
+  show() {
+    this.cusPick.show()
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -68,7 +73,8 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    // 获取弹框组件
+    this.cusPick = this.selectComponent('#cusPick')
   },
 
   /**

@@ -12,6 +12,7 @@
     "pages/my/editInfo/editInfo",
     "pages/my/evaluate/evaluate",
     "pages/air/index/index",
+    "pages/air/next/next",
     "pages/air/check/check",
     "pages/login/index/index",
     "pages/login/login/login",

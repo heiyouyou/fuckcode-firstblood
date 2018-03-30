@@ -1,0 +1,10 @@
+<!--pages/air/next/next.wxml-->
+<view class='container'>
+  <view class='main-wrap'>
+    <view class='main-form'>
+      <view class='item'>
+        <view class='lab'>人数</view>
+      </view>
+    </view>
+  </view>
+</view>

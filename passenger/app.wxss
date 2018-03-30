@@ -283,3 +283,46 @@ page {
 /* 遮罩end */
 
 /* 表单样式end */
+
+/* 自定义picker start */
+.custom-picker-wrap {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.custom-picker {
+  width: 100%;
+  position: fixed;
+  bottom: -300px;
+  background: #FFF;
+  z-index: 999;
+}
+.custom-picker.enter {
+  bottom: 0;
+  -webkit-transition: bottom .3s ease-in-out;
+  transition: bottom .3s ease-in-out;
+}
+.custom-picker.leave {
+  bottom: -300px;
+  -webkit-transition: bottom .3s ease-in-out;
+  transition: bottom .3s ease-in-out;
+}
+.custom-picker-column {
+  text-align: center;
+  line-height: 50px;
+}
+
+.custom-picker-head {
+  display: flex;
+  padding: 24rpx;
+  background: #FFF;
+  border-bottom: 1px solid #EBEBEB;
+}
+.custom-picker-head text {
+  flex: 1;
+}
+.custom-picker-head .confirm {
+  text-align: right;
+}
+
+/* 自定义picker end */
