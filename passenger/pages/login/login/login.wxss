@@ -1,7 +1,7 @@
 /* pages/login/login/login.wxss */
 page{
 	color:#fff;
-	overflow:hidden;
+	background:#fff;
 }
 .wechat-login{
 	margin:100rpx 0;

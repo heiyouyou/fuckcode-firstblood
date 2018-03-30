@@ -1,4 +1,7 @@
 /* pages/register/phone/phone.wxss */
+page{
+	background:#fff;
+}
 .placeholder-text{
     position:absolute;
     left:0;

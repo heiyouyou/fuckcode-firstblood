@@ -1,0 +1,58 @@
+<!--pages/my/wallet/withdraw/withdraw.wxml-->
+<view class="displayf flexdirec altc">
+    <view class="w710 boxb bgw my-box-shadow mt15" style="padding:40rpx 55rpx;">
+        <view class="displayf h75 fz14 padding-left-15rpx" bindtap="maskToggle">
+            <text class="color-333">提现币种</text>
+            <view class="ml40 pr flex1">
+                <view class="clearfix">
+                    <text class="color-3CBCA3">{{withdrawWay}}</text>
+                    <image class="choice-size choice-icon" src="../../../imgs/common/choice@2x.png"></image>
+                </view>
+                <text class="displayb fz12 color-999 mt10">预计15个工作日内到账</text>
+            </view>
+        </view>
+        <view>
+            <text class="color-333 fz14 mb25 mt25 displayib padding-left-15rpx">提现金额</text>
+            <view class="border-bottom-ccc fz15 lh30 pb15 clearfix mb15 padding-left-15rpx">
+                <text class="fl" style="margin-right:54rpx;" placeholder="输入RMB">RMB</text>
+                <input class="h30 fl color-F1604F" type="digit" placeholder="输入RMB" placeholder-class="color-BBB" disabled="{{!disabled}}"/>
+            </view>
+            <view class="border-bottom-ccc fz15 lh30 pb15 clearfix padding-left-15rpx">
+                <text class="fl" style="margin-right:54rpx;">ABN</text>
+                <input class="h30 fl color-F1604F" type="digit" placeholder="输入ABN" placeholder-class="color-BBB" disabled="{{disabled}}"/>
+            </view>
+            <view class="fz12 pt20 padding-left-15rpx">
+                <text class="color-999">零钱余额￥10.00，</text><text class="highlight-text">全部提现</text>
+            </view>
+        </view>
+    </view>
+    <view class="w710 mb10 mt15">
+        <button class="save-btn">确认提现</button>
+    </view>
+    <view class="mask-no-padding displayf altend" hidden="{{hide}}">
+        <view class="bgw w">
+            <view class="mask-title border-bottom-ccc tc">
+                <text class="fz15 color-333">选择提现币种</text>
+                <image class="icon-size-32 fr" src="../../../imgs/common/close@2x.png" bindtap="maskToggle"></image>
+            </view>
+            <view class="mask-item border-bottom-ccc {{way==1?'active':''}}" data-way="1" bindtap="chooseWay">
+                <view class="mb5">
+                    <text class="fz15 color-333">人民币（RMB）</text>
+                </view>
+                <view>
+                    <text class="fz12 color-999">15个工作日内到帐</text>
+                </view>
+            </view>
+            <view class="mask-item border-bottom-ccc {{way==2?'active':''}}" data-way="2" bindtap="chooseWay">
+                <view class="mb5">
+                    <text class="fz15 color-333">澳币（AUD）</text>
+                </view>
+                <view>
+                    <text class="fz12 color-999">15个工作日内到帐</text>
+                </view>
+            </view>
+            <view class="mask-item">
+            </view>
+        </view>
+    </view>
+</view>

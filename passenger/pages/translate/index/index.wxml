@@ -1,2 +1,82 @@
 <!--pages/translate/index/index.wxml-->
-<text>驾照翻译</text>
+<view class="translate-box">
+  <view class='translate-banner'><image src='/pages/imgs/translate/translate-banner.png'></image></view>
+  <view class="body-view card-style translate-tip action">
+    <icon type="warn" size="10"/><text>国际驾照翻译件，澳洲境内可包邮，其他翻译请联系客服。</text>
+  </view>
+  <view class="kind-list-item">
+    <view class="kind-list-item-hd">
+      <view class="kind-list-text">手机号:</view>
+      <input placeholder="请输入手机号"/>
+    </view>
+    <view class="kind-list-item-hd kind-list-item-email">
+      <view class="kind-list-text">电子邮箱:</view>
+      <input placeholder="驾照翻译电子版会发送到此邮箱"/>
+    </view>
+    <view class="kind-list-item-hd kind-list-item-address" style="margin-top:10px;">
+      <view class="kind-list-text">澳洲地址:</view>
+      <input placeholder="驾照翻译件会邮寄到此地址"/>
+    </view>
+    <view class="kind-list-item-hd" style="margin-top:10px;">
+      <view class="kind-list-image">
+        <view class="kind-list-text">上传驾照正面</view>
+        <image src='/pages/imgs/translate/translate-banner.png'></image>
+      </view>
+      <view class="kind-list-image">
+        <view class="kind-list-text">上传驾照反面</view>
+        <image src='/pages/imgs/translate/translate-banner.png'></image>
+      </view>
+    </view>
+    <view class="kind-list-item-hd kind-list-item-submit" style="margin-top:10px;">
+      <button type="warn" class='translate-submit-btn' bindtap="tapName">提交并支付</button>
+    </view>
+  </view>
+</view>
+<!-- 驾驶证上传模态框 -->
+<view class="modal-driving-license" id='modal-driving-card' style='display:none;'>
+  <view class="modal-box">
+    <view class="modal-driving-container">
+      <image src='/pages/imgs/translate/translate-card.png'></image>
+      <view class='modal-example-text'>
+        <text>请提交驾驶证正面照片，确保文字清晰、无反光、无遮挡</text>
+      </view>
+      <view class='modal-image-btn'>
+        <button type="default" class='translate-submit-btn'>拍照</button>
+        <button type="default" class='translate-submit-btn choose-image'>从相册中选择</button>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 选择支付类型模态框 -->
+<view class="modal-driving-license" id='modal-driving-pay' style='display:none;'>
+  <view class="modal-box">
+    <view class="modal-driving-container">
+      <view class="modal-driving-header">
+        <text></text>
+        <text class='header-title'>SKY-CAR在线支付</text>
+        <icon type="cancel" size="26" color="#333333"/>
+      </view>
+      <text class='modal-price'>￥198.00</text>
+      <radio-group class="group" bindchange="radioChange">
+        <view class="label-2" wx:for="{{radioItems}}">
+          <label class="label-2-text" for="{{item.name}}"><text>{{item.name}}</text></label>
+          <radio id="{{item.name}}" value="{{item.name}}" checked="{{item.checked}}"></radio>
+        </view>
+      </radio-group>
+    </view>
+  </view>
+</view>
+<!-- 确认支付模态框 -->
+<view class="modal-driving-license" id='modal-check-pay' style='display:none;'>
+  <view class="modal-check-box">
+    <view class="modal-check-container">
+      <icon type="success" size="40" color="orange"/>
+      <text>确认余额支付</text>
+      <view class='pay-text'>立即支付<text class='pay-num'>198.00</text>元</view>
+      <view class='choose-pay-btn'>
+        <text class='pay-btn-cancel'>取消</text>
+        <text>确认</text>
+      </view>
+    </view>
+  </view>
+</view>

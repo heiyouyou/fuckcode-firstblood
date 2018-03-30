@@ -36,7 +36,7 @@
                 </navigator>
             </view>
             <view class="fz14 color-666 border-bottom-ccc h50 boxb">
-                <navigator class="patrbl15" url="">
+                <navigator class="patrbl15" url="../evaluate/evaluate">
                     <image class="bg-F1604F icon-size" src=""></image>
                     <text class="ml15">我的评价</text>
                     <view class="fr navigator-choice">
@@ -56,7 +56,7 @@
         </view>
         <view class="bgw br4 my-box-shadow mb10">
             <view class="fz14 color-666 border-bottom-ccc h50 boxb">
-                <navigator class="patrbl15" src="">
+                <navigator class="patrbl15" url="../CarOwnerCertification/index/index">
                     <image class="bg-F1604F icon-size" src=""></image>
                     <text class="ml15">车主认证</text>
                     <view class="fr navigator-choice">
@@ -124,6 +124,10 @@
                     </view>
                 </navigator>
             </view>
+        </view>
+        <view class="h50 w50 br50 bg-F1604F pa displayf altc jscc flexdirec message-circle">
+            <image class="icon-size bgw displayb mb5" src="" ></image>
+            <text class="fwb fz14 colorf">消息</text>
         </view>
     </view>
 </view>

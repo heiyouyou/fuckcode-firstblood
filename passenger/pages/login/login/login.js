@@ -10,7 +10,11 @@ Page({
     
   },
   getData(e){
+    util.go('../../index/index',5)
     console.log(e.detail.value)
+  },
+  wechatLogin(){
+    util.go('../../index/index',5)
   },
   /**
    * 生命周期函数--监听页面加载
