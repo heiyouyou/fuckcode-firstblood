@@ -1,0 +1,54 @@
+<!--pages/my/addressAndContact/addressAndContact.wxml-->
+<view>
+    <view class="displayf jscc">
+        <view class="tab-head displayf altc jsca">
+            <view>
+                <text class="{{current==1?'color-F1604F':''}} fz15" data-type='1' bindtap="chooseWay">联系人管理</text> 
+            </view>
+            <view>
+                <text class="{{current==2?'color-F1604F':''}} fz15" data-type='2' bindtap="chooseWay">地址管理</text> 
+            </view>
+        </view>
+        <view class="tab-body w710 mt10">
+            <view>
+                <button class="h50 border-radius-4rpx fz15 color-333 lh50 borderNone my-box-shadow" type="default"><image class="icon-size-30 br50 bg-F1604F vm mr5" src=""></image>新增乘车人</button>
+            </view>
+            <view class="mt15">
+                <text class="fz14 color-666">常用乘车人</text>
+                <view class="bgw parl15 my-box-shadow mt10">
+                    <view class="h75 boxb border-bottom-ccc displayf jscb altc">
+                        <view class="color-333">
+                            <text class="fz15 displayb">小红</text>
+                            <text class="fz12 displayb mt5s">+86 18335295207</text>
+                        </view>
+                        <view>
+                            <image class="bg-494C5B icon-size-30" src=""></image>
+                        </view>
+                    </view>
+                    <view class="h75 boxb border-bottom-ccc displayf jscb altc">
+                        <view class="color-333">
+                            <text class="fz15 displayb">海蓝</text>
+                            <text class="fz12 displayb mt5s">+86 18335295207</text>
+                        </view>
+                        <view>
+                            <image class="bg-494C5B icon-size-30" src=""></image>
+                        </view>
+                    </view>
+                    <view class="h75 boxb displayf jscb altc">
+                        <view class="color-333">
+                            <text class="fz15 displayb">岳东明</text>
+                            <text class="fz12 displayb mt5s">+86 18335295207</text>
+                        </view>
+                        <view>
+                            <image class="bg-494C5B icon-size-30" src=""></image>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="h50 w50 br50 bg-F1604F pa displayf altc jscc flexdirec message-circle">
+        <image class="icon-size bgw displayb mb5" src="" ></image>
+        <text class="fwb fz14 colorf">客服</text>
+    </view>
+</view>
