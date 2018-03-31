@@ -41,12 +41,18 @@
 .color-3CBCA3{
     color:#3CBCA3;
 }
+.color-00A0E9{
+    color:#00A0E9;
+}
 .highlight-text{
     color:#F1604F;
 }
 /* 文本颜色 end */
 
 /* 宽度、高度、行高 start */
+.w450{
+    width:450rpx;
+}
 .w710{
     width:710rpx;
 }
@@ -63,7 +69,9 @@
 .h-70rpx{
     height:70rpx;
 }
-
+.h-88rpx{
+    height:88rpx;
+}
 .lh-45rpx{
     line-height:45rpx;
 }

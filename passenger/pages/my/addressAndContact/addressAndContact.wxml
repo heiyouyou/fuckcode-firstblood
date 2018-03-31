@@ -9,9 +9,11 @@
                 <text class="{{current==2?'color-F1604F':''}} fz15" data-type='2' bindtap="chooseWay">地址管理</text> 
             </view>
         </view>
-        <view class="tab-body w710 mt10">
-            <view>
-                <button class="h50 border-radius-4rpx fz15 color-333 lh50 borderNone my-box-shadow" type="default"><image class="icon-size-30 br50 bg-F1604F vm mr5" src=""></image>新增乘车人</button>
+        <view class="tab-body w710 mt10" hidden="{{current==1?false:true}}">
+            <view class="ohidden">
+                <navigator url="./addContact/addContact">
+                    <button class="h50 border-radius-4rpx fz15 color-333 lh50 borderNone my-box-shadow" type="default"><image class="icon-size-30 br50 bg-F1604F vm mr5" src=""></image>新增乘车人</button>
+                </navigator>
             </view>
             <view class="mt15">
                 <text class="fz14 color-666">常用乘车人</text>
@@ -19,7 +21,7 @@
                     <view class="h75 boxb border-bottom-ccc displayf jscb altc">
                         <view class="color-333">
                             <text class="fz15 displayb">小红</text>
-                            <text class="fz12 displayb mt5s">+86 18335295207</text>
+                            <text class="fz12 displayb mt5">+86 18335295207</text>
                         </view>
                         <view>
                             <image class="bg-494C5B icon-size-30" src=""></image>
@@ -28,7 +30,7 @@
                     <view class="h75 boxb border-bottom-ccc displayf jscb altc">
                         <view class="color-333">
                             <text class="fz15 displayb">海蓝</text>
-                            <text class="fz12 displayb mt5s">+86 18335295207</text>
+                            <text class="fz12 displayb mt5">+86 18335295207</text>
                         </view>
                         <view>
                             <image class="bg-494C5B icon-size-30" src=""></image>
@@ -37,10 +39,67 @@
                     <view class="h75 boxb displayf jscb altc">
                         <view class="color-333">
                             <text class="fz15 displayb">岳东明</text>
-                            <text class="fz12 displayb mt5s">+86 18335295207</text>
+                            <text class="fz12 displayb mt5">+86 18335295207</text>
                         </view>
                         <view>
                             <image class="bg-494C5B icon-size-30" src=""></image>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="tab-body w710 mt10" hidden="{{current==2?false:true}}">
+            <view class="ohidden">
+                <navigator url="./addAddress/addAddress">
+                    <button class="h50 border-radius-4rpx fz15 color-333 lh50 borderNone my-box-shadow" type="default"><image class="icon-size-30 br50 bg-F1604F vm mr5" src=""></image>新增地址</button>
+                </navigator>
+            </view>
+            <view class="mt15">
+                <text class="fz14 color-666">常用地址</text>
+                <view class="mt10">
+                    <view class="h100 boxb displayf parl15 bgw my-box-shadow flexdirec jscc altc mb10 border-radius-4rpx">
+                        <view class="color-333 border-bottom-ccc w mb15 pb20">
+                            <text class="fz14 thidden300">601 little lonsdale st,Melboune,VIC,3000601 little lonsdale st,Melboune,VIC,3000</text>
+                        </view>
+                        <view class="displayf jscb altc fz14 w">
+                            <view>
+                                <icon class="br50 border-ccc" type="success" size="15" color="#F1604F" />
+                                <text class="color-F1604F ml5">设为默认</text>
+                            </view>
+                            <view>
+                                <image class="bg-494C5B icon-size-30 mr5" src=""></image>
+                                <text class="color-666">编辑</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="h100 boxb displayf parl15 bgw my-box-shadow flexdirec jscc altc mb10 border-radius-4rpx">
+                        <view class="color-333 border-bottom-ccc w mb15 pb20">
+                            <text class="fz14 thidden300">601 little lonsdale st,Melboune,VIC,3000601 little lonsdale st,Melboune,VIC,3000</text>
+                        </view>
+                        <view class="displayf jscb altc fz14 w">
+                            <view>
+                                <icon class="br50 border-ccc" type="success" size="15" color="#fff" />
+                                <text class="color-F1604F ml5">设为默认</text>
+                            </view>
+                            <view>
+                                <image class="bg-494C5B icon-size-30 mr5" src=""></image>
+                                <text class="color-666">编辑</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="h100 boxb displayf parl15 bgw my-box-shadow flexdirec jscc altc mb10 border-radius-4rpx">
+                        <view class="color-333 border-bottom-ccc w mb15 pb20">
+                            <text class="fz14 thidden300">601 little lonsdale st,Melboune,VIC,3000601 little lonsdale st,Melboune,VIC,3000</text>
+                        </view>
+                        <view class="displayf jscb altc fz14 w">
+                            <view>
+                                <icon class="border-ccc br50" type="success" size="15" color="#fff" />
+                                <text class="color-F1604F ml5">设为默认</text>
+                            </view>
+                            <view>
+                                <image class="bg-494C5B icon-size-30 mr5" src=""></image>
+                                <text class="color-666">编辑</text>
+                            </view>
                         </view>
                     </view>
                 </view>

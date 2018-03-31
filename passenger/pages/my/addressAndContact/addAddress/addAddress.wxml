@@ -1,0 +1,34 @@
+<!--pages/my/addressAndContact/addAddress/addAddress.wxml-->
+<view class="ohidden">
+    <view class="bgw my-box-shadow mt10 border-radius-4rpx w710 mauto pl15 boxb">
+        <view class="h50 lh50 border-bottom-ccc boxb color-666">
+            <picker bindchange="bindPickerCityChange" value="{{cityIndex}}" range="{{cityArray}}">
+                <text class="fz14 input-des-text">城市</text>
+                <text class="fz14 color-BBB">{{c_city||"请输入您所在城市"}}</text>
+                <view class="fr mr15">
+                    <image class="choice-size" src="../../../imgs/common/choice@2x.png"></image>
+                </view>
+            </picker>
+        </view>
+        <view class="h50 lh50 border-bottom-ccc boxb color-666">
+            <picker bindchange="bindPickerContinentChange" value="{{continentIndex}}" range="{{continentArray}}">
+                <text class="fz14 input-des-text">洲</text>
+                <text class="fz14 color-BBB">{{c_continent||"请输入您所在的洲"}}</text>
+                <view class="fr mr15">
+                    <image class="choice-size" src="../../../imgs/common/choice@2x.png"></image>
+                </view>
+            </picker>
+        </view>
+        <view class="h100 displayf pt20 border-bottom-ccc boxb color-666">
+            <text class="fz14 input-des-text">详细地址</text>
+            <textarea class="fz14 h" placeholder="请输入您的详细地址" placeholder-class="color-BBB" />
+        </view>
+        <view class="h50 displayf altc boxb color-666">
+            <text class="fz14 input-des-text">邮编</text>
+            <input class="fz14 w" type="number" placeholder="请输入您当地的邮政编码" placeholder-class="color-BBB"/>
+        </view>
+    </view>
+    <view class="mauto mt50 h-88rpx w450 ohidden">
+        <button class="bg-F1604F fz18 colorf">确定</button>
+    </view>
+</view>
