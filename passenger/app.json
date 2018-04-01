@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/my/message/message",
     "pages/my/index/index",
     "pages/my/addressAndContact/addressAndContact",
     "pages/my/addressAndContact/addAddress/addAddress",

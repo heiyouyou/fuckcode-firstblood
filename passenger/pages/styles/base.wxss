@@ -53,6 +53,7 @@
     color:rgb(197, 190, 190);
 }
 .lh0{line-height:0;}
+.lh5{line-height:5px;}
 .lh10{line-height:10px;}
 .lh15{line-height:15px;}
 .lh16{line-height:16px;}
