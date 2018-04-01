@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/air/index/index",
     "pages/my/index/index",
     "pages/my/wallet/binding/binding",
     "pages/my/wallet/withdraw/withdraw",
@@ -11,7 +12,6 @@
     "pages/my/CarOwnerCertification/index/index",
     "pages/my/editInfo/editInfo",
     "pages/my/evaluate/evaluate",
-    "pages/air/index/index",
     "pages/air/next/next",
     "pages/air/check/check",
     "pages/login/index/index",

@@ -1,5 +1,5 @@
 @import './pages/styles/base.wxss';
-@import './pages/styles/main.wxss'; 
+@import './pages/styles/main.wxss';
 
 /**app.wxss**/
 
@@ -14,93 +14,106 @@ page {
 /** by youyou start **/
 
 /* 登录、注册 start */
-.login-wrap{
-  width:550rpx;
-  margin-top:110rpx;
+
+.login-wrap {
+  width: 550rpx;
+  margin-top: 110rpx;
 }
-.login-form-title{
-  color:#333;
-  font-size:80rpx;
+
+.login-form-title {
+  color: #333;
+  font-size: 80rpx;
 }
-.login-form-btn{
-  width:550rpx;
-  height:100rpx; 
-  line-height:100rpx;
-  font-weight:bold;
-  border-radius: 50rpx; 
-  font-size:36rpx;
-  color:#fff;
+
+.login-form-btn {
+  width: 550rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-weight: bold;
+  border-radius: 50rpx;
+  font-size: 36rpx;
+  color: #fff;
 }
-.login-form-input{
-  border-bottom:1px solid #CCCCCC;
-  font-size:28rpx;
-  color:#333333;
-  line-height:18px;
+
+.login-form-input {
+  border-bottom: 1px solid #ccc;
+  font-size: 28rpx;
+  color: #333;
+  line-height: 18px;
 }
-.register-next-btn{
-  background:#fff;
-  color:#F1604F;
-  border:1px solid #F1604F;
+
+.register-next-btn {
+  background: #fff;
+  color: #f1604f;
+  border: 1px solid #f1604f;
 }
-.login-placeholder{
-  text-indent:15px;
-  color:#BBBBBB;
-  font-size:14px;
+
+.login-placeholder {
+  text-indent: 15px;
+  color: #bbb;
+  font-size: 14px;
 }
+
 /* 登录、注册 end */
 
 /* 弹出层 start */
+
 .mask-no-padding {
   width: 100%;
   height: 100%;
   box-sizing: border-box;
-  background: rgba(0, 0, 0, .5);
+  background: rgba(0, 0, 0, 0.5);
   position: fixed;
   left: 0;
   top: 0;
   z-index: 500;
 }
-.mask-title{
-  height:120rpx;
-  padding:44rpx 30rpx;
-  box-sizing:border-box;
+
+.mask-title {
+  height: 120rpx;
+  padding: 44rpx 30rpx;
+  box-sizing: border-box;
 }
-.mask-item{
-  height:160rpx;
-  padding-left:40rpx;
-  padding-top:44rpx;
-  box-sizing:border-box;
+
+.mask-item {
+  height: 160rpx;
+  padding-left: 40rpx;
+  padding-top: 44rpx;
+  box-sizing: border-box;
 }
-.mask-item.active{
-  background:rgba(0, 0, 0, 0.1);
+
+.mask-item.active {
+  background: rgba(0, 0, 0, 0.1);
 }
+
 /* 弹出层 end */
 
-.tab-head{
-  height:88rpx;
-  color:#999;
-  position:fixed;
-  right:0;
-  left:0;
-  background:rgba(255,255,255,1);
-  box-shadow:4px px 10px rgba(0,0,0,0.1) 
-}
-.tab-body{
-  margin-top:108rpx;
+.tab-head {
+  height: 88rpx;
+  color: #999;
+  position: fixed;
+  right: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 4px px 10px rgba(0, 0, 0, 0.1);
 }
 
-.input-des-text{
-  min-width:130rpx;
-  box-sizing:border-box;
-  margin-right:37rpx;
-  display:inline-block;
-
+.tab-body {
+  margin-top: 108rpx;
 }
 
-.result-img{
-  width:388rpx;
-  height:295rpx;
+.input-des-text {
+  min-width: 130rpx;
+  box-sizing: border-box;
+  margin-right: 37rpx;
+  display: inline-block;
 }
+
+.result-img {
+  width: 388rpx;
+  height: 295rpx;
+}
+
 /** by youyou end **/
 
 /* 公用最外层 */
@@ -147,6 +160,7 @@ page {
 .dp-flex.jc-sb {
   justify-content: space-between;
 }
+
 .dp-flex.jc-cen {
   justify-content: center;
 }
@@ -184,10 +198,12 @@ page {
   font-weight: bold;
   color: #333;
 }
+
 .main-tit.ad-b-bor {
   padding-bottom: 30rpx;
   border-bottom: 1px solid #ccc;
 }
+
 .main-form {
 }
 
@@ -195,9 +211,11 @@ page {
   padding: 25rpx 0;
   border-bottom: 1px solid #ccc;
 }
+
 .main-form .item.no-bor-b {
   border-bottom: 0;
 }
+
 .main-form .lab {
   width: 140rpx;
   color: #666;
@@ -263,66 +281,61 @@ page {
   text-align: center;
   margin-bottom: 30rpx;
 }
+
 .tips.sub {
   color: #fff;
 }
+
 /* 主按钮end */
 
 /* 遮罩 */
+
 .mask {
   width: 100%;
   height: 100%;
   box-sizing: border-box;
-  background: rgba(0, 0, 0, .5);
+  background: rgba(0, 0, 0, 0.5);
   padding: 20rpx;
   position: fixed;
   left: 0;
   top: 0;
   z-index: 500;
 }
+
 /* 遮罩end */
 
 /* 表单样式end */
 
-/* 自定义picker start */
-.custom-picker-wrap {
-  position: absolute;
-  left: 0;
-  top: 0;
+/* Ethan start */
+
+.pick-cnt {
 }
-.custom-picker {
-  width: 100%;
-  position: fixed;
-  bottom: -300px;
-  background: #FFF;
-  z-index: 999;
+
+.pick-item {
 }
-.custom-picker.enter {
-  bottom: 0;
-  -webkit-transition: bottom .3s ease-in-out;
-  transition: bottom .3s ease-in-out;
+
+.pick-item > view:first-of-type {
+  font-size: 32rpx;
 }
-.custom-picker.leave {
-  bottom: -300px;
-  -webkit-transition: bottom .3s ease-in-out;
-  transition: bottom .3s ease-in-out;
+
+.pick-item + .pick-item {
+  margin-top: 110rpx;
 }
-.custom-picker-column {
+
+.pick-val {
+  font-size: 36rpx;
+  margin: 0 50rpx;
+}
+
+.pick-btn {
+  width: 44rpx;
+  height: 44rpx;
+  line-height: 44rpx;
   text-align: center;
-  line-height: 50px;
+  color: #666;
+  font-size: 40rpx;
+  border: 1px solid #dbdbdb;
+  border-radius: 50%;
 }
 
-.custom-picker-head {
-  display: flex;
-  padding: 24rpx;
-  background: #FFF;
-  border-bottom: 1px solid #EBEBEB;
-}
-.custom-picker-head text {
-  flex: 1;
-}
-.custom-picker-head .confirm {
-  text-align: right;
-}
-
-/* 自定义picker end */
+/* Ethan end */

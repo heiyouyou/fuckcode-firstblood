@@ -1,7 +1,8 @@
 {
   "usingComponents": {
-    "cusPick": "/pages/components/cus-pick/cus-pick"
-  }
+    "cusPick": "/pages/components/cus-pick/cus-pick",
+    "subcusPick": "/pages/components/cus-pick/cus-pick"
+  },
   "navigationBarBackgroundColor": "#F1604F",
   "navigationBarTextStyle":"white",	
   "navigationBarTitleText":"接送机"

@@ -34,8 +34,22 @@ Page({
       id: 1213
     }],
     index: 0,
-    fi: { name: '成人>7岁', val: 0 },
-    li: { name: '儿童<7岁', val: 0}
+    busAdultNum: {
+      name: '成人>7岁', 
+      val: 0
+    },
+    busChildNum: {
+      name: '儿童<7岁',
+      val: 0
+    },
+    bigLuggage: {
+      name: '大行李',
+      val: 0
+    },
+    smallLuggage: {
+      name: '小行李',
+      val: 0
+    }
   },
   go(e) {
     let url = e.currentTarget.dataset.url
@@ -59,8 +73,23 @@ Page({
       index: e.detail.value
     })
   },
-  show() {
-    this.cusPick.show()
+  show(e) {
+    let id = e.currentTarget.dataset.id
+    this[id].show()
+  },
+  onBtn(e) {
+    let t = e.currentTarget.dataset.t,
+      val = e.currentTarget.dataset.val,
+      v = this.data[val].val
+    if (t == 'minus' && v > 0) {
+      this.setData({
+        [`${val}.val`]: --v
+      })
+    } else if (t == 'add') {
+      this.setData({
+        [`${val}.val`]: ++v
+      })
+    }
   },
   /**
    * 生命周期函数--监听页面加载
@@ -75,6 +104,7 @@ Page({
   onReady: function () {
     // 获取弹框组件
     this.cusPick = this.selectComponent('#cusPick')
+    this.subcusPick = this.selectComponent('#subcusPick')
   },
 
   /**
