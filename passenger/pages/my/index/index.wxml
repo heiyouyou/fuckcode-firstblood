@@ -127,9 +127,13 @@
                 </navigator>
             </view>
         </view>
-        <view class="h50 w50 br50 bg-F1604F pa displayf altc jscc flexdirec message-circle">
-            <image class="icon-size bgw displayb mb5" src="" ></image>
-            <text class="fwb fz14 colorf">消息</text>
+        <view class="h50 w50 br50 bg-F1604F pa message-circle">
+            <navigator class="h" url="../message/message">
+                <view class="displayf altc jscc flexdirec h">
+                    <image class="icon-size bgw displayb mb5" src="" ></image>
+                    <text class="fwb fz14 colorf">消息</text>
+                </view>
+            </navigator>
         </view>
     </view>
 </view>

@@ -1,12 +1,9 @@
 {
   "pages": [
-    "pages/my/message/message",
     "pages/my/index/index",
     "pages/my/addressAndContact/addressAndContact",
     "pages/my/addressAndContact/addAddress/addAddress",
     "pages/my/addressAndContact/addContact/addContact",
-    "pages/my/editInfo/editInfo",
-    "pages/my/evaluate/evaluate",
     "pages/my/wallet/binding/binding",
     "pages/my/wallet/withdraw/withdraw",
     "pages/my/wallet/recharge/recharge",
@@ -15,6 +12,9 @@
     "pages/my/CarOwnerCertification/license/license",
     "pages/my/CarOwnerCertification/info/info",
     "pages/my/CarOwnerCertification/index/index",
+    "pages/my/editInfo/editInfo",
+    "pages/my/evaluate/evaluate",
+    "pages/my/message/message",
     "pages/login/index/index",
     "pages/login/login/login",
     "pages/air/index/index",
