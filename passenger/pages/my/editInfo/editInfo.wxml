@@ -8,7 +8,7 @@
             </view>
             <view class="fz14 border-bottom-ccc h50 boxb displayf altc pr">
                 <text class="color-666 edit-name mr20">昵称</text>
-                <input class="displayib color-333" placeholder="" value="Kevin"/>
+                <input class="displayib color-333 w" placeholder="" value="Kevin"/>
             </view>
             <picker bindchange="bindPickerChangeSex" value="{{sexIndex}}" range="{{sexArry}}">
                 <view class="fz14 border-bottom-ccc h50 boxb displayf altc pr">
@@ -21,7 +21,7 @@
             </picker>
             <view class="fz14 h50 boxb displayf altc pr">
                 <text class="color-666 edit-name mr20">手机号</text>
-                <input class="displayib color-333" type="number" value="12345678909"/>
+                <input class="displayib color-333 w" type="number" value="12345678909"/>
             </view>
         </view>
         <view class="bgw my-box-shadow mb10 pl15">
