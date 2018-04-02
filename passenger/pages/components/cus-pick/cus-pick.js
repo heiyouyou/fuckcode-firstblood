@@ -56,26 +56,12 @@ Component({
         show: true
       })
     },
-    onBtn(e) {
-      let t = e.currentTarget.dataset.t,
-        val = e.currentTarget.dataset.val
-        console.log(val)
-      if (t == 'minus' && val > 0) {
-        this.setData({
-          [val]: --val
-        })
-      } else {
-        this.setData({
-          [val]: ++val
-        })
-      }
-    },
     /*
      * 内部私有方法建议以下划线开头
      * triggerEvent 用于触发事件
      */
     _onCancel() {
-      this.triggerEvent("conCancel")
+      this.triggerEvent("cancel")
       this.hide()
     },
     _onConfirm() {
