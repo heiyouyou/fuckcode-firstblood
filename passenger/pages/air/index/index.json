@@ -1,7 +1,8 @@
 {
   "usingComponents": {
     "cusPick": "/pages/components/cus-pick/cus-pick",
-    "subcusPick": "/pages/components/cus-pick/cus-pick"
+    "subcusPick": "/pages/components/cus-pick/cus-pick",
+    "datePick": "/pages/components/date-pick/date-pick"
   },
   "navigationBarBackgroundColor": "#F1604F",
   "navigationBarTextStyle":"white",	

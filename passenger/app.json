@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/air/index/index",
     "pages/my/index/index",
     "pages/my/addressAndContact/addressAndContact",
     "pages/my/addressAndContact/addAddress/addAddress",
@@ -17,7 +18,6 @@
     "pages/my/message/message",
     "pages/login/index/index",
     "pages/login/login/login",
-    "pages/air/index/index",
     "pages/air/next/next",
     "pages/air/check/check",
     "pages/register/info/info",

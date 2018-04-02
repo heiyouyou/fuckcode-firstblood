@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "cusPick": "/pages/components/cus-pick/cus-pick"
+  }
+}

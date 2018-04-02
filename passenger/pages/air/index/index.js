@@ -105,6 +105,7 @@ Page({
     // 获取弹框组件
     this.cusPick = this.selectComponent('#cusPick')
     this.subcusPick = this.selectComponent('#subcusPick')
+    this.datePick = this.selectComponent('#datePick')
   },
 
   /**

@@ -1,0 +1,5 @@
+/* pages/components/date-pick/date-pick.wxss */
+.custom-picker-column {
+  text-align: center;
+  line-height:50px;
+}
