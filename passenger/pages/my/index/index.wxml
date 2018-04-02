@@ -2,24 +2,26 @@
 <view class="displayf jscc page-bg">
     <view class="w710 mt10">
         <view class="bgw patrbl15 br4 my-box-shadow mb10">
-            <view class="displayf altc">
-                <image class="my-avatar bg-F1604F br50" src=""></image>
-                <view class="displayf jscc ml20 flexdirec flex1">
-                    <view class="displayf altc pr">
-                        <image src="../../imgs/male_unchecked@2x.png" style="width:26rpx;height:26rpx;"></image>
-                        <text class="fz18 ml10 thiddennb100">Kevin</text>
-                        <text class="fz12 color-666" style="margin-left:35rpx;">（普通会员）</text>
-                        <navigator class="pa navigator-choice" url="../editInfo/editInfo" style="right:0px;">
-                            <image class="choice-size" src="../../imgs/common/choice@2x.png"></image>
-                        </navigator>
+                <navigator url="../editInfo/editInfo">
+                    <view class="displayf altc">
+                        <image class="my-avatar bg-F1604F br50" src=""></image>
+                        <view class="displayf jscc ml20 flexdirec flex1">
+                            <view class="displayf altc pr">
+                                    <image src="../../imgs/male_unchecked@2x.png" style="width:26rpx;height:26rpx;"></image>
+                                    <text class="fz18 ml10 thiddennb100">Kevin</text>
+                                    <text class="fz12 color-666" style="margin-left:35rpx;">（普通会员）</text>
+                                    <view class="pa navigator-choice" style="right:0px;">
+                                        <image class="choice-size" src="../../imgs/common/choice@2x.png"></image>
+                                    </view>
+                            </view> 
+                            <view class="lh10">
+                                <image class="start-img displayib" src="../../imgs/home_comments/star.png"></image>
+                                <image class="start-img displayib" src="../../imgs/home_comments/star.png"></image>
+                                <image class="start-img displayib" src="../../imgs/home_comments/star.png"></image>
+                            </view>
+                        </view>
                     </view>
-                    <view class="lh10">
-                        <image class="start-img displayib" src="../../imgs/home_comments/star.png"></image>
-                        <image class="start-img displayib" src="../../imgs/home_comments/star.png"></image>
-                        <image class="start-img displayib" src="../../imgs/home_comments/star.png"></image>
-                    </view>
-                </view>
-            </view>
+                </navigator>
             <view class="mt30 lh10">
                 <image class="bg-F1604F icon-size" src=""></image>
                 <text class="fz15 color-333 ml10">可用余额：10元</text>
@@ -125,9 +127,13 @@
                 </navigator>
             </view>
         </view>
-        <view class="h50 w50 br50 bg-F1604F pa displayf altc jscc flexdirec message-circle">
-            <image class="icon-size bgw displayb mb5" src="" ></image>
-            <text class="fwb fz14 colorf">消息</text>
+        <view class="h50 w50 br50 bg-F1604F pa message-circle">
+            <navigator class="h" url="../message/message">
+                <view class="displayf altc jscc flexdirec h">
+                    <image class="icon-size bgw displayb mb5" src="" ></image>
+                    <text class="fwb fz14 colorf">消息</text>
+                </view>
+            </navigator>
         </view>
     </view>
 </view>
