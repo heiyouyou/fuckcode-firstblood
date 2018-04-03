@@ -102,6 +102,51 @@ page {
   width:388rpx;
   height:295rpx;
 }
+
+.filter-box{
+  padding-top:24rpx;
+  position:fixed;
+  width:100%;
+}
+.search-icon{
+  position:absolute;
+  left:13px;
+  top:10px
+}
+.top-search-input{
+  height:64rpx; 
+  background:#EBEBEB;
+  border-radius: 32rpx;
+  padding-left:68rpx; 
+  font-size:14px;
+}
+.filter-tab{
+  margin-top:12rpx;
+  height:96rpx;
+}
+.filter-content-box{
+  margin-top:108px;
+}
+.route-tag{
+  height:32rpx; 
+  line-height:32rpx; 
+  border-radius:4rpx;
+  text-align:center;
+  display:inline-block; 
+  padding:2px 4px;
+  margin-left:10rpx;
+}
+.item-btn{
+  min-width:140rpx;
+  height:60rpx; 
+  line-height:60rpx;
+  text-align:center;
+  box-sizing:border-box;
+  border:1px solid #666;
+  border-radius: 4rpx; 
+  font-size:14px;
+  margin-left:5px;
+}
 /** by youyou end **/
 
 /* 公用最外层 */

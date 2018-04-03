@@ -1,0 +1,4 @@
+/* pages/route/index/index.wxss */
+.content-padding{
+  padding:50rpx 30rpx 0 37rpx;
+}
