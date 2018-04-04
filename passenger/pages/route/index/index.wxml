@@ -25,21 +25,25 @@
     <view class="filter-content-box">
         <view class="w710 mauto bgw mb10 color-666 content-item boxb my-box-shadow">
             <view class="content-padding">
-                <text class="fz16 color-333">Sky-car官方班车</text>
-                <text class="fz12 colorf bg-F1604F route-tag">直达</text>
-                <view class="mt25">
+                <view class="displayf jscb altc">
+                    <view>
+                        <text class="fz16 color-333">小小班车</text>
+                        <text class="fz12 colorf bg-F1604F route-tag">结伴上班</text>
+                    </view>
+                </view>
+                <view class="mt20">
                     <view class="mb10">
                         <image class="bg-F1604F icon-size-16" src=""></image>
                         <text class="fz14 ml10 vm">2017/08/09 8:00-9:00出发</text>
                     </view>
                     <view class="mb5">
                         <text class="br50 bg-3CBCA3 icon-size-12 displayib mr10"></text>
-                        <text class="fz14 vm displayib w70 thiddennb200">Clayton</text>
+                        <text class="fz14 vm displayib w70 text-ellipsis">Clayton</text>
                         <text class="fz12 color-999 vm displayib thiddennb200">起点区域以内，可到您指定地点接您加入行程</text>
                     </view>
                     <view class="mb10">
                         <text class="br50 bg-F1604F icon-size-12 displayib mr10"></text>
-                        <text class="fz14 vm displayib w70">Caulfield  </text>
+                        <text class="fz14 vm displayib w70 text-ellipsis">Caulfield  </text>
                         <text class="fz12 color-999 vm displayib thiddennb200">预计10:30到达</text>
                     </view>
                     <view class="clearfix lh30">
@@ -63,26 +67,30 @@
         </view>
         <view class="w710 mauto bgw mb10 color-666 content-item boxb my-box-shadow">
             <view class="content-padding">
-                <text class="fz16 color-333">Sky-car官方班车</text>
-                <text class="fz12 colorf bg-F1604F route-tag">直达</text>
-                <view class="mt25">
+                <view class="displayf jscb altc">
+                    <view>
+                        <text class="fz16 color-333">小小班车</text>
+                        <text class="fz12 colorf bg-F1604F route-tag">结伴上班</text>
+                    </view>
+                </view>
+                <view class="mt20">
                     <view class="mb10">
                         <image class="bg-F1604F icon-size-16" src=""></image>
                         <text class="fz14 ml10 vm">2017/08/09 8:00-9:00出发</text>
                     </view>
                     <view class="mb5">
                         <text class="br50 bg-3CBCA3 icon-size-12 displayib mr10"></text>
-                        <text class="fz14 vm displayib w70 thiddennb200">Clayton</text>
+                        <text class="fz14 vm displayib w70 text-ellipsis">Clayton</text>
                         <text class="fz12 color-999 vm displayib thiddennb200">起点区域以内，可到您指定地点接您加入行程</text>
                     </view>
                     <view class="mb10">
                         <text class="br50 bg-F1604F icon-size-12 displayib mr10"></text>
-                        <text class="fz14 vm displayib w70">Caulfield  </text>
+                        <text class="fz14 vm displayib w70 text-ellipsis">Caulfield  </text>
                         <text class="fz12 color-999 vm displayib thiddennb200">预计10:30到达</text>
                     </view>
                     <view class="clearfix lh30">
                         <image class="icon-size-20 bg-F1604F mr5" src=""></image>
-                        <text class="fz14">剩余2个座位，4件大行李位</text>
+                        <text class="fz14 thiddennb250">剩余2个座位，4件大行李位</text>
                         <text class="fr fz20 fwb color-F1604F">￥3</text>
                     </view>
                 </view>
@@ -99,5 +107,138 @@
                 </view>
             </view>
         </view>
+        <view class="w710 mauto bgw mb10 color-666 content-item boxb my-box-shadow">
+            <view class="content-padding">
+                <view class="displayf jscb altc">
+                    <view>
+                        <text class="fz16 color-333">小小班车</text>
+                        <text class="fz12 colorf bg-F1604F route-tag">结伴上班</text>
+                    </view>
+                    <switch checked color="#F1604F"/>
+                </view>
+                <view class="mt20">
+                    <view class="mb10">
+                        <image class="bg-F1604F icon-size-16" src=""></image>
+                        <text class="fz14 ml10 vm">2017/08/09 8:00-9:00出发</text>
+                    </view>
+                    <view class="mb5">
+                        <text class="br50 bg-3CBCA3 icon-size-12 displayib mr10"></text>
+                        <text class="fz14 vm displayib w70 text-ellipsis">Clayton</text>
+                        <text class="fz12 color-999 vm displayib thiddennb200"></text>
+                    </view>
+                    <view class="mb10">
+                        <text class="br50 bg-F1604F icon-size-12 displayib mr10"></text>
+                        <text class="fz14 vm displayib w70 text-ellipsis">Caulfield  </text>
+                        <text class="fz12 color-999 vm displayib thiddennb200">预计10:30到达</text>
+                    </view>
+                    <view class="clearfix lh30">
+                        <image class="icon-size-20 bg-F1604F mr5" src=""></image>
+                        <text class="fz14 thiddennb250">同行2人</text>
+                        <text class="fr fz20 fwb color-F1604F">￥3</text>
+                    </view>
+                </view>
+            </view>
+            <view class="border-top-ccc mt15 displayf jscb altc h50 boxb parl15">
+                <text class="color-F1604F fz14">等待接单</text>
+                <view class="displayf jscb altc" wx:if="{{false}}">
+                    <view class="item-btn">
+                        邀请伙伴
+                    </view>
+                    <view class="item-btn">
+                        联系司机
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="w710 mauto bgw mb10 color-666 content-item boxb my-box-shadow">
+            <view class="content-padding">
+                <view class="displayf jscb altc">
+                    <view>
+                        <text class="fz16 color-333">上班小分队1</text>
+                        <text class="fz12 colorf bg-F1604F route-tag">结伴上班</text>
+                    </view>
+                    <switch checked color="#F1604F"/>
+                </view>
+                <view class="mt20">
+                    <view class="mb10">
+                        <image class="bg-F1604F icon-size-16" src=""></image>
+                        <text class="fz14 ml10 vm">2017/08/09 8:00-9:00出发</text>
+                    </view>
+                    <view class="mb5">
+                        <text class="br50 bg-3CBCA3 icon-size-12 displayib mr10"></text>
+                        <text class="fz14 vm displayib w70 text-ellipsis">Clayton</text>
+                        <text class="fz12 color-999 vm displayib thiddennb200"></text>
+                    </view>
+                    <view class="mb10">
+                        <text class="br50 bg-F1604F icon-size-12 displayib mr10"></text>
+                        <text class="fz14 vm displayib w70 text-ellipsis">Caulfield  </text>
+                        <text class="fz12 color-999 vm displayib thiddennb200"></text>
+                    </view>
+                    <view class="clearfix lh30">
+                        <image class="icon-size-20 bg-F1604F mr5" src=""></image>
+                        <text class="fz14 thiddennb250">已有3人加入</text>
+                        <text class="fr fz20 fwb color-F1604F">￥3</text>
+                    </view>
+                </view>
+            </view>
+            <view class="border-top-ccc mt15 displayf jscb altc h50 boxb parl15">
+                <text class="color-F1604F fz14">等待伙伴</text>
+                <view class="displayf jscb altc" wx:if="{{true}}">
+                    <view class="item-btn">
+                        邀请伙伴
+                    </view>
+                    <view class="item-btn">
+                        发车找司机
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="w710 mauto bgw mb10 color-666 content-item boxb my-box-shadow">
+            <view class="content-padding">
+                <view class="displayf jscb altc">
+                    <view>
+                        <text class="fz16 color-333">上班小分队1</text>
+                        <text class="fz12 colorf bg-F1604F route-tag">结伴上班</text>
+                    </view>
+                    <switch color="#F1604F"/>
+                </view>
+                <view class="mt20">
+                    <view class="mb10">
+                        <image class="bg-F1604F icon-size-16" src=""></image>
+                        <text class="fz14 ml10 vm">每早8:00出发</text>
+                    </view>
+                    <view class="mb5">
+                        <text class="br50 bg-3CBCA3 icon-size-12 displayib mr10"></text>
+                        <text class="fz14 vm displayib w70 text-ellipsis">Clayton</text>
+                        <text class="fz12 color-999 vm displayib thiddennb200"></text>
+                    </view>
+                    <view class="mb10">
+                        <text class="br50 bg-F1604F icon-size-12 displayib mr10"></text>
+                        <text class="fz14 vm displayib w70 text-ellipsis">Caulfield  </text>
+                        <text class="fz12 color-999 vm displayib thiddennb200"></text>
+                    </view>
+                    <view class="clearfix lh30">
+                        <image class="icon-size-20 bg-F1604F mr5" src=""></image>
+                        <text class="fz14 thiddennb250">已有0人加入</text>
+                        <text class="fr fz20 fwb color-F1604F">￥3</text>
+                    </view>
+                </view>
+            </view>
+            <view class="border-top-ccc mt15 displayf jscb altc h50 boxb parl15">
+                <text class="color-F1604F fz14">未开启</text>
+                <view class="displayf jscb altc" wx:if="{{false}}">
+                    <view class="item-btn">
+                        邀请伙伴
+                    </view>
+                    <view class="item-btn">
+                        联系司机
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="filter-type-btn">
+        <image class="filter-type-screen vm mr5" src="../../imgs/common/screen@2x.png"></image>
+        <text class="fz14 colorf vm">行程中</text>
     </view>
 </view>
