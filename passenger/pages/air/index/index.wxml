@@ -36,7 +36,7 @@
         <input placeholder='您从哪上车？'></input>
       </view>
     </view>
-    <view class='dp-flex flex-one air-sub'>
+    <view class='dp-flex flex-one sub-term'>
       <view class='dp-flex' data-id='cusPick' bindtap='show'>
         <image src='/pages/imgs/airplan_nav/num.png'></image>
         <text>乘车人数</text>

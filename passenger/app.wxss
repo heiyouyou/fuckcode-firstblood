@@ -10,7 +10,9 @@ page {
   font-size: 28rpx;
   background: #f2f4f5;
 }
-
+map {
+  width: 100%;
+}
 /** by youyou start **/
 
 /* 登录、注册 start */
@@ -138,10 +140,6 @@ page {
   overflow: hidden;
 }
 
-.main-wrap.ad-pad {
-  padding: 30rpx 30rpx 22rpx;
-}
-
 .main-wrap + .main-wrap {
   margin-top: 20rpx;
 }
@@ -205,6 +203,7 @@ page {
 }
 
 .main-form {
+  background: #fff;
 }
 
 .main-form .item {
@@ -336,6 +335,23 @@ page {
   font-size: 40rpx;
   border: 1px solid #dbdbdb;
   border-radius: 50%;
+}
+
+/* 附加选项 */
+.sub-term {
+  color: #bbb;
+  padding: 20rpx 0;
+}
+.sub-term .dp-flex {
+  justify-content: center;
+}
+.sub-term .dp-flex:not(:last-of-type) {
+  border-right: 1px solid #CCC;
+}
+.sub-term image {
+  width: 19rpx;
+  height: 28rpx;
+  margin-right: 20rpx;
 }
 
 /* Ethan end */
