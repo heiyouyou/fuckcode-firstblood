@@ -1,5 +1,5 @@
 <!--pages/components/date-pick/date-pick.wxml-->
-<cusPick id="cusPick" title="{{title}}" cancelTxt="{{cancelTxt}}" confirmTxt="{{confirmTxt}}" bind:confirm="_onConfirm">
+<cusPick id="cusPick" title="{{title}}" cancelTxt="{{cancelTxt}}" confirmTxt="{{confirmTxt}}" bind:confirm="_onDatePickcfm">
   <picker-view indicator-style="height: 50px;" style="width: 100%; height: 250px;" value="{{value}}" bindchange="bindChange">
     <picker-view-column style="flex: 1.2;">
       <view wx:for="{{dList}}" class='custom-picker-column'>{{item.dStr}}</view>

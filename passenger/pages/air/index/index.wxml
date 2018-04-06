@@ -90,7 +90,7 @@
         </view>
       </view>
     </cusPick>
-    <datePick id="datePick" title="飞机降落时间"></datePick>
+    <datePick id="datePick" title="飞机降落时间" bind:onDatePickcfm="_onDatePickcfm"></datePick>
   </view>
 
   <view class='main-wrap ad-pad' wx:if="{{flag==2}}">

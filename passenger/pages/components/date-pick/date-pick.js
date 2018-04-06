@@ -85,14 +85,16 @@ Component({
         mins: this.data.minList[val[2]]
       })
     },
-    _onConfirm() {
+    getDateVal() {
       let time = {
         dates: this.data.dates,
         hours: this.data.hours,
         mins: this.data.mins
       }
-      console.log(time)
       return time
+    },
+    _onDatePickcfm() {
+      this.triggerEvent('onDatePickcfm')
     }
   },
   ready() {
