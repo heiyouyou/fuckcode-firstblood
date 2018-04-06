@@ -1,0 +1,142 @@
+<!--pages/route/driver/driver.wxml-->
+<view>
+    <view class="h100 displayf altc jscb parl15 bgw border-bottom-ccc">
+        <view>
+            <view>
+                <text class="fz17 color-333">川A88888</text>
+            </view>
+            <text class="fz12 color-999">SUV . 宝马</text>
+        </view>
+        <view class="pr driver-img-box bg-F1604F">
+            <image class="w h" src=""></image>
+            <view class="pa driver-avator-box">
+                <image class="driver-avator bgb br50" src=""></image>
+            </view>            
+        </view>
+        <view class="fz12 color-999">
+            <view>
+                <text class="fz17 color-333">陈师傅</text>
+            </view>
+            <image class="icon-size-24" src="../../imgs/common/star@2x.png"></image>
+            <text class="mr5 ml5">4.9</text>
+            <text>231单</text>
+        </view>
+    </view>
+    <view class="bgw my-box-shadow">
+        <view class="displayf jscb altc driver-car-img-box">
+            <view>
+                <image class="driver-car-img bg-F1604F" src=""></image>
+            </view>
+            <view>
+                <image class="driver-car-img bg-F1604F" src=""></image>
+            </view>
+        </view>
+        <view class="border-top-ccc boxb h50 lh50 displayf jscb altc">
+            <view class="flex1 border-right-ccc tc h">
+                <image class="icon-size-24" src="../../imgs/common/phone@2x.png"></image>
+                <text class="fz14 color-666 ml5">打电话</text>
+            </view>
+            <view class="flex1 tc h">
+                <image class="icon-size-24" src="../../imgs/common/service@2x.png"></image>
+                <text class="fz14 color-666 ml5">联系客服</text>
+            </view>
+        </view>
+    </view>
+    <view class="tc mtb10"><text class="color-666 fz14">该司机正在运营的结伴班车</text></view>
+    <view>
+        <view class="w710 mauto bgw mb10 color-666 content-item boxb my-box-shadow">
+            <view class="content-padding">
+                <view class="displayf altc border-bottom-ccc pb10">
+                    <view class="mr10">
+                        <image class="bg-F1604F h50 w50 br50" src=""></image>
+                    </view>
+                    <view>
+                        <view class="mb5">
+                            <text class="fz16 color-333 mr5">上班小分队</text>
+                            <text class="order-tag vm colorf bg-F1604F boxb mr5 fz12">直达</text>
+                            <text class="order-tag vm color-00A0E9 boxb border-00A0E9 fz12 mr5">4.9星</text>
+                        </view>
+                        <text class="color-999 fz12 thidden240">路线临近区域，到您指定地点接您加入行程</text>
+                    </view>
+                </view>
+                <view class="mt10">
+                    <view class="mb10">
+                        <image class="icon-size-16" src="../../imgs/common/time@2x.png"></image>
+                        <text class="fz14 ml10 vm">2017/08/09 8:00-9:00出发</text>
+                    </view>
+                    <view class="mb5">
+                        <text class="br50 bg-3CBCA3 icon-size-12 displayib mr10"></text>
+                        <text class="fz14 vm displayib w70 text-ellipsis">Clayton</text>
+                        <text class="fz12 color-999 vm displayib thiddennb200"></text>
+                    </view>
+                    <view class="mb10">
+                        <text class="br50 bg-F1604F icon-size-12 displayib mr10"></text>
+                        <text class="fz14 vm displayib w70 text-ellipsis">Caulfield  </text>
+                        <text class="fz12 color-999 vm displayib thiddennb200">预计10:30到达</text>
+                    </view>
+                    <view class="clearfix lh30">
+                        <image class="icon-size-20 mr5" src="../../imgs/common/thenumberof@2x.png"></image>
+                        <text class="fz14">剩余2个座位</text>
+                        <text class="fr fz20 fwb color-F1604F">￥3-5/人</text>
+                    </view>
+                </view>
+            </view>
+            <view class="border-top-ccc mt15 displayf jscb altc h50 boxb parl15">
+                <text class="color-F1604F fz14"></text>
+                <view class="displayf jscb altc">
+                    <view class="item-btn">
+                        <image class="icon-size-24 vm" src="../../imgs/common/join@2x.png"></image>
+                        加入
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="w710 mauto bgw mb10 color-666 content-item boxb my-box-shadow">
+            <view class="content-padding">
+                <view class="displayf altc border-bottom-ccc pb10">
+                    <view class="mr10">
+                        <image class="bg-F1604F h50 w50 br50" src=""></image>
+                    </view>
+                    <view>
+                        <view class="mb5">
+                            <text class="fz16 color-333 mr5">上班小分队</text>
+                            <text class="order-tag colorf bg-F1604F boxb mr5 fz12">直达</text>
+                            <text class="order-tag color-00A0E9 boxb border-00A0E9 fz12 mr5">4.9星</text>
+                        </view>
+                        <text class="color-999 fz12 thidden240">路线临近区域，到您指定地点接您加入行程</text>
+                    </view>
+                </view>
+                <view class="mt10">
+                    <view class="mb10">
+                        <image class="icon-size-16" src="../../imgs/common/time@2x.png"></image>
+                        <text class="fz14 ml10 vm">2017/08/09 8:00-9:00出发</text>
+                    </view>
+                    <view class="mb5">
+                        <text class="br50 bg-3CBCA3 icon-size-12 displayib mr10"></text>
+                        <text class="fz14 vm displayib w70 text-ellipsis">Clayton</text>
+                        <text class="fz12 color-999 vm displayib thiddennb200"></text>
+                    </view>
+                    <view class="mb10">
+                        <text class="br50 bg-F1604F icon-size-12 displayib mr10"></text>
+                        <text class="fz14 vm displayib w70 text-ellipsis">Caulfield  </text>
+                        <text class="fz12 color-999 vm displayib thiddennb200">预计10:30到达</text>
+                    </view>
+                    <view class="clearfix lh30">
+                        <image class="icon-size-20 mr5" src="../../imgs/common/thenumberof@2x.png"></image>
+                        <text class="fz14">剩余2个座位</text>
+                        <text class="fr fz20 fwb color-F1604F">￥3-5/人</text>
+                    </view>
+                </view>
+            </view>
+            <view class="border-top-ccc mt15 displayf jscb altc h50 boxb parl15">
+                <text class="color-F1604F fz14"></text>
+                <view class="displayf jscb altc">
+                    <view class="item-btn">
+                        <image class="icon-size-24 vm" src="../../imgs/common/join@2x.png"></image>
+                        加入
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

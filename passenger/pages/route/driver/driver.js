@@ -1,5 +1,4 @@
-let util = require('../../../utils/util')
-// pages/route/index/index.js
+// pages/route/driver/driver.js
 Page({
 
   /**
@@ -8,10 +7,7 @@ Page({
   data: {
   
   },
-  detail(e){
-    console.log(e)
-    util.go('../orderDetail/orderDetail')
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */

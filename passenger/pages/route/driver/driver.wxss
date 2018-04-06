@@ -1,0 +1,20 @@
+/* pages/route/driver/driver.wxss */
+.driver-img-box{
+    width:234rpx;
+    height:131rpx;
+}
+.driver-avator-box{
+    top:14px;
+    right:-6px;
+}
+.driver-avator{
+    width:80rpx;
+    height:80rpx; 
+}
+.driver-car-img-box{
+    padding:40rpx 34rpx 30rpx;
+}
+.driver-car-img{
+    width:324rpx;
+    height:230rpx;
+}
