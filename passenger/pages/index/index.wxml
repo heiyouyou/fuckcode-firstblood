@@ -51,7 +51,7 @@
   </view>
   <view class='main-wrap home-comments-wrap'>
     <view class='home-comments-tit'>用户实时评价</view>
-    <scroll-view class='home-comments-list' scroll-y bindscrolltolower="lower">
+    <scroll-view scroll-y style="height: 200px;" bindscrolltolower="lower">
       <view class='home-comments' wx:for="{{list}}">
         <view class='dp-flex jc-sb home-comments-user'>
           <view class='user-info dp-flex'>

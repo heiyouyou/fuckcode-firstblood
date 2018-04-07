@@ -1,18 +1,29 @@
-// pages/car/index/index.js
+// pages/reserve/index/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    height: '',
   },
-
+  getSysInfo() {
+    wx.getSystemInfo({
+      success: res => {
+        this.setData({
+          height: res.windowHeight
+        })
+        console.log(res)
+      },
+      fail: function(res) {},
+      complete: function(res) {},
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    this.getSysInfo()
   },
 
   /**
