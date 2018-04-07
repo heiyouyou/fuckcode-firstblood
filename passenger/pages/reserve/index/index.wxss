@@ -1,7 +1,0 @@
-/* pages/reserve/index/index.wxss */
-.main-form {
-  height: 23%;
-}
-map {
-   height: 77%; 
-}

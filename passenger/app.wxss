@@ -10,9 +10,11 @@ page {
   font-size: 28rpx;
   background: #f2f4f5;
 }
+
 map {
   width: 100%;
 }
+
 /** by youyou start **/
 
 /* 登录、注册 start */
@@ -392,14 +394,23 @@ map {
   box-sizing: border-box;
 }
 
-.main-btn {
+.main-btn, .sub-btn {
   width: 100%;
-  font-size: 32rpx;
-  color: #fff;
   text-align: center;
-  background: #f1604f;
   border-radius: 4rpx;
   padding: 10rpx;
+}
+
+.main-btn {
+  font-size: 32rpx;
+  color: #fff;
+  background: #f1604f;
+}
+
+.sub-btn {
+  color: #f1604f;
+  background: #fff;
+  border: 1px solid #ccc;
 }
 
 .tips {
@@ -471,16 +482,20 @@ map {
 }
 
 /* 附加选项 */
+
 .sub-term {
   color: #bbb;
   padding: 20rpx 0;
 }
+
 .sub-term .dp-flex {
   justify-content: center;
 }
+
 .sub-term .dp-flex:not(:last-of-type) {
-  border-right: 1px solid #CCC;
+  border-right: 1px solid #ccc;
 }
+
 .sub-term image {
   width: 19rpx;
   height: 28rpx;
