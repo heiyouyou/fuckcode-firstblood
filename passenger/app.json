@@ -1,7 +1,8 @@
 {
   "pages": [
-    "pages/reserve/index/index",
-    "pages/air/index/index",
+    "pages/route/index/index",
+    "pages/route/driver/driver",
+    "pages/route/orderDetail/orderDetail",
     "pages/my/index/index",
     "pages/my/addressAndContact/addressAndContact",
     "pages/my/addressAndContact/addAddress/addAddress",
@@ -19,6 +20,8 @@
     "pages/my/message/message",
     "pages/login/index/index",
     "pages/login/login/login",
+    "pages/reserve/index/index",
+    "pages/air/index/index",
     "pages/air/next/next",
     "pages/air/check/check",
     "pages/register/info/info",
@@ -30,7 +33,6 @@
     "pages/translate/index/index",
     "pages/index/index",
     "pages/bybus/index/index",
-    "pages/trip/index/index",
     "pages/car/index/index",
     "pages/bus/index/index",
     "pages/travel/index/index",
@@ -57,7 +59,7 @@
         "text": "班车"
       },
       {
-        "pagePath": "pages/trip/index/index",
+        "pagePath": "pages/route/index/index",
         "iconPath": "pages/imgs/tab_bar/trip_unsel.png",
         "text": "行程"
       },
