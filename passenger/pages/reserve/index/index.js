@@ -5,7 +5,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-    height: '',
+    price:　{
+      rmb: 28,
+      usd: 2.8  
+    }
+    
   },
   getSysInfo() {
     wx.getSystemInfo({

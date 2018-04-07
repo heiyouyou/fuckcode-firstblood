@@ -21,4 +21,20 @@
     </view>
   </view>
 </view>
-<map show-location></map>
+<map show-location class='minmap'></map>
+<view class='sub-container'>
+  <view class='dp-flex intro'>
+    <view>￥{{price.rmb}}/${{price.usd}}</view>
+    <text class='xs-font'>计价规则</text>
+  </view>
+  <view class='btn-wrap dp-flex'>
+    <view class='main-btn'>
+      <view>￥{{price.rmb}}</view>
+      <view class='xs-font'>在线预约，9.8折</view>
+    </view>
+    <view class='sub-btn'>
+      <view>${{price.usd}}</view>
+      <view class='xs-font'>上车付</view>
+    </view>
+  </view>
+</view>
