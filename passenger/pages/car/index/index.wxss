@@ -1,1 +1,51 @@
-/* pages/car/index/index.wxss */
+/* pages/reserve/index/index.wxss */
+
+.main-form {
+  height: 23%;
+}
+
+map {
+  height: 77%;
+}
+
+.minmap {
+  height: 57%;
+}
+
+.sub-container {
+  height: 20%;
+  font-size: 40rpx;
+  background: #fff;
+  position: relative;
+}
+
+.xs-font {
+  font-size: 24rpx;
+}
+
+.btn-wrap {
+  border-top: 1px solid #ccc;
+}
+
+.btn-wrap button {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.main-btn {
+  font-size: 40rpx;
+}
+.sub-btn {
+  margin-left: 10rpx;
+}
+.intro {
+  height: 100rpx;
+  padding: 0 20rpx;
+}
+.intro view {
+  color: #F1604F;
+  flex: 2;
+  text-align: center;
+  margin-left: 100rpx;
+}
