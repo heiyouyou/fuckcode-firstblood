@@ -1,10 +1,36 @@
 <!--pages/air/next/next.wxml-->
 <view class='container'>
-  <view class='main-wrap'>
+  <view class='main-wrap ad-pad'>
     <view class='main-form'>
       <view class='item'>
         <view class='lab'>人数</view>
       </view>
+      <view class='item'>
+        <view class='lab'>行李</view>
+      </view>
+      <view class='item no-bor-b'>
+        <view class='lab'>时间</view>
+      </view>
     </view>
+  </view>
+  <view class='main-wrap dp-flex flex-one car-type'>
+    <view wx:for="{{car}}" class="{{flag == index ? 'active' : ''}}" data-t='{{index}}' bindtap='onCar'>
+      <image src="{{item.src}}"></image>
+      <view class='car-type-txt'>{{item.type == 1 ? '经济车' : '豪华车'}}</view>
+      <view class='intro' wx:if="{{flag == index}}">{{item.intro}}</view>
+    </view>
+  </view>
+  <view class='main-wrap'>
+    <view class='main-form ad-pad'>
+      <view class='item no-bor-b dp-flex jc-sb'>
+        <view class='lab'>举牌接机</view>
+        <view>
+          <switch checked />
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='btn-wrap'>
+    <button class='main-btn'>继续</button>
   </view>
 </view>

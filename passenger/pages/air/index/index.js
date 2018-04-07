@@ -49,7 +49,8 @@ Page({
     smallLuggage: {
       name: '小行李',
       val: 0
-    }
+    },
+    landDate: {}
   },
   go(e) {
     let url = e.currentTarget.dataset.url
@@ -91,6 +92,11 @@ Page({
       })
     }
   },
+  _onDatePickcfm() {
+    this.setData({
+      landDate: this.datePick.getDateVal()
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -105,6 +111,7 @@ Page({
     // 获取弹框组件
     this.cusPick = this.selectComponent('#cusPick')
     this.subcusPick = this.selectComponent('#subcusPick')
+    this.datePick = this.selectComponent('#datePick')
   },
 
   /**

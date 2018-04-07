@@ -55,6 +55,11 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+const formatNoToCn = n => {
+  const cnNo = ['日', '一', '二', '三', '四', '五', '六']
+  return cnNo[n]
+}
+
 const go = (url, t) => {
   let type = t ? t : 1
   if (type == 1) {
@@ -190,6 +195,7 @@ const delEmptyKey = obj => {
 module.exports = {
   formatTime: formatTime,
   formatNumber: formatNumber,
+  formatNoToCn: formatNoToCn,
   go: go,
   ajax: ajax,
   getUserInfo: getUserInfo,

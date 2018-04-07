@@ -1,1 +1,36 @@
 /* pages/air/next/next.wxss */
+.car-type {
+  position: relative;
+  padding: 30rpx 0 60rpx;
+}
+.car-type > view {
+  text-align: center;
+}
+.car-type image {
+  width: 150rpx;
+  max-height: 66rpx;
+}
+.car-type .intro {
+  width: 100%;
+  font-size: 24rpx;
+  color: #999;
+  text-align: center;
+  background: #FAFAFA;
+  padding: 18rpx;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.car-type-txt {
+  width: 110rpx;
+  margin: 16rpx auto 30rpx;
+}
+.car-type .active .car-type-txt {
+  color: #fff;
+  border-radius: 15rpx;
+  background: #F1604F;
+}
+
+.ad-pad {
+  padding: 0 30rpx;
+}

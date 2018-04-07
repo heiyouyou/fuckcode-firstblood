@@ -10,7 +10,9 @@ page {
   font-size: 28rpx;
   background: #f2f4f5;
 }
-
+map {
+  width: 100%;
+}
 /** by youyou start **/
 
 /* 登录、注册 start */
@@ -208,6 +210,7 @@ page {
 }
 /** by youyou end **/
 
+/* by Ethan start */
 /* 公用最外层 */
 
 .container {
@@ -228,10 +231,6 @@ page {
   border-radius: 4rpx;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.06);
   overflow: hidden;
-}
-
-.main-wrap.ad-pad {
-  padding: 30rpx 30rpx 22rpx;
 }
 
 .main-wrap + .main-wrap {
@@ -294,6 +293,7 @@ page {
   border-bottom: 1px solid #ccc;
 }
 .main-form {
+  background: #fff;
 }
 
 .main-form .item {
@@ -430,4 +430,21 @@ page {
   text-align: right;
 }
 
+/* 附加选项 */
+.sub-term {
+  color: #bbb;
+  padding: 20rpx 0;
+}
+.sub-term .dp-flex {
+  justify-content: center;
+}
+.sub-term .dp-flex:not(:last-of-type) {
+  border-right: 1px solid #CCC;
+}
+.sub-term image {
+  width: 19rpx;
+  height: 28rpx;
+  margin-right: 20rpx;
+}
 /* 自定义picker end */
+/* by Ethan end */
