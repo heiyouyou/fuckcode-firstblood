@@ -1,0 +1,84 @@
+<!--pages/route/orderDetail/orderDetail.wxml-->
+<view>
+    <view class="my-box-shadow">
+        <view class="bgw pl10">
+            <view class="displayf h100 altc border-bottom-ccc boxb">
+                <navigator url="../driver/driver">
+                    <image class="icon-size-120 bg-F1604F br50" src=""></image>
+                </navigator>
+                <view class="ml10">
+                    <view class="mb10">
+                        <text class="fz16 color-333">Sky-car官方班车</text>
+                    </view>
+                    <view class="fz14 clearfix">
+                        <text class="order-tag colorf bg-F1604F fl boxb mr5">直达</text>
+                        <text class="order-tag color-00A0E9 boxb fl border-00A0E9">4.9星</text>
+                        <view class="fl ml10">
+                            <image class="icon-size-24" src="../../imgs/common/star@2x.png"></image>
+                            <image class="icon-size-24" src="../../imgs/common/star@2x.png"></image>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="color-666 fz14 bgw pl30 pt15 pb10">
+            <view class="mb10">
+                <image class="icon-size-16" src="../../imgs/common/time@2x.png"></image>
+                <text class="ml10 vm">2017/08/09 8:00-9:00出发</text>
+            </view>
+            <view class="mb5">
+                <text class="br50 bg-3CBCA3 icon-size-12 displayib mr10"></text>
+                <text class="fz14 vm displayib">Clayton</text>
+            </view>
+            <view class="mb5">
+                <text class="br50 bg-F1604F icon-size-12 displayib mr10"></text>
+                <text class="fz14 vm displayib">Caulfield</text>
+            </view>
+            <view id="toggle-block" hidden="{{!show}}">
+                <view class="mb5">
+                    <image class="icon-size-20" src="../../imgs/common/thenumberof@2x.png"></image>
+                    <text class="ml10 vm">同行2人，2件大行李，1件小行李</text>
+                </view>
+                <view class="mb5">
+                    <image class="icon-size-16" src="../../imgs/common/time@2x.png"></image>
+                    <text class="ml10 vm">下单时间：2017/08/18 13:24:33</text>
+                </view>
+                <view class="mb5">
+                    <image class="icon-size-16" src="../../imgs/common/ordernumber@2x.png"></image>
+                    <text class="ml10 vm">订单编号：888888</text>
+                </view>
+            </view>
+            <view class="tc" bindtap="toggle">
+                <image class="shrink-icon" src="{{show_url}}"></image>
+            </view>
+        </view>
+    </view>
+    <view class="pr">
+        <!--<view class="map-status-box">
+            <image class="icon-size-30 vm" src="../../imgs/common/red@2x.png"></image><text class="fz15 vm color-F1604F ml10">等待上车</text>
+        </view>-->
+        <map class="map-box pr" id="map" style="height:{{200+add_height}}px;" longitude="113.324520" latitude="23.099994" scale="14" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" show-location>
+            <cover-view class="map-status-box displayf jscc altc">
+                <cover-image class="icon-size-30 vm" src="../../imgs/common/red@2x.png"></cover-image>
+                <cover-view class="fz15 vm color-F1604F ml10">等待上车</cover-view>
+            </cover-view>
+        </map>
+    </view>
+    <view class="bgw my-box-shadow">
+        <view class="h50 lh50 tc boxb border-bottom-ccc pr">
+            <text class="color-F1604F fz20 fwb">￥30/$3</text>
+            <view class="contact-client-btn">
+                <image class="icon-size-22" src="../../imgs/common/service@2x.png"></image>
+                <text class="fz14 color-666 ml5">联系客服</text>
+            </view>
+        </view>
+        <view class="tc">
+            <view class="w710 mauto patb10">
+                <button class="save-btn cancel-btn-bg">取消订单</button>
+            </view>
+            <view class="h50 lh50" hidden>
+                <text class="fz14 color-666 mr5">评价本次服务</text><image class="icon-size-12 vm" src="../../imgs/common/next@2x.png"></image>
+            </view>
+        </view>
+    </view>
+</view>
