@@ -1,32 +1,45 @@
-// pages/reserve/index/index.js
+// pages/air/onWayBill/onWayBill.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    price:　{
+    flag: '',
+    car: [{
+      type: 1,
+      src: 'https://pic.lanhuapp.com/FliHx2wk49s_O3Q-Y6SmzeQyRQXH',
+      intro: '经济车：卡罗拉、伊兰特、宝莱等同级车。'
+    }, {
+      type: 2,
+      src: 'https://pic.lanhuapp.com/FrJb4yGe1HjIiiUT4AIfjd89R06a',
+      intro: '豪华车：卡罗拉、伊兰特、宝莱等同级车。'
+    }],
+    form: {
+      time: '2017年8月1日 08:23',
+      start: '墨尔本上海路',
+      end: '墨尔本机场（大约18.2km）',
+      aduit: 1,
+      child: 1,
+      bigLuggage: 2,
+      smallLuggage: 3
+    },
+    price: {
       rmb: 28,
-      usd: 2.8  
+      usd: 2.8
     }
   },
-  getSysInfo() {
-    wx.getSystemInfo({
-      success: res => {
-        this.setData({
-          height: res.windowHeight
-        })
-        console.log(res)
-      },
-      fail: function(res) {},
-      complete: function(res) {},
+  onCar(e) {
+    let t = e.currentTarget.dataset.t
+    this.setData({
+      flag: t
     })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getSysInfo()
+  
   },
 
   /**

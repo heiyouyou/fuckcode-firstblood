@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/air/onWayBill/onWayBill",
     "pages/index/index",
     "pages/route/index/index",
     "pages/route/driver/driver",
@@ -24,6 +25,7 @@
     "pages/air/index/index",
     "pages/air/next/next",
     "pages/air/check/check",
+    "pages/air/toFromBill/toFromBill",
     "pages/register/info/info",
     "pages/register/phone/phone",
     "pages/register/password/password",
