@@ -1,31 +1,13 @@
-let util = require('../../../utils/util')
-// pages/route/index/index.js
+// pages/route/payment/payment.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    current:1
+  
   },
-  chooseWay(e){
-    let type = e.currentTarget.dataset.type
-    this.setData({
-      ['current']:type
-    })
-  },
-  // 订单详情页面
-  detail(e){
-    console.log(e)
-    util.go('../orderDetail/orderDetail')
-  },
-  // 支付页面
-  nextPay(){
-    util.go('../payment/payment')
-  },
-  bubble(){
-    console.log(2)
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */

@@ -1,0 +1,63 @@
+<!--pages/route/payment/payment.wxml-->
+<view class="ohidden">
+    <view class="w710 mauto bgw mt10 color-666 boxb pt20 pb20 pr15 pl15 my-box-shadow border-radius-4rpx">
+        <view class="displayf jscb altc pr">
+            <view>
+                <text class="fz16 color-333">预约用车</text>
+            </view>
+        </view>
+        <view class="mt15">
+            <view class="mb5">
+                <image class="icon-size-16" src="../../imgs/common/time@2x.png"></image>
+                <text class="fz14 ml10 vm">每周三 早8:30 可接受+ -30分钟</text>
+            </view>
+            <view class="mb5">
+                <text class="br50 bg-3CBCA3 icon-size-12 displayib mr10"></text>
+                <text class="fz14 vm displayib text-ellipsis">Clayton</text>
+            </view>
+            <view class="mb5">
+                <text class="br50 bg-F1604F icon-size-12 displayib mr10"></text>
+                <text class="fz14 vm displayib text-ellipsis">Caulfield  </text>
+            </view>
+            <view class="mb5">
+                <image class="icon-size-20 mr5" src="../../imgs/common/distance@2x.png"></image>
+                <text class="fz14 vm displayib text-ellipsis">2.2km（预计15分钟）</text>
+            </view>
+            <view class="mb5">
+                <image class="icon-size-20 mr5" src="../../imgs/common/thenumberof@2x.png"></image>
+                <text class="fz14 vm displayib text-ellipsis">2人，2件大行李位，2件小行李位</text>
+            </view>
+            <view class="">
+                <image class="icon-size-20 mr5" src="../../imgs/common/telephone@2x.png"></image>
+                <text class="fz14 vm displayib text-ellipsis">123 4323 1234</text>
+            </view>
+        </view>
+    </view>
+    <view class="w710 mauto border-radius-4rpx my-box-shadow mt10">
+        <view class="bgw h50 displayf altc jscb fz14 parl15">
+            <text class="color-333">合计</text>
+            <text class="fwb color-F1604F">￥50/$10</text>
+        </view>
+        <view class="h25 lh25 fz14 color-666 pt5 pb5 pr15 pl15">
+            订单编号：8888888
+        </view>
+    </view>
+    <view class="w710 mauto displayf jscb" style="position:fixed;bottom:10px;right:0;left:0;">
+        <view class="displayf jscc flexdirec altc flex1 h50 bg-F1604F colorf mr5 border-radius-4rpx my-box-shadow">
+            <view class="fz20">
+                ￥28
+            </view>
+            <view class="fz12">
+                在线预约，9.8折
+            </view>
+        </view>
+        <view class="displayf jscc flexdirec altc flex1 h50 bgw color-F1604F border-radius-4rpx my-box-shadow">
+            <view class="fz20">
+                ￥28
+            </view>
+            <view class="fz12">
+                上车付
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,12 +1,19 @@
 // pages/route/orderDetail/orderDetail.js
+let app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    textarea_content:'',
+    success:false,
+    star_level:0,
+    hide:true,
     show_url:'../../imgs/common/stop@2x.png',
     show:true,
+    // 控制地图容器的显示与隐藏，防止弹窗被地图组件遮盖
+    map_hide:false,
     add_height:0,
     markers: [{
       iconPath: "../../imgs/common/starting@2x.png",
@@ -47,6 +54,34 @@ Page({
     //   },
     //   clickable: true
     // }]
+  },
+  maskToggle(){
+    app.maskToggle(this)
+    this.setData({
+      'textarea_content':'',
+      'success':false,
+      'star_level':0,
+      'map_hide':!this.data.map_hide
+    })
+  },
+  // 评论点赞
+  commentStar(e){
+    let level = e.currentTarget.dataset.level
+    this.setData({
+      'star_level':level
+    })
+  },
+  textareaBlur(e){
+    let content = e.detail.value
+    this.setData({
+      'textarea_content':content
+    })
+  },
+  // 获取评论的内容
+  getCommentData(){
+    this.setData({
+      'success':!this.data.success
+    })
   },
   // 收缩隐藏订单部分内容
   toggle(){

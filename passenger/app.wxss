@@ -182,6 +182,15 @@ map {
   margin-left:5px;
   padding:0 3px;
 }
+.watermark{
+  position:absolute;
+  right:0;
+  top:-10px;
+}
+.watermark-img{
+  width:200rpx;
+  height:151rpx;
+}
 /* 搜索过滤 end */
 
 .order-tag{
@@ -209,6 +218,37 @@ map {
   border-radius: 0 38rpx 38rpx 0; 
   box-shadow:4px 0px 8px rgba(0,0,0,0.06);
   z-index:33; 
+}
+
+.comment-star{
+  margin-right:34rpx;
+  width:50rpx;
+  height:48rpx;
+}
+.comment-star:last-child{
+  margin:0;
+}
+.comment-textarea{
+  width:548rpx;
+  height:140rpx;
+  padding:10px;
+  box-sizing:border-box;
+  margin:0 auto;
+  border:1px solid #ccc;
+}
+.comment-placeholder{
+  line-height:140rpx;
+  text-align:center;
+  color:#ccc;
+  font-size:14px;
+}
+.comment-btn{
+  font-size:18px;
+  color:#fff;
+  height:100rpx;
+  width:548rpx;
+  line-height:50px;
+  border-radius:4rpx;
 }
 /** by youyou end **/
 
