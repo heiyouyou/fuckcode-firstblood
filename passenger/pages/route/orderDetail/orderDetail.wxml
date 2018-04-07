@@ -34,7 +34,7 @@
                 <text class="br50 bg-F1604F icon-size-12 displayib mr10"></text>
                 <text class="fz14 vm displayib">Caulfield</text>
             </view>
-            <view hidden="{{!show}}">
+            <view id="toggle-block" hidden="{{!show}}">
                 <view class="mb5">
                     <image class="icon-size-20" src="../../imgs/common/thenumberof@2x.png"></image>
                     <text class="ml10 vm">同行2人，2件大行李，1件小行李</text>
@@ -53,11 +53,16 @@
             </view>
         </view>
     </view>
-    <view class="map-box pr">
-        <view class="map-status-box">
+    <view class="pr">
+        <!--<view class="map-status-box">
             <image class="icon-size-30 vm" src="../../imgs/common/red@2x.png"></image><text class="fz15 vm color-F1604F ml10">等待上车</text>
-        </view>
-        <map class="map-box" id="map" longitude="113.324520" latitude="23.099994" scale="14" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" show-location></map>
+        </view>-->
+        <map class="map-box pr" id="map" style="height:{{200+add_height}}px;" longitude="113.324520" latitude="23.099994" scale="14" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" show-location>
+            <cover-view class="map-status-box displayf jscc altc">
+                <cover-image class="icon-size-30 vm" src="../../imgs/common/red@2x.png"></cover-image>
+                <cover-view class="fz15 vm color-F1604F ml10">等待上车</cover-view>
+            </cover-view>
+        </map>
     </view>
     <view class="bgw my-box-shadow">
         <view class="h50 lh50 tc boxb border-bottom-ccc pr">

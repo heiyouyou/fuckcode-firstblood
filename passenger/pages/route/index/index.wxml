@@ -108,13 +108,13 @@
             </view>
         </view>
         <view class="w710 mauto bgw mb10 color-666 content-item boxb my-box-shadow">
-            <view class="content-padding">
+            <view class="content-padding" bindtap="detail" data-id="2">
                 <view class="displayf jscb altc">
                     <view>
                         <text class="fz16 color-333">小小班车</text>
                         <text class="fz12 colorf bg-F1604F route-tag">结伴上班</text>
                     </view>
-                    <switch checked color="#F1604F"/>
+                    <switch checked color="#F1604F" catchtap="bubble"/>
                 </view>
                 <view class="mt20">
                     <view class="mb10">

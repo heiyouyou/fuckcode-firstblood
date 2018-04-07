@@ -7,6 +7,7 @@ Page({
   data: {
     show_url:'../../imgs/common/stop@2x.png',
     show:true,
+    add_height:0,
     markers: [{
       iconPath: "../../imgs/common/starting@2x.png",
       id: 0,
@@ -49,6 +50,7 @@ Page({
   },
   // 收缩隐藏订单部分内容
   toggle(){
+    this.getRect()
     console.log(this.data.show)
     let url = !this.data.show?'../../imgs/common/stop@2x.png':'../../imgs/common/open@2x.png'
     let show = !this.data.show
@@ -56,6 +58,15 @@ Page({
       'show_url':url,
       'show':show
     })
+  },
+  // 获取隐藏部分高度
+  getRect(){
+    wx.createSelectorQuery().select("#toggle-block").boundingClientRect((rect)=>{
+      let height = rect.height
+      this.setData({
+        'add_height':height
+      })
+    }).exec()
   },
   regionchange(e) {
     console.log(e.type)
