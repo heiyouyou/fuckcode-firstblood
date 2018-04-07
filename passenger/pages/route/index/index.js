@@ -1,4 +1,5 @@
-// pages/my/index/index.js
+let util = require('../../../utils/util')
+// pages/route/index/index.js
 Page({
 
   /**
@@ -6,6 +7,13 @@ Page({
    */
   data: {
   
+  },
+  detail(e){
+    console.log(e)
+    util.go('../orderDetail/orderDetail')
+  },
+  bubble(){
+    console.log(2)
   },
   /**
    * 生命周期函数--监听页面加载

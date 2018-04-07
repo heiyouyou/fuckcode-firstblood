@@ -1,0 +1,6 @@
+/* pages/route/orderDetail/orderDetail.wxss */
+.contact-client-btn{
+    position:absolute;
+    right:15px;
+    top:0;
+}
