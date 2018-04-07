@@ -101,6 +101,9 @@
 .bg-FFD325{
     background:#FFD325;
 }
+.bg-F4F4F5{
+    background:#F4F4F5;
+}
 /* 背景色 end */
 
 /* 图标大小 start */

@@ -1,8 +1,9 @@
 {
   "pages": [
     "pages/route/index/index",
-    "pages/route/driver/driver",
     "pages/route/orderDetail/orderDetail",
+    "pages/route/payment/payment",        
+    "pages/route/driver/driver",
     "pages/my/index/index",
     "pages/my/addressAndContact/addressAndContact",
     "pages/my/addressAndContact/addAddress/addAddress",
