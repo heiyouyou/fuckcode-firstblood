@@ -17,7 +17,7 @@
     <view wx:for="{{car}}" class="{{flag == index ? 'active' : ''}}" data-t='{{index}}' bindtap='onCar'>
       <image src="{{item.src}}"></image>
       <view class='car-type-txt'>{{item.type == 1 ? '经济车' : '豪华车'}}</view>
-      <view class='intro' wx:if="{{flag == index}}">{{item.intro}}</view>
+      <view class='remarks' wx:if="{{flag == index}}">{{item.intro}}</view>
     </view>
   </view>
   <view class='main-wrap'>

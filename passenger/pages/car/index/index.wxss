@@ -19,26 +19,10 @@ map {
   position: relative;
 }
 
-.xs-font {
-  font-size: 24rpx;
-}
-
 .btn-wrap {
   border-top: 1px solid #ccc;
 }
 
-.btn-wrap button {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-
-.main-btn {
-  font-size: 40rpx;
-}
-.sub-btn {
-  margin-left: 10rpx;
-}
 .intro {
   height: 100rpx;
   padding: 0 20rpx;
