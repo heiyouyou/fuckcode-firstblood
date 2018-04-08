@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/route/index/index",
     "pages/route/orderDetail/orderDetail",
     "pages/route/payment/payment",        
@@ -22,10 +23,10 @@
     "pages/login/index/index",
     "pages/login/login/login",
     "pages/reserve/index/index",
-    "pages/air/onWayBill/onWayBill",
     "pages/air/index/index",
     "pages/air/next/next",
     "pages/air/check/check",
+    "pages/air/oneWayBill/oneWayBill",
     "pages/air/toFromBill/toFromBill",
     "pages/register/info/info",
     "pages/register/phone/phone",
@@ -34,7 +35,6 @@
     "pages/results/licenseCertified/licenseCertified",
     "pages/templates/result/result",
     "pages/translate/index/index",
-    "pages/index/index",
     "pages/bybus/index/index",
     "pages/car/index/index",
     "pages/bus/index/index",
