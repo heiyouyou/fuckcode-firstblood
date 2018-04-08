@@ -131,6 +131,7 @@ map {
 }
 .filter-content-box{
   margin-bottom:80px;
+  margin-top:108px;
 }
 .filter-tab{
   margin-top:12rpx;
@@ -151,9 +152,6 @@ map {
 .filter-type-screen{
   width:26rpx;
   height:31rpx;
-}
-.filter-content-box{
-  margin-top:108px;
 }
 .route-tag{
   height:32rpx; 
