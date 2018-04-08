@@ -10,11 +10,9 @@ page {
   font-size: 28rpx;
   background: #f2f4f5;
 }
-
 map {
   width: 100%;
 }
-
 /** by youyou start **/
 
 /* 登录、注册 start */
@@ -148,6 +146,7 @@ map {
 
 .filter-content-box {
   margin-bottom: 80px;
+  margin-top: 108px;
 }
 
 .filter-tab {
@@ -170,10 +169,6 @@ map {
 .filter-type-screen {
   width: 26rpx;
   height: 31rpx;
-}
-
-.filter-content-box {
-  margin-top: 108px;
 }
 
 .route-tag {
@@ -207,6 +202,15 @@ map {
   padding: 0 3px;
 }
 
+.watermark{
+  position:absolute;
+  right:0;
+  top:-10px;
+}
+.watermark-img{
+  width:200rpx;
+  height:151rpx;
+}
 /* 搜索过滤 end */
 
 .order-tag {
@@ -237,6 +241,36 @@ map {
   z-index: 33;
 }
 
+.comment-star{
+  margin-right:34rpx;
+  width:50rpx;
+  height:48rpx;
+}
+.comment-star:last-child{
+  margin:0;
+}
+.comment-textarea{
+  width:548rpx;
+  height:140rpx;
+  padding:10px;
+  box-sizing:border-box;
+  margin:0 auto;
+  border:1px solid #ccc;
+}
+.comment-placeholder{
+  line-height:140rpx;
+  text-align:center;
+  color:#ccc;
+  font-size:14px;
+}
+.comment-btn{
+  font-size:18px;
+  color:#fff;
+  height:100rpx;
+  width:548rpx;
+  line-height:50px;
+  border-radius:4rpx;
+}
 /** by youyou end **/
 
 /* by Ethan start */
@@ -399,7 +433,6 @@ map {
   padding: 20rpx;
   box-sizing: border-box;
 }
-
 .btn-wrap-two {
   display: flex;
   align-items: center;
@@ -422,17 +455,14 @@ map {
   padding: 10rpx;
   line-height: normal;
 }
-
 .main-btn {
+  width: 100%;
   font-size: 32rpx;
   color: #fff;
+  text-align: center;
   background: #f1604f;
-}
-
-.sub-btn {
-  color: #f1604f;
-  background: #fff;
-  border: 1px solid #ccc;
+  border-radius: 4rpx;
+  padding: 10rpx;
 }
 
 .tips {
@@ -515,20 +545,16 @@ map {
 }
 
 /* 附加选项 */
-
 .sub-term {
   color: #bbb;
   padding: 20rpx 0;
 }
-
 .sub-term .dp-flex {
   justify-content: center;
 }
-
 .sub-term .dp-flex:not(:last-of-type) {
-  border-right: 1px solid #ccc;
+  border-right: 1px solid #CCC;
 }
-
 .sub-term image {
   width: 19rpx;
   height: 28rpx;

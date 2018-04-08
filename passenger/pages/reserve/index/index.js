@@ -1,36 +1,29 @@
-let util = require('../../../utils/util')
-// pages/route/index/index.js
+// pages/reserve/index/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    current:1
+    height: '',
   },
-  chooseWay(e){
-    let type = e.currentTarget.dataset.type
-    this.setData({
-      ['current']:type
+  getSysInfo() {
+    wx.getSystemInfo({
+      success: res => {
+        this.setData({
+          height: res.windowHeight
+        })
+        console.log(res)
+      },
+      fail: function(res) {},
+      complete: function(res) {},
     })
-  },
-  // 订单详情页面
-  detail(e){
-    console.log(e)
-    util.go('../orderDetail/orderDetail')
-  },
-  // 支付页面
-  nextPay(){
-    util.go('../payment/payment')
-  },
-  bubble(){
-    console.log(2)
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    this.getSysInfo()
   },
 
   /**

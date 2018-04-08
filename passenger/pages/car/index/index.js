@@ -1,4 +1,4 @@
-// pages/reserve/index/index.js
+// pages/car/index/index.js
 Page({
 
   /**
@@ -22,11 +22,12 @@ Page({
       complete: function(res) {},
     })
   },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getSysInfo()
+  
   },
 
   /**

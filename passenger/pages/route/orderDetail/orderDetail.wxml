@@ -6,17 +6,24 @@
                 <navigator url="../driver/driver">
                     <image class="icon-size-120 bg-F1604F br50" src=""></image>
                 </navigator>
-                <view class="ml10">
+                <view class="ml10 flex1 pr">
                     <view class="mb10">
-                        <text class="fz16 color-333">Sky-car官方班车</text>
+                        <text class="fz16 color-333" hidden>Sky-car官方班车</text>
+                        <text class="fz16 color-333">Kevin</text>
                     </view>
                     <view class="fz14 clearfix">
-                        <text class="order-tag colorf bg-F1604F fl boxb mr5">直达</text>
+                        <!--<text class="order-tag colorf bg-F1604F fl boxb mr5">直达</text>-->
                         <text class="order-tag color-00A0E9 boxb fl border-00A0E9">4.9星</text>
                         <view class="fl ml10">
                             <image class="icon-size-24" src="../../imgs/common/star@2x.png"></image>
                             <image class="icon-size-24" src="../../imgs/common/star@2x.png"></image>
+                            <image class="icon-size-24" src="../../imgs/common/star@2x.png"></image>
+                            <image class="icon-size-24" src="../../imgs/common/star@2x.png"></image>
+                            <image class="icon-size-24" src="../../imgs/common/star@2x.png"></image>
                         </view>
+                    </view>
+                    <view class="watermark">
+                        <image class="watermark-img" src="../../imgs/common/payforthecar@2x.png"></image>
                     </view>
                 </view>
             </view>
@@ -31,8 +38,12 @@
                 <text class="fz14 vm displayib">Clayton</text>
             </view>
             <view class="mb5">
+                <text class="br50 bg-3CBCA3 icon-size-12 displayib mr10"></text>
+                <text class="fz14 vm displayib">601 clayton Rd clayton</text>
+            </view>
+            <view class="mb5">
                 <text class="br50 bg-F1604F icon-size-12 displayib mr10"></text>
-                <text class="fz14 vm displayib">Caulfield</text>
+                <text class="fz14 vm displayib">墨尔本机场</text>
             </view>
             <view id="toggle-block" hidden="{{!show}}">
                 <view class="mb5">
@@ -53,10 +64,7 @@
             </view>
         </view>
     </view>
-    <view class="pr">
-        <!--<view class="map-status-box">
-            <image class="icon-size-30 vm" src="../../imgs/common/red@2x.png"></image><text class="fz15 vm color-F1604F ml10">等待上车</text>
-        </view>-->
+    <view class="pr" hidden="{{map_hide}}">
         <map class="map-box pr" id="map" style="height:{{200+add_height}}px;" longitude="113.324520" latitude="23.099994" scale="14" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" show-location>
             <cover-view class="map-status-box displayf jscc altc">
                 <cover-image class="icon-size-30 vm" src="../../imgs/common/red@2x.png"></cover-image>
@@ -73,11 +81,35 @@
             </view>
         </view>
         <view class="tc">
-            <view class="w710 mauto patb10">
+            <view class="w710 mauto patb10" hidden>
                 <button class="save-btn cancel-btn-bg">取消订单</button>
             </view>
-            <view class="h50 lh50" hidden>
+            <view class="h50 lh50" bindtap="maskToggle">
                 <text class="fz14 color-666 mr5">评价本次服务</text><image class="icon-size-12 vm" src="../../imgs/common/next@2x.png"></image>
+            </view>
+        </view>
+    </view>
+    <view class="mask-no-padding displayf altend" hidden="{{hide}}">
+        <view class="bgw w">
+            <view class="mask-title border-bottom-ccc tc" bindtap="maskToggle">
+                <image class="icon-size-32 fl" src="../../imgs/common/close@2x.png"></image>
+                <text class="fz15 color-333">评价</text>
+            </view>
+            <view style="min-height:550rpx;">
+                <view class="tc mb25 mt20">
+                    <image wx:for="{{[1,2,3,4,5]}}" wx:key="*this" class="comment-star" src="{{star_level>=item?'../../imgs/common/evaluate_selected@2x.png':'../../imgs/common/evaluate_unchecked@2x.png'}}" data-level="{{item}}" bind:tap="commentStar"></image>
+                </view>
+                <view hidden="{{success}}">
+                    <view class="mb50">
+                        <textarea bindblur="textareaBlur" value="{{textarea_content}}" class="comment-textarea bg-F4F4F5 border-radius-4rpx color-F1604F" placeholder="输入您对司机的评价" placeholder-class="comment-placeholder" />
+                    </view>
+                    <view class="mb40">
+                        <button class="comment-btn bg-F1604F" bind:tap="getCommentData">提交</button>
+                    </view>
+                </view>
+                <view class="tc" hidden="{{!success}}">
+                    <text class="color-F1604F fz14">{{textarea_content}}</text>
+                </view>
             </view>
         </view>
     </view>
