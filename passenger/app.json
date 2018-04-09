@@ -35,6 +35,7 @@
     "pages/air/index/index",
     "pages/air/next/next",
     "pages/air/check/check",
+    "pages/air/oneWayBill/oneWayBill",
     "pages/air/toFromBill/toFromBill",
     "pages/register/info/info",
     "pages/register/phone/phone",

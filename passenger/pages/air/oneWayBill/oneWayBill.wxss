@@ -1,0 +1,37 @@
+/* pages/air/onWayBill/onWayBill.wxss */
+
+.main-form {
+  padding-left: 20rpx;
+}
+
+.ad-b-pad {
+  padding-bottom: 160rpx;
+}
+
+
+.bill-info {
+  padding: 20rpx 30rpx;
+}
+
+.bill-info > view, .bill-info > text {
+  padding-left: 40rpx;
+}
+
+.bill-info > view {
+  margin-top: 20rpx;
+}
+
+.bill-info .no-pad {
+  padding: 0;
+}
+.bill-info .no-mar {
+  margin: 0;
+}
+
+.bill-info-txt {
+  font-size: 24rpx;
+}
+.agree {
+  font-size: 24rpx;
+  margin: 30rpx auto 20rpx;
+}
