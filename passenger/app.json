@@ -1,10 +1,10 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/route/index/index",
     "pages/route/orderDetail/orderDetail",
     "pages/route/payment/payment",        
     "pages/route/driver/driver",
-    "pages/index/index",
     "pages/my/index/index",
     "pages/my/addressAndContact/addressAndContact",
     "pages/my/addressAndContact/addAddress/addAddress",

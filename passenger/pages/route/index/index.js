@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    current:3
+    current:1
   },
   chooseWay(e){
     let type = e.currentTarget.dataset.type
