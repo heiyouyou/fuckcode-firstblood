@@ -1,0 +1,18 @@
+<!--pages/bybus/index/index.wxml  班车-->
+<view class='bybus-content'>
+  <view class='bybus-banner'>
+    <image src='/pages/imgs/bybus/bybus-banner.png'></image>
+  </view>
+  <view class='bybus-search'>
+    <text class='search-text'>墨尔本</text>
+    <input type="text" class='search-input'></input>
+  </view>
+  <view class='bybus-card'>
+    <view>
+
+    </view>
+    <view>
+      
+    </view>
+  </view>
+</view>

@@ -1,0 +1,32 @@
+/* pages/bybus/choose_city/index.wxss 选择城市*/
+/* 
+  latest edit by lewyon
+  code start
+*/
+.this-city{
+  font-size: 15px;
+  color: #999999;
+  padding: 13px 0;
+}
+.city-choose{
+
+}
+.city-choose input{
+  font-size: 16px;
+  color: #999999;
+}
+.city-list{
+  margin-top: 20px;
+}
+.list-title{
+  font-size: 16px;
+  color: #999999;
+}
+.city-item{
+  margin-top: 10px;
+  font-size: 14px;
+  color: #333333;
+  line-height: 35px;
+  height: 35px;
+  border-bottom: 1px solid #CCCCCC;
+}

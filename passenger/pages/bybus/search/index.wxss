@@ -1,4 +1,8 @@
-/* pages/bus/index/index.wxss by  lewyon*/
+/* pages/bybus/index/index.wxss */
+/* 
+  latest edit by lewyon
+  code start
+*/
 .lh30{
   margin-top: 20px;
 }

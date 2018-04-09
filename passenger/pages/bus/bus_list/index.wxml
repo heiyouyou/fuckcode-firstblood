@@ -1,0 +1,54 @@
+<!--pages/bus/index/index.wxml 结伴班车-->
+<!--pages/my/index/index.wxml-->
+<view class='container'>
+  <view>
+    <text class='lh30'>系统匹配到以下可能符合您行程的结果</text>
+  </view>
+  <view class='main-wrap bybus-content'>
+    <view class='dp-flex jc-cen bybus-msg'>
+      <image class="card-avatar bg-F1604F br50" src=""></image>
+      <view class='dp-flex jc-cen msg-text'>
+        <text class='bybus-name'>Sky-car官方班车 <text class='bybus-name-type'>直达</text></text>
+        <text class='bybus-tip'>起点区域以内，可到您指定地点接您加入行程</text>
+      </view>
+    </view>
+    <view class="bgw mb10">
+        <view class="fz14 color-666 h30 lh40">
+          <image class="bg-F1604F icon-size" src=""></image>
+          <text class="ml15">2017/08/09 8:00-9:00出发</text>
+          <view class="fr">
+              <image class="choice-size" src="../../../imgs/common/choice@2x.png"></image>
+          </view>
+        </view>
+        <view class="fz14 color-666 h30 lh30">
+          <image class="bg-F1604F icon-size" src=""></image>
+          <text class="ml15">Clayton</text>
+          <view class="fr">
+              <image class="choice-size" src="../../../imgs/common/choice@2x.png"></image>
+          </view>
+        </view>
+        <view class="fz14 color-666 h30 lh30">
+          <image class="bg-F1604F icon-size" src=""></image>
+          <text class="ml15">Caulfield  预计10:30到达</text>
+          <view class="fr">
+              <image class="choice-size" src="../../../imgs/common/choice@2x.png"></image>
+          </view>
+        </view>
+        <view class="fz14 color-666 h30 lh30">
+          <image class="bg-F1604F icon-size" src=""></image>
+          <text class="ml15">剩余2个座位，4件大行李位</text>
+          <view class="fr">
+              <image class="choice-size" src="../../../imgs/common/choice@2x.png"></image>
+          </view>
+        </view>
+    </view>
+    <view class='bgw buybus-join'>
+      <button type='default' class='dp-flex jc-cen buybus-join-btn' data-url='/pages/bybus/detail/index' bindtap='go'>加入</button>
+    </view>
+  </view>
+  
+  <view class="searcg-btn">
+      <button class='dp-flex jc-cen' type='default' data-url='/pages/bus/bus_list/index' bindtap='go'>搜索其他班车</button>
+  </view>
+</view>
+
