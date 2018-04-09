@@ -1,13 +1,24 @@
-// pages/bus/index/index.js
+// pages/bybus/index/index.js
 const app = getApp(),
   util = require('../../../utils/util.js')
 Page({
-
+  
   /**
    * 页面的初始数据
    */
   data: {
-  
+    array: [{
+      message: '默认排序',
+    },
+    {
+      message: '按行程开始时间排序'
+    },
+    {
+      message: '按发布时间排序'
+    },
+    {
+      message: '按价格排序'
+    }]
   },
   go(e) {
     let url = e.currentTarget.dataset.url

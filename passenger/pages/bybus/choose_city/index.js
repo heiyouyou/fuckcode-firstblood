@@ -1,8 +1,8 @@
-// pages/bus/index/index.js
+// pages/bybus/index/index.js
 const app = getApp(),
   util = require('../../../utils/util.js')
 Page({
-
+  
   /**
    * 页面的初始数据
    */

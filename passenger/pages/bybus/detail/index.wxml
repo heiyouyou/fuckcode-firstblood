@@ -1,0 +1,4 @@
+<!--pages/bybus/index/index.wxml  订单详情-->
+<view class='bybus-content'>
+  订单详情
+</view>

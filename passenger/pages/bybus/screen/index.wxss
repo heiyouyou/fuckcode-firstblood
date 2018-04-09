@@ -1,0 +1,42 @@
+/* pages/bybus/index/index.wxss */
+/* 
+  latest edit by lewyon
+  code start
+*/
+.bybus-content{
+  padding: 12px 12px 0 12px;
+}
+.bybus-banner{
+  width: 100%;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bybus-banner image{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.bybus-search{
+  margin-top: 12px;
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bybus-search .search-text{
+  flex: 1;
+}
+.bybus-search .search-input{
+  flex: 4;
+  border: 1px solid #ccc;
+  border-radius: 13px;
+  text-indent: 10px;
+  padding-left: 10px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 13px;
+  /* opacity: .2; */
+}
+
