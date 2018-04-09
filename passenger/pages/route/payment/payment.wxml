@@ -1,6 +1,6 @@
 <!--pages/route/payment/payment.wxml-->
 <view class="ohidden">
-    <view class="w710 mauto bgw mt10 color-666 boxb pt20 pb20 pr15 pl15 my-box-shadow border-radius-4rpx">
+    <view class="w710 mauto bgw mt10 color-666 boxb pt20 pb20 pr15 pl15 my-box-shadow border-radius-4rpx" hidden>
         <view class="displayf jscb altc pr">
             <view>
                 <text class="fz16 color-333">预约用车</text>
@@ -33,10 +33,85 @@
             </view>
         </view>
     </view>
-    <view class="w710 mauto border-radius-4rpx my-box-shadow mt10">
+    <view class="w710 mauto bgw mt10 color-666 boxb pt20 pb20 pr15 pl15 my-box-shadow border-radius-4rpx">
+        <view class="displayf jscb altc pr">
+            <view>
+                <text class="fz16 color-333">去程</text>
+                <text class="fz16 color-333 vm" hidden>机场接送</text>
+                <image class="route-tag-img vm ml5" mode="aspectFill" src="../../imgs/common/airportdrop_off@2x.png" hidden></image>
+            </view>
+        </view>
+        <view class="mt15">
+            <view class="mb5">
+                <image class="icon-size-16" src="../../imgs/common/time@2x.png"></image>
+                <text class="fz14 ml10 vm">每周三 早8:30 可接受+ -30分钟</text>
+            </view>
+            <view class="mb5">
+                <text class="br50 bg-3CBCA3 icon-size-12 displayib mr10"></text>
+                <text class="fz14 vm displayib text-ellipsis">Clayton</text>
+            </view>
+            <view class="mb5">
+                <text class="br50 bg-F1604F icon-size-12 displayib mr10"></text>
+                <text class="fz14 vm displayib text-ellipsis">Caulfield  </text>
+            </view>
+            <view class="mb5">
+                <image class="icon-size-20 mr5" src="../../imgs/common/distance@2x.png"></image>
+                <text class="fz14 vm displayib text-ellipsis">2.2km（预计15分钟）</text>
+            </view>
+            <view class="mb5">
+                <image class="icon-size-20 mr5" src="../../imgs/common/thenumberof@2x.png"></image>
+                <text class="fz14 vm displayib text-ellipsis">2人，2件大行李位，2件小行李位</text>
+            </view>
+            <view class="">
+                <image class="icon-size-20 mr5" src="../../imgs/common/telephone@2x.png"></image>
+                <text class="fz14 vm displayib text-ellipsis">123 4323 1234</text>
+            </view>
+        </view>
+    </view>
+    <view class="w710 mauto bgw mt5 color-666 boxb pt20 pb20 pr15 pl15 my-box-shadow border-radius-4rpx">
+        <view class="displayf jscb altc pr">
+            <view>
+                <text class="fz16 color-333">返程</text>
+            </view>
+        </view>
+        <view class="mt15">
+            <view class="mb5">
+                <image class="icon-size-16" src="../../imgs/common/time@2x.png"></image>
+                <text class="fz14 ml10 vm">每周三 早8:30 可接受+ -30分钟</text>
+            </view>
+            <view class="mb5">
+                <text class="br50 bg-3CBCA3 icon-size-12 displayib mr10"></text>
+                <text class="fz14 vm displayib text-ellipsis">Clayton</text>
+            </view>
+            <view class="mb5">
+                <text class="br50 bg-F1604F icon-size-12 displayib mr10"></text>
+                <text class="fz14 vm displayib text-ellipsis">Caulfield  </text>
+            </view>
+            <view class="mb5">
+                <image class="icon-size-20 mr5" src="../../imgs/common/distance@2x.png"></image>
+                <text class="fz14 vm displayib text-ellipsis">2.2km（预计15分钟）</text>
+            </view>
+            <view class="mb5">
+                <image class="icon-size-20 mr5" src="../../imgs/common/thenumberof@2x.png"></image>
+                <text class="fz14 vm displayib text-ellipsis">2人，2件大行李位，2件小行李位</text>
+            </view>
+            <view class="">
+                <image class="icon-size-20 mr5" src="../../imgs/common/telephone@2x.png"></image>
+                <text class="fz14 vm displayib text-ellipsis">123 4323 1234</text>
+            </view>
+        </view>
+    </view>
+    <view class="w710 mauto bgw mt10 border-radius-4rpx my-box-shadow h50 displayf jscb altc parl15 boxb">
+        <text class="color-666 fz14">请选择优惠券</text>
+        <image class="choice-size" src="../../imgs/common/choice@2x.png"></image>
+    </view>
+    <view class="w710 mauto border-radius-4rpx my-box-shadow mt10" style="margin-bottom:75px;">
         <view class="bgw h50 displayf altc jscb fz14 parl15">
             <text class="color-333">合计</text>
-            <text class="fwb color-F1604F">￥50/$10</text>
+            <text class="fwb color-F1604F text-line-t">￥50/$10</text>
+        </view>
+        <view class="parl15 bgw" style="margin-top:-10px;">
+            <text class="fz14 color-F1604F">往返优惠价：￥200 / $20</text>
         </view>
         <view class="h25 lh25 fz14 color-666 pt5 pb5 pr15 pl15">
             订单编号：8888888

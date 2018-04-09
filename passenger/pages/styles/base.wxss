@@ -79,6 +79,8 @@
 .lh60{line-height:60px;}
 .lh65{line-height:65px;}
 .unl{text-decoration: underline;}
+.text-line-t{text-decoration: line-through;}
+.text-line-o{text-decoration: overline;}
 .no_unl{text-decoration: none;}
 .fwn{font-weight:normal;}
 .fwb{font-weight:bold;}

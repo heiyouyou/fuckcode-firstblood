@@ -179,6 +179,10 @@ map {
   padding: 2px 4px;
   margin-left: 10rpx;
 }
+.route-tag-img{
+  width:90rpx;
+  height:34rpx;
+}
 
 .content-padding {
   padding: 50rpx 30rpx 0 37rpx;

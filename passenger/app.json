@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/route/index/index",
     "pages/route/orderDetail/orderDetail",
     "pages/route/payment/payment",        
@@ -34,7 +35,6 @@
     "pages/results/licenseCertified/licenseCertified",
     "pages/templates/result/result",
     "pages/translate/index/index",
-    "pages/index/index",
     "pages/bybus/index/index",
     "pages/car/index/index",
     "pages/bus/index/index",
