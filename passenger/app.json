@@ -31,7 +31,6 @@
     "pages/my/message/message",
     "pages/login/index/index",
     "pages/login/login/login",
-    "pages/air/onWayBill/onWayBill",
     "pages/air/index/index",
     "pages/air/next/next",
     "pages/air/check/check",

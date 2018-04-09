@@ -1,9 +1,9 @@
 <!--pages/reserve/index/index.wxml-->
 <view class='main-form'>
-  <view class='item'>
+  <view class='item start'>
     <input placeholder='您从哪出发'></input>
   </view>
-  <view class='item'>
+  <view class='item end'>
     <input placeholder='您想要去哪'></input>
   </view>
   <view class='dp-flex flex-one sub-term'>
@@ -21,7 +21,7 @@
     </view>
   </view>
 </view>
-<map show-location class='minmap'></map>
+<map show-location="true" class='minmap'></map>
 <view class='sub-container'>
   <view class='dp-flex intro'>
     <view>￥{{price.rmb}}/${{price.usd}}</view>
