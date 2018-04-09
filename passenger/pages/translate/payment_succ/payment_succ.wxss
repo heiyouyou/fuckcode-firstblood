@@ -1,0 +1,30 @@
+.succ-box{
+  padding-top: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.succ-icon{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.succ-icon image{
+  width: 139px;
+  height: 148px;
+}
+.succ-text{
+  margin-top: 20px;
+  text-align: center;
+}
+.succ-text p{
+  display: block;
+}
+.succ-server{
+  position: absolute;
+  width: 100%;
+  bottom: 10px;
+  text-align: center;
+}

@@ -1,0 +1,6 @@
+<!--pages/bybus/sort/index.wxml  排序-->
+<view class='container'>
+  <view wx:for="{{array}}" class='sort-list'>
+    {{item.message}}
+  </view>
+</view>
