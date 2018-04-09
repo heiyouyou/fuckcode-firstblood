@@ -33,7 +33,24 @@ Page({
       name: '悉尼',
       id: 1213
     }],
-    index: 0
+    index: 0,
+    busAdultNum: {
+      name: '成人>7岁', 
+      val: 0
+    },
+    busChildNum: {
+      name: '儿童<7岁',
+      val: 0
+    },
+    bigLuggage: {
+      name: '大行李',
+      val: 0
+    },
+    smallLuggage: {
+      name: '小行李',
+      val: 0
+    },
+    landDate: {}
   },
   go(e) {
     let url = e.currentTarget.dataset.url
@@ -57,6 +74,29 @@ Page({
       index: e.detail.value
     })
   },
+  show(e) {
+    let id = e.currentTarget.dataset.id
+    this[id].show()
+  },
+  onBtn(e) {
+    let t = e.currentTarget.dataset.t,
+      val = e.currentTarget.dataset.val,
+      v = this.data[val].val
+    if (t == 'minus' && v > 0) {
+      this.setData({
+        [`${val}.val`]: --v
+      })
+    } else if (t == 'add') {
+      this.setData({
+        [`${val}.val`]: ++v
+      })
+    }
+  },
+  _onDatePickcfm() {
+    this.setData({
+      landDate: this.datePick.getDateVal()
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -68,7 +108,10 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    // 获取弹框组件
+    this.cusPick = this.selectComponent('#cusPick')
+    this.subcusPick = this.selectComponent('#subcusPick')
+    this.datePick = this.selectComponent('#datePick')
   },
 
   /**

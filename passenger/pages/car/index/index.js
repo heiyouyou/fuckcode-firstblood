@@ -5,7 +5,22 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    price:　{
+      rmb: 28,
+      usd: 2.8  
+    }
+  },
+  getSysInfo() {
+    wx.getSystemInfo({
+      success: res => {
+        this.setData({
+          height: res.windowHeight
+        })
+        console.log(res)
+      },
+      fail: function(res) {},
+      complete: function(res) {},
+    })
   },
 
   /**

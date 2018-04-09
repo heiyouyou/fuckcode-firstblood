@@ -1,0 +1,4 @@
+/* pages/air/next/next.wxss */
+.ad-pad {
+  padding: 0 30rpx;
+}

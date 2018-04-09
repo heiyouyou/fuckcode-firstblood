@@ -1,0 +1,15 @@
+/* pages/route/orderDetail/orderDetail.wxss */
+.contact-client-btn{
+    position:absolute;
+    right:15px;
+    top:0;
+}
+.watermark{
+  position:absolute;
+  right:15px;
+  top:0px;
+}
+.watermark-img{
+  width:260rpx;
+  height:196rpx;
+}

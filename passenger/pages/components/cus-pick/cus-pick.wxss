@@ -1,0 +1,71 @@
+/* pages/components/num-of-people.wxss */
+
+
+.dp-flex {
+  display: flex;
+  align-items: center;
+}
+.jc-sb {
+  justify-content: space-between;
+}
+/* 自定义picker start */
+
+.custom-picker-wrap {
+  width: 100%;
+  height: 40%;
+  position: fixed;
+  background: #FFF;
+  left: 0;
+  bottom: -300px;
+  z-index: 999;
+}
+.custom-picker-wrap.enter {
+  bottom: 0;
+  -webkit-transition: bottom .3s ease-in-out;
+  transition: bottom .3s ease-in-out;
+}
+.custom-picker-wrap.leave {
+  bottom: -300px;
+  -webkit-transition: bottom .3s ease-in-out;
+  transition: bottom .3s ease-in-out;
+}
+.custom-picker-column {
+  text-align: center;
+  line-height: 50px;
+}
+
+.custom-picker-head {
+  display: flex;
+  padding: 24rpx;
+  background: #FFF;
+  border-bottom: 1px solid #EBEBEB;
+}
+.custom-picker-head text {
+  flex: 1;
+  color: #BBB;
+}
+.title {
+  font-size: 36rpx;
+  text-align: center;
+  color: #333;
+}
+.custom-picker-head .confirm {
+  text-align: right;
+  color: #F1604F;
+}
+.custom-picker-content {
+  padding: 100rpx 30rpx;
+}
+/* 自定义picker end */
+
+.mask {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, .5);
+  padding: 20rpx;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 500;
+}

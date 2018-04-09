@@ -1,0 +1,14 @@
+<!--pages/components/cus-pick.wxml-->
+<view class='mask' wx:if="{{show}}"></view>
+<view class='custom-picker-wrap {{show ? "enter" : "leave"}}'>
+  <view class='custom-picker'>
+    <view class='custom-picker-head'>
+      <text class='cancle' bindtap='_onCancel'>{{cancelTxt}}</text>
+      <text class='title'>{{title}}</text>
+      <text class='confirm' bindtap='_onConfirm'>{{confirmTxt}}</text>
+    </view>
+    <view class='custom-picker-content'>
+      <slot></slot>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,32 @@
+<!--pages/my/addressAndContact/addContact/addContact.wxml-->
+<view class="ohidden">
+    <view class="w710 mauto mt10 bgw pl10 my-box-shadow border-radius-4rpx boxb">
+        <view class="h50 border-bottom-ccc boxb displayf jscb altc">
+            <view class="color-666 fz14 displayf altc">
+                <text class="displayib lh0">
+                    姓名
+                </text>
+                <input class="ml35" type="" placeholder="请填写联系人姓名" placeholder-class="color-BBB" />
+            </view>
+            <view class="mr15">
+                <image style="width:21rpx;height:21rpx;" src="../../../imgs/common/maillist@2x.png"></image>
+                <text class="color-00A0E9 fz10 ml5">通讯录</text>
+            </view>
+        </view>
+        <view class="h50 boxb displayf altc">
+            <view class="color-666 fz14 border-right-ccc pr5">
+                <text class="displayib lh0">
+                    手机号
+                </text>
+                <text class="ml20 displayib lh0">+86</text>
+                <image style="width:10rpx;height:10rpx;" src="../../../imgs/common/areacode@2x.png"></image>
+            </view>
+            <view class="ml10 color-666 fz14">
+                <input type="number" placeholder="请填写手机号" placeholder-class="color-BBB" />
+            </view>
+        </view>
+    </view>
+    <view class="mauto mt50 h-88rpx w450 ohidden">
+        <button class="bg-F1604F fz18 colorf">确定</button>
+    </view>
+</view> 
