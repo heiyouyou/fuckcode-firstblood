@@ -1,0 +1,17 @@
+<!--pages/translate/index/index.wxml-->
+<view class="succ-box">
+  <view class='succ-icon'>
+    <image src='/pages/imgs/translate/success.png'></image>
+  </view>
+  <view class='succ-text'>
+    <p>支付成功</p>
+    <text>请注意查收翻译证件</text>
+  </view>
+  <view class='succ-server'>
+    <p>有任何问题请<text>联系客服</text></p>
+    <text>
+      Sky-car车来了将竭诚为您服务。
+    </text>
+  </view>
+</view>
+

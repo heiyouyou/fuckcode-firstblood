@@ -1,4 +1,4 @@
-// pages/translate/translate.js
+// pages/bus/index/index.js
 Page({
 
   /**

@@ -75,7 +75,7 @@
       <view class='pay-text'>立即支付<text class='pay-num'>198.00</text>元</view>
       <view class='choose-pay-btn'>
         <text class='pay-btn-cancel'>取消</text>
-        <text>确认</text>
+        <text data-url='/pages/translate/payment_succ/payment_succ' bindtap='go'>确认</text>
       </view>
     </view>
   </view>

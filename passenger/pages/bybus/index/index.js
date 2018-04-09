@@ -1,13 +1,17 @@
 // pages/bybus/index/index.js
+const app = getApp(),
+  util = require('../../../utils/util.js')
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
   
   },
-
+  go(e) {
+    let url = e.currentTarget.dataset.url
+    util.go(url)
+  },
   /**
    * 生命周期函数--监听页面加载
    */

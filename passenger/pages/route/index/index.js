@@ -23,8 +23,26 @@ Page({
   nextPay(){
     util.go('../payment/payment')
   },
+  // 阻止冒泡函数
   bubble(){
     console.log(2)
+  },
+  // 删除订单
+  deleteOrder(){
+    wx.showModal({
+      title: '确认删除',
+      content: '确定要删除订单吗？\r\n删除后无法找回哦！',
+      cancelText:'再想想',
+      cancelColor:'#999999',
+      confirmColor:'#F1604F',
+      success: function(res) {
+        if (res.confirm) {
+          console.log('用户点击确定')
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
   },
   /**
    * 生命周期函数--监听页面加载

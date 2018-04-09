@@ -145,10 +145,9 @@ map {
   padding-left: 68rpx;
   font-size: 14px;
 }
-
-.filter-content-box {
-  margin-bottom: 80px;
-  margin-top: 108px;
+.filter-content-box{
+  margin-bottom:80px;
+  margin-top:108px;
 }
 
 .filter-tab {
@@ -181,6 +180,10 @@ map {
   display: inline-block;
   padding: 2px 4px;
   margin-left: 10rpx;
+}
+.route-tag-img{
+  width:90rpx;
+  height:34rpx;
 }
 
 .content-padding {
@@ -251,35 +254,36 @@ map {
   height: 48rpx;
 }
 
-.comment-star:last-child {
-  margin: 0;
+.comment-star{
+  margin-right:34rpx;
+  width:50rpx;
+  height:48rpx;
 }
-
-.comment-textarea {
-  width: 548rpx;
-  height: 140rpx;
-  padding: 10px;
-  box-sizing: border-box;
-  margin: 0 auto;
-  border: 1px solid #ccc;
+.comment-star:last-child{
+  margin:0;
 }
-
-.comment-placeholder {
-  line-height: 140rpx;
-  text-align: center;
-  color: #ccc;
-  font-size: 14px;
+.comment-textarea{
+  width:548rpx;
+  height:140rpx;
+  padding:10px;
+  box-sizing:border-box;
+  margin:0 auto;
+  border:1px solid #ccc;
 }
-
-.comment-btn {
-  font-size: 18px;
-  color: #fff;
-  height: 100rpx;
-  width: 548rpx;
-  line-height: 50px;
-  border-radius: 4rpx;
+.comment-placeholder{
+  line-height:140rpx;
+  text-align:center;
+  color:#ccc;
+  font-size:14px;
 }
-
+.comment-btn{
+  font-size:18px;
+  color:#fff;
+  height:100rpx;
+  width:548rpx;
+  line-height:50px;
+  border-radius:4rpx;
+}
 /** by youyou end **/
 
 /* by Ethan start */
