@@ -1,0 +1,17 @@
+<!--pages/bus/index/index.wxml 结伴班车-->
+<!--pages/my/index/index.wxml-->
+<view class="container">
+  <view class='main-wrap'>
+    <text class='default-address'>[默认地址]</text>
+    <text>601 little lonsdale st,Melboune</text>
+  </view>
+  <view class='main-wrap'>
+    <text>601 little lonsdale st,Melbounelonsdale st,Mel
+boune</text>
+  </view>
+  <view class='main-wrap'>
+    <text>601 little lonsdale st,Melbounelonsdale st,Mel
+boune</text>
+  </view>
+</view>
+

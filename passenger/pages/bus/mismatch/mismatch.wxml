@@ -1,2 +1,8 @@
 <!--pages/bus/mismatch/mismatch.wxml 结伴班车-->
-<view>没有匹配班车</view>
+<view class='container'>
+  <view class='main-wrap'>
+    <text class='mismatch-title'>没有符合要求的班车？</text>
+    <text class='mismatch-text'>点击"立即创建"立即创建自己的班车</text>
+    <button class='creat-btn' data-url='/pages/bus/address/index' bindtap='go'>立即创建</button>
+  </view>
+</view>

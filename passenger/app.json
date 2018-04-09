@@ -1,8 +1,12 @@
 {
   "pages": [
-    "pages/index/index",
+    "pages/bus/join/index",
+    "pages/bus/address/index",
+    "pages/bus/mismatch/mismatch",
+    "pages/bus/detail/index",
     "pages/bus/index/index",
     "pages/bus/bus_list/index",
+    "pages/index/index",
     "pages/bybus/index/index",
     "pages/bybus/detail/index",
     "pages/bybus/search/index",
