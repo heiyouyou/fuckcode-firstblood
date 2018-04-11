@@ -1,20 +1,13 @@
-// pages/route/payment/payment.js
+// pages/my/addressAndContact/addressRewrite/addressRewrite.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    hide:true,
+  
   },
-  show(e){
-    this.setData({
-      hide:false
-    })
-  },
-  pay(e){
-    console.log(e)
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
