@@ -118,7 +118,7 @@
         </view>
     </view>
     <view class="w710 mauto displayf jscb" style="position:fixed;bottom:10px;right:0;left:0;">
-        <view class="displayf jscc flexdirec altc flex1 h50 bg-F1604F colorf mr5 border-radius-4rpx my-box-shadow" bindtap="show">
+        <view class="displayf jscc flexdirec altc flex1 h50 bg-F1604F colorf mr5 border-radius-4rpx my-box-shadow" bindtap="showPay">
             <view class="fz20">
                 ￥28
             </view>
@@ -126,7 +126,7 @@
                 在线预约，9.8折
             </view>
         </view>
-        <view class="displayf jscc flexdirec altc flex1 h50 bgw color-F1604F border-radius-4rpx my-box-shadow" bindtap="show">
+        <view class="displayf jscc flexdirec altc flex1 h50 bgw color-F1604F border-radius-4rpx my-box-shadow" bindtap="showPay">
             <view class="fz20">
                 ￥28
             </view>

@@ -51,9 +51,9 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Skycar",
-    "navigationBarTextStyle": "black"
+    "navigationBarBackgroundColor": "#F1604F",
+    "navigationBarTitleText": "SkyCar",
+    "navigationBarTextStyle": "white"
   },
   "tabBar": {
     "color": "#909090",

@@ -1,12 +1,13 @@
 {
   "pages":[
-    "pages/login/login",
-    "pages/index/index"
+    "pages/login/login/login",
+    "pages/login/index/index",
+    "pages/register/index/index"
   ],
   "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F1604F",
+    "navigationBarTitleText": "SkyCar",
+    "navigationBarTextStyle": "white"
   }
 }

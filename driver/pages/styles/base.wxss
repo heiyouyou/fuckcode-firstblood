@@ -5,6 +5,7 @@
 **/
 
 /*文字排版、颜色配置、行高等*/
+.fz10{font-size:10px!important;}
 .fz12{font-size:12px!important;}
 .fz13{font-size:13px!important;}
 .fz14{font-size:14px!important;}
@@ -51,6 +52,8 @@
 .text-gray{
     color:rgb(197, 190, 190);
 }
+.lh0{line-height:0;}
+.lh5{line-height:5px;}
 .lh10{line-height:10px;}
 .lh15{line-height:15px;}
 .lh16{line-height:16px;}
@@ -76,6 +79,8 @@
 .lh60{line-height:60px;}
 .lh65{line-height:65px;}
 .unl{text-decoration: underline;}
+.text-line-t{text-decoration: line-through;}
+.text-line-o{text-decoration: overline;}
 .no_unl{text-decoration: none;}
 .fwn{font-weight:normal;}
 .fwb{font-weight:bold;}
@@ -88,6 +93,7 @@
 .whites-pre{white-space: pre;}
 .whites-pl{white-space: pre-line;}
 .whites-pw{white-space: pre-wrap;}
+
 /*单行指定宽度的省略号*/
 .text-ellipsis{display:block;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;}
 .thidden50{display:block;max-width:50px !important;overflow:hidden !important;white-space:nowrap !important;text-overflow:ellipsis !important;}
@@ -101,6 +107,7 @@
 .thidden250{display:block;max-width:250px !important;overflow:hidden !important;white-space:nowrap !important;text-overflow:ellipsis !important;}
 .thidden300{display:block;max-width:300px !important;overflow:hidden !important;white-space:nowrap !important;text-overflow:ellipsis !important;}
 .thidden350{display:block;max-width:350px !important;overflow:hidden !important;white-space:nowrap !important;text-overflow:ellipsis !important;}
+/*单行指定宽度的省略号，不升级为块级元素的*/
 .thiddennb50{max-width:50px !important;overflow:hidden !important;white-space:nowrap !important;text-overflow:ellipsis !important;}
 .thiddennb100{max-width:100px !important;overflow:hidden !important;white-space:nowrap !important;text-overflow:ellipsis !important;}
 .thiddennb150{max-width:150px !important;overflow:hidden !important;white-space:nowrap !important;text-overflow:ellipsis !important;}
@@ -120,7 +127,7 @@
 .mt10{margin-top: 10px;}
 .mt15{margin-top: 15px;}
 .mt20{margin-top: 20px;}
-.mt25{margin-top: 20px;}
+.mt25{margin-top: 25px;}
 .mt30{margin-top: 30px;}
 .mt35{margin-top: 35px;}
 .mt40{margin-top: 40px;}
@@ -130,7 +137,11 @@
 .mb10{margin-bottom: 10px;}
 .mb15{margin-bottom: 15px;}
 .mb20{margin-bottom: 20px;}
+.mb25{margin-bottom: 25px;}
 .mb30{margin-bottom: 30px;}
+.mb35{margin-bottom: 35px;}
+.mb40{margin-bottom: 40px;}
+.mb45{margin-bottom: 45px;}
 .mb50{margin-bottom: 50px;}
 .mb60{margin-bottom: 60px;}
 .mb70{margin-bottom: 70px;}
@@ -140,12 +151,16 @@
 .ml15{margin-left: 15px;}
 .ml20{margin-left: 20px;}
 .ml30{margin-left: 30px;}
+.ml35{margin-left: 35px;}
+.ml40{margin-left: 40px;}
 .mr5{margin-right: 5px;}
 .mr10{margin-right: 10px;}
 .mr15{margin-right: 15px;}
 .mr20{margin-right: 20px;}
 .mr25{margin-right: 25px;}
+.mr35{margin-left: 35px;}
 .mr30{margin-right: 30px;}
+.mr40{margin-right: 40px;}
 .mrl5{margin:0 5px;}
 .mrl10{margin:0 10px;}
 .mrl15{margin:0 15px;}
@@ -166,29 +181,33 @@
 .mtblr20{margin:20px;}
 .mtblr25{margin:25px;}
 
-/*.pd10{padding: 10px;}
+.pd10{padding: 10px;}
 .pd15{padding: 15px;}
 .pd20{padding: 20px;}
-.pr30{padding: 30px;}*/
+.pd30{padding: 30px;}
 .pt5{padding-top: 5px;}
 .pt10{padding-top: 10px;}
 .pt15{padding-top: 15px;}
 .pt20{padding-top: 20px;}
+.pt25{padding-top: 25px;}
 .pt30{padding-top: 30px;}
 .pb5{padding-bottom: 5px;}
 .pb10{padding-bottom: 10px;}
 .pb15{padding-bottom: 15px;}
 .pb20{padding-bottom: 20px;}
+.pb25{padding-bottom: 25px;}
 .pb30{padding-bottom: 30px;}
 .pl5{padding-left: 5px;}
 .pl10{padding-left: 10px;}
 .pl15{padding-left: 15px;}
 .pl20{padding-left: 20px;}
+.pl25{padding-left: 25px;}
 .pl30{padding-left: 30px;}
 .pr5{padding-right: 5px;}
 .pr10{padding-right: 10px;}
 .pr15{padding-right: 15px;}
 .pr20{padding-right: 20px;}
+.pr25{padding-right: 25px;}
 .pr30{padding-right: 30px;}
 .patb5{padding:5px 0;}
 .parl5{padding:0 5px;}
@@ -217,6 +236,7 @@
 .w50{width:50px;}
 .w60{width:60px;}
 .w70{width:70px;}
+.w75{width:75px;}
 .w80{width:80px;}
 .w90{width:90px;}
 .w100{width:100px;}
@@ -276,6 +296,7 @@
 .h50{height:50px;}
 .h60{height:60px;}
 .h70{height:70px;}
+.h75{height:75px;}
 .h80{height:80px;}
 .h100{height:100px;}
 .h150{height:150px;}
@@ -418,6 +439,7 @@
 .order6{order:6;}
 .order7{order:7;}
 .order8{order:8;}
+
 /*弹性box布局相关属性*/
 .bdirectionr{-webkit-box-direction:reverse;-moz-box-direction:reverse;}
 .borientz{-webkit-box-orient:horizontal;}
@@ -479,6 +501,9 @@
 }
 .bg-purple{
     background-color:#673AB7;
+}
+.bg-opacity{
+    background-color:rgba(255,255,255,0);
 }
 
 /*透明度*/

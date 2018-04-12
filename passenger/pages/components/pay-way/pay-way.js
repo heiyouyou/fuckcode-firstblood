@@ -5,6 +5,11 @@ Component({
    * 组件的属性列表
    */
   properties: {
+    // 支付组件标题
+    'title':{
+      'type':String,
+      'value':"SKY-CAR在线支付",
+    },
     // 支付数额
     'payAmout':{
       'type':String,
@@ -21,8 +26,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-    title:"SKY-CAR在线支付",
-    payWay:1,//支付类型，1:余额支付,2:微信支付,3:支付宝支付
+    payWay:0,//支付类型，0:未选择支付方式,1:余额支付,2:微信支付,3:支付宝支付
     wayList:[
       {
         'way':1,
@@ -54,14 +58,18 @@ Component({
     // 确认支付
     _confirmPay(){
       let payWay = this.data.payWay
-      this.triggerEvent('payEvent',{payWay})
+      let payAmout = this.data.payAmout
+      this.triggerEvent('payEvent',{payWay,payAmout})
+      if(payWay==0){
+        return
+      } 
       this.maskToggle()
     },
     // 显示隐藏支付组件
     maskToggle(){
       app.maskToggle(this)
       this.setData({
-        payWay:1
+        payWay:0
       })
     },
   },
