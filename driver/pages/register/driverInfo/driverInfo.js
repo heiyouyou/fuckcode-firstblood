@@ -1,24 +1,17 @@
-// pages/register/index/index.js
+// pages/register/driverInfo/driverInfo.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    multiArray:[['中国','美国','日本'],['+86','0','1']],
-    multiIndex:[0,0],
-    countryCode:'+86'
+    cityArray: ['深圳市','墨尔本','洛杉矶','东京'],
+    index: 0,
   },
-  bindMultiPickerColumnChange(e){
-    console.log(e.detail)
-    let value = e.detail.value
+  bindPickerChange: function(e) {
     this.setData({
-      'multiIndex':[value,value]
-    })
-  },
-  bindMultiPickerChange(e){
-    this.setData({
-      'countryCode':this.data.multiArray[1][e.detail.value[1]]
+      index: e.detail.value,
+      city:this.data.cityArray[e.detail.value]
     })
   },
 

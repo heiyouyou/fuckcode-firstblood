@@ -1,8 +1,10 @@
 {
   "pages":[
+    "pages/register/driverCar/driverCar",
+    "pages/register/driverInfo/driverInfo",
+    "pages/register/index/index",
     "pages/login/login/login",
-    "pages/login/index/index",
-    "pages/register/index/index"
+    "pages/login/index/index"
   ],
   "window":{
     "backgroundTextStyle": "light",

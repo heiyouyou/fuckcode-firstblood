@@ -50,6 +50,15 @@
 .color-8F8E94{
     color:#8F8E94;
 }
+.color-4A90E2{
+    color:#4A90E2;
+}
+.color-C7C7CC{
+    color:#C7C7CC;
+}
+.color-D0021B{
+    color:#D0021B;
+}
 .highlight-text{
     color:#F1604F;
 }
@@ -118,6 +127,9 @@
 }
 .bg-C7C7CC{
     background:#C7C7CC;
+}
+.bg-f2f4f5{
+    background:#f2f4f5;
 }
 /* 背景色 end */
 
@@ -227,6 +239,9 @@
 }
 .border-C7C7CC{
     border:1rpx solid #C7C7CC;
+}
+.border-dashed-C7C7CC{
+    border:1rpx dashed #C7C7CC;
 }
 .border-00A0E9{
     border:1rpx solid #00A0E9;

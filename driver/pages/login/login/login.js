@@ -5,9 +5,22 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    multiArray:[['中国','美国','日本'],['+86','0','1']],
+    multiIndex:[0,0],
+    countryCode:'+86'
   },
-
+  bindMultiPickerColumnChange(e){
+    console.log(e.detail)
+    let value = e.detail.value
+    this.setData({
+      'multiIndex':[value,value]
+    })
+  },
+  bindMultiPickerChange(e){
+    this.setData({
+      'countryCode':this.data.multiArray[1][e.detail.value[1]]
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
