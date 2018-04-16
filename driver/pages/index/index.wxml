@@ -1,2 +1,53 @@
 <!--pages/index/index.wxml-->
-<text>pages/index/index.wxml</text>
+<view class="ohidden">
+    <view class="w710 mauto mt10 my-box-shadow bgw">
+        <view>
+            <swiper indicator-dots="true" autoplay="true" circular="true" indicator-color="#FFFFFF" indicator-active-color="#F1604F">
+                <block wx:for="{{imgUrls}}" wx:key="*this">
+                    <swiper-item>
+                    <image src="{{item}}" class="slide-image"/>
+                    </swiper-item>
+                </block>
+            </swiper>
+        </view>
+        <view class="index-navigation displayf altc jsca">
+            <block wx:for="{{navigationIcons}}" wx:key="*this">
+                <view class="displayf jscc altc flexdirec">
+                    <image class="index-navigation-icon" src="{{item.imgUrl}}"></image>
+                    <text class="fz12 color-666 mt10">{{item.title}}</text>
+                </view>
+            </block>
+        </view>
+    </view>
+    <view class="w710 mauto mt10 boxb parl25 my-box-shadow bgw">
+        <view class="patb15 border-bottom-ccc">
+            <text class="color-333 fz14">用户实时评价</text>
+        </view>
+        <view class="mt20">
+            <scroll-view scroll-y="true" bindscrolltolower="loadCommentData" style="height:510rpx;">
+                <view class="mb30" wx:for="{{[1,2,3,4,5]}}">
+                    <view class="displayf altc jscb">
+                        <view class="displayf">
+                            <image class="index-user-comment-avator bg-F1604F" src=""></image>
+                            <view class="ml15">
+                                <text class="color-666 fz14 displayb">张女士</text>
+                                <text class="color-909090 fz10 mt5">1小时前</text>
+                            </view>
+                        </view>
+                        <view class="alt-self-start">
+                            <image class="start-img" src="../../images/icon_home_star_light@2x.png"></image>
+                            <image class="start-img" src="../../images/icon_home_star_light@2x.png"></image>
+                            <image class="start-img" src="../../images/icon_home_star_light@2x.png"></image>
+                        </view>
+                    </view>
+                    <view class="mt10">
+                        <text class="fz14 color-333">这个司机特别棒，特别准时，Skycar特别棒，希望下次司机还能这么棒！</text>
+                    </view>
+                </view>
+                <view class="tc pb30" hidden="{{commentHide}}">
+                    <text class="color-999">没有更多评论~</text>
+                </view>
+            </scroll-view>
+        </view>
+    </view>
+</view>

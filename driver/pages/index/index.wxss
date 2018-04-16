@@ -1,1 +1,17 @@
 /* pages/index/index.wxss */
+.slide-image{
+    width:710rpx;
+    height:300rpx;
+}
+.index-navigation{
+    height:170rpx;
+}
+.index-navigation-icon{
+    width:40rpx;
+    height:38rpx;
+}
+.index-user-comment-avator{
+    width:74rpx;
+    height:74rpx;
+    border-radius:50%;
+}

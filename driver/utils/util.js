@@ -150,7 +150,7 @@ const getUserInfo = (cb) => {
   })
 }
 
-const updImg = ({count=1,sizeType=['original', 'compressed'],sourceType=['album', 'camera'],cb,url=server + '/upload'}={}) => {
+const updImg = ({count=1,sizeType=['original', 'compressed'],sourceType=['album', 'camera'],uploadCb,chooseImgCb,url=server + '/upload'}={}) => {
   let that = this
   wx.chooseImage({
     count: count, // 默认9
@@ -159,13 +159,13 @@ const updImg = ({count=1,sizeType=['original', 'compressed'],sourceType=['album'
     success: function (res) {
       // 返回选定照片的本地文件路径列表，imgPath可以作为img标签的src属性显示图片
       let ips = res.tempFilePaths
-
+      chooseImgCb&&chooseImgCb(ips);
       wx.uploadFile({
         url: url,
         filePath: ips[0],
         name: 'file',
         success: function (res) {
-          cb && cb(res)
+          uploadCb && uploadCb(res)
         }
       })
     }

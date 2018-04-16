@@ -1,30 +1,13 @@
-// pages/register/driverCar/driverCar.js
-let util = require('../../../utils/util')
+// pages/orders/index/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    previewUrls:['','','','','',''],
-    cindex:0,
-    ctype:0,
-    chide:true
+  
   },
-  uploadImg(e){
-    const that = this;
-    let index = e.currentTarget.dataset.type
-    util.updImg({
-      chooseImgCb(paths){
-        console.log(paths)
-        that.setData({
-          [`previewUrls[${index-1}]`]:paths[0],
-          ['ctype']:index,
-          ['chide']:false
-        })
-      }
-    })
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
