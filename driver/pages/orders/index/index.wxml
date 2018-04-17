@@ -1,2 +1,52 @@
 <!--pages/orders/index/index.wxml-->
-<text>pages/orders/index/index.wxml</text>
+<view class="ohidden bg-F2F2F2">
+    <view class="top-nav-box displayf altc jscb">
+        <view class="top-nav-item flex1 tc {{cindex==index?'active':''}}" data-type="{{index}}" wx:for="{{ordersNavs}}" bindtap="chooseType">
+            {{item}}
+        </view>
+    </view>
+    <view class="content-box">
+        <view class="content-item bgw border-bottom-E4E4E4 border-top-E4E4E4" wx:for="{{itemList}}">
+            <view class="content-item-title displayf altc jscb parl25">
+                <view>
+                    <text class="color-333 fz17">{{item}}</text>
+                </view>
+                <view>
+                    <text class="color-8F8E94 fz13 mr5">其他乘客地址点击查看</text>
+                    <image class="see-detail-icon bg-F1604F" src=""></image>
+                </view>
+            </view>
+            <view class="border-bottom-E4E4E4 border-top-E4E4E4 parl25">
+                <view class="displayf jscb altc mt10 mb10">
+                    <text class="color-8F8E94 fz13">最早出发时间</text>
+                    <text class="color-333 fz15">2017年7月16日 6：20</text>
+                </view>
+                <view class="displayf jscb altc mt10 mb10">
+                    <text class="color-8F8E94 fz13">出发地</text>
+                    <text class="color-333 fz15 thiddennb200">丰台区南湖公园102号丰台区南湖公园102号丰台区南湖公园102号</text>
+                </view>
+                <view class="displayf jscb altc mt10 mb10">
+                    <text class="color-8F8E94 fz13">目的地</text>
+                    <text class="color-333 fz15 thiddennb200">朝阳区大悦城</text>
+                </view>
+                <view class="displayf jscb altc mt10 mb10">
+                    <text class="color-8F8E94 fz13">同行人数</text>
+                    <text class="color-333 fz15">3 人</text>
+                </view>
+            </view>
+            <view class="parl25 content-item-footer displayf jscb altc">
+                <view>
+                    <text class="color-8F8E94 fz13 mr15 vm">行程费用</text><text class="fz22 color-F1604F vm">$4</text>
+                </view>
+                <view>
+                    <view class="qiangdan-btn">
+                        抢单
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="tc pb30 pt15" hidden="{{commentHide}}">
+        <text class="color-C7C7CC fz15">没有更多了~</text>
+    </view>
+</view>

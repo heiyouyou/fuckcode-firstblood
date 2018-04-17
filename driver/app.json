@@ -1,10 +1,10 @@
 {
   "pages":[
-    "pages/index/index",
     "pages/orders/index/index",
+    "pages/register/driverCar/driverCar",
+    "pages/index/index",
     "pages/order/index/index",
     "pages/my/index/index",
-    "pages/register/driverCar/driverCar",
     "pages/register/driverInfo/driverInfo",
     "pages/register/index/index",
     "pages/login/login/login",

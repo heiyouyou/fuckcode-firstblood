@@ -25,4 +25,59 @@ page{
   display:block;
   margin-bottom:54rpx;
 }
+/* 顶部Tab选项卡 start */
+.top-nav-box{
+  height:88rpx;
+  line-height:88rpx;
+  width:100%;
+  position:fixed;
+  background:#8F8E94;
+}
+.top-nav-box .top-nav-item{
+  font-size:15px;
+  color:#fff;
+  height:100%;
+  background:#8F8E94;
+}
+.top-nav-box .top-nav-item.active{
+  color:#F1604F;
+  background:#F2F2F2;
+  border-radius:8px 8px 0 0;
+}
+.top-nav-box .top-nav-item.active:first-child{
+  border-radius:0 8px 0 0;
+}
+.top-nav-box .top-nav-item.active:last-child{
+  border-radius:8px 0 0 0;
+}
+/* 顶部Tab选项卡 end */
+
+.content-box{
+  margin-top:140rpx;
+}
+.content-item-title{
+  min-height:120rpx;
+}
+.content-item{
+  margin-bottom:52rpx;
+}
+.content-item:last-child{
+  margin-bottom:0;
+}
+.content-item-footer{
+  min-height:140rpx;
+}
+.see-detail-icon{
+  width:12rpx;
+  height:22rpx; 
+}
+.qiangdan-btn{
+  height:80rpx; 
+  line-height:80rpx;
+  text-align:center; 
+  background:rgba(241,96,79,1);
+  border-radius: 50rpx ; 
+  font-size:15px;
+  color:#fff;
+}
 /* by youyou end */

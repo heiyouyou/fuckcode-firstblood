@@ -5,9 +5,17 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    cindex:0,
+    ordersNavs:['结伴班车','机场接送','预约用车','包车旅游'],
+    itemList:['上班小分队','kevin小班车','Skycar']
   },
-
+  // tab选择
+  chooseType(e){
+    let type = e.currentTarget.dataset['type'];
+    this.setData({
+      cindex:type
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

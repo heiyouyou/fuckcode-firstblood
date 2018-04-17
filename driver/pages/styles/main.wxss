@@ -131,6 +131,9 @@
 .bg-f2f4f5{
     background:#f2f4f5;
 }
+.bg-F2F2F2{
+    background:#F2F2F2;
+}
 /* 背景色 end */
 
 /* 图标大小 start */
@@ -239,6 +242,21 @@
 }
 .border-C7C7CC{
     border:1rpx solid #C7C7CC;
+}
+.border-bottom-E4E4E4{
+    border-bottom:1rpx solid #E4E4E4;
+}
+.border-right-E4E4E4{
+    border-right:1rpx solid #E4E4E4;
+}
+.border-left-E4E4E4{
+    border-right:1rpx solid #E4E4E4;
+}
+.border-top-E4E4E4{
+    border-top:1rpx solid #E4E4E4;
+}
+.border-E4E4E4{
+    border:1rpx solid #E4E4E4;
 }
 .border-dashed-C7C7CC{
     border:1rpx dashed #C7C7CC;

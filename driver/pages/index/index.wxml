@@ -25,7 +25,7 @@
         </view>
         <view class="mt20">
             <scroll-view scroll-y="true" bindscrolltolower="loadCommentData" style="height:510rpx;">
-                <view class="mb30" wx:for="{{[1,2,3,4,5]}}">
+                <view class="mb30" wx:for="{{[1,2,3,4,5]}}" wx:key="*this">
                     <view class="displayf altc jscb">
                         <view class="displayf">
                             <image class="index-user-comment-avator bg-F1604F" src=""></image>
