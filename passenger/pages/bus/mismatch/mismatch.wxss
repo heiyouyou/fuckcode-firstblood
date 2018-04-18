@@ -1,5 +1,8 @@
 /* pages/bus/mismatch/mismatch.wxss */
 /*edit by lewyon   */
+.container{
+  padding: 0;
+}
 .main-wrap{
   height: 100%;
   display: flex;
