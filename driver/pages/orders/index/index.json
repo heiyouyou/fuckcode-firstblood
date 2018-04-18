@@ -1,1 +1,6 @@
-{}
+{
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F1604F",
+    "navigationBarTitleText": "接单页面",
+    "navigationBarTextStyle": "white"
+}

@@ -59,6 +59,15 @@
 .color-D0021B{
     color:#D0021B;
 }
+.color-F19E4F{
+    color:#F19E4F;
+}
+.color-338594{
+    color:#338594;
+}
+.color-3CB657{
+    color:#3CB657;
+}
 .highlight-text{
     color:#F1604F;
 }
@@ -84,6 +93,9 @@
     width:70rpx;
 }
 
+.h120{
+    height:120rpx;
+}
 .h150{
     height:150rpx;
 }
@@ -186,13 +198,17 @@
     width:27rpx;
     height:27rpx;
 }
+.icon-size-30{
+    width:30rpx;
+    height:30rpx;
+}
 .icon-size-32{
     width:32rpx;
     height:32rpx;
 }
-.icon-size-30{
-    width:30rpx;
-    height:30rpx;
+.icon-size-36{
+    width:36rpx;
+    height:36rpx;
 }
 .icon-size-40{
     width:40rpx;
@@ -201,6 +217,10 @@
 .icon-size-44{
     width:44rpx;
     height:44rpx;
+}
+.icon-size-88{
+    width:88rpx;
+    height:88rpx;
 }
 .icon-size-120{
     width:120rpx;
@@ -242,6 +262,21 @@
 }
 .border-C7C7CC{
     border:1rpx solid #C7C7CC;
+}
+.border-bottom-DCDCDC{
+    border-bottom:1rpx solid #DCDCDC;
+}
+.border-right-DCDCDC{
+    border-right:1rpx solid #DCDCDC;
+}
+.border-left-DCDCDC{
+    border-right:1rpx solid #DCDCDC;
+}
+.border-top-DCDCDC{
+    border-top:1rpx solid #DCDCDC;
+}
+.border-DCDCDC{
+    border:1rpx solid #DCDCDC;
 }
 .border-bottom-E4E4E4{
     border-bottom:1rpx solid #E4E4E4;

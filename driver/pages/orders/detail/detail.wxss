@@ -1,0 +1,12 @@
+/* pages/orders/detail/detail.wxss */
+.detail-list-item{
+    height:72rpx;
+}
+.driver-nav-img{
+    width:94rpx;
+    height:36rpx;
+}
+#map{
+    height:250px;
+    width:100%;
+}

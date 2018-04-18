@@ -18,6 +18,15 @@ page{
   border-radius:30px;
   box-sizing:border-box;
 }
+.common-F1604F-btn{
+  width:650rpx;
+  height:80rpx; 
+  line-height:80rpx; 
+  background:rgba(241,96,79,1);
+  border-radius: 50rpx; 
+  color:#fff;
+  font-size:15px;
+}
 .login-nav-title{
   font-size:68rpx;
   color:#333;
@@ -43,6 +52,9 @@ page{
   color:#F1604F;
   background:#F2F2F2;
   border-radius:8px 8px 0 0;
+}
+.top-nav-box .top-nav-item.active + .top-nav-item{
+  border-radius:0 0 0 8px;
 }
 .top-nav-box .top-nav-item.active:first-child{
   border-radius:0 8px 0 0;
@@ -79,5 +91,17 @@ page{
   border-radius: 50rpx ; 
   font-size:15px;
   color:#fff;
+}
+.pay-oncar{
+  width:110rpx;
+  height:40rpx;
+}
+.tag-btn{
+  min-width:120rpx;
+  height:40rpx; 
+  line-height:40rpx; 
+  padding:0 3px;
+  border-radius: 4rpx ; 
+  border:1px solid #F1604F;
 }
 /* by youyou end */

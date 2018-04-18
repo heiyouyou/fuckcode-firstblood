@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/orders/detail/detail",
     "pages/orders/index/index",
     "pages/register/driverCar/driverCar",
     "pages/index/index",

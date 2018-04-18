@@ -1,23 +1,29 @@
-// pages/orders/index/index.js
+// pages/orders/detail/detail.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    cindex:0,
-    ordersNavs:['结伴班车','机场接送','预约用车','包车旅游'],
-    itemList:['上班小分队','kevin小班车','Skycar'],
-    airItemList:['接机','送机','往返'],
-    airItemImgUrl:['../../../images/icon_pickup@2x.png','../../../images/icon_send copy@2x.png','../../../images/icon_goandback@2x.png']
+    markers: [{
+      // iconPath: "/resources/others.png",
+      id: 0,
+      latitude: 23.099994,
+      longitude: 113.324520,
+      width: 30,
+      height: 30,
+      alpha:0,
+      callout:{
+        content:'test',
+        color:'#fff',
+        bgColor:'#F1604F',
+        display:'ALWAYS',
+        padding:20,
+        borderRadius:40
+      }
+    }],
   },
-  // tab选择
-  chooseType(e){
-    let type = e.currentTarget.dataset['type'];
-    this.setData({
-      cindex:type
-    })
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
