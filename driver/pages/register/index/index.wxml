@@ -1,0 +1,40 @@
+<!--pages/register/index/index.wxml-->
+<view class="ohidden bgw h">
+    <view class="w660 mauto mt40">
+        <view style="width:338rpx;">
+            <text class="color-333 login-nav-title" style="font-size:20px;">欢迎您申请SkyCar 车来了车主认证</text>
+        </view>
+        <view>
+            <view class="border-bottom-F1604F">
+                <text class="fz13 color-8F8E94">手机号</text>
+                <view class="patb10 displayf mt5">
+                    <view class="border-right-C7C7CC pr5 mr10" style="min-width:40px;">
+                        <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+                            <text class="fz15 color-333 mr5 vm">{{countryCode}}</text>
+                            <image class="icon-size-30 vm" mode="aspectFit" src="../../../images/login_btn_number@2x.png"></image>
+                        </picker>
+                    </view>
+                    <view class="flex1">
+                        <input class="login-input fz15 color-333" type="number" placeholder-class="color-C7C7CC" placeholder="请输入您的手机号"/>
+                    </view>
+                </view>
+            </view>
+            <view class="border-bottom-C7C7CC mt10">
+                <text class="fz13 color-8F8E94">验证码</text>
+                <view class="patb10 displayf mt5 w pr">
+                    <view class="bgw pt5 pb5 pr10 pl10" style="position:absolute;right:0;z-index:22;">
+                        <text class="fz15 color-F1604F">获取验证码</text>
+                    </view>
+                    <view class="flex1">
+                        <input class="login-input fz15 color-333" type="" placeholder-class="color-C7C7CC" placeholder="请输入您的密码"/>
+                    </view>
+                </view>                
+            </view>
+        </view>
+    </view>
+    <view class="w550 mauto mt30">
+        <view class="mb30">
+            <button class="common-btn bg-C7C7CC colorf">确定</button>
+        </view>
+    </view>
+</view>

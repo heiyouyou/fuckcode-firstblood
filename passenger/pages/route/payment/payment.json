@@ -1,5 +1,8 @@
 {
     "navigationBarBackgroundColor": "#F1604F",
     "navigationBarTextStyle":"white",	
-    "navigationBarTitleText":"支付订单"
+    "navigationBarTitleText":"支付订单",
+    "usingComponents":{
+        "pay-way":"/pages/components/pay-way/pay-way"
+    }
 }

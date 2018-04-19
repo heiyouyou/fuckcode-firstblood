@@ -140,7 +140,7 @@
 
   <view class='btn-wrap'>
     <view class='tips' wx:if="{{flag==0}}">以实际降落时间开始计算，免费等待90分钟</view>
-    <button class='main-btn' wx:if="{{flag != 2}}" bindtap='onCheck'>立即查询</button>
+    <button class='main-btn' wx:if="{{flag != 2}}" data-url='/pages/air/oneWayBill/oneWayBill' bindtap='go'>立即查询</button>
     <button class='main-btn' wx:if="{{flag==2}}" data-url='/pages/air/next/next' bindtap='go'>继续</button>
   </view>
 </view>

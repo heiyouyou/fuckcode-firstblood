@@ -3,7 +3,12 @@
 .main-form {
   height: 23%;
 }
-
+.main-form .item {
+  margin-left: 80rpx;
+}
+.start:before, .end:before {
+  left: -40rpx;
+}
 map {
   height: 77%;
 }

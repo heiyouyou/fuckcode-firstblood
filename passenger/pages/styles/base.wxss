@@ -502,7 +502,9 @@
 .bg-purple{
     background-color:#673AB7;
 }
-
+.bg-opacity{
+    background-color:rgba(255,255,255,0);
+}
 /*透明度*/
 .opa0{opacity:0;}
 .opa01{opacity:.1;}

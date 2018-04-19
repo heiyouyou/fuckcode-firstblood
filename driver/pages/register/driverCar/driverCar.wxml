@@ -1,0 +1,142 @@
+<!--pages/register/driverCar/driverCar.wxml-->
+<view class="bgw">
+    <view class="bg-f2f4f5">
+        <view class="my-box-shadow bgw pt25">
+            <view class="w660 mauto">
+                <view class="border-bottom-C7C7CC mb15">
+                    <text class="fz13 color-8F8E94">车型</text>
+                    <view class="patb10 displayf w pr">
+                        <view class="flex1">
+                            <input class="fz15 color-333" type="" placeholder-class="color-C7C7CC" placeholder="您的车型，例如SUV"/>
+                        </view>
+                    </view>                
+                </view>
+                <view class="border-bottom-C7C7CC mb15">
+                    <text class="fz13 color-8F8E94">车牌号</text>
+                    <view class="patb10 displayf w pr">
+                        <view class="flex1">
+                            <input class="login-input fz15 color-333" type="" placeholder-class="color-C7C7CC" placeholder="请输入您的车牌号"/>
+                        </view>
+                    </view>                
+                </view>
+                <view class="border-bottom-C7C7CC mb15">
+                    <text class="fz13 color-8F8E94">护照号</text>
+                    <view class="patb10 displayf w pr">
+                        <view class="flex1">
+                            <input class="login-input fz15 color-333" type="number" placeholder-class="color-C7C7CC" placeholder="请输入您的护照号码"/>
+                        </view>
+                    </view>                
+                </view>
+                <view class="border-bottom-C7C7CC mb15">
+                    <text class="fz13 color-8F8E94">汽车品牌</text>
+                    <view class="patb10 displayf w pr">
+                        <view class="flex1">
+                            <input class="login-input fz15 color-333" type="number" placeholder-class="color-C7C7CC" placeholder="请输入您的汽车品牌"/>
+                        </view>
+                    </view>                
+                </view>
+                <view class="mb10">
+                    <text class="fz13 color-8F8E94">手机号</text>
+                    <view class="patb10 displayf w pr">
+                        <view class="flex1">
+                            <input class="login-input fz15 color-333" type="number" placeholder-class="color-C7C7CC" placeholder="请输入您的手机号"/>
+                        </view>
+                    </view>                
+                </view>
+            </view>
+        </view>
+        <view class="my-box-shadow bgw">
+            <view class="w660 mauto pt25">
+                <view class="displayf jscb mb50" wx:for="{{[1,2,3]}}" wx:for-index="pindex" wx:for-item="pitem">
+                    <view class="flex1 mr5 pr" wx:for="{{[1,2]}}" wx:for-index="sitem" wx:for-item="sitem">
+                        <text class="fz13 color-8F8E94">汽车全险</text>
+                        <view class="border-dashed-C7C7CC img-preview-box mt10 displayf jscc altc flexdirec ohidden pr" bindtap="uploadImg" data-type="{{}}">
+                            <image class="img-preview-icon" src="../../../images/icon_uploadpictures@2x.png"></image>
+                            <text class="fz15 color-C7C7CC mt10">点击上传照片</text>
+                            <image class="preview-img" src="{{previewUrls[0]}}"></image>
+                            <view class="re-upload-box" hidden="{{!ctype==1&&chide}}">
+                                <text class="fz13">点击重新上传</text>
+                            </view>
+                        </view>
+                        <view class="waring-info-box" hidden="{{!ctype==1&&chide}}">
+                            <text class="color-D0021B fz13">*请您上传真实图片</text>
+                        </view>
+                    </view>
+                </view>
+                <view class="displayf jscb mb50" hidden>
+                    <view class="flex1 mr5 pr">
+                        <text class="fz13 color-8F8E94">汽车全险</text>
+                        <view class="border-dashed-C7C7CC img-preview-box mt10 displayf jscc altc flexdirec ohidden pr" bindtap="uploadImg" data-type="1">
+                            <image class="img-preview-icon" src="../../../images/icon_uploadpictures@2x.png"></image>
+                            <text class="fz15 color-C7C7CC mt10">点击上传照片</text>
+                            <image class="preview-img" src="{{previewUrls[0]}}"></image>
+                            <view class="re-upload-box" hidden="{{!ctype==1&&chide}}">
+                                <text class="fz13">点击重新上传</text>
+                            </view>
+                        </view>
+                        <view class="waring-info-box" hidden="{{!ctype==1&&chide}}">
+                            <text class="color-D0021B fz13">*请您上传真实图片</text>
+                        </view>
+                    </view>
+                    <view class="flex1 pr">
+                        <text class="fz13 color-8F8E94">手持护照实例</text>
+                        <view class="border-dashed-C7C7CC img-preview-box mt10 displayf jscc altc flexdirec ohidden pr" data-type="2">
+                            <image class="img-preview-icon displayb" src="../../../images/icon_uploadpictures@2x.png"></image>
+                            <text class="fz15 color-C7C7CC mt10">点击上传照片</text>
+                            <image class="preview-img" src="{{previewsUrls[1]}}"></image>
+                            <view class="re-upload-box">
+                                <text class="fz13">点击重新上传</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="displayf jscb mb50" hidden>
+                    <view class="flex1 mr5 pr">
+                        <text class="fz13 color-8F8E94">驾照</text>
+                        <view class="border-dashed-C7C7CC img-preview-box mt10 displayf jscc altc flexdirec ohidden pr" data-type="3">
+                            <image class="img-preview-icon" src="../../../images/icon_uploadpictures@2x.png"></image>
+                            <text class="fz15 color-C7C7CC mt10">点击上传照片</text>
+                            <view class="re-upload-box">
+                                <text class="fz13">点击重新上传</text>
+                            </view>
+                        </view>
+                        <view class="waring-info-box">
+                            <text class="color-D0021B fz13">*请您上传真实图片</text>
+                        </view>
+                    </view>
+                    <view class="flex1 pr">
+                        <text class="fz13 color-8F8E94">手持护照</text>
+                        <view class="border-dashed-C7C7CC img-preview-box mt10 displayf jscc altc flexdirec ohidden pr" data-type="4">
+                            <image class="img-preview-icon displayb" src="../../../images/icon_uploadpictures@2x.png"></image>
+                            <text class="fz15 color-C7C7CC mt10">点击上传照片</text>
+                            <view class="re-upload-box">
+                                <text class="fz13">点击重新上传</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="displayf jscb" hidden>
+                    <view class="flex1 mr5 pr">
+                        <text class="fz13 color-8F8E94">汽车正面图</text>
+                        <view class="border-dashed-C7C7CC img-preview-box mt10 displayf jscc altc flexdirec ohidden pr" data-type="5">
+                            <image class="img-preview-icon" src="../../../images/icon_uploadpictures@2x.png"></image>
+                            <text class="fz15 color-C7C7CC mt10">点击上传照片</text>
+                        </view>
+                    </view>
+                    <view class="flex1 pr">
+                        <text class="fz13 color-8F8E94">汽车侧面图</text>
+                        <view class="border-dashed-C7C7CC img-preview-box mt10 displayf jscc altc flexdirec ohidden pr" data-type="6">
+                            <image class="img-preview-icon displayb" src="../../../images/icon_uploadpictures@2x.png"></image>
+                            <text class="fz15 color-C7C7CC mt10">点击上传照片</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="w550 mauto mt30">
+                <view class="pb30">
+                    <button class="common-btn bg-C7C7CC colorf">提交申请</button>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

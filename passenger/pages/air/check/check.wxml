@@ -28,7 +28,7 @@
       </view>
       <view class='plan-detail'>
         <text>{{item.planCo}}</text>
-        <view class='dp-flex jc-cen'>
+        <view class='dp-flex jc-cnt'>
           <view class='plan-detail-txt'>
             <view>{{item.start}}</view>
             <view>{{item.startPlan}}</view>
