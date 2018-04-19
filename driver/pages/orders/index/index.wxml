@@ -8,7 +8,7 @@
     <!-- 结伴班车 start -->
     <view class="content-box" wx:if="{{cindex==0}}">
         <view class="content-item bgw border-bottom-E4E4E4 border-top-E4E4E4" wx:for="{{itemList}}">
-            <view class="content-item-title displayf altc jscb parl25">
+            <view class="content-item-title displayf altc jscb parl25" bindtap="next">
                 <view>
                     <text class="color-333 fz17">{{item}}</text>
                 </view>
@@ -51,7 +51,7 @@
     <!-- 机场接送 start -->
     <view class="content-box" wx:if="{{cindex==1}}">
         <view class="content-item bgw border-bottom-E4E4E4 border-top-E4E4E4" wx:for="{{airItemList}}">
-            <view class="content-item-title displayf altc jscb pt10 pb10">
+            <view class="content-item-title displayf altc jscb pt10 pb10" bindtap="next">
                 <view class="displayf altc jscc flexdirec flex1 border-right-E4E4E4">  
                     <view class="mb5">
                         <image class="airplane-icon vb" src="{{airItemImgUrl[index]}}"></image>
@@ -99,7 +99,7 @@
     <!-- 预约用车 start -->
     <view class="content-box" wx:if="{{cindex==2}}">
         <view class="content-item bgw border-bottom-E4E4E4 border-top-E4E4E4" wx:for="{{airItemList}}">
-            <view class="content-item-title displayf altc jscb pl25 pt10 pb10">
+            <view class="content-item-title displayf altc jscb pl25 pt10 pb10" bindtap="next">
                 <view class="displayf jscc flexdirec w150 border-right-E4E4E4">  
                     <text class="color-8F8E94 fz13 mb5">等待接单</text>
                     <text class="color-333 fz15">12月16日 17：00</text>
@@ -138,7 +138,7 @@
     <!-- 包车旅游 start -->
     <view class="content-box" wx:if="{{cindex==3}}">
         <view class="content-item bgw border-bottom-E4E4E4 border-top-E4E4E4" wx:for="{{airItemList}}">
-            <view class="content-item-title displayf altc jscb pl25 pr25">
+            <view class="content-item-title displayf altc jscb pl25 pr25" bindtap="next">
                 <view class="displayf jscc flexdirec">  
                     <text class="color-333 fz17">包车</text>
                 </view>

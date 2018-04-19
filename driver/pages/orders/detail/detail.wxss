@@ -1,6 +1,6 @@
 /* pages/orders/detail/detail.wxss */
 .detail-list-item{
-    height:72rpx;
+    height:74rpx;
 }
 .driver-nav-img{
     width:94rpx;

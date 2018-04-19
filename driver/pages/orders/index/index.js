@@ -1,11 +1,13 @@
 // pages/orders/index/index.js
+let util = require('../../../utils/util')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    cindex:0,
+    cindex:0,//当前接单类型，0:结伴班车,1:机场接送,2:预约用车,3:包车旅游,
+    orderId:0,//订单id
     ordersNavs:['结伴班车','机场接送','预约用车','包车旅游'],
     itemList:['上班小分队','kevin小班车','Skycar'],
     airItemList:['接机','送机','往返'],
@@ -18,11 +20,14 @@ Page({
       cindex:type
     })
   },
+  next(){
+    util.go(`../detail/detail?type=${this.data.cindex}&orderId=${this.data.orderId}`)
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    
   },
 
   /**
@@ -36,7 +41,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    wx.setNavigationBarTitle({
+      title:'接单页面'
+    })
   },
 
   /**
@@ -72,5 +79,5 @@ Page({
    */
   onShareAppMessage: function () {
   
-  }
+  },
 })

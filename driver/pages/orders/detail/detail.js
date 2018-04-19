@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    ordersType:0,
     markers: [{
       // iconPath: "/resources/others.png",
       id: 0,
@@ -12,7 +13,6 @@ Page({
       longitude: 113.324520,
       width: 30,
       height: 30,
-      alpha:0,
       callout:{
         content:'test',
         color:'#fff',
@@ -28,14 +28,19 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    console.log(options)
+    this.setData({
+      ordersType:options.type
+    })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+    wx.setNavigationBarTitle({
+      title:'订单详情'
+    })
   },
 
   /**

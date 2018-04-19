@@ -1,102 +1,123 @@
 <!--pages/orders/detail/detail.wxml-->
-<view class="bgw">
-    <view class="h120 displayf altc jscb pl20 pr25 boxb border-bottom-DCDCDC">
-        <view class="displayf altc">
+<view class="bg-F9F9F9">
+    <view class="h120 displayf altc jscb pl20 pr25 boxb border-bottom-DCDCDC bgw">
+        <view class="displayf altc" wx:if="{{ordersType!=3}}">
             <image class="icon-size-88 bg-F1604F br50" src=""></image>
             <view class="ml15">
                 <view>
                     <text class="color-333 fz15 mr5 vm">上班小分队</text>
-                    <text class="color-F1604F fz12 tag-btn">结伴班车</text>
+                    <text class="color-F1604F fz12 tag-btn" wx:if="{{ordersType==0}}">结伴班车</text>
                 </view>
                 <text class="fz13 color-8F8E94 mr5">3.5</text>
                 <image class="icon-size-22" src="../../../images/icon_home_star_light@2x.png"></image>
             </view>
         </view>
-        <text class="alt-self-end color-C7C7CC fz13 mb10">订单号 4585125841</text>
+        <text class="alt-self-end color-C7C7CC fz13 mb10" wx:if="{{ordersType!=0&&ordersType!=3}}">订单号 4585125841</text>
+        <view class="displayf flexdirec jscc" wx:if="{{ordersType==3}}">
+            <text class="fz15 color-333">墨尔本</text>
+            <text class="fz13 color-8F8E94">豪华八座</text>
+        </view>
+        <view class="alt-self-end mb10" wx:if="{{ordersType==3}}">
+            <text class="fz13 color-8F8E94">订单总额</text>
+            <text class="fz20 color-F1604F ml15">$17550</text>
+        </view>
     </view>
     <view>
-        <view class="displayf altc jscb detail-list-item pl20 pr25 fz15 border-bottom-DCDCDC">
-            <view>
-                <text class="color-C7C7CC vm mr20">订单号</text>
-                <text class="color-333">74362952217</text>
+        <view class="bgw" wx:if="{{ordersType==3}}">
+            <view class="displayf altc jscb detail-list-item pl20 pr25 fz15 border-bottom-DCDCDC">
+                <view>
+                    <text class="color-C7C7CC vm mr20">订单号</text>
+                    <text class="color-333">74362952217</text>
+                </view>
+                <view>
+                </view>
             </view>
-            <view>
-            </view>
-        </view>
-        <view class="displayf altc jscb detail-list-item pl20 pr25 fz15 border-bottom-DCDCDC">
-            <view>
-                <text class="color-C7C7CC vm mr20">出发地</text>
-                <text class="color-333">301 Collin Rd, clayton</text>
-            </view>
-            <view>
-                <image class="driver-nav-img" src="../../../images/btn_location@2x.png"></image>
-            </view>
-        </view>
-        <view class="displayf altc jscb detail-list-item pl20 pr25 fz15 border-bottom-DCDCDC">
-            <view>
-                <image class="icon-size-36 mr15 vm" src="../../../images/icon_order_destination copy 2@2x.png"></image>
-                <text class="color-333 vm">Clayton</text>
-            </view>
-            <view>
-                <image class="driver-nav-img" src="../../../images/btn_location@2x.png"></image>
+            <view class="displayf altc jscb detail-list-item pl20 pr25 fz15 border-bottom-DCDCDC mb10">
+                <view>
+                    <text class="color-C7C7CC vm mr20">出发地</text>
+                    <text class="color-333">301 Collin Rd, clayton</text>
+                </view>
+                <view class="patb5">
+                    <image class="driver-nav-img" src="../../../images/btn_location@2x.png"></image>
+                </view>
             </view>
         </view>
-        <view class="displayf altc jscb detail-list-item pl20 pr25 fz15 border-bottom-DCDCDC">
-            <view>
-                <image class="icon-size-36 mr15 vm" src="../../../images/icon_order_destination copy 2@2x.png"></image>
-                <text class="color-333 vm">301 Collin Rd, clayton</text>
+        <view class="bgw" wx:if="{{ordersType!=3}}">
+            <view class="displayf altc jscb detail-list-item pl20 pr25 fz15 border-bottom-DCDCDC">
+                <view>
+                    <image class="icon-size-36 mr15 vm" src="../../../images/icon_order_destination@2x.png"></image>
+                    <text class="color-333 vm">Clayton</text>
+                </view>
+                <view class="patb5">
+                    <image class="driver-nav-img" src="../../../images/btn_location@2x.png"></image>
+                </view>
             </view>
-            <view>
-                <image class="driver-nav-img" src="../../../images/btn_location@2x.png"></image>
+            <view class="displayf altc jscb detail-list-item pl20 pr25 fz15 border-bottom-DCDCDC">
+                <view>
+                    <image class="icon-size-36 mr15 vm" src="../../../images/icon_order_destination@2x.png"></image>
+                    <text class="color-333 vm">301 Collin Rd, clayton</text>
+                </view>
+                <view class="patb5">
+                    <image class="driver-nav-img" src="../../../images/btn_location@2x.png"></image>
+                </view>
+            </view>
+            <view class="displayf altc jscb detail-list-item pl20 pr25 fz15 border-bottom-DCDCDC mb10">
+                <view>
+                    <image class="icon-size-36 mr15 vm" src="../../../images/icon_order_destination_black@2x.png"></image>
+                    <text class="color-333 vm">墨尔本机场</text>
+                </view>
+                <view>
+                </view>
             </view>
         </view>
-        <view class="displayf altc jscb detail-list-item pl20 pr25 fz15 border-bottom-DCDCDC mb10">
+        <view class="displayf altc jscb detail-list-item pl20 pr25 fz15 border-top-DCDCDC bgw" wx:if="{{ordersType!=3}}">
             <view>
-                <image class="icon-size-36 mr15 vm" src="../../../images/icon_order_destination_black copy 2@2x.png"></image>
-                <text class="color-333 vm">墨尔本机场</text>
-            </view>
-            <view>
-            </view>
-        </view>
-        <view class="displayf altc jscb detail-list-item pl20 pr25 fz15 border-bottom-DCDCDC border-top-DCDCDC">
-            <view>
-                <image class="icon-size-36 mr15 vm" src="../../../images/icon_order_destination copy 2@2x.png"></image>
+                <image class="icon-size-36 mr15 vm" src="../../../images/icon_order_destination@2x.png"></image>
                 <text class="color-C7C7CC vm">创建时间</text>
             </view>
             <view>
                 <text class="color-333">2017/07/16 09：00：43</text>
             </view>
         </view>
-        <view class="displayf altc jscb detail-list-item pl20 pr25 fz15 border-bottom-DCDCDC">
+        <view class="displayf altc jscb detail-list-item pl20 pr25 fz15 border-bottom-DCDCDC border-top-DCDCDC bgw">
             <view>
-                <image class="icon-size-36 mr15 vm" src="../../../images/icon_order_time copy 2@2x.png"></image>
+                <image class="icon-size-36 mr15 vm" src="../../../images/icon_order_time@2x.png"></image>
                 <text class="color-C7C7CC vm">出发时间</text>
             </view>
             <view>
                 <text class="color-333">2017/07/16 09：00：43</text>
             </view>
         </view>
-        <view class="displayf altc jscb detail-list-item pl20 pr25 fz15 border-bottom-DCDCDC">
+        <view class="displayf altc jscb detail-list-item pl20 pr25 fz15 border-bottom-DCDCDC bgw">
             <view>
-                <image class="icon-size-36 mr15 vm" src="../../../images/icon_order_nubmer copy 2@2x.png"></image>
+                <image class="icon-size-36 mr15 vm" src="../../../images/icon_order_nubmer@2x.png"></image>
                 <text class="color-C7C7CC vm">同行人数</text>
             </view>
             <view>
                 <text class="color-333">3 人</text>
             </view>
         </view>
-        <view class="displayf altc jscb detail-list-item pl20 pr25 fz15 border-bottom-DCDCDC mb10">
+        <view class="displayf altc jscb detail-list-item pl20 pr25 fz15 border-bottom-DCDCDC mb10 bgw">
             <view>
-                <image class="icon-size-36 mr15 vm" src="../../../images/icon_order_luggage copy 2@2x.png"></image>
+                <image class="icon-size-36 mr15 vm" src="../../../images/icon_order_luggage@2x.png"></image>
                 <text class="color-C7C7CC vm">行李数</text>
             </view>
             <view>  
                 <text class="color-333">2 大件行李 丨 1 小件行李</text>
             </view>
         </view>
-        <view class="displayf altc jscb detail-list-item pl20 pr25 fz15 border-bottom-DCDCDC border-top-DCDCDC">
+        <view class="displayf altc jscb detail-list-item pl20 pr25 fz15 border-bottom-DCDCDC border-top-DCDCDC mb10 bgw" wx:if="{{ordersType==3}}">
             <view>
-                <image class="icon-size-36 mr15 vm" src="../../../images/icon_order_wait copy 2@2x.png"></image>
+                <image class="icon-size-36 mr15 vm" src="../../../images/icon_order_luggage@2x.png"></image>
+                <text class="color-C7C7CC vm">需要车型</text>
+            </view>
+            <view>  
+                <text class="color-333">豪华8座</text>
+            </view>
+        </view>
+        <view class="displayf altc jscb detail-list-item pl20 pr25 fz15 border-bottom-DCDCDC border-top-DCDCDC bgw">
+            <view>
+                <image class="icon-size-36 mr15 vm" src="../../../images/icon_order_wait@2x.png"></image>
                 <text class="color-F1604F vm">等待接单/伙伴</text>
             </view>
             <view>  
@@ -104,11 +125,11 @@
             </view>
         </view>
     </view>
-    <view>
+    <view class="bgw" wx:if="{{ordersType!=3}}">
         <map id="map" longitude="113.324520" latitude="23.099994" markers="{{markers}}"></map>
     </view>
-    <view>
-        <view class="detail-route-title h50 displayf altc pl20">
+    <view class="bgw" wx:if="{{ordersType==3}}">
+        <view class="detail-route-title h50 displayf altc pl20 bg-F9F9F9">
             <text class="color-333 fz15">行程安排</text>
         </view>
         <view class="border-top-DCDCDC pl20 {{index==1?'border-bottom-DCDCDC':''}}" wx:for="{{[1,2]}}">
@@ -134,7 +155,7 @@
                 </view>
             </view>
         </view>
-        <view class="detail-route-title h50 displayf altc pl20 border-bottom-DCDCDC ">
+        <view class="detail-route-title h50 displayf altc pl20 border-bottom-DCDCDC bg-F9F9F9">
             <text class="color-333 fz15">费用明细</text>
         </view>
         <view class="pl20">
@@ -167,7 +188,7 @@
             </view>
         </view>
     </view>
-    <view class="pb25 pt25">
+    <view class="pb25 pt25 bgw">
         <button class="common-F1604F-btn">立即接单</button>
     </view>
 </view>
