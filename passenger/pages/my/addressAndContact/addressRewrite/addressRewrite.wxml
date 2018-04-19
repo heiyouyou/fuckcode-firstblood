@@ -1,0 +1,21 @@
+<!--pages/my/addressAndContact/addressRewrite/addressRewrite.wxml-->
+<view>
+    <view class="pt15 pb15 pr25 pl25">
+        <image class="address-icon vm mr10" src="../../../imgs/common/hourglass@2x.png"></image>
+        <text class="fz14 color-666 vm">您的地址填写不完整，请选择正确地址</text>
+    </view>
+    <view>
+        <view class="h50 boxb bgw color-666 fz15 parl20 displayf altc border-bottom-ccc">
+            <text>centralrd，melboured</text>
+        </view>  
+        <view class="h50 boxb bgw color-666 fz15 parl20 displayf altc border-bottom-ccc">
+            <text>centralrd，melboured</text>
+        </view>
+        <view class="h50 boxb bgw color-666 fz15 parl20 displayf altc border-bottom-ccc">
+            <text>centralrd，melboured</text>
+        </view>
+    </view>
+    <view class="mauto h-88rpx w450 ohidden border-radius-4rpx" style="margin-top:150px;">
+        <button class="bg-F1604F fz18 colorf">确定</button>
+    </view>
+</view>

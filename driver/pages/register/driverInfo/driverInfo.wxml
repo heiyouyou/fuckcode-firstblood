@@ -1,0 +1,68 @@
+<!--pages/register/driverInfo/driverInfo.wxml-->
+<view class="bgw h ohidden">
+    <view class="mt20">
+        <view class="w660 mauto">
+            <view class="border-bottom-C7C7CC mb15">
+                <text class="fz13 color-8F8E94">姓名</text>
+                <view class="patb10 displayf w pr">
+                    <view class="flex1">
+                        <input class="fz15 color-333" type="" placeholder-class="color-C7C7CC" placeholder="请输入您姓名"/>
+                    </view>
+                </view>                
+            </view>
+            <view class="border-bottom-C7C7CC mb15">
+                <text class="fz13 color-8F8E94">城市</text>
+                <view class="patb10 displayf w pr">
+                    <view class="flex1">
+                        <picker bindchange="bindPickerChange" value="{{index}}" range="{{cityArray}}">
+                            <input class="login-input fz15 color-333" type="" value="{{city}}" placeholder-class="color-C7C7CC" placeholder="请输入您所在的城市" disabled/>
+                        </picker>
+                    </view>
+                </view>                
+            </view>
+            <view class="border-bottom-C7C7CC mb15">
+                <text class="fz13 color-8F8E94">年龄</text>
+                <view class="patb10 displayf w pr">
+                    <view class="flex1">
+                        <input class="login-input fz15 color-333" type="number" placeholder-class="color-C7C7CC" placeholder="请输入您的汽车使用年龄"/>
+                    </view>
+                </view>                
+            </view>
+            <view class="border-bottom-C7C7CC mb15">
+                <text class="fz13 color-8F8E94">驾龄</text>
+                <view class="patb10 displayf w pr">
+                    <view class="flex1">
+                        <input class="login-input fz15 color-333" type="number" placeholder-class="color-C7C7CC" placeholder="请输入您的驾龄"/>
+                    </view>
+                </view>                
+            </view>
+            <view class="border-bottom-C7C7CC mb15">
+                <text class="fz13 color-8F8E94">手机号</text>
+                <view class="patb10 displayf w pr">
+                    <view class="flex1">
+                        <input class="login-input fz15 color-333" type="number" placeholder-class="color-C7C7CC" placeholder="请输入您的手机号"/>
+                    </view>
+                </view>                
+            </view>
+        </view>
+        <view class="w660 mauto">
+                <checkbox-group>
+                    <view class="mb5">
+                        <label class="fz13 color-8F8E94">
+                            <checkbox class="vm" value="1" color="#4A90E2"/><text class="vm">我已经阅读并同意</text><text class="color-4A90E2 vm">《skycar基本使用条例》</text>
+                        </label>
+                    </view>
+                    <view>
+                        <label class="fz13 color-8F8E94">
+                            <checkbox class="vm" value="1" color="#4A90E2"/><text class="vm">我已经阅读并同意</text><text class="color-4A90E2 vm">《skycar基本使用条例》</text>
+                        </label>
+                    </view>
+                </checkbox-group>
+        </view>
+        <view class="w550 mauto mt30">
+            <view class="mb30">
+                <button class="common-btn bg-C7C7CC colorf">继续申请</button>
+            </view>
+        </view>
+    </view>
+</view>

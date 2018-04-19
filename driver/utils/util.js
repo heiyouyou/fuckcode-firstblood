@@ -1,16 +1,20 @@
 // 服务器地址
 const server = ''
 
-String.prototype.toDate = function (/*format*/) {
-  var str = this, len = str.length, arg = (arguments.length ? arguments[0] || "" : ""), format = arg || (len == 6 && (str = str + '01') && "yyyyMMdd") || (len == 7 && "yyyy-MM") || (len == 8 && "yyyyMMdd") || (len == 10 && "yyyy-MM-dd") || "yyyy-MM-dd hh:mm:ss"
+String.prototype.toDate = function ( /*format*/ ) {
+  var str = this,
+    len = str.length,
+    arg = (arguments.length ? arguments[0] || "" : ""),
+    format = arg || (len == 6 && (str = str + '01') && "yyyyMMdd") || (len == 7 && "yyyy-MM") || (len == 8 && "yyyyMMdd") || (len == 10 && "yyyy-MM-dd") || "yyyy-MM-dd hh:mm:ss"
   var val = function (f) {
-    var from = format.indexOf(f), to = from == -1 ? -1 : format.lastIndexOf(f);
+    var from = format.indexOf(f),
+      to = from == -1 ? -1 : format.lastIndexOf(f);
     return from != -1 ? parseInt(str.substring(from, to + 1), 10) : 0;
   }
   return new Date(val('y'), val('M') - 1, val('d'), val('h'), val('m'), val('s'), val('S'));
 }
 
-Date.prototype.format = function ( /*format*/) {
+Date.prototype.format = function ( /*format*/ ) {
   var fmt = arguments.length ? arguments[0] : "yyyy-MM-dd hh:mm:ss";
   var o = {
     "M+": this.getMonth() + 1,
@@ -51,7 +55,13 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
-const go = (url, type) => {
+const formatNoToCn = n => {
+  const cnNo = ['日', '一', '二', '三', '四', '五', '六']
+  return cnNo[n]
+}
+
+const go = (url, t) => {
+  let type = t ? t : 1
   if (type == 1) {
     wx.navigateTo({
       url: url
@@ -66,6 +76,10 @@ const go = (url, type) => {
     })
   } else if (type == 4) {
     wx.reLaunch({
+      url: url
+    })
+  } else if (type == 5) {
+    wx.switchTab({
       url: url
     })
   }
@@ -119,14 +133,16 @@ const ajax = (url, param, cb, cbf) => {
         }
       }
     },
-    fail: function (res) { },
-    complete: function (res) { },
+    fail: function (res) {},
+    complete: function (res) {},
   })
 }
 
 const getUserInfo = (cb) => {
   let uid = getStorageSync('user') ? getStorageSync('user').UID : ''
-  ajax('/ccuser/getLoginUser', { UID: uid }, res => {
+  ajax('/ccuser/getLoginUser', {
+    UID: uid
+  }, res => {
     if (res.data.result == 'success') {
       let _res = res.data.data
       wx.setStorageSync('user_info', _res)
@@ -134,22 +150,22 @@ const getUserInfo = (cb) => {
   })
 }
 
-const updImg = cb => {
+const updImg = ({count=1,sizeType=['original', 'compressed'],sourceType=['album', 'camera'],uploadCb,chooseImgCb,url=server + '/upload'}={}) => {
   let that = this
   wx.chooseImage({
-    count: 1, // 默认9
-    sizeType: ['compressed'], // 可以指定是原图还是压缩图，默认二者都有
-    sourceType: ['album'], // 可以指定来源是相册还是相机，默认二者都有
+    count: count, // 默认9
+    sizeType: sizeType, // 可以指定是原图还是压缩图，默认二者都有
+    sourceType: sourceType, // 可以指定来源是相册还是相机，默认二者都有
     success: function (res) {
       // 返回选定照片的本地文件路径列表，imgPath可以作为img标签的src属性显示图片
       let ips = res.tempFilePaths
-
+      chooseImgCb&&chooseImgCb(ips);
       wx.uploadFile({
-        url: server + '/upload',
+        url: url,
         filePath: ips[0],
         name: 'file',
         success: function (res) {
-          cb && cb(res)
+          uploadCb && uploadCb(res)
         }
       })
     }
@@ -179,7 +195,8 @@ const delEmptyKey = obj => {
 module.exports = {
   formatTime: formatTime,
   formatNumber: formatNumber,
-  goto: goto,
+  formatNoToCn: formatNoToCn,
+  go: go,
   ajax: ajax,
   getUserInfo: getUserInfo,
   updImg: updImg,

@@ -349,7 +349,9 @@ map {
 .dp-flex.jc-cnt {
   justify-content: center;
 }
-
+.jc-cen{
+  justify-content: center;
+}
 .dp-flex.ai-fs {
   align-items: flex-start;
 }

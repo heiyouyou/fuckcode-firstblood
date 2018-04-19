@@ -1,0 +1,47 @@
+<!--pages/login/login/login.wxml-->
+<view class="ohidden bgw h">
+    <view class="w660 mauto mt40">
+        <view>
+            <text class="color-333 login-nav-title">登录</text>
+        </view>
+        <view>
+            <view class="border-bottom-F1604F">
+                <text class="fz13 color-8F8E94">手机号</text>
+                <view class="patb10 displayf mt5">
+                    <view class="border-right-C7C7CC pr5 mr10" style="min-width:40px;">
+                    <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+                        <text class="fz15 color-333 mr5 vm">{{countryCode}}</text>
+                        <image class="icon-size-30 vm" mode="aspectFit" src="../../../images/login_btn_number@2x.png"></image>
+                    </picker>
+                    </view>
+                    <view class="flex1">
+                        <input class="login-input fz15 color-333" type="" placeholder-class="color-C7C7CC" placeholder="请输入您的手机号"/>
+                    </view>
+                </view>
+            </view>
+            <view class="border-bottom-C7C7CC mt10">
+                <text class="fz13 color-8F8E94">密码</text>
+                <view class="patb10 displayf mt5 flex1">
+                    <input class="login-input fz15 color-333" type="" placeholder-class="color-C7C7CC" placeholder="请输入您的密码"/>
+                </view>                
+            </view>
+        </view>
+    </view>
+    <view class="w550 mauto mt30">
+        <view class="mb30">
+            <button class="common-btn bg-F1604F colorf">登录</button>
+        </view>
+        <view class="pr mb20 mauto displayf jscc altc" style="width:370rpx;">
+            <view class="bg-C7C7CC" style="width:100%;height:4rpx;">
+                
+            </view>
+            <view class="parl10 bgw" style="position:absolute;">
+                <text class="fz13 color-8F8E94">或使用第三方登录</text>
+            </view>
+        </view>
+        <view class="mb20 pr">
+            <image class="login_icon_wechat" src="../../../images/login_icon_wechat@2x.png" />
+            <button class="common-btn border-62B900 bgw color-62B900">使用微信账号登录</button>
+        </view>
+    </view>
+</view>
