@@ -1,9 +1,5 @@
 <!--pages/bus/index/index.wxml 结伴班车-->
-<!--pages/my/index/index.wxml-->
-<view class='container'>
-  <view>
-    <text class='lh30'>系统匹配到以下可能符合您行程的结果</text>
-  </view>
+<view class=''>
   <view class='main-wrap bybus-content'>
     <view class='dp-flex jc-cen bybus-msg'>
       <image class="card-avatar bg-F1604F br50" src=""></image>
@@ -42,13 +38,11 @@
           </view>
         </view>
     </view>
-    <view class='bgw buybus-join'>
-      <button type='default' class='dp-flex jc-cen buybus-join-btn' data-url='/pages/bus/detail/index' bindtap='go'>加入</button>
-    </view>
+    <!-- map.wxml -->
+    <map id="map" longitude="113.324520" latitude="23.099994" scale="14" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" show-location style="width: 100%; height: 300px;"></map>
   </view>
-  
   <view class="searcg-btn">
-      <button class='dp-flex jc-cen' type='default' data-url='/pages/bus/bus_list/index' bindtap='go'>搜索其他班车</button>
+      <button class='dp-flex jc-cen' type='default' data-url='/pages/bus/join/index' bindtap='go'>立即加入</button>
   </view>
 </view>
 
