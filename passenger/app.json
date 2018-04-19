@@ -14,7 +14,6 @@
     "pages/bus/detail/index",
     "pages/bus/join/index",
     "pages/bus/index/index",
-    "pages/index/index",
     "pages/translate/index/index",
     "pages/translate/payment_succ/payment_succ",
     "pages/route/index/index",
