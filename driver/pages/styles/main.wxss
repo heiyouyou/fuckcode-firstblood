@@ -140,6 +140,9 @@
 .bg-C7C7CC{
     background:#C7C7CC;
 }
+.bg-DCDCDC{
+    background:#DCDCDC;
+}
 .bg-f2f4f5{
     background:#f2f4f5;
 }
@@ -288,7 +291,7 @@
     border-right:1rpx solid #E4E4E4;
 }
 .border-left-E4E4E4{
-    border-right:1rpx solid #E4E4E4;
+    border-left:1rpx solid #E4E4E4;
 }
 .border-top-E4E4E4{
     border-top:1rpx solid #E4E4E4;

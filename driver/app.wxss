@@ -41,6 +41,7 @@ page{
   width:100%;
   position:fixed;
   background:#8F8E94;
+  z-index:22;
 }
 .top-nav-box .top-nav-item{
   font-size:15px;
@@ -64,6 +65,7 @@ page{
 }
 /* 顶部Tab选项卡 end */
 
+/* 订单列表 start */
 .content-box{
   margin-top:140rpx;
 }
@@ -92,6 +94,10 @@ page{
   font-size:15px;
   color:#fff;
 }
+.airplane-icon{
+  width:44rpx;
+  height:36rpx;
+}
 .pay-oncar{
   width:110rpx;
   height:40rpx;
@@ -104,4 +110,5 @@ page{
   border-radius: 4rpx ; 
   border:1px solid #F1604F;
 }
+/* 订单列表 end */
 /* by youyou end */

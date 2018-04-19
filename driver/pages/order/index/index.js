@@ -5,7 +5,18 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    cindex:0,//当前接单类型，0:机场接送,1:预约用车,2:班车,3:包车旅游,
+    ordersNavs:['机场接送','预约用车','班车','包车旅游'],
+    airItemList:['接机','送机','往返'],
+    airItemImgUrl:['../../../images/icon_pickup@2x.png','../../../images/icon_send copy@2x.png','../../../images/icon_goandback@2x.png'],
+    notAirItemImgUrl:['../../../images/icon_pickup_grey@2x.png','../../../images/icon_send_grey@2x.png','../../../images/icon_goandback_grey@2x.png']
+  },
+  // tab选择
+  chooseType(e){
+    let type = e.currentTarget.dataset['type'];
+    this.setData({
+      cindex:type
+    })
   },
 
   /**

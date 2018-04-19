@@ -1,11 +1,11 @@
 {
   "pages":[
+    "pages/order/index/index",
     "pages/orders/index/index",
     "pages/orders/detail/detail",
-    "pages/register/driverCar/driverCar",
     "pages/index/index",
-    "pages/order/index/index",
     "pages/my/index/index",
+    "pages/register/driverCar/driverCar",
     "pages/register/driverInfo/driverInfo",
     "pages/register/index/index",
     "pages/login/login/login",
@@ -34,6 +34,7 @@
       {
         "pagePath": "pages/order/index/index",
         "iconPath": "images/order_unchecked@2x.png",
+        "selectedIconPath": "images/tab_form_normal@2x.png",
         "text": "订单"
       },
       {
