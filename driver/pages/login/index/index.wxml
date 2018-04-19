@@ -1,0 +1,18 @@
+<!--pages/login/index/index.wxml-->
+<view class="w h">
+    <image class="w h displayb" src="../../../images/bj.png"></image>
+</view>
+<view class="login-box displayf flexdirec altc jscc">
+    <view class="login-title-box displayf flexdirec altc">
+        <text class="fz32 fwb">SKYCAR</text>
+        <text class="fz18">欢迎来到车来了</text>
+    </view>
+    <view class="w">
+        <view class="mb20">
+            <button class="common-btn bg-F1604F colorf">登录</button>
+        </view>
+        <view class="mb20">
+            <button class="common-btn border-F1604F bg-opacity color-F1604F">注册</button>
+        </view>
+    </view>
+</view>

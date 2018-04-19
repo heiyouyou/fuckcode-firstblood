@@ -1,0 +1,31 @@
+<!--pages/components/pay-way/pay-way.wxml-->
+<view class="mask-no-padding" catchtouchmove="preventTouchMove" hidden="{{hide}}">
+    <view class="bgw w mask-content-box">
+        <view class="mask-title">
+            <text>{{title}}</text>
+            <view class="close-box" bindtap="maskToggle">
+                <image class="close-icon" src="../../imgs/common/close@2x.png"></image>
+            </view>
+        </view>
+        <view class="pay-amout">
+            <text>{{payAmout}}</text>
+        </view>
+        <view class="mask-content">
+            <view class="mask-item" bindtap="_choosePayWay" wx:for="{{wayList}}" data-way='{{index+1}}' wx:key="{{item.way}}">
+                <view>
+                    <image class="pay-way-icon" src="{{payWay==index+1?item.chooseImg:item.unchooseImg}}"></image>
+                    <text wx:if="{{index+1==1}}">余额支付</text>
+                    <text wx:elif="{{index+1==2}}">微信支付</text>
+                    <text wx:elif="{{index+1==3}}">支付宝支付</text>
+                    <text wx:else="{{index+1==3}}">其他方式</text>
+                </view>
+                <view>
+                    <image class="pay-choose-way-icon" src="{{payWay==index+1?'../../imgs/common/xuanzhong@2x.png':'../../imgs/common/weixuanzhong@2x.png'}}"></image>
+                </view>
+            </view>
+        </view>
+        <view class="pay-btn-box">
+            <button class="pay-btn" bindtap="_confirmPay">确认支付</button>
+        </view>
+    </view>
+</view>
