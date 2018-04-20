@@ -1,4 +1,5 @@
 // pages/login/index/index.js
+let util = require('../../../utils/util')
 Page({
 
   /**
@@ -14,7 +15,12 @@ Page({
   onLoad: function (options) {
   
   },
-
+  login(){
+    util.go(`../login/login`)
+  },
+  register(){
+    util.go(`../../register/index/index`)
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

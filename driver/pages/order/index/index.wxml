@@ -7,18 +7,14 @@
     </view>
     <view class="filter-box displayf altc jscb parl25">
         <view class="bgw filter-tab-box pr">
-            <image class="icon-size-36 vm" mode="widthFix" src="../../../images/icon_management_filtrate@3x.png"></image>
-            <text class="fz13 color-333 vm ml10 mr30">已取消</text>
-            <image class="icon-size-36 vm" mode="widthFix" src="../../../images/login_btn_number@2x.png"></image>
-            <view class="bg-DCDCDC filter-tab-item" hidden>
-                <view class="tc mb5">
-                    <image class="choose-hook icon-size-30" src="../../../images/icon_order_right@2x.png"></image><text class="color-333 ml5 fz15">行程中</text>
-                </view>
-                <view class="tc mb5">
-                    <image class="choose-hook icon-size-30" src="../../../images/icon_order_right@2x.png"></image><text class="color-333 ml5 fz15">已完成</text>
-                </view>
-                <view class="tc mb5">
-                    <image class="choose-hook icon-size-30" src="../../../images/icon_order_right@2x.png"></image><text class="color-333 ml5 fz15">已取消</text>
+            <view bindtap="showFilter">
+                <image class="icon-size-36 vm" mode="widthFix" src="../../../images/icon_management_filtrate@3x.png"></image>
+                <text class="fz13 color-333 vm ml10 mr30">{{orderFilters[cfilterIndex]}}</text>
+                <image class="icon-size-36 vm" mode="widthFix" src="../../../images/login_btn_number@2x.png"></image>
+            </view>
+            <view class="bg-DCDCDC filter-tab-item" hidden="{{filterHide}}">
+                <view class="tr mb5 pr30" wx:for="{{orderFilters}}" data-type="{{index}}" bindtap="chooseFilter">
+                    <image class="choose-hook icon-size-30" src="../../../images/icon_order_right@2x.png" hidden="{{index==cfilterIndex?false:true}}"></image><text class="color-333 ml10 fz15">{{item}}</text>
                 </view>
             </view>
         </view>

@@ -1,15 +1,15 @@
 {
   "pages":[
+    "pages/index/index",
+    "pages/login/index/index",
+    "pages/login/login/login",
+    "pages/my/index/index",
     "pages/order/index/index",
     "pages/orders/index/index",
     "pages/orders/detail/detail",
-    "pages/index/index",
-    "pages/my/index/index",
     "pages/register/driverCar/driverCar",
     "pages/register/driverInfo/driverInfo",
-    "pages/register/index/index",
-    "pages/login/login/login",
-    "pages/login/index/index"
+    "pages/register/index/index"
   ],
   "window":{
     "backgroundTextStyle": "light",

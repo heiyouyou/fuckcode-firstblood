@@ -9,10 +9,10 @@
     </view>
     <view class="w">
         <view class="mb20">
-            <button class="common-btn bg-F1604F colorf">登录</button>
+            <button class="common-btn bg-F1604F colorf" bindtap="login">登录</button>
         </view>
         <view class="mb20">
-            <button class="common-btn border-F1604F bg-opacity color-F1604F">注册</button>
+            <button class="common-btn border-F1604F bg-opacity color-F1604F" bindtap="register">注册</button>
         </view>
     </view>
 </view>
