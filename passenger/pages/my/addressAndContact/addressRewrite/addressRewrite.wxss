@@ -1,0 +1,5 @@
+/* pages/my/addressAndContact/addressRewrite/addressRewrite.wxss */
+.address-icon{
+    width:21rpx;
+    height:28rpx;
+}

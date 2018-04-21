@@ -1,6 +1,8 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/login/index/index",
+    "pages/login/login/login",
     "pages/bus/index/index",
     "pages/bus/bus_list/index",
     "pages/bybus/index/index",
@@ -11,13 +13,14 @@
     "pages/translate/index/index",
     "pages/translate/payment_succ/payment_succ",
     "pages/route/index/index",
-    "pages/route/orderDetail/orderDetail",
     "pages/route/payment/payment",        
+    "pages/route/orderDetail/orderDetail",
     "pages/route/driver/driver",
-    "pages/my/index/index",
+    "pages/my/addressAndContact/addressRewrite/addressRewrite",
     "pages/my/addressAndContact/addressAndContact",
     "pages/my/addressAndContact/addAddress/addAddress",
     "pages/my/addressAndContact/addContact/addContact",
+    "pages/my/index/index",
     "pages/my/wallet/binding/binding",
     "pages/my/wallet/withdraw/withdraw",
     "pages/my/wallet/recharge/recharge",
@@ -29,8 +32,6 @@
     "pages/my/editInfo/editInfo",
     "pages/my/evaluate/evaluate",
     "pages/my/message/message",
-    "pages/login/index/index",
-    "pages/login/login/login",
     "pages/air/index/index",
     "pages/air/next/next",
     "pages/air/check/check",
@@ -55,9 +56,9 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Skycar",
-    "navigationBarTextStyle": "black"
+    "navigationBarBackgroundColor": "#F1604F",
+    "navigationBarTitleText": "SkyCar",
+    "navigationBarTextStyle": "white"
   },
   "tabBar": {
     "color": "#909090",
