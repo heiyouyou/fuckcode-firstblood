@@ -1,0 +1,11 @@
+<!--pages/air/oneWayBill/map/index.wxml-->
+<map></map>
+<view class='main-form'>
+  <view class='time'>2017年10月1日 22:15</view>
+  <view class='item start'>
+    <input placeholder='您从哪出发'></input>
+  </view>
+  <view class='item end no-bor-b'>
+    <input placeholder='您想要去哪'></input>
+  </view>
+</view>
