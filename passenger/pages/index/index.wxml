@@ -62,7 +62,7 @@
             </view>
           </view>
           <view class='dp-flex star'>
-            <image wx:for="{{item.star}}" src="/pages/imgs/home_comments/star.png"></image>
+            <image wx:for="{{item.star}}" src="/pages/imgs/common/score-star-red.png"></image>
           </view>
         </view>
         <view class='home-comments-info'>{{item.txt}}</view>

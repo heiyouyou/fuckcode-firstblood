@@ -1,0 +1,57 @@
+<!--pages/travel/city/city.wxml-->
+<view class='nav'>
+  <view class='{{flag == index ? "active" : ""}}' wx:for="{{nav}}" data-i='{{index}}' bindtap='onNav'>
+    <text>{{item.name}}</text>
+  </view>
+</view>
+
+<view class='travel'>
+  <scroll-view scroll-y>
+    <view class='main-form'>
+      <view class='item {{index == (list.length -1) ? "no-bor-b" : ""}}' wx:for="{{list}}">
+        <view class='dp-flex flex-one ai-fs pro-detail'>
+          <view class='pro-img'>
+            <image src='{{item.img}}'></image>
+          </view>
+          <view>
+            <view class='name'>{{item.name}}</view>
+            <view>
+              <view class='dp-flex'>
+                <view class='score'>
+                  <image wx:for="{{item.score}}" src='/pages/imgs/common/score-star-red.png'></image>
+                  <image wx:for="{{5 - (item.score)}}" src='/pages/imgs/common/score-star.png'></image>
+                </view>
+                <view class='day'>{{item.day}}天</view>
+              </view>
+              <view class='collect'>{{item.collect}}人收藏</view>
+              <view class='txt-rgt price'>
+                <text>￥{{item.price}}</text>起/人</view>
+            </view>
+          </view>
+        </view>
+        <view class='intro dp-flex'>
+          <text class='recommend' wx:if="{{item.recommend == 1}}">荐</text>
+          <text>{{item.intro}}</text>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <view class='filter'>
+    <view wx:for="{{filter}}">
+      <view class='dp-flex ai-fs'>
+        <view class='filter-nav {{fFlag == index ? "active" : ""}}' data-index='{{index}}' bindtap='onFilterNav'>{{item.name}}</view>
+        <view class='filter-item' wx:if="{{fFlag == index}}">
+          <view class='{{fiFlag == idx ? "active" : ""}}'
+                wx:for="{{item.list}}" wx:for-item="itm" wx:for-index="idx"
+                data-idx='{{idx}}' bindtap='onFilterItem'>{{itm.name}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='hover-btn'>
+    <view>
+      <image src='/pages/imgs/common/service@2x.png'></image>
+    </view>
+    <view>客服</view>
+  </view>
+</view>

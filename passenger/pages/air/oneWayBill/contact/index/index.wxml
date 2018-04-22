@@ -1,2 +1,24 @@
 <!--pages/air/oneWayBill/contact/index/index.wxml-->
-<text>pages/air/oneWayBill/contact/index/index.wxml</text>
+<view class='container'>
+  <view class='main-wrap add dp-flex jc-cnt' data-url='/pages/air/oneWayBill/contact/add/add' bindtap='go'>
+    <text>+</text>
+    <text>新增乘车人</text>
+  </view>
+  <view class='tit'>常用乘车人</view>
+  <view class='main-wrap'>
+    <view class='main-form'>
+      <view class='item dp-flex {{opn && flag == index ? "active" : ""}} {{index == (list.length -1) ? "no-bor-b" : ""}}' wx:for="{{list}}" data-i='{{index}}' bindtap='onItem'>
+        <view class='dp-flex'>
+          <view class='checkOrNot'>
+            <text>√</text>
+          </view>
+          <view>
+            <view class='name'>{{item.name}}</view>
+            <view>{{item.tel}}</view>
+          </view>
+        </view>
+        <view>e</view>
+      </view>
+    </view>
+  </view>
+</view>

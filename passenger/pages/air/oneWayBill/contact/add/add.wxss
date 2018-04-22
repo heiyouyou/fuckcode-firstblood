@@ -1,1 +1,4 @@
 /* pages/air/oneWayBill/contact/add/add.wxss */
+.main-form {
+  padding-left: 20rpx;
+}

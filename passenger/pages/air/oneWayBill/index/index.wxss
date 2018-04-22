@@ -35,3 +35,10 @@
   font-size: 24rpx;
   margin: 30rpx auto 20rpx;
 }
+
+.hover-btn {
+  position: absolute;
+  top: 40rpx;
+  right: 40rpx;
+  padding: 0 !important;
+}
