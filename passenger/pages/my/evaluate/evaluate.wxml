@@ -49,3 +49,7 @@
         </view>
     </view>
 </view>
+<view class="displayf altc jscc flexdirec h w" hidden>
+    <image class="icon-size-100 displayb mb15" src="../../imgs/common/nocomment@2x.png"></image>
+    <text class="fz14 color-333 mt">暂未收到评论~~</text>
+</view>

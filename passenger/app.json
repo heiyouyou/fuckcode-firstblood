@@ -1,5 +1,7 @@
 {
   "pages": [
+    "pages/my/CarOwnerCertification/license/license",
+    "pages/route/index/index",
     "pages/index/index",
     "pages/login/index/index",
     "pages/login/login/login",
@@ -12,7 +14,7 @@
     "pages/bybus/choose_city/index",
     "pages/translate/index/index",
     "pages/translate/payment_succ/payment_succ",
-    "pages/route/index/index",
+    "pages/route/packOrderDetail/packOrderDetail",
     "pages/route/payment/payment",        
     "pages/route/orderDetail/orderDetail",
     "pages/route/driver/driver",
@@ -26,7 +28,7 @@
     "pages/my/wallet/recharge/recharge",
     "pages/my/wallet/details/details",
     "pages/my/wallet/index/index",
-    "pages/my/CarOwnerCertification/license/license",
+    
     "pages/my/CarOwnerCertification/info/info",
     "pages/my/CarOwnerCertification/index/index",
     "pages/my/editInfo/editInfo",
@@ -44,7 +46,7 @@
     "pages/reserve/index/index",
     "pages/trip/index/index",
     "pages/results/licenseCertified/licenseCertified",
-    "pages/templates/result/result",
+    "pages/results/success/success",
     "pages/car/index/index",
     "pages/travel/index/index",
     "pages/flight/index/index"

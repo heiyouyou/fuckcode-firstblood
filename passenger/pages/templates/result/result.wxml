@@ -1,5 +1,5 @@
 <!--pages/templates/result/result.wxml-->
-<!-- 结果信息模板，result_url：图片url， -->
+<!-- 结果信息模板，result_url：图片url，result_content：结果信息内容 -->
 
 <template name="result">
     <view class="displayf jscb altc flexdirec bgw h">

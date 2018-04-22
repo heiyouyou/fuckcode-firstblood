@@ -1,0 +1,270 @@
+<!--pages/order/detail/detail.wxml-->
+<view class="bg-F9F9F9">
+    <!--班车 start-->
+    <view wx:if="{{false}}">
+        <view class="h120 displayf altc jscb pl20 pr25 boxb border-bottom-DCDCDC bgw">
+            <view class="displayf altc">
+                <image class="icon-size-88 bg-F1604F br50" src=""></image>
+                <view class="ml15">
+                    <view>
+                        <text class="color-333 fz15 mr5 vm fwb">上班小分队</text>
+                        <text class="color-F1604F fz12 tag-btn">结伴班车</text>
+                    </view>
+                    <text class="fz13 color-8F8E94 mr5">3.5</text>
+                    <image class="icon-size-22" src="../../../images/icon_home_star_light@2x.png"></image>
+                </view>
+            </view>
+            <text class="alt-self-end color-C7C7CC fz13 mb10">订单号 4585125841</text>
+        </view>
+        <view>
+            <view class="displayf altc jscb detail-list-item pl20 pr25 fz15 border-bottom-DCDCDC bgw mb10">
+                <view>
+                    <image class="icon-size-36 mr15 vm" src="../../../images/icon_order_destination@2x.png"></image>
+                    <text class="color-C7C7CC vm">创建时间</text>
+                </view>
+                <view>
+                    <text class="color-333">2017/07/16 09：00：43</text>
+                </view>
+            </view>
+            <view class="bgw border-top-DCDCDC">
+                <view class="displayf altc jscb detail-list-item pl20 pr25 fz15 border-bottom-DCDCDC bgw">
+                    <view>
+                        <image class="icon-size-36 mr15 vm" src="../../../images/icon_order_destination@2x.png"></image>
+                        <text class="color-333 vm">Clayton</text>
+                    </view>
+                    <view class="patb5">
+                        <image class="driver-nav-img" src="../../../images/btn_location@2x.png"></image>
+                    </view>
+                </view>
+                <view class="displayf altc jscb detail-list-item pl20 pr25 fz15 border-bottom-DCDCDC ">
+                    <view>
+                        <image class="icon-size-36 mr15 vm" src="../../../images/icon_order_destination@2x.png"></image>
+                        <text class="color-333 vm">301 Collin Rd, clayton</text>
+                    </view>
+                    <view class="patb5">
+                        <image class="driver-nav-img" src="../../../images/btn_location@2x.png"></image>
+                    </view>
+                </view>
+            </view>
+            <view class="h50 displayf altc pl20">
+                <text class="color-333 fz13">乘客信息</text>
+            </view>
+            <view class="border-top-DCDCDC mb10" wx:for="{{[1,2]}}">
+                <view class="displayf altc bgw h60 pl20 pr25 border-bottom-DCDCDC">
+                    <image class="icon-size-88 bg-F1604F br50" src=""></image>
+                    <view class="ml15 displayf jscb flex1">
+                        <text class="color-333 fz15 fwb">白佩玉</text>
+                        <text class="color-494C5B fz13">电话 13800138000</text>
+                    </view>
+                </view>
+                <view class="displayf altc jscb detail-list-item pl20 pr25 fz15 border-bottom-DCDCDC bgw">
+                    <view>
+                        <image class="icon-size-36 mr15 vm" src="../../../images/icon_order_destination@2x.png"></image>
+                        <text class="color-333 vm">Clayton</text>
+                    </view>
+                    <view class="patb5">
+                        <image class="driver-nav-img" src="../../../images/btn_location@2x.png"></image>
+                    </view>
+                </view>
+                <view class="displayf altc jscb detail-list-item pl20 pr25 fz15 border-bottom-DCDCDC bgw">
+                    <view>
+                        <image class="icon-size-36 mr15 vm" src="../../../images/icon_order_destination@2x.png"></image>
+                        <text class="color-333 vm">301 Collin Rd, clayton</text>
+                    </view>
+                    <view class="patb5">
+                        <image class="driver-nav-img" src="../../../images/btn_location@2x.png"></image>
+                    </view>
+                </view>
+                <view class="displayf altc jscb detail-list-item pl20 pr25 fz15 border-bottom-DCDCDC bgw">
+                    <view>
+                        <image class="icon-size-36 mr15 vm" src="../../../images/icon_order_time@2x.png"></image>
+                        <text class="color-C7C7CC vm">出发时间</text>
+                    </view>
+                    <view>
+                        <text class="color-333">2017/07/16 09：00：43</text>
+                    </view>
+                </view>
+                <view class="displayf altc jscb detail-list-item pl20 pr25 fz15 border-bottom-DCDCDC bgw">
+                    <view>
+                        <image class="icon-size-36 mr15 vm" src="../../../images/icon_order_nubmer@2x.png"></image>
+                        <text class="color-C7C7CC vm">同行人数</text>
+                    </view>
+                    <view>
+                        <text class="color-333">3 人</text>
+                    </view>
+                </view>
+                <view class="displayf altc jscb detail-list-item pl20 pr25 fz15 border-bottom-DCDCDC bgw">
+                    <view>
+                        <image class="icon-size-36 mr15 vm" src="../../../images/icon_order_luggage@2x.png"></image>
+                        <text class="color-C7C7CC vm">行李数</text>
+                    </view>
+                    <view>  
+                        <text class="color-333">2 大件行李 丨 1 小件行李</text>
+                    </view>
+                </view>
+            </view>
+            <view class="displayf altc jscb detail-list-item pl20 pr25 fz15 border-bottom-DCDCDC border-top-DCDCDC bgw">
+                <view>
+                    <image class="icon-size-36 mr15 vm" src="../../../images/icon_order_wait@2x.png"></image>
+                    <text class="color-F1604F vm">等待上车</text>
+                </view>
+                <view>  
+                    <text class="color-F1604F">¥30（$5）/人</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <!--班车 end-->
+    <!--接送机 start-->
+    <view>
+        <view class="h120 displayf altc jscb pl20 pr25 boxb border-bottom-DCDCDC bgw">
+            <view class="displayf altc">
+                <image class="icon-size-88 bg-F1604F br50" src=""></image>
+                <view class="ml15">
+                    <view>
+                        <text class="color-333 fz15 mr5 vm fwb">上班小分队</text>
+                    </view>
+                    <text class="fz13 color-8F8E94 mr5">3.5</text>
+                    <image class="icon-size-22" src="../../../images/icon_home_star_light@2x.png"></image>
+                </view>
+            </view>
+            <view class="displayf jscc altend flexdirec">
+                <text class="color-494C5B fz13">电话 13800138000</text>
+                <text class="color-C7C7CC fz13">订单号 4585125841</text>
+            </view>
+        </view>
+        <view>
+            <view class="bgw mb10" wx:if="{{false}}">
+                <view class="displayf altc jscb detail-list-item pl20 pr25 fz15 border-bottom-DCDCDC bgw">
+                    <view>
+                        <image class="icon-size-36 mr15 vm" src="../../../images/icon_order_destination@2x.png"></image>
+                        <text class="color-333 vm">Clayton</text>
+                    </view>
+                    <view class="patb5">
+                        <image class="driver-nav-img" src="../../../images/btn_location@2x.png"></image>
+                    </view>
+                </view>
+                <view class="displayf altc jscb detail-list-item pl20 pr25 fz15 border-bottom-DCDCDC ">
+                    <view>
+                        <image class="icon-size-36 mr15 vm" src="../../../images/icon_order_destination@2x.png"></image>
+                        <text class="color-333 vm">301 Collin Rd, clayton</text>
+                    </view>
+                    <view class="patb5">
+                        <image class="driver-nav-img" src="../../../images/btn_location@2x.png"></image>
+                    </view>
+                </view>
+                <view class="displayf altc jscb detail-list-item pl20 pr25 fz15 border-bottom-DCDCDC ">
+                    <view>
+                        <image class="icon-size-36 mr15 vm" src="../../../images/icon_order_destination_black@2x.png"></image>
+                        <text class="color-333 vm">墨尔本机场</text>
+                    </view>
+                </view>
+            </view>
+            <view class="displayf altc jscb detail-list-item pl20 pr25 fz15 border-bottom-DCDCDC bgw mb10">
+                <view>
+                    <image class="icon-size-36 mr15 vm" src="../../../images/icon_order_destination@2x.png"></image>
+                    <text class="color-C7C7CC vm">创建时间</text>
+                </view>
+                <view>
+                    <text class="color-333">2017/07/16 09：00：43</text>
+                </view>
+            </view>
+            <view wx:if="{{false}}">
+                <view class="displayf altc jscb detail-list-item pl20 pr25 fz15 border-bottom-DCDCDC bgw">
+                    <view>
+                        <image class="icon-size-36 mr15 vm" src="../../../images/icon_order_time@2x.png"></image>
+                        <text class="color-C7C7CC vm">出发时间</text>
+                    </view>
+                    <view>
+                        <text class="color-333">2017/07/16 09：00：43</text>
+                    </view>
+                </view>
+                <view class="displayf altc jscb detail-list-item pl20 pr25 fz15 border-bottom-DCDCDC bgw">
+                    <view>
+                        <image class="icon-size-36 mr15 vm" src="../../../images/icon_order_nubmer@2x.png"></image>
+                        <text class="color-C7C7CC vm">同行人数</text>
+                    </view>
+                    <view>
+                        <text class="color-333">3 人</text>
+                    </view>
+                </view>
+                <view class="displayf altc jscb detail-list-item pl20 pr25 fz15 border-bottom-DCDCDC bgw">
+                    <view>
+                        <image class="icon-size-36 mr15 vm" src="../../../images/icon_order_luggage@2x.png"></image>
+                        <text class="color-C7C7CC vm">行李数</text>
+                    </view>
+                    <view>  
+                        <text class="color-333">2 大件行李 丨 1 小件行李</text>
+                    </view>
+                </view>
+            </view>
+            <view>
+                <view class="border-top-DCDCDC" wx:for="{{[1,2]}}">
+                    <view class="displayf altc jscb detail-list-item pl20 pr25 fz15 border-bottom-DCDCDC bgw">
+                        <view>
+                            <image class="icon-size-36 mr15 vm" src="../../../images/icon_order_destination@2x.png"></image>
+                            <text class="color-333 vm">301 Collin Rd, clayton</text>
+                        </view>
+                    </view>
+                    <view class="displayf altc jscb detail-list-item pl20 pr25 fz15 border-bottom-DCDCDC bgw">
+                        <view>
+                            <image class="icon-size-36 mr15 vm" src="../../../images/icon_order_destination@2x.png"></image>
+                            <text class="color-333 vm">301 Collin Rd, clayton</text>
+                        </view>
+                    </view>
+                    <view class="displayf altc jscb detail-list-item pl20 pr25 fz15 border-bottom-DCDCDC bgw">
+                        <view>
+                            <image class="icon-size-36 mr15 vm" src="../../../images/icon_order_time@2x.png"></image>
+                            <text class="color-C7C7CC vm">出发时间</text>
+                        </view>
+                        <view>
+                            <text class="color-333">2017/07/16 09：00：43</text>
+                        </view>
+                    </view>
+                    <view class="displayf altc jscb detail-list-item pl20 pr25 fz15 border-bottom-DCDCDC bgw">
+                        <view>
+                            <image class="icon-size-36 mr15 vm" src="../../../images/icon_order_nubmer@2x.png"></image>
+                            <text class="color-C7C7CC vm">同行人数</text>
+                        </view>
+                        <view>
+                            <text class="color-333">3 人</text>
+                        </view>
+                    </view>
+                    <view class="displayf altc jscb detail-list-item pl20 pr25 fz15 border-bottom-DCDCDC bgw">
+                        <view>
+                            <image class="icon-size-36 mr15 vm" src="../../../images/icon_order_luggage@2x.png"></image>
+                            <text class="color-C7C7CC vm">行李数</text>
+                        </view>
+                        <view>  
+                            <text class="color-333">2 大件行李 丨 1 小件行李</text>
+                        </view>
+                    </view>
+                    <view class="h50 displayf altc pl20" wx:if="{{index!=1}}">
+                        <text class="color-333 fz13">返程</text>
+                    </view>
+                </view>
+            </view>
+            <view class="displayf altc jscb detail-list-item pl20 pr25 fz15 border-bottom-DCDCDC border-top-DCDCDC bgw mt10">
+                <view>
+                    <image class="icon-size-36 mr15 vm" src="../../../images/icon_order_wait@2x.png"></image>
+                    <text class="color-F1604F vm">等待上车</text>
+                </view>
+                <view>  
+                    <text class="color-F1604F">¥30（$5）/人</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <!--接送机 end-->
+    <view class="bgw">
+        <map id="map" longitude="113.324520" latitude="23.099994" markers="{{markers}}"></map>
+    </view>
+    <view class="pb25 pt25 bgw">
+        <button class="common-F1604F-btn t-order-btn mb10">转单</button>
+        <button class="common-F1604F-btn c-order-btn">取消订单</button>
+        <view class="mt15 tc">
+            <image class="icon-size-30 vm mr5" src="../../../images/icon_prompt_attention_grey@2x.png"></image>
+            <text class="color-8F8E94 fz13 vm">转单规则</text>
+        </view>
+    </view>
+</view>

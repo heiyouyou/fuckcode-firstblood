@@ -104,6 +104,15 @@
 .bg-F4F4F5{
     background:#F4F4F5;
 }
+.bg-FFE200{
+    background:#FFE200;
+}
+.bg-C490BF{
+    background:#C490BF;
+}
+.bg-FAFAFA{
+    background:#FAFAFA;
+}
 /* 背景色 end */
 
 /* 图标大小 start */
@@ -168,6 +177,14 @@
     width:40rpx;
     height:40rpx;
 }
+.icon-size-80{
+    width:80rpx;
+    height:80rpx;
+}
+.icon-size-100{
+    width:100rpx;
+    height:100rpx;
+}
 .icon-size-120{
     width:120rpx;
     height:120rpx;
@@ -179,6 +196,9 @@
 /* 图标大小 end */
 
 /* 边框颜色 start */
+.border-F1604F{
+    border:1rpx solid #F1604F;
+}
 .border-bottom-ccc{
     border-bottom:1rpx solid #ccc;
 }

@@ -1,13 +1,11 @@
-// pages/results/licenseCertified/licenseCertified.js
+// pages/route/packOrderDetail/packOrderDetail.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    data:{
-      result_content:'非常感谢您的耐心填写\n您的认证资料已经提交成功\n亲您在此后的7个工作日内手机尽量保持畅通\n我们工作人员会与您联系'
-    }
+  
   },
 
   /**

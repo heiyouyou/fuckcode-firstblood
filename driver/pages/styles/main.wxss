@@ -68,6 +68,9 @@
 .color-3CB657{
     color:#3CB657;
 }
+.color-494C5B{
+    color:#494C5B;
+}
 .highlight-text{
     color:#F1604F;
 }

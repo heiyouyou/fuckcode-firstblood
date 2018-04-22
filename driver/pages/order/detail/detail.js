@@ -1,13 +1,27 @@
-// pages/results/licenseCertified/licenseCertified.js
+// pages/order/detail/detail.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    data:{
-      result_content:'非常感谢您的耐心填写\n您的认证资料已经提交成功\n亲您在此后的7个工作日内手机尽量保持畅通\n我们工作人员会与您联系'
-    }
+    ordersType:0,
+    markers: [{
+      // iconPath: "/resources/others.png",
+      id: 0,
+      latitude: 23.099994,
+      longitude: 113.324520,
+      width: 30,
+      height: 30,
+      callout:{
+        content:'test',
+        color:'#fff',
+        bgColor:'#F1604F',
+        display:'ALWAYS',
+        padding:20,
+        borderRadius:40
+      }
+    }],
   },
 
   /**

@@ -1,4 +1,4 @@
-<!--pages/results/licenseCertified/licenseCertified.wxml-->
+<!--pages/results/success/success.wxml-->
 <import src="../../templates/result/result" />
 <template is="result" data="{{...data}}">
     
