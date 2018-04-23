@@ -1,4 +1,6 @@
 // pages/order/index/index.js
+let util = require('../../../utils/util')
+
 Page({
 
   /**
@@ -34,6 +36,9 @@ Page({
       filterHide:false
     })
   },
+  next(){
+    util.go(`../detail/detail?type=${this.data.cindex}`)
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -45,7 +50,9 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+    wx.setNavigationBarTitle({
+      title:'订单管理'
+    })
   },
 
   /**

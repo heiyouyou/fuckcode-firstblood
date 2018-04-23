@@ -23,19 +23,54 @@ Page({
       }
     }],
   },
+  cancelOrder(){
+    wx.showModal({
+      title: '取消订单',
+      content: '您确定要取消订单吗？\n可能会会有惩罚',
+      confirmColor:'#F1604F',
+      cancelColor:'#8F8E94',
+      success: function(res) {
+        if (res.confirm) {
 
+        } else if (res.cancel) {
+          
+        }
+      }
+    })
+  },
+  transferOrder(){
+    wx.showModal({
+      title: '确认订单',
+      content: '您确定要转订单吗？\n每月转单超过X次，会有惩罚',
+      confirmColor:'#F1604F',
+      cancelColor:'#8F8E94',
+      success: function(res) {
+        if (res.confirm) {
+
+        } else if (res.cancel) {
+          
+        }
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    let type = options.type
+    console.log(type)
+    this.setData({
+      ordersType:type
+    })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+    wx.setNavigationBarTitle({
+      title:'订单详情'
+    })
   },
 
   /**
