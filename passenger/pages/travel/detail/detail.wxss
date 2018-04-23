@@ -1,0 +1,6 @@
+/* pages/travel/detail/detail.wxss */
+.detial-top {
+  height: 550rpx;
+  position: relative;
+  background-size: 100% 100%;
+}

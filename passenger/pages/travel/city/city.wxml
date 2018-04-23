@@ -8,7 +8,9 @@
 <view class='travel'>
   <scroll-view scroll-y>
     <view class='main-form'>
-      <view class='item {{index == (list.length -1) ? "no-bor-b" : ""}}' wx:for="{{list}}">
+      <view class='item {{index == (list.length -1) ? "no-bor-b" : ""}}'
+            data-url="/pages/travel/detail/detail" bindtap='go'
+            wx:for="{{list}}">
         <view class='dp-flex flex-one ai-fs pro-detail'>
           <view class='pro-img'>
             <image src='{{item.img}}'></image>
@@ -36,7 +38,7 @@
       </view>
     </view>
   </scroll-view>
-  <view class='filter'>
+  <view class='filter' wx:if="{{showFilter}}">
     <view wx:for="{{filter}}">
       <view class='dp-flex ai-fs'>
         <view class='filter-nav {{fFlag == index ? "active" : ""}}' data-index='{{index}}' bindtap='onFilterNav'>{{item.name}}</view>

@@ -36,16 +36,32 @@
 .filter {
   width: 100%;
   height: 100%;
-  position: relative;
-}
-
-.filter-nav {
+  font-size: 30rpx;
   color: #666;
   background: #fff;
-  flex: 1;
+  position: fixed;
+  left: 0;
+  top: 90rpx;
+}
+.filter-nav, .filter-item > view {
+  border-bottom: 1px solid #CCC;
+  padding: 30rpx;
+}
+.filter-nav {
+  width: 30%;
+  background: #fff;
 }
 .filter-item {
-  flex: 2;
+  width: 70%;
+  height: 100%;
+  background: #F2F4F5;
+  padding-left: 30rpx;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.filter-item > view {
+  padding-left: 0;
 }
 .filter .active {
   color: #F1604F;

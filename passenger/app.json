@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/travel/city/city",
+    "pages/travel/detail/detail",
     "pages/travel/index/index",
     "pages/travel/wish/wish",
     "pages/index/index",

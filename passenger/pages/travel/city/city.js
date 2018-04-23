@@ -1,10 +1,13 @@
 // pages/travel/city/city.js
+const util = require('../../../utils/util.js')
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    showFilter: false,
     flag: '',
     fFlag: '',
     fiFlag: '',
@@ -88,10 +91,15 @@ Page({
       }]
     }]
   },
+  go(e) {
+    let url = e.currentTarget.dataset.url
+    util.go(url)
+  },
   onNav(e) {
     let i = e.currentTarget.dataset.i
     this.setData({
-      flag: i
+      flag: i,
+      showFilter: i == 2 ? true : false
     })
   },
   onFilterNav(e) {
@@ -103,7 +111,8 @@ Page({
   onFilterItem(e) {
     let idx = e.currentTarget.dataset.idx
     this.setData({
-      fiFlag: idx
+      fiFlag: idx,
+      showFilter: false
     })
   },
   /**
