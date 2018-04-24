@@ -1,5 +1,7 @@
 {
   "pages":[
+    "pages/my/wallet/wallet",
+    "pages/my/info/info",
     "pages/my/index/index",
     "pages/order/index/index",
     "pages/order/detail/detail",

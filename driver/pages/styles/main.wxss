@@ -13,13 +13,19 @@
 .padding-right-15rpx{
     padding-left:15rpx;
 }
+.padding-l-44{
+    padding-left:44rpx;
+}
+.padding-r-44{
+    padding-right:44rpx;
+}
 .mt-150{
     margin-top:150rpx;
 }
 /* 内外边距 end */
 
 
-/* 文本颜色 start */
+/* 文本颜色/大小 start */
 .color-ccc{
     color:#ccc;
 }
@@ -77,7 +83,13 @@
 .color-DCDCDC{
     color:#DCDCDC;
 }
-/* 文本颜色 end */
+.fz11{
+    font-size:22rpx;
+}
+.fz27{
+    font-size:54rpx;
+}
+/* 文本颜色/大小 end */
 
 /* 宽度、高度、行高 start */
 .w450{

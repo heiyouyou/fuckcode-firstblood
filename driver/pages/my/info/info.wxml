@@ -1,0 +1,65 @@
+<!--pages/my/info/info.wxml-->
+<view class="ohidden">
+    <view class="pt10 pb10 pr15 pl20 border-top-DCDCDC border-bottom-DCDCDC mt25 bgw">
+        <view class="displayf jscb altc" bindtap="maskToggle">
+            <text class="color-333 fz15 vm">头像</text>
+            <view>
+                <image class="icon-size-88 bg-F1604F br50 vm mr10" src=""></image>
+                <image class="setting-icon vm" src="../../../images/icon_setting@2x.png"></image>
+            </view>
+        </view>
+    </view>
+    <view>
+        <view class="displayf altc jscb h-88rpx bgw border-bottom-DCDCDC pl20 pr15">
+            <text class="fz15 color-333 vm">昵称</text>
+            <view>
+                <input class="tr w250" type="" placeholder="131****4874" placeholder-class="color-C7C7CC"/>
+            </view>
+        </view>
+         <view class="displayf altc jscb h-88rpx bgw border-bottom-DCDCDC pl20 pr15">
+            <text class="fz15 color-333 vm">性别</text>
+            <view class="displayf altc">
+                <view class="mr10" bindtap="chooseSex" data-sex="1">
+                    <view class="icon-size-24 br50 displayib sex-icon {{cSex==1?'male':''}} vm mr5">
+                    </view>
+                    <text class="fz15 {{cSex==1?'color-333':'color-C7C7CC'}} vm">男</text>
+                </view>
+                <view class="" bindtap="chooseSex" data-sex="2">
+                    <view class="icon-size-24 br50 displayib sex-icon {{cSex==2?'female':''}} vm mr5">
+                    </view>
+                    <text class="fz15 {{cSex==2?'color-333':'color-C7C7CC'}} vm">女</text>
+                </view>
+            </view>
+        </view>
+         <view class="displayf altc jscb h-88rpx bgw border-bottom-DCDCDC border-top-DCDCDC pl20 pr15 mt25 mb25">
+            <text class="fz15 color-333 vm">城市</text>
+            <view>
+                <picker bindchange="bindCityChange" value="{{cityIndex}}" range="{{cityArray}}">
+                    <text class="fz15 color-C7C7CC vm mr10">{{cityArray[cityIndex]}}</text>
+                    <image class="setting-icon vm" src="../../../images/icon_setting@2x.png"></image>
+                </picker>
+            </view>
+        </view>
+         <view class="displayf altc jscb h-88rpx bgw border-bottom-DCDCDC border-top-DCDCDC pl20 pr15">
+            <text class="fz15 color-333 vm">手机号</text>
+            <view>
+                <input class="tr w250" type="" placeholder="131****4874" placeholder-class="color-C7C7CC"/>
+            </view>
+        </view>
+    </view>
+    <view class="mask" hidden="{{hide}}" bindtap="maskToggle">
+        <view class="displayf altend h">
+            <view class="bgw my-box-shadow w" style="border-radius:4px 4px 0 0;" catchtap="stopBubble">
+                <view class="h-88rpx displayf altc jscc pl10 border-bottom-DCDCDC">
+                    <text class="color-333 fz15">修改头像</text>
+                </view>
+                <view class="h-88rpx displayf altc pl10 border-bottom-DCDCDC">
+                    <text class="color-8F8E94 fz15">拍照</text>
+                </view>
+                <view class="h-88rpx displayf altc pl10" bindtap="uploadImg">
+                    <text class="color-8F8E94 fz15">相册选取照片</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
