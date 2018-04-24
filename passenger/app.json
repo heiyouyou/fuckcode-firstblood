@@ -1,10 +1,10 @@
 {
   "pages": [
-    "pages/travel/city/city",
     "pages/travel/detail/detail",
     "pages/travel/index/index",
-    "pages/travel/wish/wish",
     "pages/index/index",
+    "pages/travel/city/city",
+    "pages/travel/wish/wish",
     "pages/login/index/index",
     "pages/login/login/login",
     "pages/bus/index/index",

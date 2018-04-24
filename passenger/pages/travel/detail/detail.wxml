@@ -1,2 +1,34 @@
 <!--pages/travel/detail/detail.wxml-->
-<view class='detial-top'></view>
+<view class='detial-top' style='background: url({{obj.img}});background-size: 100% 100%;'>
+  <view class='city-name'>{{obj.city}}</view>
+  <view class='dp-flex jc-sb name-wrap'>
+    <view>
+      <view class='name'>{{obj.destination}}</view>
+      <view class='name-esl'>{{obj.esl}}</view>
+    </view>
+    <view>
+      <view>
+        <image></image>
+      </view>
+      <view>{{obj.collect}}</view>
+    </view>
+  </view>
+</view>
+<view class='basic-info'>
+  <view class='basic-info-tit'>基本信息</view>
+  <view>{{obj.intro}}</view>
+  <view class='basic-info-list'>
+    <view>
+      <view class='lab'>时长</view><view>{{obj.day}}天</view>
+    </view>
+    <view>
+      <view class='lab'>时间</view><view>上车时间{{obj.strTime}}, 回程时间{{obj.endTime}}</view>
+    </view>
+    <view>
+      <view class='lab'>出行</view><view>{{obj.type}}</view>
+    </view>
+    <view>
+      <view class='lab'>地址</view><view>{{obj.adr}}</view>
+    </view>
+  </view>
+</view>
