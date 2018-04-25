@@ -47,6 +47,9 @@
             </view>
         </view>
     </view>
+    <view class="pb25 pt25">
+        <button class="common-F1604F-btn">保存</button>
+    </view>
     <view class="mask" hidden="{{hide}}" bindtap="maskToggle">
         <view class="displayf altend h">
             <view class="bgw my-box-shadow w" style="border-radius:4px 4px 0 0;" catchtap="stopBubble">

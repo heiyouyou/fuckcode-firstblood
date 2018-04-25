@@ -1,0 +1,55 @@
+<!--pages/my/evaluate/evaluate.wxml-->
+<view class="bgw h">
+    <view class="displayf altc jscc my-top-tab-box">
+        <view class="my-top-tab-item fz15 {{ctype==1?'active':''}}" bindtap="chooseTab" data-type='1'>
+            我给乘客的评价
+        </view>
+        <view class="my-top-tab-item fz15 {{ctype==2?'active':''}}" bindtap="chooseTab" data-type='2'>
+            乘客给我的评价
+        </view>
+    </view>
+    <view>
+        <view class="padding-44 border-bottom-DCDCDC">
+            <view class="displayf jscb altc mb20">
+                <view class="displayf altc">
+                    <image class="br50 icon-size-88 bg-F1604F" src=""></image>
+                    <view class="ml15">
+                        <text class="fz15 color-333 displayb">Heather Webb</text>
+                        <text class="fz11 color-333 displayb">订单编号：12542441298</text>
+                    </view>
+                </view>
+                <view>
+                    <view class="">
+                        <text class="fz13 color-333 vm">4.7</text>
+                        <image class="icon-size-24 vm ml5" src="../../../images/icon_home_star_light@2x.png" wx:for="{{[1,2,3,4,5]}}"></image>
+                    </view>
+                    <text class="fz11 color-C7C7CC">2017-08-25 17:32</text>
+                </view>
+            </view>
+            <view class="color-333 fz15">
+                Thanks for using Ckycar! To make our app better for you, we bring updates to the App Store regularly.
+            </view>
+        </view>
+        <view class="padding-44 border-bottom-DCDCDC">
+            <view class="displayf jscb altc mb20">
+                <view class="displayf altc">
+                    <image class="br50 icon-size-88 bg-F1604F" src=""></image>
+                    <view class="ml15">
+                        <text class="fz15 color-333 displayb">Heather Webb</text>
+                        <text class="fz11 color-333 displayb">订单编号：12542441298</text>
+                    </view>
+                </view>
+                <view>
+                    <view class="">
+                        <text class="fz13 color-333 vm">4.7</text>
+                        <image class="icon-size-24 vm ml5" src="../../../images/icon_home_star_light@2x.png" wx:for="{{[1,2,3]}}"></image>
+                    </view>
+                    <text class="fz11 color-C7C7CC">2017-08-25 17:32</text>
+                </view>
+            </view>
+            <view class="color-333 fz15">
+                Thanks for using Ckycar! To make our app better for you, we bring updates to the App Store regularly.
+            </view>
+        </view>
+    </view>
+</view>

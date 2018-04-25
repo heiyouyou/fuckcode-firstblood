@@ -1,0 +1,14 @@
+<!--pages/my/message/message.wxml-->
+<view class="bgw h">
+    <view class="displayf altc jscc my-top-tab-box">
+        <view class="my-top-tab-item fz15 {{ctype==index+1?'active':''}}" bindtap="chooseTab" data-type='{{index+1}}' wx:for="{{tabArr}}">
+            <view class="pr">
+                {{item}}
+                <view class="bg-F1604F message-num-notice" wx:if="{{ctype!=index+1}}">
+                    12
+                </view>
+            </view>
+        </view>
+    </view>
+    
+</view>

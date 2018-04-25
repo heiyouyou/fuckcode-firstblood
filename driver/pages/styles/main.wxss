@@ -13,6 +13,15 @@
 .padding-right-15rpx{
     padding-left:15rpx;
 }
+.padding-44{
+    padding:44rpx;
+}
+.padding-top-44{
+    padding-top:44rpx;
+}
+.padding-bottom-44{
+    padding-bottom:44rpx;
+}
 .padding-l-44{
     padding-left:44rpx;
 }

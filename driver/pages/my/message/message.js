@@ -1,13 +1,19 @@
-// pages/my/wallet/wallet.js
+// pages/my/message/message.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    ctype:1,
+    tabArr:['订单信息','系统消息','聊天']
   },
-
+  chooseTab(e){
+    let type = e.currentTarget.dataset.type;
+    this.setData({
+      ctype:type
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -19,9 +25,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    wx.setNavigationBarTitle({
-      title: '我的钱包'
-    })
+  
   },
 
   /**

@@ -143,4 +143,20 @@ page{
   border:1px solid #F1604F;
 }
 /* 订单列表 end */
+
+.my-top-tab-box{
+  height:136rpx;
+}
+.my-top-tab-item{
+  color:#333;
+  padding:17rpx 38rpx;
+  box-sizing:border-box;
+  min-width:200rpx;
+  text-align:center;
+}
+.my-top-tab-item.active{
+  background:#F1604F;
+  border-radius:100rpx;
+  color:#fff;
+}
 /* by youyou end */
