@@ -25,15 +25,15 @@ Page({
         list: [{
           time: '08:30',
           plan: '乘车约5小时',
-          star: 'CROWN酒店出发'
+          start: 'CROWN酒店出发'
         }, {
           time: '08:30',
           plan: '乘车约5小时',
-          star: 'CROWN酒店出发'
+          start: 'CROWN酒店出发'
         }, {
           time: '08:30',
           plan: '乘车约5小时',
-          star: 'CROWN酒店出发'
+          start: 'CROWN酒店出发'
         }]
       }, {
         city: '墨尔本',
@@ -43,15 +43,15 @@ Page({
         list: [{
           time: '08:30',
           plan: '乘车约5小时',
-          star: 'CROWN酒店出发'
+          start: 'CROWN酒店出发'
         }, {
           time: '08:30',
           plan: '乘车约5小时',
-          star: 'CROWN酒店出发'
+          start: 'CROWN酒店出发'
         }, {
           time: '08:30',
           plan: '乘车约5小时',
-          star: 'CROWN酒店出发'
+          start: 'CROWN酒店出发'
         }]
       }],
       evaluation: [{

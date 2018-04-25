@@ -15,20 +15,56 @@
   </view>
 </view>
 <view class='basic-info'>
-  <view class='basic-info-tit'>基本信息</view>
+  <view class='detail-tit'>基本信息</view>
   <view>{{obj.intro}}</view>
   <view class='basic-info-list'>
     <view>
-      <view class='lab'>时长</view><view>{{obj.day}}天</view>
+      <view class='lab'>时长</view>
+      <view>{{obj.day}}天</view>
     </view>
     <view>
-      <view class='lab'>时间</view><view>上车时间{{obj.strTime}}, 回程时间{{obj.endTime}}</view>
+      <view class='lab'>时间</view>
+      <view>上车时间{{obj.strTime}}, 回程时间{{obj.endTime}}</view>
     </view>
     <view>
-      <view class='lab'>出行</view><view>{{obj.type}}</view>
+      <view class='lab'>出行</view>
+      <view>{{obj.type}}</view>
     </view>
     <view>
-      <view class='lab'>地址</view><view>{{obj.adr}}</view>
+      <view class='lab'>地址</view>
+      <view>{{obj.adr}}</view>
     </view>
+  </view>
+</view>
+
+  <map>
+    <cover-view class='map-recommend'>
+      <cover-image></cover-image>
+      <cover-view>导航查看沿途热点推荐</cover-view>
+    </cover-view>
+  </map>
+
+<view class='detail-wrap'>
+  <view class='detail-tit'>行程参考</view>
+  <view class='main-wrap'>
+    <view wx:for="{{obj.routePlan}}">
+      <view class='dp-flex jc-sb'>
+        <view class='dp-flex route-basic-tit'>
+          <view class='route-day'>DAY{{item.day}}</view>
+          <view>{{item.city}}</view>
+        </view>
+        <view class='route-underline'>{{item.duration}}小时-{{item.kilometer}}公里</view>
+      </view>
+      <view class='route-plan-wrap'>
+        <view class='dp-flex ai-fs' wx:for="{{item.list}}" wx:for-item="itm">
+          <view>{{itm.time}}</view>
+          <view class='route-plan-detial'>
+            <view class='route-plan'>{{itm.plan}}</view>
+            <view class='route-start'>{{itm.start}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view>*以下参考行程和建议出发时间可根据您的需要在下单时自动调整（仅出发时间），或者联系客服帮助修改。</view>
   </view>
 </view>
