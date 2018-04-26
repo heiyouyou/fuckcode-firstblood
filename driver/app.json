@@ -1,10 +1,11 @@
 {
   "pages":[
+    "pages/bus/bus",
+    "pages/my/index/index",
     "pages/my/message/message",
     "pages/my/evaluate/evaluate",
     "pages/my/info/info",
     "pages/my/wallet/wallet",
-    "pages/my/index/index",
     "pages/order/index/index",
     "pages/order/detail/detail",
     "pages/index/index",

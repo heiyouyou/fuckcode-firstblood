@@ -1,0 +1,23 @@
+<!--pages/bus/bus.wxml-->
+<view class="bgw ohidden">
+    <view class="w650 mauto mt20">
+        <view class="mb20 displayf">
+            <view class="mr10 displayf altc jscb input-box-class">
+                <input class="pl15 h" type="" disabled placeholder="选择日期" placeholder-class="color-C7C7CC fz13"/>
+                <image class="icon-size-36 mr15" src="../../images/icon_ date@2x.png"></image>
+            </view>
+            <view class="displayf altc jscb input-box-class">
+                <input class="pl15 h" type="" disabled placeholder="设置出发时间" placeholder-class="color-C7C7CC fz13"/>
+                <image class="icon-size-36 mr15" src="../../images/icon_ time@2x.png"></image>
+            </view>
+        </view>
+        <view class="input-box-class mb20 displayf altc jscb">
+            <input class="pl15 h" type="" placeholder="设置终点，匹配顺路乘客" placeholder-class="color-C7C7CC fz13"/>
+            <image class="icon-size-36 mr15" src="../../images/icon_ time@2x.png"></image>
+        </view>
+        <view class="input-box-class mb20 displayf altc jscb">
+            <input class="pl15 h" type="" placeholder="设置终点，匹配顺路乘客" placeholder-class="color-C7C7CC fz13"/>
+            <image class="icon-size-36 mr15" src="../../images/icon_ time@2x.png"></image>
+        </view>
+    </view>
+</view>

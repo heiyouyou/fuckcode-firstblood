@@ -33,7 +33,7 @@
         </view>
          <view class="displayf altc jscb h-88rpx bgw border-bottom-DCDCDC border-top-DCDCDC pl20 pr15 mt25 mb25">
             <text class="fz15 color-333 vm">城市</text>
-            <view>
+            <view class="flex1 tr">
                 <picker bindchange="bindCityChange" value="{{cityIndex}}" range="{{cityArray}}">
                     <text class="fz15 color-C7C7CC vm mr10">{{cityArray[cityIndex]}}</text>
                     <image class="setting-icon vm" src="../../../images/icon_setting@2x.png"></image>

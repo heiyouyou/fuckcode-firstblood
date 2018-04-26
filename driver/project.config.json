@@ -8,7 +8,7 @@
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "1.9.93",
+	"libVersion": "2.0.0",
 	"appid": "wx5cdfdc01c39599ec",
 	"projectname": "driver",
 	"isGameTourist": false,

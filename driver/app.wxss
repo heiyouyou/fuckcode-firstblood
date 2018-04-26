@@ -151,12 +151,25 @@ page{
   color:#333;
   padding:17rpx 38rpx;
   box-sizing:border-box;
-  min-width:200rpx;
   text-align:center;
+  margin-right:10px;
 }
 .my-top-tab-item.active{
   background:#F1604F;
   border-radius:100rpx;
   color:#fff;
+}
+
+.message-circle{
+  position:fixed;
+  right:60rpx;
+  bottom:70rpx;
+  width:108rpx;
+  height:108rpx;
+}
+.input-box-class{
+  height:80rpx; 
+  border-radius:10rpx;
+  border:1px solid #E4E4E4;   
 }
 /* by youyou end */

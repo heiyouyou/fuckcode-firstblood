@@ -10,5 +10,75 @@
             </view>
         </view>
     </view>
-    
+    <view>
+        <!-- 订单信息 start -->
+        <view wx:if="{{ctype==1}}">
+            <view class="pr15 pl15 border-bottom-DCDCDC" wx:for="{{[1,2,3]}}">
+                <view class="displayf jscb altc prl15 pt10">
+                    <view>
+                        <view class="displayib icon-size-20 br50 bg-F1604F mr5">
+                        </view>
+                        <text class="color-333 fz15">订单信息更新</text>
+                    </view>
+                    <view>
+                        <text class="color-C7C7CC fz13 vm mr5">今天 8:54</text>
+                        <image class="setting-icon vm" src="../../../images/icon_setting@2x.png"></image>
+                    </view>
+                </view>
+                <view class="fz15 color-8F8E94 mt5 pb10">
+                    <text>详细信息展示详细信息展示详细信息展示详细信息展示详细信息展示</text>
+                </view>
+            </view>
+        </view>
+        <!-- 订单信息 end -->
+        <!-- 系统休息 start -->
+        <view wx:if="{{ctype==2}}">
+            <view class="pr15 pl15" wx:for="{{[1,3]}}">
+                <view class="displayf jscb altc prl15 pt10">
+                    <view>
+                        <text class="color-333 fz15">五一钜惠，不容错过</text>
+                    </view>
+                    <view>
+                        <text class="color-C7C7CC fz13 vm mr5">今天 8:54</text>
+                        <image class="setting-icon vm" src="../../../images/icon_setting@2x.png"></image>
+                    </view>
+                </view>
+                <view class="fz15 color-8F8E94 mt5 border-bottom-DCDCDC pb10">
+                    <image class="bg-C7C7CC w h100 br4 mtb5" src=""></image>
+                    <text>详细信息展示详细信息展示详细信息展示详细信息展示详细信息展示</text>
+                </view>
+            </view>
+        </view>
+        <!-- 系统休息 end -->
+        <!-- 聊天 start -->
+        <view wx:if="{{ctype==3}}">
+           <view class="chatting-line border-bottom-DCDCDC parl15 displayf altc" wx:for="{{[1,3]}}">
+               <view class="displayf w">
+                    <view class="pr mr5">
+                        <image class="icon-size-88 bg-DCDCDC br50" src=""></image>
+                        <view class="colorf fz11 bg-F1604F chating-num-notice">
+                            12
+                        </view>
+                    </view>
+                   <view class="flex1">
+                        <text class="color-333 fz15">Margaret Howell</text>
+                        <text class="fz13 color-C7C7CC fr">今天 05:43</text>
+                        <view class="color-8F8E94 fz13 thidden250">
+                           我已经到达目的地了，但确实是没有看
+                           我已经到达目的地了，但确实是没有看
+                        </view>
+                   </view>
+               </view>
+           </view>
+        </view>
+        <!-- 聊天 end -->
+    </view>
+    <view class="br50 bg-F1604F pa message-circle">
+        <navigator class="h" url="">
+            <view class="displayf altc jscc flexdirec h">
+                <image class="icon-size-48 displayb" src="../../../images/icon_service@2x.png" ></image>
+                <text class="fz13 colorf">客服</text>
+            </view>
+        </navigator>
+    </view>
 </view>

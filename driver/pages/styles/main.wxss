@@ -107,6 +107,9 @@
 .w550{
     width:550rpx;
 }
+.w650{
+    width:650rpx;
+}
 .w660{
     width:660rpx;
 }
@@ -379,11 +382,6 @@
 }
 .cancel-btn-bg{
     background:#999999;
-}
-.message-circle{
-    position:fixed;
-    right:60rpx;
-    bottom:100rpx;
 }
 .message-num-icon{
     min-width:30rpx;
