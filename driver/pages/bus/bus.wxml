@@ -1,23 +1,43 @@
 <!--pages/bus/bus.wxml-->
-<view class="bgw ohidden">
+<view class="bgw ohidden h">
     <view class="w650 mauto mt20">
         <view class="mb20 displayf">
-            <view class="mr10 displayf altc jscb input-box-class">
-                <input class="pl15 h" type="" disabled placeholder="选择日期" placeholder-class="color-C7C7CC fz13"/>
-                <image class="icon-size-36 mr15" src="../../images/icon_ date@2x.png"></image>
+            <view class="mr10 displayf altc jscb input-box-class pr15">
+                <picker class="flex1" mode="date" value="{{date}}" bindchange="bindDateChange">
+                    <input class="pl15 h flex1" type="" value="{{date}}" disabled placeholder="选择日期" placeholder-class="color-C7C7CC fz13"/>
+                </picker>
+                <image class="icon-size-36" src="../../images/icon_ date@2x.png"></image>
             </view>
-            <view class="displayf altc jscb input-box-class">
-                <input class="pl15 h" type="" disabled placeholder="设置出发时间" placeholder-class="color-C7C7CC fz13"/>
-                <image class="icon-size-36 mr15" src="../../images/icon_ time@2x.png"></image>
+            <view class="displayf altc jscb input-box-class pr15">
+                <picker class="flex1" mode="time" value="{{time}}" bindchange="bindTimeChange">
+                    <input class="pl15 h flex1" type="" value="{{time}}" disabled placeholder="设置出发时间" placeholder-class="color-C7C7CC fz13"/>
+                </picker>
+                <image class="icon-size-36" src="../../images/icon_ time@2x.png"></image>
             </view>
         </view>
-        <view class="input-box-class mb20 displayf altc jscb">
-            <input class="pl15 h" type="" placeholder="设置终点，匹配顺路乘客" placeholder-class="color-C7C7CC fz13"/>
-            <image class="icon-size-36 mr15" src="../../images/icon_ time@2x.png"></image>
+        <view class="input-box-class mb20 displayf altc jscb pr15 pr">
+            <input class="pl15 h flex1" type="" placeholder="设置终点，匹配顺路乘客" placeholder-class="color-C7C7CC fz13"/>
+            <view class="start-end-icon">
+                <image class="" style="width:30rpx;height:78px;" src="../../../images/icon_createbus_position@2x.png" />
+            </view>
         </view>
-        <view class="input-box-class mb20 displayf altc jscb">
-            <input class="pl15 h" type="" placeholder="设置终点，匹配顺路乘客" placeholder-class="color-C7C7CC fz13"/>
-            <image class="icon-size-36 mr15" src="../../images/icon_ time@2x.png"></image>
+        <view class="input-box-class mb20 displayf altc jscb pr15">
+            <input class="pl15 h flex1" type="" placeholder="设置终点，匹配顺路乘客" placeholder-class="color-C7C7CC fz13"/>
+        </view>
+        <view>
+            <text class="color-8F8E94 fz13">座位数</text>
+            <view class="input-box-class mb20 mt10 displayf altc jscb pr15">
+                <input class="pl15 h flex1" type="" placeholder="请输入可提供的座位数" placeholder-class="color-C7C7CC fz13"/>
+            </view>
+        </view>
+        <view>
+            <text class="color-8F8E94 fz13">班车名</text>
+            <view class="input-box-class mb20 mt10 displayf altc jscb pr15">
+                <input class="pl15 h flex1" type="" placeholder="给您的班车命名" placeholder-class="color-C7C7CC fz13"/>
+            </view>
+        </view>
+        <view class="pb25 pt25">
+            <button class="common-F1604F-btn" bindtap="createBus">创建班车</button>
         </view>
     </view>
 </view>
