@@ -49,11 +49,11 @@
       </view>
     </view>
   </view>
-  <view class='main-wrap home-comments-wrap'>
-    <view class='home-comments-tit'>用户实时评价</view>
+  <view class='main-wrap comments-wrap'>
+    <view class='comments-tit'>用户实时评价</view>
     <scroll-view scroll-y style="height: 200px;" bindscrolltolower="lower">
-      <view class='home-comments' wx:for="{{list}}">
-        <view class='dp-flex jc-sb home-comments-user'>
+      <view class='comments' wx:for="{{list}}">
+        <view class='dp-flex jc-sb comments-user'>
           <view class='user-info dp-flex'>
             <image src="{{item.avatar}}"></image>
             <view>
@@ -65,7 +65,7 @@
             <image wx:for="{{item.star}}" src="/pages/imgs/common/score-star-red.png"></image>
           </view>
         </view>
-        <view class='home-comments-info'>{{item.txt}}</view>
+        <view class='comments-info'>{{item.txt}}</view>
       </view>
     </scroll-view>
   </view>

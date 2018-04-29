@@ -319,8 +319,9 @@ view {
 }
 
 .main-color {
-  color: #F1604F;
+  color: #f1604f;
 }
+
 .rgt-arr {
 }
 
@@ -423,9 +424,11 @@ view {
   background: #fff;
   position: relative;
 }
+
 .main-form.pad-lft {
   padding-left: 20rpx;
 }
+
 .main-form .item {
   padding: 25rpx 0;
   border-bottom: 1px solid #ccc;
@@ -710,7 +713,9 @@ view {
   background: #f1604f;
   box-shadow: 2px 2px 6px rgba(241, 96, 79, 0.5);
 }
+
 /* 包车旅游公用样式 */
+
 .travel .item {
   color: #999;
   font-size: 24rpx;
@@ -787,6 +792,7 @@ view {
   background: #f1604f;
   margin-right: 15rpx;
 }
+
 .travel .hover-btn {
   width: 120rpx;
   height: 120rpx;
@@ -795,8 +801,60 @@ view {
   right: 50rpx;
   bottom: 8%;
 }
+
 .travel .hover-btn image {
   width: 40rpx;
   height: 40rpx;
 }
+
+/* 用户评价 */
+
+.comments-wrap {
+  font-size: 28rpx;
+  margin-bottom: 20rpx;
+}
+
+.comments-tit {
+  padding: 30rpx 0;
+  margin: 0 50rpx;
+  border-bottom: 1px solid #ccc;
+}
+
+scroll-view {
+  padding: 0 50rpx;
+  box-sizing: border-box;
+}
+
+.comments {
+  margin: 30rpx auto 20rpx;
+}
+
+.comments-user image {
+  width: 74rpx;
+  height: 74rpx;
+  margin-right: 30rpx;
+  border-radius: 50%;
+}
+
+.user-info view {
+  color: #666;
+}
+
+.user-info text {
+  font-size: 20rpx;
+  color: #909090;
+}
+
+.star image {
+  width: 18rpx;
+  height: 18rpx;
+  margin: 0;
+}
+
+.comments-info {
+  margin: 20rpx 0 0 10rpx;
+}
+
+/* 用户评价end */
+
 /* by Ethan end */

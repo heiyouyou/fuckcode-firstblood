@@ -119,6 +119,12 @@ map {
 .route-plan, .route-start {
   position: relative;
 }
+.route-plan {
+  margin-bottom: 24rpx;
+}
+.route-start {
+  margin-bottom: 54rpx;
+}
 .route-plan:before, .route-start:before {
   content: "";
   display: block;
@@ -137,4 +143,38 @@ map {
   width: 14rpx;
   height: 14rpx;
   background: #F1604F;
+}
+.route-plan:after, .route-start:after {
+  content: "";
+  width: 2rpx;
+  background: #CCC;
+  position: absolute;
+  left: -23rpx;
+  top: 32rpx;
+}
+
+.route-plan:after {
+  height: 30rpx;
+}
+
+.route-start:after {
+  height: 60rpx;
+}
+.last-route-start {
+  margin-bottom: 0;
+}
+.last-route-start:after {
+  display: none
+}
+
+.route-tips {
+  font-size: 24rpx;
+  color: #999;
+  margin-top: -20rpx;
+}
+
+.more {
+  margin-bottom: 50rpx;
+  text-align: center;
+  color: #F1604F;
 }

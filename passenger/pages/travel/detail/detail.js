@@ -55,7 +55,17 @@ Page({
         }]
       }],
       evaluation: [{
-
+        avatar: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
+        name: '张女士',
+        creTime: '1小时前',
+        txt: '挺好的，方便快捷，直接送到酒店门口',
+        star: 5
+      }, {
+        avatar: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
+        name: '张女士',
+        creTime: '1小时前',
+        txt: '挺好的，方便快捷，直接送到酒店门口',
+        star: 5
       }]
     }
   },

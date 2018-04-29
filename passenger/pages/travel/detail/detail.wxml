@@ -37,12 +37,12 @@
   </view>
 </view>
 
-  <map>
-    <cover-view class='map-recommend'>
-      <cover-image></cover-image>
-      <cover-view>导航查看沿途热点推荐</cover-view>
-    </cover-view>
-  </map>
+<map>
+  <cover-view class='map-recommend'>
+    <cover-image></cover-image>
+    <cover-view>导航查看沿途热点推荐</cover-view>
+  </cover-view>
+</map>
 
 <view class='detail-wrap'>
   <view class='detail-tit'>行程参考</view>
@@ -56,15 +56,43 @@
         <view class='route-underline'>{{item.duration}}小时-{{item.kilometer}}公里</view>
       </view>
       <view class='route-plan-wrap'>
-        <view class='dp-flex ai-fs' wx:for="{{item.list}}" wx:for-item="itm">
+        <view class='dp-flex ai-fs' wx:for="{{item.list}}" wx:for-item="itm" wx:for-index="idx">
           <view>{{itm.time}}</view>
           <view class='route-plan-detial'>
             <view class='route-plan'>{{itm.plan}}</view>
-            <view class='route-start'>{{itm.start}}</view>
+            <view class='route-start {{idx == (item.list.length - 1) ? "last-route-start" : "" }}'>{{itm.start}}</view>
           </view>
         </view>
       </view>
     </view>
-    <view>*以下参考行程和建议出发时间可根据您的需要在下单时自动调整（仅出发时间），或者联系客服帮助修改。</view>
+    <view class='route-tips'>*以下参考行程和建议出发时间可根据您的需要在下单时自动调整（仅出发时间），或者联系客服帮助修改。</view>
+  </view>
+</view>
+
+<view class='detail-wrap'>
+  <view class='detail-tit'>用户评价</view>
+  <view class='main-wrap comments-wrap'>
+    <view class='comments' wx:for="{{obj.evaluation}}">
+      <view class='dp-flex jc-sb comments-user'>
+        <view class='user-info dp-flex'>
+          <image src="{{item.avatar}}"></image>
+          <view>
+            <view>{{item.name}}</view>
+            <text>{{item.creTime}}</text>
+          </view>
+        </view>
+        <view class='dp-flex star'>
+          <image wx:for="{{item.star}}" src="/pages/imgs/common/score-star-red.png"></image>
+        </view>
+      </view>
+      <view class='comments-info'>{{item.txt}}</view>
+    </view>
+  </view>
+</view>
+<view class='more'>查看更多评价(共300条)</view>
+
+<view class='detail-wrap'>
+  <view class='detail-tit'>下单小贴士</view>
+  <view class='main-wrap'>
   </view>
 </view>
