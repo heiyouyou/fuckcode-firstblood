@@ -9,7 +9,7 @@ Page({
       city: '墨尔本',
       destination: '弗林德斯大街车站',
       esl: 'Flinders Street Station',
-      collect: 123, 
+      collect: 123,
       img: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1524338756279&di=badb5739139e7f0538e46e68a4c20b19&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimage%2Fc0%253Dshijue1%252C0%252C0%252C294%252C40%2Fsign%3Df072192f91504fc2b652b8468db48d64%2Fd4628535e5dde7114fb3d6d1adefce1b9d1661b0.jpg',
       intro: '墨尔本中央火车站，又叫弗林顿斯大道火车站。弗林德斯街站，是澳大利亚最早的火车站，集合所有城市火车的换乘，如同墨尔本发散型火车网络的圆心。这',
       day: 2,
@@ -66,8 +66,23 @@ Page({
         creTime: '1小时前',
         txt: '挺好的，方便快捷，直接送到酒店门口',
         star: 5
-      }]
-    }
+      }],
+      price: 1000,
+      priceGroup: 500
+    },
+    recommends: [{
+      name: '弗林德斯大街车站',
+      img: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1524338756279&di=badb5739139e7f0538e46e68a4c20b19&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimage%2Fc0%253Dshijue1%252C0%252C0%252C294%252C40%2Fsign%3Df072192f91504fc2b652b8468db48d64%2Fd4628535e5dde7114fb3d6d1adefce1b9d1661b0.jpg',
+      star: 3
+    }, {
+      name: '弗林德斯大街车站',
+      img: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1524338756279&di=badb5739139e7f0538e46e68a4c20b19&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimage%2Fc0%253Dshijue1%252C0%252C0%252C294%252C40%2Fsign%3Df072192f91504fc2b652b8468db48d64%2Fd4628535e5dde7114fb3d6d1adefce1b9d1661b0.jpg',
+      star: 4
+    }, {
+      name: '弗林德斯大街车站',
+      img: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1524338756279&di=badb5739139e7f0538e46e68a4c20b19&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimage%2Fc0%253Dshijue1%252C0%252C0%252C294%252C40%2Fsign%3Df072192f91504fc2b652b8468db48d64%2Fd4628535e5dde7114fb3d6d1adefce1b9d1661b0.jpg',
+      star: 5
+    }]
   },
 
   /**

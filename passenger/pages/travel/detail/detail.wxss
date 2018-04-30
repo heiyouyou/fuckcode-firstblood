@@ -178,3 +178,40 @@ map {
   text-align: center;
   color: #F1604F;
 }
+
+.recommends {
+  display: flex;
+  align-items: center;
+  overflow-x: scroll;
+}
+.recommends > view {
+  flex-shrink: 0;
+  width: 300rpx;
+  height: 360rpx;
+  margin-right: 20rpx;
+  background: #fff;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+
+.pro-img image {
+  width: 100%;
+  height: 230rpx;
+}
+
+.recommends-intro {
+  padding: 25rpx;
+  font-size: 30rpx;
+}
+
+.recommends-intro image {
+  width: 24rpx;
+  height: 24rpx;
+  margin: 8rpx 2rpx 0 0;
+}
+
+.btn-wrap-two {
+  position: static;
+  padding: 20rpx;
+  background: #fff;
+}

@@ -496,7 +496,6 @@ view {
 
 .btn-wrap-two button {
   flex: 1;
-  font-size: 40rpx;
   flex-direction: column;
   padding: 4px;
 }

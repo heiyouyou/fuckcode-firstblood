@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/travel/map/map",
     "pages/travel/detail/detail",
     "pages/travel/index/index",
     "pages/index/index",
