@@ -1,8 +1,10 @@
 {
   "pages": [
-    "pages/travel/map/map",
+    "pages/travel/calendar/calendar",
+    "pages/travel/bill/bill",
     "pages/travel/detail/detail",
     "pages/travel/index/index",
+    "pages/travel/map/map",
     "pages/index/index",
     "pages/travel/city/city",
     "pages/travel/wish/wish",

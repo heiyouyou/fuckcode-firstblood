@@ -1,0 +1,16 @@
+<!--pages/travel/calendar/calendar.wxml-->
+<view class='calendar-content'>
+  <view class="calendar-bar">
+    <view wx:for="{{weekData}}">{{item}}</view>
+  </view>
+  <view class="calendar-items">
+    <view class="calendar-month" wx:for="{{dateData}}">
+      <view class="calendar-title">{{ item.title }}</view>
+      <view class="calendar-days">
+        <view wx:for="{{item.dayList}}" wx:for-item="itm" wx:for-index="idx" class="{{itm.active ? 'active' : ''}}" data-idx='{{idx}}' data-index='{{index}}' data-url='/pages/travel/bill/bill' bindtap="onDay">
+          <view><text>{{ itm.day }}</text></view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

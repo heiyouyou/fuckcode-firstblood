@@ -10,7 +10,7 @@
       <image src='{{item.img}}'></image>
     </view>
     <view>
-      <view class='dp-flex jc-sb ai-fs'>
+      <view class='dp-flex jc-sb'>
         <view>{{item.name}}</view>
         <view class='day'>DAY{{item.day}}</view>
       </view>
@@ -22,7 +22,7 @@
           <image src="/pages/imgs/common/score-star.png"></image>
         </block>
       </view>
-      <view>{{item.type}}{{item.name}}</view>
+      <view>{{item.type}}第{{item.day}}站 {{item.city}}</view>
     </view>
   </view>
 </view>

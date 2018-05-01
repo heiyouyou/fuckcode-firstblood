@@ -1,10 +1,13 @@
 // pages/travel/detail/detail.js
+const util = require('../../../utils/util.js')
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    showPopup: false,
     obj: {
       city: '墨尔本',
       destination: '弗林德斯大街车站',
@@ -84,7 +87,16 @@ Page({
       star: 5
     }]
   },
-
+  go(e) {
+    let url = e.currentTarget.dataset.url
+    util.go(url)
+  },
+  onKilo() {
+    let sp = this.data.showPopup
+    this.setData({
+      showPopup: !sp
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

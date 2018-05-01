@@ -1,0 +1,17 @@
+<!--pages/travel/bill/bill.wxml-->
+<view class='bill-wrap'>
+  <view>
+    <view class='pro-img'>
+      <image src=''></image>
+    </view>
+    <view></view>
+  </view>
+  <view>
+    <view>
+      <view>出行时间</view><view></view>
+    </view>
+    <view>
+      <view>起止时间</view><view></view>
+    </view>
+  </view>
+</view>

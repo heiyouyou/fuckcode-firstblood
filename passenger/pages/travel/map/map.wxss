@@ -37,3 +37,9 @@ map {
   background: #FEEFED;
   padding: 6rpx 10rpx; 
 }
+
+.star image {
+  width: 24rpx;
+  height: 24rpx;
+  margin-top: 40rpx;
+}
