@@ -12,7 +12,7 @@
         </view>
         <view class="index-navigation displayf altc jsca">
             <block wx:for="{{navigationIcons}}" wx:key="*this">
-                <view class="displayf jscc altc flexdirec">
+                <view class="displayf jscc altc flexdirec" bindtap="next" data-type="{{index}}">
                     <image class="index-navigation-icon" src="{{item.imgUrl}}"></image>
                     <text class="fz12 color-666 mt10">{{item.title}}</text>
                 </view>
