@@ -1,0 +1,43 @@
+<!--pages/orderManage/orderManage.wxml-->
+<view>
+    <view class="h-88rpx bg-F1604F displayf altc jscb parl15">
+        <image class="icon-size-44" mode="aspectFit" src="../../images/nav_back_white_pass@2x.png" data-flag="-1" bindtap="changeYear"></image>
+        <text class="colorf fz17">{{curYear}}</text>
+        <image class="icon-size-44" mode="aspectFit" src="../../images/nav_next_white copy@2x.png" data-flag="1" bindtap="changeYear"></image>
+    </view>
+    <view class="parl20 bg-F1604F">
+        <scroll-view class="whites-nowrap pb15 pt5" scroll-x>
+            <view class="month-btn {{curMonth==index+1?'active':''}}" wx:for="{{monthArrs}}" data-month="{{index+1}}" bindtap="chooseMonth">
+                {{item}}
+            </view>
+        </scroll-view>
+    </view>
+    <view>
+        <view class="patb25 pl20 displayf flexflowrw">
+            <view class="order-item boxb mr5 mb5 {{today==item?'active':''}}" wx:for="{{orderItem}}" data-date="{{item}}" bindtap="chooseDateOrder">
+                <view class="fz13 parl5 {{today==item?'border-bottom-F1604F':'border-bottom-DCDCDC'}} order-item-title displayf altc jscb">
+                    <text>1日 周二</text>
+                    <text class="today-tag" wx:if="{{today==item}}">今日</text>
+                </view> 
+                <view class="parl5 pt5 pb5 fz11">
+                    <view class="displayf altc jscb mb5">
+                        <text>接送机</text>
+                        <text>0单</text>
+                    </view>
+                    <view class="displayf altc jscb mb5">
+                        <text>预约用车</text>
+                        <text>0单</text>
+                    </view>
+                    <view class="displayf altc jscb mb5">
+                        <text>班车</text>
+                        <text>0单</text>
+                    </view>
+                    <view class="displayf altc jscb mb5">
+                        <text>包车</text>
+                        <text>0单</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

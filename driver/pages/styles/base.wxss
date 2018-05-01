@@ -192,6 +192,7 @@
 .patb15{padding:15px 0;}
 .parl15{padding:0 15px;}
 .patb20{padding:20px 0;}
+.patb25{padding:25px 0;}
 .parl20{padding:0 20px;}
 .parl25{padding:0 25px;}
 .parl30{padding:0 30px;}

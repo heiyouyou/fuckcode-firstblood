@@ -1,0 +1,8 @@
+/* pages/licenseTranslate/licenseTranslate.wxss */
+.slide-image{
+    width:100%;
+    height:300rpx;
+}
+.success-desc-title{
+    padding:30rpx 48rpx;
+}

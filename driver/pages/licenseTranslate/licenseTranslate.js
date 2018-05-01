@@ -1,4 +1,4 @@
-// pages/bus/bus.js
+// pages/licenseTranslate/licenseTranslate.js
 let util = require('../../utils/util')
 
 Page({
@@ -7,32 +7,51 @@ Page({
    * 页面的初始数据
    */
   data: {
-    time:'',
-    date:''
+    imgUrls:['../../images/bybus-banner.png','../../images/bybus-banner.png','../../images/bybus-banner.png','../../images/bybus-banner.png'],
+    licenseTitle:['驾照正面','驾照反面'],
+    cindex:0,
+    previewUrls:['',''],
+    ctype:0,
+    chide:true,
+    hidePay:true,
   },
-  bindTimeChange(e){
-    this.setData({
-      time:e.detail.value
+  // 上传驾照
+  uploadImg(e){
+    const that = this;
+    let index = e.currentTarget.dataset.type
+    util.updImg({
+      chooseImgCb(paths){
+        console.log(paths)
+        that.setData({
+          [`previewUrls[${index-1}]`]:paths[0],
+          ['ctype']:index,
+          ['chide']:false
+        })
+      }
     })
   },
-  bindDateChange(e){
-    this.setData({
-      date:e.detail.value
-    })
-  },
-  createBus(){
+  // 确认支付
+  paySure(e){
+    console.log(e)
+    let title = e.detail.payWay==0?'确认余额支付':'确认微信支付';
+    let amout = e.detail.payAmout;
     wx.showModal({
-      title: '确认创建班车',
-      content: '确认创建您的班车吗？ \n创建后您可以手动开关您的班车',
+      title: title,
+      content: `立即支付${amout}元\n让skycar安全准时的为您保驾护航`,
       confirmColor:'#F1604F',
       cancelColor:'#8F8E94',
       success: function(res) {
         if (res.confirm) {
-          util.go('./createSuccess/createSuccess')  
+
         } else if (res.cancel) {
           
         }
       }
+    })
+  },
+  commitPay(){
+    this.setData({
+      hidePay:false
     })
   },
   /**
@@ -46,9 +65,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    wx.setNavigationBarTitle({
-      title:'创建我的班车'
-    })
+  
   },
 
   /**

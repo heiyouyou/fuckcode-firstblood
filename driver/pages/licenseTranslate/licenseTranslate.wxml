@@ -1,0 +1,58 @@
+<!--pages/licenseTranslate/licenseTranslate.wxml-->
+<view>
+    <view class="w">
+        <swiper indicator-dots="true" autoplay="true" circular="true" indicator-color="#FFFFFF" indicator-active-color="#F1604F">
+            <block wx:for="{{imgUrls}}" wx:key="*this">
+                <swiper-item>
+                <image src="{{item}}" class="slide-image"></image>
+                </swiper-item>
+            </block>
+        </swiper>
+    </view>
+    <view class="success-desc-title">
+        <image class="icon-size-30 mr5 vm" src="../../images/icon_prompt_attention@2x.png"></image>
+        <text class="fz13 color-333 vm">国际驾照翻译件，澳洲境内可包邮，其他翻译请 联系客服</text>
+    </view>
+    <view class="bgw my-box-shadow ohidden">
+        <view class="w650 mauto mt25">
+            <view>
+                <text class="color-8F8E94 fz13">联系电话</text>
+                <view class="input-box-class mb20 mt10 displayf altc jscb pr15">
+                    <input class="pl15 h flex1" type="number" placeholder="请输入您的联系电话" placeholder-class="color-C7C7CC fz13"/>
+                </view>
+            </view>
+            <view>
+                <text class="color-8F8E94 fz13">澳洲地址</text>
+                <view class="input-box-class mb20 mt10 displayf altc jscb pr15">
+                    <input class="pl15 h flex1" type="" placeholder="驾照翻译会邮寄到此地址" placeholder-class="color-C7C7CC fz13"/>
+                </view>
+            </view>
+            <view>
+                <text class="color-8F8E94 fz13">网络邮箱</text>
+                <view class="input-box-class mb20 mt10 displayf altc jscb pr15">
+                    <input class="pl15 h flex1" type="" placeholder="驾照翻译件电子版会发送到此邮箱" placeholder-class="color-C7C7CC fz13"/>
+                </view>
+            </view>
+            <view class="displayf jscb mb25">
+                <view class="flex1 mr5 pr" wx:for="{{licenseTitle}}">
+                    <text class="fz13 color-8F8E94">{{item}}</text>
+                    <view class="border-dashed-C7C7CC img-preview-box mt10 displayf jscc altc flexdirec ohidden pr" bindtap="uploadImg" data-type="{{index+1}}">
+                        <image class="img-preview-icon" src="../../images/icon_uploadpictures@2x.png"></image>
+                        <text class="fz15 color-C7C7CC mt10">点击上传照片</text>
+                        <image class="preview-img" src="{{previewUrls[index]}}"></image>
+                        <view class="re-upload-box">
+                            <text class="fz13">点击重新上传</text>
+                        </view>
+                    </view>
+                    <view class="waring-info-box">
+                        <text class="color-D0021B fz13">*请您上传真实图片</text>
+                    </view>
+                </view>
+            </view>
+            <view class="pb25 pt25">
+                <button class="common-F1604F-btn" bindtap="commitPay">提交并支付</button>
+            </view>
+        </view>
+    </view>
+    <pay-way hide="{{hidePay}}" pay-amout="￥22.3" title="澳洲驾照翻译" bind:paySure="paySure"></pay-way>
+</view>

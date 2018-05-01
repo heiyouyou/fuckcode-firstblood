@@ -1,39 +1,41 @@
-// pages/bus/bus.js
-let util = require('../../utils/util')
-
+// pages/orderManage/orderManage.js
+let util = require('../../utils/util');
+let tYear = new Date().getFullYear();
+let tMonth = new Date().getMonth()+1;
+let tDate = new Date().getDate();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    time:'',
-    date:''
+    curYear:tYear,
+    curMonth:tMonth,
+    today:tYear+'-'+tMonth+'-'+tDate,
+    monthArrs:['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'],
+    orderItem:['2018-3-1','2018-4-5','2018-5-1','2018-5-2','2018-6-1']
   },
-  bindTimeChange(e){
+  chooseMonth(e){
+    let month = e.currentTarget.dataset.month;
     this.setData({
-      time:e.detail.value
+      'curMonth':month
     })
   },
-  bindDateChange(e){
+  changeYear(e){
+    let flag = e.currentTarget.dataset.flag;
+    let cYear = flag==-1?--this.data.curYear:++this.data.curYear;
     this.setData({
-      date:e.detail.value
-    })
+      curYear:cYear
+    });
   },
-  createBus(){
-    wx.showModal({
-      title: '确认创建班车',
-      content: '确认创建您的班车吗？ \n创建后您可以手动开关您的班车',
-      confirmColor:'#F1604F',
-      cancelColor:'#8F8E94',
-      success: function(res) {
-        if (res.confirm) {
-          util.go('./createSuccess/createSuccess')  
-        } else if (res.cancel) {
-          
-        }
-      }
-    })
+  formatDate(){
+    
+  },
+  chooseDateOrder(e){
+    let date = e.currentTarget.dataset.date;
+    console.log(date);
+    util.go(`../order/index/index?date=${date}`)
+    
   },
   /**
    * 生命周期函数--监听页面加载
@@ -47,7 +49,7 @@ Page({
    */
   onReady: function () {
     wx.setNavigationBarTitle({
-      title:'创建我的班车'
+      title:'订单管理'
     })
   },
 

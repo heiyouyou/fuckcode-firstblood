@@ -18,7 +18,7 @@
         <view class="input-box-class mb20 displayf altc jscb pr15 pr">
             <input class="pl15 h flex1" type="" placeholder="设置终点，匹配顺路乘客" placeholder-class="color-C7C7CC fz13"/>
             <view class="start-end-icon">
-                <image class="" style="width:30rpx;height:78px;" src="../../../images/icon_createbus_position@2x.png" />
+                <image style="width:30rpx;height:78px;" src="../../../images/icon_createbus_position@2x.png"></image>
             </view>
         </view>
         <view class="input-box-class mb20 displayf altc jscb pr15">
@@ -27,7 +27,7 @@
         <view>
             <text class="color-8F8E94 fz13">座位数</text>
             <view class="input-box-class mb20 mt10 displayf altc jscb pr15">
-                <input class="pl15 h flex1" type="" placeholder="请输入可提供的座位数" placeholder-class="color-C7C7CC fz13"/>
+                <input class="pl15 h flex1" type="number" placeholder="请输入可提供的座位数" placeholder-class="color-C7C7CC fz13"/>
             </view>
         </view>
         <view>

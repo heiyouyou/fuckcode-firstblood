@@ -1,0 +1,14 @@
+/* pages/bus/createSuccess/createSuccess.wxss */
+.success-desc-box{
+    padding:94rpx 70rpx;
+}
+.success-icon{
+    width:160rpx;
+    height:160rpx;
+}
+.success-desc-title{
+    padding:30rpx 48rpx;
+}
+.qiangdan-btn{
+  width:200rpx;
+}
