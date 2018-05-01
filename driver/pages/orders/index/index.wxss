@@ -1,1 +1,4 @@
 /* pages/orders/index/index.wxss */
+.qiangdan-btn{
+  width:200rpx;
+}
