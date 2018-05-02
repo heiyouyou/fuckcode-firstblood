@@ -608,6 +608,30 @@ view {
   text-align: right;
 }
 
+.pick-cnt {
+
+}
+.pick-item > view:first-of-type {
+  font-size: 32rpx;
+}
+
+.pick-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48rpx;
+  height: 48rpx;
+  line-height: 48rpx;
+  font-size: 40rpx;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+}
+
+.pick-val {
+  color: #666;
+  font-size: 36rpx;
+  margin: 40rpx;
+}
 /* 附加选项 */
 
 .sub-term {

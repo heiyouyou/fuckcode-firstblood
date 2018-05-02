@@ -54,7 +54,7 @@
   color: #F1604F;
 }
 .custom-picker-content {
-  padding: 100rpx 30rpx;
+  padding: 60rpx 30rpx;
 }
 /* 自定义picker end */
 

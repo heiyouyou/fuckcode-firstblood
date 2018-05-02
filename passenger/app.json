@@ -1,7 +1,8 @@
 {
   "pages": [
-    "pages/travel/calendar/calendar",
     "pages/travel/bill/bill",
+    "pages/air/index/index",
+    "pages/travel/calendar/calendar",
     "pages/travel/detail/detail",
     "pages/travel/index/index",
     "pages/travel/map/map",
@@ -40,7 +41,6 @@
     "pages/my/evaluate/evaluate",
     "pages/my/message/message",
     "pages/air/oneWayBill/index/index",
-    "pages/air/index/index",
     "pages/air/next/next",
     "pages/air/check/check",
     "pages/air/oneWayBill/map/index",
