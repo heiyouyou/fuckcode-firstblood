@@ -12,7 +12,7 @@
         <view class="tab-body w710 mt10" hidden="{{current==1?false:true}}">
             <view class="ohidden">
                 <navigator url="./addContact/addContact">
-                    <button class="h50 border-radius-4rpx fz15 color-333 lh50 borderNone my-box-shadow" type="default"><image class="icon-size-30 br50 bg-F1604F vm mr5" src=""></image>新增乘车人</button>
+                    <button class="h50 border-radius-4rpx fz15 color-333 lh50 borderNone my-box-shadow bgw" type="default"><image class="icon-size-30 br50 bg-F1604F vm mr5" src=""></image>新增乘车人</button>
                 </navigator>
             </view>
             <view class="mt15">
@@ -51,7 +51,7 @@
         <view class="tab-body w710 mt10" hidden="{{current==2?false:true}}">
             <view class="ohidden">
                 <navigator url="./addAddress/addAddress">
-                    <button class="h50 border-radius-4rpx fz15 color-333 lh50 borderNone my-box-shadow" type="default"><image class="icon-size-30 br50 bg-F1604F vm mr5" src=""></image>新增地址</button>
+                    <button class="h50 border-radius-4rpx fz15 color-333 lh50 borderNone my-box-shadow bgw" type="default"><image class="icon-size-30 br50 bg-F1604F vm mr5" src=""></image>新增地址</button>
                 </navigator>
             </view>
             <view class="mt15">
@@ -111,3 +111,8 @@
         <text class="fwb fz14 colorf">客服</text>
     </view>
 </view>
+<view class="displayf altc jscc flexdirec h w" hidden>
+    <image class="icon-size-100 displayb mb15" src="../../imgs/common/noone@2x.png"></image>
+    <text class="fz14 color-333 mt">还没有常用乘车人哦~</text>
+</view>
+<!-- noaddress@2x.png 还没有常用地址哦~-->

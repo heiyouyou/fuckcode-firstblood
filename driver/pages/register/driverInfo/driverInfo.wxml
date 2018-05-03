@@ -61,7 +61,7 @@
         </view>
         <view class="w550 mauto mt30">
             <view class="mb30">
-                <button class="common-btn bg-C7C7CC colorf">继续申请</button>
+                <button class="common-btn bg-C7C7CC colorf" bindtap="next">继续申请</button>
             </view>
         </view>
     </view>

@@ -1,0 +1,13 @@
+/* pages/bus/index/index.wxss */
+.main-wrap{
+  padding: 18px;
+  font-size: 13px;
+}
+.default-address{
+  margin-right: 2px;
+  color: #F1604F;
+  font-size: 12px;
+}
+.main-wrap text{
+  
+}

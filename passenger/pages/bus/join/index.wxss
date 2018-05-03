@@ -1,1 +1,45 @@
-/* pages/bus/index/index.wxss */
+/* pages/bus/join/index.wxss by lewyon */
+.lh30{
+  margin-top: 20px;
+}
+
+.bg-F1604F{
+  width: 6px;
+  height: 6px;
+  display:inline-block;
+  margin-right: 12px;
+}
+.search-input{
+  flex: 10;
+  border-bottom: 1px solid #CCCCCC;
+  height: 30px;
+  line-height: 30px;
+}
+.search-label{
+  margin-right: 4px;
+  margin-left: 12px;
+}
+.search-time{
+  flex-wrap: wrap;
+}
+.search-time .time-content .search-input{
+  border-bottom: none;
+}
+.search-time .time-content :first{
+  border-right: 1px solid #CCCCCC;
+}
+.searcg-btn{
+  position: absolute;
+  bottom: 12px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+.searcg-btn button{
+  flex: 10;
+  width: 96%;
+  height:53px; 
+  background:rgba(241,96,79,1);
+  border-radius: 2px;
+  color: #fff;
+}

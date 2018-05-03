@@ -1,21 +1,5 @@
 <!--pages/results/licenseCertified/licenseCertified.wxml-->
 <import src="../../templates/result/result" />
-<view class="displayf jscb altc flexdirec bgw h">
-    <view class="mt-150 tc">
-        <image class="result-img" src="{{'../../imgs/common/success@2x.png'}}"></image>
-        <view class="mt45">
-            <text class="fz14 color-333 whites-pl" style="line-height:24px;">
-                非常感谢您的耐心填写
-                您的认证资料已经提交成功
-                亲您在此后的7个工作日内手机尽量保持畅通
-                我们工作人员会与您联系
-            </text>
-        </view>
-    </view>
-    <view class="mb25">
-        <view class="color-999 whites-pl tc fz12">
-            有任何问题请<text class="color-F1604F">联系客服，</text>
-            Sky-car车来了将竭诚为您服务。
-        </view>
-    </view>
-</view>
+<template is="result" data="{{...data}}">
+    
+</template>

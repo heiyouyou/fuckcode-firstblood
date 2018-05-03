@@ -1,4 +1,6 @@
 // pages/register/index/index.js
+let util = require('../../../utils/util')
+
 Page({
 
   /**
@@ -21,7 +23,9 @@ Page({
       'countryCode':this.data.multiArray[1][e.detail.value[1]]
     })
   },
-
+  next(){
+    util.go('../driverInfo/driverInfo')
+  },
   /**
    * 生命周期函数--监听页面加载
    */

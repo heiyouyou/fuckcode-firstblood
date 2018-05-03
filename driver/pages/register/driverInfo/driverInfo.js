@@ -1,4 +1,5 @@
 // pages/register/driverInfo/driverInfo.js
+let util = require('../../../utils/util')
 Page({
 
   /**
@@ -14,7 +15,9 @@ Page({
       city:this.data.cityArray[e.detail.value]
     })
   },
-
+  next(){
+    util.go('../driverCar/driverCar')
+  },
   /**
    * 生命周期函数--监听页面加载
    */

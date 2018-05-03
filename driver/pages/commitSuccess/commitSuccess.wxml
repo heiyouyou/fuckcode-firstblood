@@ -1,0 +1,23 @@
+<!--pages/commitSuccess/commitSuccess.wxml-->
+<view class="displayf flexdirec altc h bgw">
+    <view style="padding-top:64rpx;">
+        <view class="displayf altc fl" wx:for="{{[1,2,3]}}">
+            <label>
+                <radio color="{{index<=byIndex?'#F1604F':'#DCDCDC'}}" disabled="{{index<=byIndex?false:true}}" checked="{{index<=byIndex?true:false}}"/>
+            </label>
+            <view class="line fl" wx:if="{{index!=2}}">
+                
+            </view>
+        </view>
+    </view>
+    <view class="displayf altc w mt10">
+        <text wx:for="{{['提交申请','等待审核','审核通过']}}" class="flex1 tc fz15 {{index<=byIndex?'color-8F8E94':'color-333'}}">{{item}}</text>
+    </view>
+    <image class="bg-F1604F" src="" style="width:336rpx;height:252rpx;margin:156rpx 0 64rpx 0;"></image>
+    <view class="tc color-8F8E94 parl20">
+        <text class="displayb">
+            非常感谢您的耐心填写，您的认证资料已经提交成功。请您在此后的7个工作日内手机尽量保持畅通，我们的工作人员会与您联系\n\n如果有任何问题，请联系
+        </text>
+        <text class="fz13 color-333">skycardriver</text>
+    </view>
+</view>

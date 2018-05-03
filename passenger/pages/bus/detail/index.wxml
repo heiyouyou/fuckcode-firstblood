@@ -1,0 +1,48 @@
+<!--pages/bus/index/index.wxml 结伴班车-->
+<view class=''>
+  <view class='main-wrap bybus-content'>
+    <view class='dp-flex jc-cen bybus-msg'>
+      <image class="card-avatar bg-F1604F br50" src=""></image>
+      <view class='dp-flex jc-cen msg-text'>
+        <text class='bybus-name'>Sky-car官方班车 <text class='bybus-name-type'>直达</text></text>
+        <text class='bybus-tip'>起点区域以内，可到您指定地点接您加入行程</text>
+      </view>
+    </view>
+    <view class="bgw mb10">
+        <view class="fz14 color-666 h30 lh40">
+          <image class="bg-F1604F icon-size" src=""></image>
+          <text class="ml15">2017/08/09 8:00-9:00出发</text>
+          <view class="fr">
+              <image class="choice-size" src="../../../imgs/common/choice@2x.png"></image>
+          </view>
+        </view>
+        <view class="fz14 color-666 h30 lh30">
+          <image class="bg-F1604F icon-size" src=""></image>
+          <text class="ml15">Clayton</text>
+          <view class="fr">
+              <image class="choice-size" src="../../../imgs/common/choice@2x.png"></image>
+          </view>
+        </view>
+        <view class="fz14 color-666 h30 lh30">
+          <image class="bg-F1604F icon-size" src=""></image>
+          <text class="ml15">Caulfield  预计10:30到达</text>
+          <view class="fr">
+              <image class="choice-size" src="../../../imgs/common/choice@2x.png"></image>
+          </view>
+        </view>
+        <view class="fz14 color-666 h30 lh30">
+          <image class="bg-F1604F icon-size" src=""></image>
+          <text class="ml15">剩余2个座位，4件大行李位</text>
+          <view class="fr">
+              <image class="choice-size" src="../../../imgs/common/choice@2x.png"></image>
+          </view>
+        </view>
+    </view>
+    <!-- map.wxml -->
+    <map id="map" longitude="113.324520" latitude="23.099994" scale="14" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" show-location style="width: 100%; height: 300px;"></map>
+  </view>
+  <view class="searcg-btn">
+      <button class='dp-flex jc-cen' type='default' data-url='/pages/bus/join/index' bindtap='go'>立即加入</button>
+  </view>
+</view>
+

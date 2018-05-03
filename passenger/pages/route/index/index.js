@@ -6,7 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    current:1
+    // 1:结伴班车 2:预约用车 3:机场接送 4:包车旅游
+    current:4
   },
   chooseWay(e){
     let type = e.currentTarget.dataset.type
@@ -16,8 +17,10 @@ Page({
   },
   // 订单详情页面
   detail(e){
-    console.log(e)
     util.go('../orderDetail/orderDetail')
+  },
+  packDetail(e){
+    util.go('../packOrderDetail/packOrderDetail')
   },
   // 支付页面
   nextPay(){

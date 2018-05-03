@@ -1,2 +1,91 @@
 <!--pages/my/index/index.wxml-->
-<text>pages/my/index/index.wxml</text>
+<view class="ohidden">
+    <view class="pt10 pb10 pr15 pl20 border-top-DCDCDC border-bottom-DCDCDC mb25 mt25 bgw">
+        <navigator url="../info/info">
+            <view class="displayf jscb altc">
+                <view>
+                    <image class="icon-size-88 bg-F1604F br50 vm" src=""></image>
+                    <text class="color-333 fz17 vm ml5 mr5">杜贝贝</text>
+                    <image class="icon-size-26 vm" src="../../../images/icon_she@2x.png"></image>
+                </view>
+                <image class="setting-icon vm" src="../../../images/icon_setting@2x.png"></image>
+            </view>
+        </navigator>
+        <view class="displayf altc mt20">
+            <view class="flex1 displayf altc jscc flexdirec border-right-DCDCDC">
+                <view class="mb10">
+                    <image class="icon-size-24 vm" src="../../../images/icon_home_star_light@2x.png" wx:for="{{[1,2,3]}}"></image>
+                    <text class="color-333 fz13 vm ml5">4.9</text>
+                </view>
+                <text class="fz13 color-DCDCDC">可用余额</text>
+            </view>
+            <view class="flex1 displayf altc jscc flexdirec">
+                <text class="fz20 color-333 mb10">￥75</text>
+                <text class="fz13 color-DCDCDC">可用余额</text>
+            </view>
+        </view>
+    </view>
+    <view class="border-top-DCDCDC">
+        <navigator url="../wallet/wallet">
+            <view class="displayf altc jscb h-88rpx bgw border-bottom-DCDCDC parl15">
+                <view>
+                    <image class="icon-size-38 bg-F1604F vm mr15" src=""></image>
+                    <text class="fz15 color-333 vm">我的钱包</text>
+                </view>
+                <image class="setting-icon vm" src="../../../images/icon_setting@2x.png"></image>
+            </view>
+        </navigator>
+        <navigator url="../evaluate/evaluate">
+            <view class="displayf altc jscb h-88rpx bgw border-bottom-DCDCDC parl15">
+                <view>
+                    <image class="icon-size-38 bg-F1604F vm mr15" src=""></image>
+                    <text class="fz15 color-333 vm">我的评价</text>
+                </view>
+                <image class="setting-icon vm" src="../../../images/icon_setting@2x.png"></image>
+            </view>
+        </navigator>
+        <view class="displayf altc jscb h-88rpx bgw border-bottom-DCDCDC parl15">
+            <view>
+                <image class="icon-size-38 bg-F1604F vm mr15" src=""></image>
+                <text class="fz15 color-333 vm">使用指南</text>
+            </view>
+            <image class="setting-icon vm" src="../../../images/icon_setting@2x.png"></image>
+        </view>
+        <view class="displayf altc jscb h-88rpx bgw border-bottom-DCDCDC border-top-DCDCDC parl15 mtb25">
+            <view>
+                <image class="icon-size-38 bg-F1604F vm mr15" src=""></image>
+                <text class="fz15 color-333 vm">车主认证</text>
+            </view>
+            <image class="setting-icon vm" src="../../../images/icon_setting@2x.png"></image>
+        </view>
+        <view class="displayf altc jscb h-88rpx bgw border-bottom-DCDCDC border-top-DCDCDC parl15">
+            <view>
+                <image class="icon-size-38 bg-F1604F vm mr15" src=""></image>
+                <text class="fz15 color-333 vm">商务合作</text>
+            </view>
+            <image class="setting-icon vm" src="../../../images/icon_setting@2x.png"></image>
+        </view>
+        <view class="displayf altc jscb h-88rpx bgw border-bottom-DCDCDC parl15">
+            <view>
+                <image class="icon-size-38 bg-F1604F vm mr15" src=""></image>
+                <text class="fz15 color-333 vm">关于我们</text>
+            </view>
+            <image class="setting-icon vm" src="../../../images/icon_setting@2x.png"></image>
+        </view>
+         <view class="displayf altc jscb h-88rpx bgw border-bottom-DCDCDC border-top-DCDCDC parl15 mtb25">
+            <view>
+                <image class="icon-size-38 bg-F1604F vm mr15" src=""></image>
+                <text class="fz15 color-333 vm">联系司机总管</text>
+            </view>
+            <image class="setting-icon vm" src="../../../images/icon_setting@2x.png"></image>
+        </view>
+    </view>
+    <view class="br50 bg-F1604F pa message-circle">
+        <navigator class="h" url="../message/message">
+            <view class="displayf altc jscc flexdirec h">
+                <image class="icon-size-48 displayb" src="../../../images/icon_service@2x.png" ></image>
+                <text class="fz13 colorf">消息</text>
+            </view>
+        </navigator>
+    </view>
+</view>

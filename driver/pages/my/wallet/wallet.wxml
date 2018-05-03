@@ -1,0 +1,80 @@
+<!--pages/my/wallet/wallet.wxml-->
+<view>
+    <view class="displayf jscb padding-l-44 padding-r-44 bgw altc border-bottom-DCDCDC" style="height:234rpx;">
+        <view class="displayf flexdirec">
+            <text class="mb5 color-C7C7CC fz13">账户余额（元）</text>
+            <text class="fz27 color-333">6145.00</text>
+        </view>
+        <view class="displayf flexdirec">
+            <text class="mb5 color-C7C7CC fz13">即将到账（元)</text>
+            <text class="color-F1604F fz27">431</text>
+        </view>
+    </view>
+    <view class="bgw">
+        <view class="displayf h50 altc jscb padding-l-44 border-bottom-DCDCDC">
+            <view class="border-right-DCDCDC flex1 h displayf jscc flexdirec">
+                <text class="fz15 color-333">充值</text>
+                <text class="fz13 color-8F8E94">145.00</text>
+            </view>
+            <view class="flex1 padding-l-44 h displayf jscc flexdirec">
+                <text class="fz15 color-333">提现</text>
+                <text class="fz13 color-8F8E94">145.00</text>
+            </view>
+        </view>
+        <view class="displayf h50 altc jscb padding-l-44 border-bottom-DCDCDC">
+            <view class="border-right-DCDCDC flex1 h displayf jscc flexdirec">
+                <text class="fz15 color-333">收入</text>
+                <text class="fz13 color-8F8E94">145.00</text>
+            </view>
+            <view class="flex1 padding-l-44 h displayf jscc flexdirec">
+                <text class="fz15 color-333">绑定提现账号</text>
+            </view>
+        </view>
+    </view>
+    <view class="h50 displayf altc padding-l-44">
+        <text class="fz13 color-333">账单明细</text>
+    </view>
+    <view class="bgw border-top-DCDCDC">
+        <view class="displayf jscb pt10 pb10 padding-l-44 padding-r-44 border-bottom-DCDCDC">
+            <view class="clearfix">
+                <text class="fl mr35 fz15 color-333">收入</text>                    
+                <view class="fl displayf flexdirec lh20">
+                    <text class="fz15 color-333">完成接送机任务</text>
+                    <text class="fz11 color-333">订单编号：25487141234</text>
+                    <text class="fz11 color-C7C7CC">2018-08-09 19:31:50</text>
+                </view>
+            </view>
+            <view class="displayf flexdirec lh20 altend">
+                <text class="fz17 color-F1604F">+200</text>
+                <text class="fz11 color-C7C7CC">余额：5000</text>
+            </view>
+        </view>
+        <view class="displayf jscb pt10 pb10 padding-l-44 padding-r-44 border-bottom-DCDCDC">
+            <view class="clearfix">
+                <text class="fl mr35 fz15 color-333">提现</text>                    
+                <view class="fl displayf flexdirec lh20">
+                    <text class="fz15 color-333">提现失败</text>
+                    <text class="fz11 color-C7C7CC">2018-08-09 19:31:50</text>
+                </view>
+            </view>
+            <view class="displayf flexdirec lh20 altend">
+                <text class="fz17 color-C7C7CC">+200</text>
+                <text class="fz11 color-C7C7CC">余额：5000</text>
+            </view>
+        </view>
+         <view class="displayf jscb pt10 pb10 padding-l-44 padding-r-44 border-bottom-DCDCDC">
+            <view class="clearfix">
+                <text class="fl mr35 fz15 color-333">支出</text>                    
+                <view class="fl displayf flexdirec lh20">
+                    <text class="fz15 color-333">预约用车</text>
+                    <text class="fz11 color-333">订单编号：25487141234</text>
+                    <text class="fz11 color-C7C7CC">2018-08-09 19:31:50</text>
+                </view>
+            </view>
+            <view class="displayf flexdirec lh20 altend">
+                <text class="fz17 color-333">-200</text>
+                <text class="fz11 color-C7C7CC">余额：5000</text>
+            </view>
+        </view>
+    </view>
+</view>

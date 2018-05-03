@@ -1,0 +1,22 @@
+/* pages/order/detail/detail.wxss */
+.detail-list-item{
+    height:74rpx;
+}
+.driver-nav-img{
+    width:94rpx;
+    height:36rpx;
+}
+#map{
+    height:250px;
+    width:100%;
+}
+.t-order-btn{
+    border:1px solid #F1604F;
+    color:#F1604F;
+    background:#fff;
+}
+.c-order-btn{
+    border:1px solid #333;
+    color:#333;
+    background:#fff;
+}

@@ -25,6 +25,9 @@ Page({
       }
     })
   },
+  next(){
+    util.go('../../commitSuccess/commitSuccess',1)
+  },
   /**
    * 生命周期函数--监听页面加载
    */

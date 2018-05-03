@@ -6,3 +6,19 @@ input{
     width:100%;
     height:230rpx;
 }
+.re-upload-box{
+    position:absolute;
+    left:0;
+    bottom:0;
+    right:0;
+    text-align:center;
+    height:56rpx;
+    line-height:56rpx;
+    color:#fff;
+    background:rgba(0,0,0,0.5);
+}
+.waring-info-box{
+    position:absolute;
+    left:0;
+    bottom:-22px;
+}

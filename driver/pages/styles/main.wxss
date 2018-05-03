@@ -13,13 +13,28 @@
 .padding-right-15rpx{
     padding-left:15rpx;
 }
+.padding-44{
+    padding:44rpx;
+}
+.padding-top-44{
+    padding-top:44rpx;
+}
+.padding-bottom-44{
+    padding-bottom:44rpx;
+}
+.padding-l-44{
+    padding-left:44rpx;
+}
+.padding-r-44{
+    padding-right:44rpx;
+}
 .mt-150{
     margin-top:150rpx;
 }
 /* 内外边距 end */
 
 
-/* 文本颜色 start */
+/* 文本颜色/大小 start */
 .color-ccc{
     color:#ccc;
 }
@@ -68,10 +83,25 @@
 .color-3CB657{
     color:#3CB657;
 }
+.color-494C5B{
+    color:#494C5B;
+}
 .highlight-text{
     color:#F1604F;
 }
-/* 文本颜色 end */
+.color-DCDCDC{
+    color:#DCDCDC;
+}
+.color-B2B2B2{
+    color:#B2B2B2;
+}
+.fz11{
+    font-size:22rpx;
+}
+.fz27{
+    font-size:54rpx;
+}
+/* 文本颜色/大小 end */
 
 /* 宽度、高度、行高 start */
 .w450{
@@ -79,6 +109,9 @@
 }
 .w550{
     width:550rpx;
+}
+.w650{
+    width:650rpx;
 }
 .w660{
     width:660rpx;
@@ -140,6 +173,9 @@
 .bg-C7C7CC{
     background:#C7C7CC;
 }
+.bg-DCDCDC{
+    background:#DCDCDC;
+}
 .bg-f2f4f5{
     background:#f2f4f5;
 }
@@ -173,6 +209,10 @@
     width:32rpx;
     height:18rpx;
 }
+.setting-icon{
+    width:20rpx;
+    height:28rpx;
+}
 .icon-size-12{
     width:12rpx;
     height:12rpx;
@@ -197,6 +237,10 @@
     width:28rpx;
     height:28rpx;
 }
+.icon-size-26{
+    width:26rpx;
+    height:26rpx;
+}
 .icon-size-27{
     width:27rpx;
     height:27rpx;
@@ -213,6 +257,10 @@
     width:36rpx;
     height:36rpx;
 }
+.icon-size-38{
+    width:38rpx;
+    height:38rpx;
+}
 .icon-size-40{
     width:40rpx;
     height:40rpx;
@@ -220,6 +268,10 @@
 .icon-size-44{
     width:44rpx;
     height:44rpx;
+}
+.icon-size-48{
+    width:48rpx;
+    height:48rpx;
 }
 .icon-size-88{
     width:88rpx;
@@ -288,7 +340,7 @@
     border-right:1rpx solid #E4E4E4;
 }
 .border-left-E4E4E4{
-    border-right:1rpx solid #E4E4E4;
+    border-left:1rpx solid #E4E4E4;
 }
 .border-top-E4E4E4{
     border-top:1rpx solid #E4E4E4;
@@ -333,11 +385,6 @@
 }
 .cancel-btn-bg{
     background:#999999;
-}
-.message-circle{
-    position:fixed;
-    right:60rpx;
-    bottom:100rpx;
 }
 .message-num-icon{
     min-width:30rpx;

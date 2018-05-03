@@ -1,20 +1,30 @@
 {
   "pages":[
+    "pages/login/index/index",
+    "pages/login/login/login",
+    "pages/index/index",
+    "pages/orderManage/orderManage",
+    "pages/licenseTranslate/licenseTranslate",
+    "pages/commitSuccess/commitSuccess",
+    "pages/bus/bus",
+    "pages/bus/createSuccess/createSuccess",
+    "pages/my/index/index",
+    "pages/my/message/message",
+    "pages/my/evaluate/evaluate",
+    "pages/my/info/info",
+    "pages/my/wallet/wallet",
+    "pages/order/index/index",
+    "pages/order/detail/detail",
     "pages/orders/index/index",
     "pages/orders/detail/detail",
-    "pages/register/driverCar/driverCar",
-    "pages/index/index",
-    "pages/order/index/index",
-    "pages/my/index/index",
     "pages/register/driverInfo/driverInfo",
-    "pages/register/index/index",
-    "pages/login/login/login",
-    "pages/login/index/index"
+    "pages/register/driverCar/driverCar",
+    "pages/register/index/index"
   ],
   "window":{
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F1604F",
-    "navigationBarTitleText": "SkyCar",
+    "navigationBarTitleText": "Skycar-车来了",
     "navigationBarTextStyle": "white"
   },
   "tabBar": {
@@ -32,8 +42,9 @@
         "text": "接单"
       },
       {
-        "pagePath": "pages/order/index/index",
+        "pagePath": "pages/orderManage/orderManage",
         "iconPath": "images/order_unchecked@2x.png",
+        "selectedIconPath": "images/tab_form_normal@2x.png",
         "text": "订单"
       },
       {

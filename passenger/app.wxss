@@ -178,12 +178,13 @@ view {
 }
 
 .route-tag {
-  height: 32rpx;
-  line-height: 32rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  box-sizing:border-box;
   border-radius: 4rpx;
   text-align: center;
   display: inline-block;
-  padding: 2px 4px;
+  padding: 0 4px;
   margin-left: 10rpx;
 }
 

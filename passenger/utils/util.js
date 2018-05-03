@@ -193,15 +193,16 @@ const delEmptyKey = obj => {
 }
 
 module.exports = {
-  formatTime: formatTime,
-  formatNumber: formatNumber,
-  formatNoToCn: formatNoToCn,
-  go: go,
-  ajax: ajax,
-  getUserInfo: getUserInfo,
-  updImg: updImg,
-  toast: toast,
-  isEmptyObj: isEmptyObj,
-  delEmptyKey: delEmptyKey,
-  getStorageSync: getStorageSync
+  formatTime,
+  formatNumber,
+  formatNoToCn,
+  go,
+  ajax,
+  getUserInfo,
+  updImg,
+  toast,
+  isEmptyObj,
+  delEmptyKey,
+  getStorageSync,
+  server
 }

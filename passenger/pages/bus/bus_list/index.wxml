@@ -43,7 +43,7 @@
         </view>
     </view>
     <view class='bgw buybus-join'>
-      <button type='default' class='dp-flex jc-cen buybus-join-btn' data-url='/pages/bybus/detail/index' bindtap='go'>加入</button>
+      <button type='default' class='dp-flex jc-cen buybus-join-btn' data-url='/pages/bus/detail/index' bindtap='go'>加入</button>
     </view>
   </view>
   
