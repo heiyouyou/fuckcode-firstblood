@@ -1,9 +1,13 @@
 <!--pages/orderManage/orderManage.wxml-->
 <view>
     <view class="h-88rpx bg-F1604F displayf altc jscb parl15">
-        <image class="icon-size-44" mode="aspectFit" src="../../images/nav_back_white_pass@2x.png" data-flag="-1" bindtap="changeYear"></image>
+        <view class="patrbl5" bindtap="changeYear" data-flag="-1">
+            <image class="icon-size-44" mode="aspectFit" src="../../images/nav_back_white_pass@2x.png"></image>
+        </view>
         <text class="colorf fz17">{{curYear}}</text>
-        <image class="icon-size-44" mode="aspectFit" src="../../images/nav_next_white copy@2x.png" data-flag="1" bindtap="changeYear"></image>
+        <view class="patrbl5" bindtap="changeYear" data-flag="1">
+            <image class="icon-size-44" mode="aspectFit" src="../../images/nav_next_white@2x.png"></image>
+        </view>
     </view>
     <view class="parl20 bg-F1604F">
         <scroll-view class="whites-nowrap pb15 pt5" scroll-x>

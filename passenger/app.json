@@ -1,10 +1,8 @@
 {
   "pages": [
-    "pages/my/CarOwnerCertification/license/license",
-    "pages/route/index/index",
-    "pages/index/index",
-    "pages/login/index/index",
     "pages/login/login/login",
+    "pages/login/index/index",
+    "pages/index/index",
     "pages/bus/index/index",
     "pages/bus/bus_list/index",
     "pages/bybus/index/index",
@@ -14,6 +12,7 @@
     "pages/bybus/choose_city/index",
     "pages/translate/index/index",
     "pages/translate/payment_succ/payment_succ",
+    "pages/route/index/index",
     "pages/route/packOrderDetail/packOrderDetail",
     "pages/route/payment/payment",        
     "pages/route/orderDetail/orderDetail",
@@ -28,7 +27,7 @@
     "pages/my/wallet/recharge/recharge",
     "pages/my/wallet/details/details",
     "pages/my/wallet/index/index",
-    
+    "pages/my/CarOwnerCertification/license/license",
     "pages/my/CarOwnerCertification/info/info",
     "pages/my/CarOwnerCertification/index/index",
     "pages/my/editInfo/editInfo",

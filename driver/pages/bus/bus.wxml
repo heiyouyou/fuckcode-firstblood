@@ -6,19 +6,19 @@
                 <picker class="flex1" mode="date" value="{{date}}" bindchange="bindDateChange">
                     <input class="pl15 h flex1" type="" value="{{date}}" disabled placeholder="选择日期" placeholder-class="color-C7C7CC fz13"/>
                 </picker>
-                <image class="icon-size-36" src="../../images/icon_ date@2x.png"></image>
+                <image class="icon-size-36" src="../../images/icon_date@2x.png"></image>
             </view>
             <view class="displayf altc jscb input-box-class pr15">
                 <picker class="flex1" mode="time" value="{{time}}" bindchange="bindTimeChange">
                     <input class="pl15 h flex1" type="" value="{{time}}" disabled placeholder="设置出发时间" placeholder-class="color-C7C7CC fz13"/>
                 </picker>
-                <image class="icon-size-36" src="../../images/icon_ time@2x.png"></image>
+                <image class="icon-size-36" src="../../images/icon_time@2x.png"></image>
             </view>
         </view>
         <view class="input-box-class mb20 displayf altc jscb pr15 pr">
             <input class="pl15 h flex1" type="" placeholder="设置终点，匹配顺路乘客" placeholder-class="color-C7C7CC fz13"/>
             <view class="start-end-icon">
-                <image style="width:30rpx;height:78px;" src="../../../images/icon_createbus_position@2x.png"></image>
+                <image style="width:30rpx;height:78px;" src="../../images/icon_createbus_position@2x.png"></image>
             </view>
         </view>
         <view class="input-box-class mb20 displayf altc jscb pr15">

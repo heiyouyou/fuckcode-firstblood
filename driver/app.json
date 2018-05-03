@@ -1,5 +1,7 @@
 {
   "pages":[
+    "pages/login/index/index",
+    "pages/login/login/login",
     "pages/index/index",
     "pages/orderManage/orderManage",
     "pages/licenseTranslate/licenseTranslate",
@@ -13,8 +15,6 @@
     "pages/my/wallet/wallet",
     "pages/order/index/index",
     "pages/order/detail/detail",
-    "pages/login/index/index",
-    "pages/login/login/login",
     "pages/orders/index/index",
     "pages/orders/detail/detail",
     "pages/register/driverInfo/driverInfo",
@@ -24,7 +24,7 @@
   "window":{
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F1604F",
-    "navigationBarTitleText": "SkyCar",
+    "navigationBarTitleText": "Skycar-车来了",
     "navigationBarTextStyle": "white"
   },
   "tabBar": {

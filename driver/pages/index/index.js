@@ -18,7 +18,8 @@ Page({
   },
   next(e){
     let type = e.currentTarget.dataset.type;
-    type==3?util.go('../licenseTranslate/licenseTranslate'):'';
+    type == 0 && util.go('../bus/bus');
+    type == 3 && util.go('../licenseTranslate/licenseTranslate');
   },
   /**
    * 生命周期函数--监听页面加载
