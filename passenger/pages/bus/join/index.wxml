@@ -1,34 +1,65 @@
 <!--pages/bus/index/index.wxml 结伴班车-->
-<!--pages/my/index/index.wxml-->
-<view class="displayf jscc page-bg">
-    <view class="w710 mt10">
-        <view class="bgw br4 my-box-shadow mb10">
-            <view class="fz14 color-666 border-bottom-ccc h50 boxb">
-                <view class="patrbl15">
-                    <image class="bg-F1604F icon-size"></image>
-                    <view class="fr">
-                        <input placeholder='您从哪儿出发'></input>
-                    </view>
-                </view>
-            </view>
-            <view class="fz14 color-666 h50 boxb">
-                <view class="patrbl15">
-                    <image class="bg-F1604F icon-size" src=""></image>
-                    <view class="fr navigator-choice">
-                        <input placeholder='您想要去哪儿'></input>
-                    </view>
-                </view>
-            </view>
-            <view class="fz14 color-666 h50 boxb">
-                <view class="patrbl15">
-                    <image class="bg-F1604F icon-size" src=""></image>
-                    <view class="fr navigator-choice">
-                        <input placeholder='出发时间'></input>
-                    </view>
-                </view>
-            </view>
-            <button type="default">下一步</button>
-        </view>
+<view class='container'>
+  <view class=' main-wrap'>
+    <view class="fz14 color-666 h30 lh30 dp-flex jc-cen">
+      <image class="bg-F1604F icon-size" src=""></image>
+      <view class="search-input">
+          <input value='' type='text' placeholder='您从哪儿出发'></input>
+      </view>
+      <text data-url='/pages/bus/address/index' bindtap='go'>常用地址</text>
     </view>
+    <view class="fz14 color-666 h30 lh30 dp-flex jc-cen">
+      <image class="bg-F1604F icon-size" src=""></image>
+      <view class="search-input">
+          <input value='' type='text' placeholder='您要去哪儿'></input>
+      </view>
+      <text data-url='/pages/bus/address/index' bindtap='go'>常用地址</text>
+    </view>
+    <view class='dp-flex jc-cen search-time'>
+      <view class="fz14 color-666 h30 lh30 dp-flex jc-cen time-content">
+        <image class="bg-F1604F icon-size" src=""></image>
+        <view class="search-input">
+            <input value='' type='text' placeholder='出发时间'></input>
+        </view>
+      </view>
+      <view class="fz14 color-666 h30 lh30 dp-flex jc-cen time-content">
+        <image class="bg-F1604F icon-size" src=""></image>
+        <view class="search-input">
+            <input value='' type='text' placeholder='可接受时间范围'></input>
+        </view>
+      </view>
+    </view>
+    <view class='dp-flex jc-cen search-time'>
+      <view class="fz14 color-666 h30 lh30 dp-flex jc-cen time-content">
+        <image class="bg-F1604F icon-size" src=""></image>
+        <view class="search-input">
+            <input value='' type='text' placeholder='同行人数'></input>
+        </view>
+      </view>
+      <view class="fz14 color-666 h30 lh30 dp-flex jc-cen time-content">
+        <image class="bg-F1604F icon-size" src=""></image>
+        <view class="search-input">
+            <input value='' type='text' placeholder='大/小行李数'></input>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class=' main-wrap'>
+    <view class="fz14 color-666 h30 lh30 dp-flex jc-cen">
+      <label class='search-label'>联系电话</label> 
+      <view class="search-input">
+          <input value='' type='text' placeholder='您从哪儿出发'></input>
+      </view>
+    </view>
+    <view class="fz14 color-666 h30 lh30 dp-flex jc-cen">
+      <label class='search-label'>乘车人</label> 
+      <view class="search-input">
+          <input value='' type='text' placeholder='李先生'></input>
+      </view>
+    </view>
+  </view>
+  <view class="searcg-btn">
+      <text>城际班次说明</text>
+      <button class='dp-flex jc-cen' type='default'>继续</button>
+  </view>
 </view>
-

@@ -1,6 +1,4 @@
-// pages/bus/index/index.js
-const app = getApp(),
-  util = require('../../../utils/util.js')
+// pages/air/oneWayBill/map/index.js
 Page({
 
   /**
@@ -9,10 +7,7 @@ Page({
   data: {
   
   },
-  go(e) {
-    let url = e.currentTarget.dataset.url
-    util.go(url)
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */

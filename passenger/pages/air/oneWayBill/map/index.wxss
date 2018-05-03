@@ -1,0 +1,23 @@
+/* pages/air/oneWayBill/map/index.wxss */
+
+map {
+  height: 74%;
+}
+
+.main-form {
+  height: 26%;
+}
+
+.main-form .time {
+  font-size: 30rpx;
+  padding: 35rpx 90rpx;
+  border-bottom: 1px solid #ccc;
+}
+
+.main-form .item {
+  margin-left: 80rpx;
+}
+
+.start:before, .end:before {
+  left: -40rpx;
+}
