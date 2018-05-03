@@ -1,0 +1,28 @@
+<!--pages/travel/map/map.wxml-->
+<map>
+  <cover-view>
+    <cover-image></cover-image>
+  </cover-view>
+</map>
+<view class='route-plan'>
+  <view wx:for="{{list}}">
+    <view class='pro-img'>
+      <image src='{{item.img}}'></image>
+    </view>
+    <view>
+      <view class='dp-flex jc-sb'>
+        <view>{{item.name}}</view>
+        <view class='day'>DAY{{item.day}}</view>
+      </view>
+      <view class='star'>
+        <block wx:for="{{item.star}}">
+          <image src="/pages/imgs/common/score-star-red.png"></image>
+        </block>
+        <block wx:for="{{5 - (item.star)}}">
+          <image src="/pages/imgs/common/score-star.png"></image>
+        </block>
+      </view>
+      <view>{{item.type}}第{{item.day}}站 {{item.city}}</view>
+    </view>
+  </view>
+</view>

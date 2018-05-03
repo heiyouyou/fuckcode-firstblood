@@ -1,2 +1,13 @@
 <!--pages/air/oneWayBill/driver/index.wxml-->
-<text>pages/air/oneWayBill/driver/index.wxml</text>
+<view class='search dp-flex'>
+  <input></input>
+  <text bindtap='onCancle'>取消</text>
+</view>
+<view class='res'>
+  <view class='main-form pad-lft'>
+    <view class='item dp-flex {{index == (list.length - 1) ? "no-bor-b" : ""}}' wx:for="{{list}}" bindtap='onItem'>
+      <view><image src="{{item.img}}"></image></view>
+      <view>{{item.name}}, {{item.carNum}}</view>
+    </view>
+  </view>
+</view>

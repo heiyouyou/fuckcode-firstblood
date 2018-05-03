@@ -1,1 +1,38 @@
 /* pages/travel/index/index.wxss */
+.wish-btn {
+  width: 100%;
+  padding: 45rpx;
+  font-size: 32rpx;
+  border-radius: 20rpx 20rpx 0 0;
+  background: #fff;
+  overflow: hidden;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+.citys {
+  padding-bottom: 70px;
+}
+.citys .item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  font-size: 36rpx;
+  color: #fff;
+  border-radius: 8rpx;
+  background-size: cover;
+}
+.citys .item > view:last-of-type {
+  font-size: 28rpx;
+}
+.citys > view:not(:first-of-type) {
+  margin-top: 20rpx;
+}
+.citys > view > view + view {
+  margin-left: 20rpx;
+}
+.citys .item + .item {
+  margin-top: 20rpx;
+}

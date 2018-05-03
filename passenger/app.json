@@ -1,6 +1,14 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/travel/bill/bill",
+    "pages/air/index/index",
+    "pages/travel/calendar/calendar",
+    "pages/travel/detail/detail",
+    "pages/travel/index/index",
+    "pages/travel/map/map",
+    "pages/travel/city/city",
+    "pages/travel/wish/wish",
     "pages/login/login/login",
     "pages/login/index/index",
     "pages/bybus/index/index",
@@ -37,13 +45,13 @@
     "pages/my/editInfo/editInfo",
     "pages/my/evaluate/evaluate",
     "pages/my/message/message",
-    "pages/air/index/index",
+    "pages/air/oneWayBill/index/index",
     "pages/air/next/next",
     "pages/air/check/check",
-    "pages/air/oneWayBill/index/index",
     "pages/air/oneWayBill/map/index",
     "pages/air/oneWayBill/contact/index/index",
     "pages/air/oneWayBill/contact/add/add",
+    "pages/air/oneWayBill/contact/edit/edit",
     "pages/air/oneWayBill/driver/index",
     "pages/air/oneWayBill/discount/index",
     "pages/air/toFromBill/toFromBill",
@@ -56,7 +64,6 @@
     "pages/results/licenseCertified/licenseCertified",
     "pages/results/success/success",
     "pages/car/index/index",
-    "pages/travel/index/index",
     "pages/flight/index/index"
   ],
   "window": {

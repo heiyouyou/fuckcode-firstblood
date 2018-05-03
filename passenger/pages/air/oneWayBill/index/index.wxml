@@ -16,6 +16,7 @@
         <text>{{form.bigLuggage}}大行李，</text>
         <text>{{form.smallLuggage}}小行李</text>
       </view>
+      <view class='hover-btn' data-url='/pages/air/oneWayBill/map/index' bindtap='go'></view>
     </view>
     <view class='remark'>司机接单后不可免费取消，具体请看
       <text>取消规则</text> </view>
@@ -31,6 +32,7 @@
     <view class='item dp-flex'>
       <view class='lab'>联系人</view>
       <input placeholder='请填写联系人姓名'></input>
+      <text data-url='/pages/air/oneWayBill/contact/index/index' bindtap='go'>常用联系人</text>
     </view>
     <view class='item dp-flex'>
       <view class='lab'>手机号</view>
@@ -66,7 +68,7 @@
       <view class='lab'>微信号</view>
       <input placeholder='请填写微信号,作为备用联系方式'></input>
     </view>
-    <view class='item dp-flex rgt-arr'>
+    <view class='item dp-flex rgt-arr' data-url='/pages/air/oneWayBill/driver/index' bindtap='go'>
       <view class='lab'>指定司机</view>
       <input placeholder='如有指定司机，请选择您的司机'></input>
     </view>

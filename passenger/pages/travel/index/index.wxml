@@ -1,2 +1,52 @@
 <!--pages/travel/index/index.wxml-->
-<text>包车旅游</text>
+<view class='container'>
+  <view class='citys'>
+    <view class='dp-flex ai-fs'>
+      <view style='flex: 1'>
+        <view class='item' wx:for="{{list}}" wx:if="{{index < 2}}"
+        data-url="/pages/travel/city/city" bindtap="go" 
+        style='height: {{item.height}}rpx;background: url({{item.img}});background-size: 100% 100%;'>
+          <view>{{item.name}}</view>
+          <view>{{item.esl}}</view>
+        </view>
+      </view>
+      <view style='flex: 2'>
+        <view class='dp-flex flex-one'>
+          <view class='item' wx:for="{{list}}" wx:if="{{index > 1 && index <4}}" style='height: {{item.height}}rpx;background: url({{item.img}});background-size: 100% 100%;margin-top: 0;margin-left: {{index == 3 ? "20rpx" : ""}}'>
+            <view>{{item.name}}</view>
+            <view>{{item.esl}}</view>
+          </view>
+        </view>
+        <view class=''>
+          <view class='item' wx:for="{{list}}" wx:if="{{index == 4}}" style='height: {{item.height}}rpx;background: url({{item.img}});background-size: 100% 100%;margin-top: 20rpx;'>
+            <view>{{item.name}}</view>
+            <view>{{item.esl}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='dp-flex flex-one'>
+      <view>
+        <view class='item' wx:for="{{list}}" wx:if="{{index == 5 || index == 6}}" style='height: {{item.height}}rpx;background: url({{item.img}});background-size: 100% 100%;'>
+          <view>{{item.name}}</view>
+          <view>{{item.esl}}</view>
+        </view>
+      </view>
+      <view>
+        <view class='item' wx:for="{{list}}" wx:if="{{index == 7 || index == 8 || index == 9}}" style='height: {{item.height}}rpx;background: url({{item.img}});background-size: 100% 100%;'>
+          <view>{{item.name}}</view>
+          <view>{{item.esl}}</view>
+        </view>
+      </view>
+    </view>
+    <view>
+        <view class='item' wx:for="{{list}}" wx:if="{{index == 10}}" style='height: {{item.height}}rpx;background: url({{item.img}});background-size: 100% 100%;'>
+          <view>{{item.name}}</view>
+          <view>{{item.esl}}</view>
+        </view>
+    </view>
+  </view>
+  <view class='wish-btn dp-flex jc-cnt' data-url='/pages/travel/wish/wish' bindtap='go'>
+    <text>我的愿望清单</text>
+  </view>
+</view>

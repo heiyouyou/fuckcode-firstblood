@@ -15,6 +15,10 @@ map {
   width: 100%;
 }
 
+view {
+  box-sizing: border-box;
+}
+
 /** by youyou start **/
 
 /* 登录、注册 start */
@@ -145,9 +149,10 @@ map {
   padding-left: 68rpx;
   font-size: 14px;
 }
-.filter-content-box{
-  margin-bottom:80px;
-  margin-top:108px;
+
+.filter-content-box {
+  margin-bottom: 80px;
+  margin-top: 108px;
 }
 
 .filter-tab {
@@ -182,9 +187,10 @@ map {
   padding: 0 4px;
   margin-left: 10rpx;
 }
-.route-tag-img{
-  width:90rpx;
-  height:34rpx;
+
+.route-tag-img {
+  width: 90rpx;
+  height: 34rpx;
 }
 
 .content-padding {
@@ -255,36 +261,41 @@ map {
   height: 48rpx;
 }
 
-.comment-star{
-  margin-right:34rpx;
-  width:50rpx;
-  height:48rpx;
+.comment-star {
+  margin-right: 34rpx;
+  width: 50rpx;
+  height: 48rpx;
 }
-.comment-star:last-child{
-  margin:0;
+
+.comment-star:last-child {
+  margin: 0;
 }
-.comment-textarea{
-  width:548rpx;
-  height:140rpx;
-  padding:10px;
-  box-sizing:border-box;
-  margin:0 auto;
-  border:1px solid #ccc;
+
+.comment-textarea {
+  width: 548rpx;
+  height: 140rpx;
+  padding: 10px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  border: 1px solid #ccc;
 }
-.comment-placeholder{
-  line-height:140rpx;
-  text-align:center;
-  color:#ccc;
-  font-size:14px;
+
+.comment-placeholder {
+  line-height: 140rpx;
+  text-align: center;
+  color: #ccc;
+  font-size: 14px;
 }
-.comment-btn{
-  font-size:18px;
-  color:#fff;
-  height:100rpx;
-  width:548rpx;
-  line-height:50px;
-  border-radius:4rpx;
+
+.comment-btn {
+  font-size: 18px;
+  color: #fff;
+  height: 100rpx;
+  width: 548rpx;
+  line-height: 50px;
+  border-radius: 4rpx;
 }
+
 /** by youyou end **/
 
 /* by Ethan start */
@@ -293,7 +304,7 @@ map {
 
 .container {
   width: 100%;
-  min-height: 100%; 
+  min-height: 100%;
   color: #333;
   box-sizing: border-box;
   padding: 20rpx;
@@ -303,7 +314,18 @@ map {
 .txt-cnt {
   text-align: center;
 }
-.rgt-arr {}
+
+.txt-rgt {
+  text-align: right;
+}
+
+.main-color {
+  color: #f1604f;
+}
+
+.rgt-arr {
+}
+
 /* 公用最外层end */
 
 /* 公用块 */
@@ -313,6 +335,7 @@ map {
   border-radius: 4rpx;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.06);
   overflow: hidden;
+  position: relative;
 }
 
 .main-wrap + .main-wrap {
@@ -350,9 +373,11 @@ map {
 .dp-flex.jc-cnt {
   justify-content: center;
 }
-.jc-cen{
+
+.jc-cen {
   justify-content: center;
 }
+
 .dp-flex.ai-fs {
   align-items: flex-start;
 }
@@ -398,6 +423,11 @@ map {
 
 .main-form {
   background: #fff;
+  position: relative;
+}
+
+.main-form.pad-lft {
+  padding-left: 20rpx;
 }
 
 .main-form .item {
@@ -434,9 +464,11 @@ map {
 }
 
 .search input {
+  font-size: 28rpx;
   text-align: center;
   background: #f2f2f2;
   border-radius: 30rpx;
+  padding: 10rpx 20rpx;
 }
 
 /* placeholder */
@@ -465,7 +497,6 @@ map {
 
 .btn-wrap-two button {
   flex: 1;
-  font-size: 40rpx;
   flex-direction: column;
   padding: 4px;
 }
@@ -578,6 +609,30 @@ map {
   text-align: right;
 }
 
+.pick-cnt {
+
+}
+.pick-item > view:first-of-type {
+  font-size: 32rpx;
+}
+
+.pick-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48rpx;
+  height: 48rpx;
+  line-height: 48rpx;
+  font-size: 40rpx;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+}
+
+.pick-val {
+  color: #666;
+  font-size: 36rpx;
+  margin: 40rpx;
+}
 /* 附加选项 */
 
 .sub-term {
@@ -643,9 +698,11 @@ map {
 /* 车辆类型 end */
 
 /* 起终点伪类 start */
+
 .start, .end {
   position: relative;
 }
+
 .start:before, .end:before {
   content: "";
   width: 12rpx;
@@ -655,11 +712,173 @@ map {
   left: 10rpx;
   top: 40%;
 }
+
 .start:before {
-  background: #44BEA3;
+  background: #44bea3;
 }
+
 .end:before {
-  background: #F1604F;
+  background: #f1604f;
 }
+
 /* 起终点伪类 end */
+
+/* 悬浮按钮 */
+
+.hover-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60rpx;
+  height: 60rpx;
+  color: #fff;
+  border-radius: 50%;
+  padding: 0;
+  background: #f1604f;
+  box-shadow: 2px 2px 6px rgba(241, 96, 79, 0.5);
+}
+
+/* 包车旅游公用样式 */
+
+.travel .item {
+  color: #999;
+  font-size: 24rpx;
+}
+
+.travel .main-form {
+  padding-left: 30rpx;
+}
+
+.travel .pro-detail {
+  padding: 10rpx 0 30rpx;
+}
+
+.travel .pro-detail > view:last-of-type {
+  flex: 2;
+  padding-right: 30rpx;
+}
+
+.travel .pro-img {
+  margin-right: 30rpx;
+}
+
+.travel .pro-img image {
+  width: 214rpx;
+  height: 184rpx;
+  border-radius: 10rpx;
+  box-shadow: 4rpx 0px 16rpx rgba(0, 0, 0, 0.2);
+}
+
+.travel .name {
+  font-size: 32rpx;
+  color: #333;
+  margin-bottom: 34rpx;
+}
+
+.travel .day {
+  padding-left: 20rpx;
+  border-left: 1px solid #ccc;
+}
+
+.travel .score {
+  margin: 0 15rpx 0 0;
+}
+
+.travel .score image {
+  width: 24rpx;
+  height: 24rpx;
+}
+
+.travel .score image + image {
+  margin-left: 4rpx;
+}
+
+.travel .collect {
+  margin-top: 20rpx;
+}
+
+.travel .price {
+  width: 100%;
+}
+
+.travel .intro {
+  font-size: 22rpx;
+}
+
+.travel .recommend {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32rpx;
+  height: 32rpx;
+  color: #fff;
+  border-radius: 6rpx;
+  background: #f1604f;
+  margin-right: 15rpx;
+}
+
+.travel .hover-btn {
+  width: 120rpx;
+  height: 120rpx;
+  flex-direction: column;
+  position: fixed;
+  right: 50rpx;
+  bottom: 8%;
+}
+
+.travel .hover-btn image {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+/* 用户评价 */
+
+.comments-wrap {
+  font-size: 28rpx;
+  margin-bottom: 20rpx;
+}
+
+.comments-tit {
+  padding: 30rpx 0;
+  margin: 0 50rpx;
+  border-bottom: 1px solid #ccc;
+}
+
+scroll-view {
+  padding: 0 50rpx;
+  box-sizing: border-box;
+}
+
+.comments {
+  margin: 30rpx auto 20rpx;
+}
+
+.comments-user image {
+  width: 74rpx;
+  height: 74rpx;
+  margin-right: 30rpx;
+  border-radius: 50%;
+}
+
+.user-info view {
+  color: #666;
+}
+
+.user-info text {
+  font-size: 20rpx;
+  color: #909090;
+}
+
+.star image {
+  width: 18rpx;
+  height: 18rpx;
+  margin: 0;
+}
+
+.comments-info {
+  margin: 20rpx 0 0 10rpx;
+}
+
+/* 用户评价end */
+
 /* by Ethan end */

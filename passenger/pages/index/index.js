@@ -37,7 +37,13 @@ Page({
   lower() {
     console.log('onLower')
   },
+  getImgs() {
+    util.ajax('/index', {}, res => {
+
+    })
+  },
   onLoad: function () {
+    this.getImgs()
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,

@@ -1,0 +1,57 @@
+<!--pages/travel/index/index.wxml-->
+<view class='dp-flex flex-one filter'>
+  <view data-name='city' bindtap='onNav'>
+    <text>城市</text>
+  </view>
+  <view data-name='route' bindtap='onNav'>
+    <text>路线</text>
+  </view>
+  <view data-name='day' bindtap='onNav'>
+    <text>天数</text>
+  </view>
+  <view data-name='kw' bindtap='onNav'>
+    <text>关键字</text>
+  </view>
+</view>
+<view class='travel'>
+  <scroll-view scroll-y class='travel'>
+    <view class='main-form'>
+      <view class='item {{index == (list.length -1) ? "no-bor-b" : ""}}' wx:for="{{list}}">
+        <view class='dp-flex flex-one ai-fs pro-detail'>
+          <view class='pro-img'>
+            <image src='{{item.img}}'></image>
+          </view>
+          <view>
+            <view class='name'>{{item.name}}</view>
+            <view>
+              <view class='dp-flex'>
+                <view class='score'>
+                  <image wx:for="{{item.score}}" src='/pages/imgs/common/score-star-red.png'></image>
+                  <image wx:for="{{5 - (item.score)}}" src='/pages/imgs/common/score-star.png'></image>
+                </view>
+                <view class='day'>{{item.day}}天</view>
+              </view>
+              <view class='collect'>{{item.collect}}人收藏</view>
+              <view class='txt-rgt price'>
+                <text>￥{{item.price}}</text>起/人</view>
+            </view>
+          </view>
+        </view>
+        <view class='intro dp-flex'>
+          <text class='recommend' wx:if="{{item.recommend == 1}}">荐</text>
+          <text>{{item.intro}}</text>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <view class='hover-btn'>
+    <view>
+      <image src='/pages/imgs/common/service@2x.png'></image>
+    </view>
+    <view>客服</view>
+  </view>
+</view>
+<view class='mask' wx:if="{{showMask}}"></view>
+<view class='city-list' wx:if="{{show.city}}">
+  <view wx:for="{{citys}}" bindtap='onCity'>{{item.name}}</view>
+</view>

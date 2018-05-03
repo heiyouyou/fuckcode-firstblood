@@ -1,6 +1,6 @@
 // pages/air/onWayBill/onWayBill.js
+const util = require('../../../../utils/util.js')
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -28,6 +28,10 @@ Page({
       rmb: 28,
       usd: 2.8
     }
+  },
+  go(e) {
+    let url = e.currentTarget.dataset.url
+    util.go(url)
   },
   onCar(e) {
     let t = e.currentTarget.dataset.t
