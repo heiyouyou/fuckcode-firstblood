@@ -1,19 +1,19 @@
 <!--pages/travel/bill/bill.wxml-->
 <view class='main-wrap'>
-  <view>
+  <view class='dp-flex'>
     <view class='pro-img'>
-      <image src=''></image>
+      <image mode='aspectFill' src='{{obj.img}}'></image>
     </view>
-    <view></view>
+    <view>{{obj.name}}</view>
   </view>
   <view>
     <view>
       <view>出行时间</view>
-      <view></view>
+      <view>{{obj.startTime}}（当地时间）</view>
     </view>
     <view>
       <view>起止时间</view>
-      <view></view>
+      <view>{{obj.startTime}}至{{obj.endTime}}</view>
     </view>
   </view>
 </view>

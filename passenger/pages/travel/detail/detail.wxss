@@ -186,6 +186,25 @@ map {
   color: #f1604f;
 }
 
+.detial-tips {
+  margin-bottom: 40rpx;
+}
+
+.detial-tips > view:first-of-type {
+  font-size: 30rpx;
+  margin-bottom: 20rpx;
+}
+
+.detial-tips > view:last-of-type {
+  font-size: 28rpx;
+  color: #666;
+  line-height: 46rpx;
+}
+
+.detail-tips-all {
+  color: #f1604f;
+}
+
 .recommends {
   display: flex;
   align-items: center;

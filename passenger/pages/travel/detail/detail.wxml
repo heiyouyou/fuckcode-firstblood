@@ -95,21 +95,21 @@
   <view class='detail-wrap'>
     <view class='detail-tit'>下单小贴士</view>
     <view class='main-wrap'>
-      <view>
+      <view class='detial-tips'>
         <view>费用包含</view>
         <view>
           <view>1）景点间以及景点之间交通往返接驳车费</view>
           <view>2）景点间以及景点之间交通往返接驳车费、燃油 费、过付费</view>
         </view>
       </view>
-      <view>
+      <view class='detial-tips'>
         <view>费用不包含</view>
         <view>
           <view>1）景点间以及景点之间交通往返接驳车费</view>
           <view>2）景点间以及景点之间交通往返接驳车费、燃油 费、过付费</view>
         </view>
       </view>
-      <view>查看全部</view>
+      <view class='detail-tips-all'>查看全部</view>
     </view>
   </view>
 

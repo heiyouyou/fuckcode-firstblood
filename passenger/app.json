@@ -1,10 +1,9 @@
 {
   "pages": [
-    "pages/index/index",
     "pages/travel/bill/bill",
-    "pages/air/index/index",
-    "pages/travel/calendar/calendar",
+    "pages/index/index",
     "pages/travel/detail/detail",
+    "pages/travel/calendar/calendar",
     "pages/travel/index/index",
     "pages/travel/map/map",
     "pages/travel/city/city",
@@ -45,6 +44,7 @@
     "pages/my/editInfo/editInfo",
     "pages/my/evaluate/evaluate",
     "pages/my/message/message",
+    "pages/air/index/index",
     "pages/air/oneWayBill/index/index",
     "pages/air/next/next",
     "pages/air/check/check",

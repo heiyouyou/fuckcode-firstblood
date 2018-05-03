@@ -844,7 +844,7 @@ view {
   border-bottom: 1px solid #ccc;
 }
 
-scroll-view {
+.comments-wrap scroll-view {
   padding: 0 50rpx;
   box-sizing: border-box;
 }
