@@ -1,1 +1,28 @@
 /* pages/order/index/index.wxss */
+.content-box{
+    margin-top:0;
+}
+.filter-box{
+    margin-top:88rpx;
+    height:94rpx;
+}
+.filter-tab-box{
+    height:48rpx;
+    padding:2px 5px;
+}
+.filter-tab-item{
+    position:absolute;
+    width:100%;
+    box-sizing:border-box;
+    padding:10px 0;
+    border-radius:4px;
+    top:0px;
+    left:0px;
+}
+.order-contact-btn{
+    width:120rpx;
+    height:80rpx;
+}
+.qiangdan-btn{
+    width:200rpx;
+}

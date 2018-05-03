@@ -1,0 +1,54 @@
+<!--pages/bus/createSuccess/createSuccess.wxml-->
+<view>
+    <view class="success-desc-box displayf flexdirec jscc altc bgw my-box-shadow">
+        <image class="success-icon mb20" src="../../../images/icon_ok_big@2x.png"></image>
+        <text class="fz20 color-333 mb10">创建结伴班车成功</text>
+        <text class="fz15 color-B2B2B2">若有新乘客加入，系统会通过短信或微信通知</text>
+        <text class="fz15 color-B2B2B2">届时您会有10分钟时间确认订单</text>
+    </view>
+    <view class="success-desc-title">
+        <image class="icon-size-30 mr5 vm" src="../../../images/icon_prompt_match@2x.png"></image>
+        <text class="fz13 color-333 vm">系统匹配到以下乘客可能对您的行程感兴趣</text>
+    </view>
+    <view class="my-box-shadow">
+        <view class="content-item bgw border-bottom-E4E4E4 border-top-E4E4E4" wx:for="{{itemList}}">
+            <view class="content-item-title displayf altc jscb parl25">
+                <view>
+                    <text class="color-333 fz17">{{item}}</text>
+                </view>
+                <view>
+                    <text class="color-8F8E94 fz13 mr5">其他乘客地址点击查看</text>
+                    <image class="see-detail-icon" src="../../../images/icon_next@2x.png"></image>
+                </view>
+            </view>
+            <view class="border-bottom-E4E4E4 border-top-E4E4E4 parl25">
+                <view class="displayf jscb altc mt10 mb10">
+                    <text class="color-8F8E94 fz13">最早出发时间</text>
+                    <text class="color-333 fz15">2017年7月16日 6：20</text>
+                </view>
+                <view class="displayf jscb altc mt10 mb10">
+                    <text class="color-8F8E94 fz13">出发地</text>
+                    <text class="color-333 fz15 thiddennb200">丰台区南湖公园102号丰台区南湖公园102号丰台区南湖公园102号</text>
+                </view>
+                <view class="displayf jscb altc mt10 mb10">
+                    <text class="color-8F8E94 fz13">目的地</text>
+                    <text class="color-333 fz15 thiddennb200">朝阳区大悦城</text>
+                </view>
+                <view class="displayf jscb altc mt10 mb10">
+                    <text class="color-8F8E94 fz13">同行人数</text>
+                    <text class="color-333 fz15">3 人</text>
+                </view>
+            </view>
+            <view class="parl25 content-item-footer displayf jscb altc">
+                <view>
+                    <text class="color-8F8E94 fz13 mr15 vm">行程费用</text><text class="fz22 color-F1604F vm">$4</text>
+                </view>
+                <view>
+                    <view class="qiangdan-btn">
+                        抢单
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

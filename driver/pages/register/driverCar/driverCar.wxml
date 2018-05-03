@@ -47,7 +47,7 @@
         </view>
         <view class="my-box-shadow bgw">
             <view class="w660 mauto pt25">
-                <view class="displayf jscb mb50" wx:for="{{[1,2,3]}}" wx:for-index="pindex" wx:for-item="pitem">
+                <view class="displayf jscb mb50" wx:for="{{[1,2,3]}}" wx:for-index="pindex" wx:for-item="pitem" wx:if="{{false}}">
                     <view class="flex1 mr5 pr" wx:for="{{[1,2]}}" wx:for-index="sitem" wx:for-item="sitem">
                         <text class="fz13 color-8F8E94">汽车全险</text>
                         <view class="border-dashed-C7C7CC img-preview-box mt10 displayf jscc altc flexdirec ohidden pr" bindtap="uploadImg" data-type="{{}}">
@@ -63,7 +63,7 @@
                         </view>
                     </view>
                 </view>
-                <view class="displayf jscb mb50" hidden>
+                <view class="displayf jscb mb50">
                     <view class="flex1 mr5 pr">
                         <text class="fz13 color-8F8E94">汽车全险</text>
                         <view class="border-dashed-C7C7CC img-preview-box mt10 displayf jscc altc flexdirec ohidden pr" bindtap="uploadImg" data-type="1">
@@ -90,7 +90,7 @@
                         </view>
                     </view>
                 </view>
-                <view class="displayf jscb mb50" hidden>
+                <view class="displayf jscb mb50">
                     <view class="flex1 mr5 pr">
                         <text class="fz13 color-8F8E94">驾照</text>
                         <view class="border-dashed-C7C7CC img-preview-box mt10 displayf jscc altc flexdirec ohidden pr" data-type="3">
@@ -115,7 +115,7 @@
                         </view>
                     </view>
                 </view>
-                <view class="displayf jscb" hidden>
+                <view class="displayf jscb">
                     <view class="flex1 mr5 pr">
                         <text class="fz13 color-8F8E94">汽车正面图</text>
                         <view class="border-dashed-C7C7CC img-preview-box mt10 displayf jscc altc flexdirec ohidden pr" data-type="5">
@@ -134,7 +134,7 @@
             </view>
             <view class="w550 mauto mt30">
                 <view class="pb30">
-                    <button class="common-btn bg-C7C7CC colorf">提交申请</button>
+                    <button class="common-btn bg-C7C7CC colorf" bindtap="next">提交申请</button>
                 </view>
             </view>
         </view>

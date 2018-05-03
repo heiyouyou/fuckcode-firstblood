@@ -1,0 +1,30 @@
+<!--pages/components/pay-way/pay-way.wxml-->
+<view class="mask" catchtouchmove="preventTouchMove"  hidden="{{hide}}">
+    <view class="pay-way-wrap">
+        <view class="pay-way-box">
+            <view class="pay-way-header">
+                <image class="pay-way-close" bindtap="maskToggle" src="../../../images/btn_close@2x.png"></image>
+                <text class="pay-title mb5">{{title}}</text>
+                <text class="pay-amount">{{payAmout}}</text>
+            </view>
+            <view class="pay-way-body">
+                <view class="pay-way-item" wx:for="{{payText}}" bindtap="_choosePayWay" data-type="{{index}}">
+                    <view>
+                        <image class="pay-way-img" src="{{payIcon[index]}}"></image>
+                        <text class="pay-way-text">{{item}}</text>
+                    </view>
+                    <view>
+                        <radio-group>
+                            <label>
+                                <radio value="{{index}}" color="#F1604F" checked="{{index==payWay}}"/>
+                            </label>
+                        </radio-group>
+                    </view>
+                </view>
+            </view>
+            <view class="pay-way-footer">
+                <button class="pay-sure-btn" bindtap="_confirmPay">确认支付</button>
+            </view>
+        </view>
+    </view>
+</view>

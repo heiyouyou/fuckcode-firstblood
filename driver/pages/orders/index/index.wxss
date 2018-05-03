@@ -2,7 +2,3 @@
 .qiangdan-btn{
   width:200rpx;
 }
-.airplane-icon{
-  width:44rpx;
-  height:36rpx;
-}

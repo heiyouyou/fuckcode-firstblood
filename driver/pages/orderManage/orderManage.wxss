@@ -1,0 +1,41 @@
+/* pages/orderManage/orderManage.wxss */
+.month-btn{
+    width:66rpx;
+    height:66rpx;
+    text-align:center;
+    line-height:66rpx;
+    background:rgba(255,255,255,0.2);
+    color:#fff;
+    border-radius:50%;
+    margin-right:34rpx;
+    display:inline-block;
+}
+.month-btn.active{
+    color:#F1604F;
+    background:#fff;
+}
+.order-item{
+    width:214rpx;
+    background:rgba(255,255,255,1);
+    border-radius: 8rpx; 
+    border:1px solid #DCDCDC;
+    color:#8F8E94;
+}
+.order-item.active{
+    border:1px solid #F1604F;
+    color:#333;
+}
+.order-item-title{
+    height:56rpx;
+}
+.today-tag{
+    width:44rpx;
+    height:44rpx;
+    line-height:44rpx;
+    text-align:center;
+    border-radius:50%;
+    background:#F1604F;
+    color:#fff;
+    display:inline-block;
+    font-size:10px;
+}

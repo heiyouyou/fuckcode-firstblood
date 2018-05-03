@@ -1,0 +1,7 @@
+/* pages/commitSuccess/commitSuccess.wxss */
+.line{
+    width:200rpx;
+    height:4rpx;
+    background:#F1604F;
+    margin-left:-5px;
+}

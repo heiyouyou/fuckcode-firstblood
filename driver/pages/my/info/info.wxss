@@ -1,0 +1,11 @@
+/* pages/my/info/info.wxss */
+.sex-icon{
+    border:2px solid #C7C7CC;
+    box-sizing:border-box;
+}
+.sex-icon.male{
+    border:2px solid #007AFF;
+}
+.sex-icon.female{
+    border:2px solid #F1604F;
+}

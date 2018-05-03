@@ -61,13 +61,19 @@
                         <image src="" class="license-size displayb bg-F1604F"></image>
                     </view>
                 </view>
-                <view class="flex1 ml5">
+                <view class="flex1 ml5 pr">
                     <text class="fz14 color-666">上传手持护照</text>
-                    <view class="mt15 border-dashed-ccc" bindtap="maskToggle">
+                    <view class="mt15 border-dashed-ccc pr ohidden" bindtap="maskToggle">
                         <view class="license-size displayf jscc flexdirec altc">
                             <image class="icon-size-40 bg-F1604F mb10"></image>
                             <text class="color-999 fz12">点击上传</text>
                         </view>
+                        <view class="re-upload-box">
+                            <text class="fz13">点击重新上传</text>
+                        </view>
+                    </view>
+                    <view class="waring-info-box">
+                        <text class="color-F1604F fz13">*请您上传真实图片</text>
                     </view>
                 </view>
             </view>

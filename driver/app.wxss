@@ -34,6 +34,38 @@ page{
   display:block;
   margin-bottom:54rpx;
 }
+
+/* 弹出层 start */
+.mask{
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.5);
+  padding:0 25rpx;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 500;
+}
+
+.mask-title {
+  height: 120rpx;
+  padding: 44rpx 30rpx;
+  box-sizing: border-box;
+}
+
+.mask-item {
+  height: 160rpx;
+  padding-left: 40rpx;
+  padding-top: 44rpx;
+  box-sizing: border-box;
+}
+
+.mask-item.active {
+  background: rgba(0, 0, 0, 0.1);
+}
+/* 弹出层 end */
+
 /* 顶部Tab选项卡 start */
 .top-nav-box{
   height:88rpx;
@@ -41,6 +73,7 @@ page{
   width:100%;
   position:fixed;
   background:#8F8E94;
+  z-index:22;
 }
 .top-nav-box .top-nav-item{
   font-size:15px;
@@ -64,6 +97,7 @@ page{
 }
 /* 顶部Tab选项卡 end */
 
+/* 订单列表 start */
 .content-box{
   margin-top:140rpx;
 }
@@ -92,6 +126,10 @@ page{
   font-size:15px;
   color:#fff;
 }
+.airplane-icon{
+  width:44rpx;
+  height:36rpx;
+}
 .pay-oncar{
   width:110rpx;
   height:40rpx;
@@ -103,5 +141,65 @@ page{
   padding:0 3px;
   border-radius: 4rpx ; 
   border:1px solid #F1604F;
+}
+/* 订单列表 end */
+
+.my-top-tab-box{
+  height:136rpx;
+}
+.my-top-tab-item{
+  color:#333;
+  padding:17rpx 38rpx;
+  box-sizing:border-box;
+  text-align:center;
+  margin-right:10px;
+}
+.my-top-tab-item.active{
+  background:#F1604F;
+  border-radius:100rpx;
+  color:#fff;
+}
+
+.message-circle{
+  position:fixed;
+  right:60rpx;
+  bottom:70rpx;
+  width:108rpx;
+  height:108rpx;
+}
+.input-box-class{
+  height:80rpx; 
+  border-radius:10rpx;
+  border:1px solid #E4E4E4;   
+}
+
+.img-preview-box{
+  border-radius:24rpx;
+  height:210rpx;
+}
+.img-preview-icon{
+  width:58rpx;
+  height:58rpx;
+}
+.preview-img{
+  width:100%;
+  height:100%;
+  position:absolute;
+}
+.re-upload-box{
+  position:absolute;
+  left:0;
+  bottom:0;
+  right:0;
+  text-align:center;
+  height:56rpx;
+  line-height:56rpx;
+  color:#fff;
+  background:rgba(0,0,0,0.5);
+}
+.waring-info-box{
+  position:absolute;
+  left:0;
+  bottom:-22px;
 }
 /* by youyou end */

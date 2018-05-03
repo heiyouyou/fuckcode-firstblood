@@ -1,4 +1,6 @@
 // pages/login/login/login.js
+let util = require('../../../utils/util')
+
 Page({
 
   /**
@@ -20,6 +22,10 @@ Page({
     this.setData({
       'countryCode':this.data.multiArray[1][e.detail.value[1]]
     })
+  },
+  next(){
+    console.log(22)
+    util.go('../../index/index',5)
   },
   /**
    * 生命周期函数--监听页面加载

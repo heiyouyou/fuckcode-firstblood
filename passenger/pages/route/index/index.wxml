@@ -4,7 +4,7 @@
         <view class="w710 mauto">
             <view class="pr">
                 <image class="icon-size-27 search-icon" src="../../imgs/common/search@2x.png"></image>
-                <input class="top-search-input pl35" type="" placeholder="搜索班车时间"/>
+                <input class="top-search-input pl35" type="" placeholder="输入结订单号或者名称"/>
             </view>
             <view class="displayf filter-tab fz15 color-666 altc jscb">
                 <view class="flex1 tc border-right-ccc lh15" data-type="1" bind:tap="chooseWay">
@@ -17,14 +17,14 @@
                     <text class="{{current==3?'color-F1604F':''}}">机场接送</text>                   
                 </view>
                 <view class="flex1 tc" data-type="4" bind:tap="chooseWay">
-                    <text class="{{current==4?'color-F1604F':''}}">包车旅游</text>                   
+                    <text class="{{current==4?'color-F1604F':''}}">包车旅游</text> 
                 </view>
             </view>
         </view>
     </view>
     <view class="filter-content-box">
         <!-- 结伴班车 start -->
-        <view hidden="{{current==1?false:true}}">
+        <view wx:if="{{current==1?true:false}}">
             <view class="w710 mauto bgw mb10 color-666 content-item boxb my-box-shadow">
                 <view class="content-padding" bindtap="detail" data-id="1">
                     <view class="displayf jscb altc">
@@ -283,7 +283,7 @@
         </view>
         <!-- 结伴班车 end -->
         <!-- 预约用车 start -->
-        <view hidden="{{current==2?false:true}}">
+        <view wx:if="{{current==2?true:false}}">
             <view class="w710 mauto bgw mb10 color-666 content-item boxb my-box-shadow">
                 <view class="content-padding" bindtap="detail" data-id="1">
                     <view class="displayf jscb altc pr">
@@ -425,7 +425,7 @@
         </view>
         <!-- 预约用车 end -->
         <!-- 机场接送 start -->
-        <view hidden="{{current==3?false:true}}">
+        <view wx:if="{{current==3?true:false}}">
             <view class="w710 mauto bgw mb10 color-666 content-item boxb my-box-shadow">
                 <view class="content-padding" bindtap="detail" data-id="1">
                     <view class="displayf jscb altc pr">
@@ -618,9 +618,50 @@
             </view>
         </view>
         <!-- 机场接送 end -->
+        <!-- 包车旅游 start -->
+        <view wx:if="{{current==4?true:false}}">
+            <view class="w710 mauto bgw mb10 color-666 content-item boxb my-box-shadow" wx:for="{{[1,2,3]}}">
+                <view class="content-padding" data-id="1" bindtap="packDetail">
+                    <view class="displayf jscb altc pr">
+                        <view>
+                            <text class="fz16 color-333 vm">包车旅游</text>
+                            <text class="fz12 colorf bg-FFE200 route-tag vm">包车</text>
+                            <text class="fz12 colorf bgw route-tag border-F1604F color-F1604F vm">紧凑5座</text>
+                        </view>
+                    </view>
+                    <view class="mt20">
+                        <view class="mb10">
+                            <image class="icon-size-16" src="../../imgs/common/time@2x.png"></image>
+                            <text class="fz14 ml10 vm">2017年08月09日 周一 9:00  共2天</text>
+                        </view>
+                        <view class="mb5">
+                            <text class="br50 bg-F1604F icon-size-12 displayib mr10"></text>
+                            <text class="fz14 vm displayib">澳大利亚墨尔本</text>
+                        </view>
+                        <view class="clearfix lh30">
+                            <text class="fz12 vm displayib color-999 ml20">订单号：2018010202223401  </text>
+                            <text class="fr fz20 fwb color-F1604F">￥30/$3</text>
+                        </view>
+                    </view>
+                </view>
+                <view class="border-top-ccc mt15 displayf jscb altc h50 boxb parl15">
+                    <text class="color-F1604F fz14">已完成</text>
+                    <view class="displayf jscb altc">
+                        <view class="item-btn">
+                            联系司机
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <!-- 包车旅游 end -->
     </view>
     <view class="filter-type-btn">
         <image class="filter-type-screen vm mr5" src="../../imgs/common/screen@2x.png"></image>
         <text class="fz14 colorf vm">行程中</text>
     </view>
+</view>
+<view class="displayf altc jscc flexdirec h w" hidden>
+    <image class="icon-size-100 displayb mb15" src="../../imgs/common/notravel@2x.png"></image>
+    <text class="fz14 color-333 mt">暂时没有行程~</text>
 </view>

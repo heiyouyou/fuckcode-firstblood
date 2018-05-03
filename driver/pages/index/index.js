@@ -1,4 +1,5 @@
 // pages/index/index.js
+let util = require('../../utils/util');
 Page({
 
   /**
@@ -14,6 +15,11 @@ Page({
     this.setData({
       commentHide:false
     })
+  },
+  next(e){
+    let type = e.currentTarget.dataset.type;
+    type == 0 && util.go('../bus/bus');
+    type == 3 && util.go('../licenseTranslate/licenseTranslate');
   },
   /**
    * 生命周期函数--监听页面加载

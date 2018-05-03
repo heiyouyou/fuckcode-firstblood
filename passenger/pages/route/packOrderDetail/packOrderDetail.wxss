@@ -1,0 +1,14 @@
+/* pages/route/packOrderDetail/packOrderDetail.wxss */
+.order-head{
+    height:110rpx;
+}
+.order-content-header{
+    height:70rpx;
+    padding-left:36rpx;
+}
+.order-line{
+    width:6rpx;
+    height:24rpx; 
+    background:rgba(241,96,79,1);
+    border-radius: 3rpx 
+}

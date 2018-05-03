@@ -1,0 +1,5 @@
+{
+    "usingComponents": {
+        "pay-way": "../components/pay-way/pay-way"
+    }  
+}

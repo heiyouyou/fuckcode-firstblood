@@ -1,2 +1,260 @@
 <!--pages/order/index/index.wxml-->
-<text>pages/order/index/index.wxml</text>
+<view class="ohidden bg-F2F2F2">
+    <view class="top-nav-box displayf altc jscb">
+        <view class="top-nav-item flex1 tc {{cindex==index?'active':''}}" data-type="{{index}}" wx:for="{{ordersNavs}}" bindtap="chooseType">
+            {{item}}
+        </view>
+    </view>
+    <view class="filter-box displayf altc jscb parl25">
+        <view class="bgw filter-tab-box pr">
+            <view bindtap="showFilter">
+                <image class="icon-size-36 vm" mode="widthFix" src="../../../images/icon_management_filtrate@3x.png"></image>
+                <text class="fz13 color-333 vm ml10 mr30">{{orderFilters[cfilterIndex]}}</text>
+                <image class="icon-size-36 vm" mode="widthFix" src="../../../images/login_btn_number@2x.png"></image>
+            </view>
+            <view class="bg-DCDCDC filter-tab-item" hidden="{{filterHide}}">
+                <view class="tr mb5 pr30" wx:for="{{orderFilters}}" data-type="{{index}}" bindtap="chooseFilter">
+                    <image class="choose-hook icon-size-30" src="../../../images/icon_order_right@2x.png" hidden="{{index==cfilterIndex?false:true}}"></image><text class="color-333 ml10 fz15">{{item}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="fz13" wx:if="{{cindex!=3}}">
+            <text class="color-C7C7CC">本月转单次数：</text>
+            <text class="color-333">1次</text>
+        </view>
+    </view>
+    <!-- 机场接送 start -->
+    <view class="content-box" wx:if="{{cindex==0}}">
+        <view class="content-item bgw border-bottom-E4E4E4 border-top-E4E4E4" wx:for="{{airItemList}}">
+            <view class="content-item-title displayf altc jscb pt10 pb10" bindtap="next">
+                <view class="displayf altc jscc flexdirec flex1 border-right-E4E4E4">  
+                    <view class="mb5">
+                        <image class="airplane-icon vb" src="{{airItemImgUrl[index]}}"></image>
+                        <text class="fz20 color-F19E4F vt ml10" wx:if="{{index==0}}">{{item}}</text>
+                        <text class="fz20 color-338594 vt ml10" wx:if="{{index==1}}">{{item}}</text>
+                        <text class="fz20 color-3CB657 vt ml10" wx:if="{{index==2}}">{{item}}</text>
+                    </view>
+                    <!-- 已取消 start -->
+                    <view class="mb5" wx:if="{{false}}">
+                        <image class="airplane-icon vb" src="{{notAirItemImgUrl[index]}}"></image>
+                        <text class="fz20 color-C7C7CC vt ml10" wx:if="{{index==0}}">{{item}}</text>
+                        <text class="fz20 color-C7C7CC vt ml10" wx:if="{{index==1}}">{{item}}</text>
+                        <text class="fz20 color-C7C7CC vt ml10" wx:if="{{index==2}}">{{item}}</text>
+                    </view>
+                    <!-- 已取消 end -->
+                    <text class="color-333 fz13">等待上车</text>
+                </view>
+                <view class="displayf altc jscc flex1">
+                    <image class="bg-F1604F icon-size-88 br50" src=""></image>
+                    <view class="ml15">
+                        <text class="color-8F8E94 fz13 displayb mb5 thiddennb100">Joan Kelley</text>
+                        <view>
+                            <text class="fz17 color-333">3.5</text><image class="icon-size-30 ml5" src="../../../images/icon_home_star_light@2x.png"></image>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="border-bottom-E4E4E4 border-top-E4E4E4 parl25">
+                <view class="displayf jscb altc mt10 mb10">
+                    <text class="color-8F8E94 fz13">降落时间</text>
+                    <text class="color-333 fz15">2017年7月16日 6：20</text>
+                </view>
+                <view class="displayf jscb altc mt10 mb10">
+                    <text class="color-8F8E94 fz13">机场</text>
+                    <text class="color-333 fz15 thiddennb200">墨尔本机场</text>
+                </view>
+                <view class="displayf jscb altc mt10 mb10">
+                    <text class="color-8F8E94 fz13">目的地</text>
+                    <text class="color-333 fz15 thiddennb200">301 Collin Rd, clayton</text>
+                </view>
+                <!-- 已完成 start -->
+                <view class="displayf jscb altc mt10 mb10" wx:if="{{false}}">
+                    <text class="color-8F8E94 fz13">乘客评价</text>
+                    <view>
+                        <text class="color-333 fz15 thiddennb200">4.7</text>
+                        <image class="icon-size-30 ml5" src="../../../images/icon_home_star_light@2x.png"></image>
+                        <image class="icon-size-30 ml5" src="../../../images/icon_home_star_light@2x.png"></image>
+                        <image class="icon-size-30 ml5" src="../../../images/icon_home_star_light@2x.png"></image>
+                        <image class="icon-size-30 ml5" src="../../../images/icon_home_star_light@2x.png"></image>
+                        <image class="icon-size-30 ml5" src="../../../images/icon_home_star_light@2x.png"></image>
+                    </view>
+                </view>
+                <!-- 已完成 start -->
+            </view>
+            <view class="parl25 content-item-footer displayf jscb altc">
+                <view>
+                    <text class="color-8F8E94 fz13 mr15 vm">行程费用</text><text class="fz22 color-F1604F vm">$4</text><image class="pay-oncar vm ml5" src="../../../images/icon_shangchefu@2x.png" wx:if="{{index==0}}"></image>
+                </view>
+                <view>
+                    <view>
+                        <image class="order-contact-btn" src="../../../images/btn_mas@2x.png"></image>
+                        <image class="order-contact-btn ml15" src="../../../images/btn_call@2x.png"></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <!-- 机场接送 start -->
+    <!-- 预约用车 start -->
+    <view class="content-box" wx:if="{{cindex==1}}">
+        <view class="content-item bgw border-bottom-E4E4E4 border-top-E4E4E4" wx:for="{{airItemList}}">
+            <view class="content-item-title displayf altc jscb pl25 pt10 pb10" bindtap="next">
+                <view class="displayf jscc altc flexdirec w150">  
+                    <text class="color-333 fz13 mb5">等待上车</text>
+                </view>
+                <view class="displayf altc flex1 pl20 border-left-E4E4E4">
+                    <image class="bg-F1604F icon-size-88 br50" src=""></image>
+                    <view class="ml15">
+                        <text class="color-8F8E94 fz13 displayb mb5 thiddennb100">Joan Kelley</text>
+                        <view>
+                            <text class="fz17 color-333">3.5</text><image class="icon-size-30 ml5" src="../../../images/icon_home_star_light@2x.png"></image>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="border-bottom-E4E4E4 border-top-E4E4E4 parl25">
+                <view class="displayf jscb altc mt10 mb10">
+                    <text class="color-8F8E94 fz13">出发时间</text>
+                    <text class="color-333 fz15 thiddennb200">2017年7月16日 9：00</text>
+                </view>
+                <view class="displayf jscb altc mt10 mb10">
+                    <text class="color-8F8E94 fz13">机场</text>
+                    <text class="color-333 fz15 thiddennb200">墨尔本机场</text>
+                </view>
+                <view class="displayf jscb altc mt10 mb10">
+                    <text class="color-8F8E94 fz13">目的地</text>
+                    <text class="color-333 fz15 thiddennb200">301 Collin Rd, clayton</text>
+                </view>
+                <!-- 已完成 start -->
+                <view class="displayf jscb altc mt10 mb10" wx:if="{{false}}">
+                    <text class="color-8F8E94 fz13">乘客评价</text>
+                    <view>
+                        <text class="color-333 fz15 thiddennb200">4.7</text>
+                        <image class="icon-size-30 ml5" src="../../../images/icon_home_star_light@2x.png"></image>
+                        <image class="icon-size-30 ml5" src="../../../images/icon_home_star_light@2x.png"></image>
+                        <image class="icon-size-30 ml5" src="../../../images/icon_home_star_light@2x.png"></image>
+                        <image class="icon-size-30 ml5" src="../../../images/icon_home_star_light@2x.png"></image>
+                        <image class="icon-size-30 ml5" src="../../../images/icon_home_star_light@2x.png"></image>
+                    </view>
+                </view>
+                <!-- 已完成 start -->
+            </view>
+            <view class="parl25 content-item-footer displayf jscb altc">
+                <view>
+                    <text class="color-8F8E94 fz13 mr15 vm">行程费用</text><text class="fz22 color-F1604F vm">$4</text><image class="pay-oncar vm ml5" src="../../../images/icon_shangchefu@2x.png" wx:if="{{index==0}}"></image>
+                </view>
+                <view>
+                    <view>
+                        <image class="order-contact-btn" src="../../../images/btn_mas@2x.png"></image>
+                        <image class="order-contact-btn ml15" src="../../../images/btn_call@2x.png"></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <!-- 预约用车 end -->
+    <!-- 班车 start -->
+    <view class="content-box" wx:if="{{cindex==2}}">
+        <view class="content-item bgw border-bottom-E4E4E4 border-top-E4E4E4" wx:for="{{airItemList}}">
+            <view class="content-item-title displayf altc jscb pl25 pt10 pb10" bindtap="next">
+                <view class="displayf jscc altc flexdirec w150">  
+                    <text class="color-333 fz13 mb5">等待上车</text>
+                </view>
+                <view class="displayf altc flex1 pl20 border-left-E4E4E4">
+                    <image class="bg-F1604F icon-size-88 br50" src=""></image>
+                    <view class="ml15">
+                        <text class="color-8F8E94 fz13 displayb mb5 thiddennb100">上班小分队 </text>
+                        <view>
+                            <text class="fz17 color-333">3.5</text><image class="icon-size-30 ml5" src="../../../images/icon_home_star_light@2x.png"></image>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="border-bottom-E4E4E4 border-top-E4E4E4 parl25">
+                <view class="displayf jscb altc mt10 mb10">
+                    <text class="color-8F8E94 fz13">出发时间</text>
+                    <text class="color-333 fz15 thiddennb200">2017年7月16日 9：00</text>
+                </view>
+                <view class="displayf jscb altc mt10 mb10">
+                    <text class="color-8F8E94 fz13">机场</text>
+                    <text class="color-333 fz15 thiddennb200">墨尔本机场</text>
+                </view>
+                <view class="displayf jscb altc mt10 mb10">
+                    <text class="color-8F8E94 fz13">目的地</text>
+                    <text class="color-333 fz15 thiddennb200">301 Collin Rd, clayton</text>
+                </view>
+                <view class="displayf jscb altc mt10 mb10">
+                    <text class="color-8F8E94 fz13">同行人数</text>
+                    <text class="color-333 fz15 thiddennb200">2 人</text>
+                </view>
+                <!-- 已完成 start -->
+                <view class="displayf jscb altc mt10 mb10" wx:if="{{false}}">
+                    <text class="color-8F8E94 fz13">乘客评价</text>
+                    <view>
+                        <text class="color-333 fz15 thiddennb200">4.7</text>
+                        <image class="icon-size-30 ml5" src="../../../images/icon_home_star_light@2x.png"></image>
+                        <image class="icon-size-30 ml5" src="../../../images/icon_home_star_light@2x.png"></image>
+                        <image class="icon-size-30 ml5" src="../../../images/icon_home_star_light@2x.png"></image>
+                        <image class="icon-size-30 ml5" src="../../../images/icon_home_star_light@2x.png"></image>
+                        <image class="icon-size-30 ml5" src="../../../images/icon_home_star_light@2x.png"></image>
+                    </view>
+                </view>
+                <!-- 已完成 start -->
+            </view>
+            <view class="parl25 content-item-footer displayf jscb altc">
+                <view>
+                    <text class="color-8F8E94 fz13 mr15 vm">行程费用</text><text class="fz22 color-F1604F vm">$4</text><image class="pay-oncar vm ml5" src="../../../images/icon_shangchefu@2x.png" wx:if="{{index==0&&false}}"></image>
+                </view>
+                <view>
+                    <view class="qiangdan-btn">
+                        取消订单
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <!-- 班车 end -->
+    <!-- 包车 start -->
+    <view class="content-box" wx:if="{{cindex==3}}">
+        <view class="content-item bgw border-bottom-E4E4E4 border-top-E4E4E4" wx:for="{{airItemList}}">
+            <view class="content-item-title displayf altc jscb pl25 pr25" bindtap="next">
+                <view class="displayf jscc flexdirec">  
+                    <text class="color-333 fz17">包车</text>
+                </view>
+                <view class="displayf altc jscc">
+                    <text class="color-8F8E94 fz13">订单号：454729369</text>
+                </view>
+            </view>
+            <view class="border-bottom-E4E4E4 border-top-E4E4E4 parl25">
+                <view class="displayf jscb altc mt10 mb10">
+                    <text class="color-8F8E94 fz13">出发时间</text>
+                    <text class="color-333 fz15">2017年7月16日 周一 6：20</text>
+                </view>
+                <view class="displayf jscb altc mt10 mb10">
+                    <text class="color-8F8E94 fz13">内容</text>
+                    <text class="color-333 fz15 thiddennb200">澳大利亚墨尔本</text>
+                </view>
+                <view class="displayf jscb altc mt10 mb10">
+                    <text class="color-8F8E94 fz13">类型</text>
+                    <text class="color-333 fz15 thiddennb200">7 座</text>
+                </view>
+                <view class="displayf jscb altc mt10 mb10">
+                    <text class="color-8F8E94 fz13">行程时间</text>
+                    <text class="color-333 fz15 thiddennb200">2 天</text>
+                </view>
+            </view>
+            <view class="parl25 content-item-footer displayf jscb altc">
+                <view>
+                    <text class="color-8F8E94 fz13 mr15 vm">行程费用</text><text class="fz22 color-F1604F vm">$4000</text><image class="pay-oncar vm ml5" src="../../../images/icon_shangchefu@2x.png" wx:if="{{index==0}}"></image>
+                </view>
+                <view>
+                    <text class="color-F1604F">行程中</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <!-- 包车 end -->
+    <view class="tc pb30 pt15" hidden="{{commentHide}}">
+        <text class="color-C7C7CC fz15">没有更多了~</text>
+    </view>
+</view>

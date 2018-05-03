@@ -1,8 +1,8 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/login/index/index",
     "pages/login/login/login",
+    "pages/login/index/index",
     "pages/bybus/index/index",
     "pages/bybus/detail/index",
     "pages/bybus/search/index",
@@ -17,6 +17,7 @@
     "pages/translate/index/index",
     "pages/translate/payment_succ/payment_succ",
     "pages/route/index/index",
+    "pages/route/packOrderDetail/packOrderDetail",
     "pages/route/payment/payment",        
     "pages/route/orderDetail/orderDetail",
     "pages/route/driver/driver",
@@ -53,7 +54,7 @@
     "pages/reserve/index/index",
     "pages/trip/index/index",
     "pages/results/licenseCertified/licenseCertified",
-    "pages/templates/result/result",
+    "pages/results/success/success",
     "pages/car/index/index",
     "pages/travel/index/index",
     "pages/flight/index/index"
