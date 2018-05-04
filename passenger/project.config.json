@@ -8,9 +8,9 @@
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "1.9.94",
-	"appid": "wx52eedb56505ff130",
-	"projectname": "fb",
+	"libVersion": "2.0.0",
+	"appid": "wxf81cc567f8c10660",
+	"projectname": "passenger",
 	"isGameTourist": false,
 	"condition": {
 		"search": {
