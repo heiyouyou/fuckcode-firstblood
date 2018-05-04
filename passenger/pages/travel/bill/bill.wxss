@@ -1,0 +1,40 @@
+/* pages/travel/bill/bill.wxss */
+
+.pay-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 120rpx;
+  line-height: 120rpx;
+  font-size: 40rpx;
+  background: #fff;
+}
+
+.pay-btn > view {
+  height: 100%;
+}
+
+.pay-btn > view:first-of-type {
+  flex: 2;
+  font-size: 24rpx;
+  padding-left: 36rpx;
+}
+
+.pay-btn > view:first-of-type > text:first-of-type {
+  font-size: 40rpx;
+  color: #f1604f;
+  margin: 0 30rpx 0 6rpx;
+}
+
+.pay-btn > view:first-of-type > text:last-of-type {
+  text-decoration: underline;
+}
+
+.pay-btn > view:last-of-type {
+  flex: 1;
+  font-weight: 600;
+  text-align: center;
+  color: #fff;
+  background: #f1604f;
+}

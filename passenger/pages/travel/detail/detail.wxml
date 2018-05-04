@@ -1,0 +1,159 @@
+<!--pages/travel/detail/detail.wxml-->
+<view>
+  <view class='detial-top' style='background: url({{obj.img}});background-size: 100% 100%;'>
+    <view class='city-name'>{{obj.city}}</view>
+    <view class='dp-flex jc-sb name-wrap'>
+      <view>
+        <view class='name'>{{obj.destination}}</view>
+        <view class='name-esl'>{{obj.esl}}</view>
+      </view>
+      <view>
+        <view>
+          <image></image>
+        </view>
+        <view>{{obj.collect}}</view>
+      </view>
+    </view>
+  </view>
+  <view class='basic-info'>
+    <view class='detail-tit'>基本信息</view>
+    <view>{{obj.intro}}</view>
+    <view class='basic-info-list'>
+      <view>
+        <view class='lab'>时长</view>
+        <view>{{obj.day}}天</view>
+      </view>
+      <view>
+        <view class='lab'>时间</view>
+        <view>上车时间{{obj.strTime}}, 回程时间{{obj.endTime}}</view>
+      </view>
+      <view>
+        <view class='lab'>出行</view>
+        <view>{{obj.type}}</view>
+      </view>
+      <view>
+        <view class='lab'>地址</view>
+        <view>{{obj.adr}}</view>
+      </view>
+    </view>
+  </view>
+
+  <map>
+    <cover-view class='map-recommend'>
+      <cover-image></cover-image>
+      <cover-view>导航查看沿途热点推荐</cover-view>
+    </cover-view>
+  </map>
+
+  <view class='detail-wrap'>
+    <view class='detail-tit'>行程参考</view>
+    <view class='main-wrap'>
+      <view wx:for="{{obj.routePlan}}">
+        <view class='dp-flex jc-sb'>
+          <view class='dp-flex route-basic-tit'>
+            <view class='route-day'>DAY{{item.day}}</view>
+            <view>{{item.city}}</view>
+          </view>
+          <view class='route-underline' bindtap='onKilo'>{{item.duration}}小时-{{item.kilometer}}公里</view>
+        </view>
+        <view class='route-plan-wrap'>
+          <view class='dp-flex ai-fs' wx:for="{{item.list}}" wx:for-item="itm" wx:for-index="idx">
+            <view>{{itm.time}}</view>
+            <view class='route-plan-detial'>
+              <view class='route-plan'>{{itm.plan}}</view>
+              <view class='route-start {{idx == (item.list.length - 1) ? "last-route-start" : "" }}'>{{itm.start}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='route-tips'>*以下参考行程和建议出发时间可根据您的需要在下单时自动调整（仅出发时间），或者联系客服帮助修改。</view>
+    </view>
+  </view>
+
+  <view class='detail-wrap'>
+    <view class='detail-tit'>用户评价</view>
+    <view class='main-wrap comments-wrap'>
+      <view class='comments' wx:for="{{obj.evaluation}}">
+        <view class='dp-flex jc-sb comments-user'>
+          <view class='user-info dp-flex'>
+            <image src="{{item.avatar}}"></image>
+            <view>
+              <view>{{item.name}}</view>
+              <text>{{item.creTime}}</text>
+            </view>
+          </view>
+          <view class='dp-flex star'>
+            <image wx:for="{{item.star}}" src="/pages/imgs/common/score-star-red.png"></image>
+          </view>
+        </view>
+        <view class='comments-info'>{{item.txt}}</view>
+      </view>
+    </view>
+  </view>
+  <view class='more'>查看更多评价(共300条)</view>
+
+  <view class='detail-wrap'>
+    <view class='detail-tit'>下单小贴士</view>
+    <view class='main-wrap'>
+      <view>
+        <view>费用包含</view>
+        <view>
+          <view>1）景点间以及景点之间交通往返接驳车费</view>
+          <view>2）景点间以及景点之间交通往返接驳车费、燃油 费、过付费</view>
+        </view>
+      </view>
+      <view>
+        <view>费用不包含</view>
+        <view>
+          <view>1）景点间以及景点之间交通往返接驳车费</view>
+          <view>2）景点间以及景点之间交通往返接驳车费、燃油 费、过付费</view>
+        </view>
+      </view>
+      <view>查看全部</view>
+    </view>
+  </view>
+
+  <view class='detail-wrap' style='padding-right: 0;'>
+    <view class='detail-tit'>好看推荐</view>
+    <view class='recommends'>
+      <view wx:for="{{recommends}}">
+        <view class='pro-img'>
+          <image src="{{item.img}}"></image>
+        </view>
+        <view class='recommends-intro'>
+          <view>{{item.name}}</view>
+          <view class='star'>
+            <block wx:for="{{item.star}}">
+              <image src="/pages/imgs/common/score-star-red.png"></image>
+            </block>
+            <block wx:for="{{5 - (item.star)}}">
+              <image src="/pages/imgs/common/score-star.png"></image>
+            </block>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class='btn-wrap-two' data-url='/pages/travel/calendar/calendar' bindtap='go'>
+    <button class='main-btn'>
+      <view>包车出行</view>
+      <view class='xs-font'>￥{{obj.price}}起/车</view>
+    </button>
+    <button class='sub-btn'>
+      <view>拼团出行</view>
+      <view class='xs-font'>￥{{obj.priceGroup}}/人</view>
+    </button>
+  </view>
+</view>
+
+<!-- 提示 -->
+<view class='mask' wx:if="{{showPopup}}"></view>
+<view class='detial-popup' wx:if="{{showPopup}}">
+  <view>
+    <view>1.此为当天总旅行时长及总公里数估值，仅供参考;</view>
+    <view>2.行程可以根据您的具体需求进行调整，具体详情请资讯客服或接单司机；</view>
+    <view>3.包车出行，具体上车时间可在下单时修改。</view>
+  </view>
+  <view bindtap='onKilo'>知道啦</view>
+</view>

@@ -1,0 +1,26 @@
+/* pages/travel/index/index.wxss */
+
+.filter {
+  height: 90rpx;
+  text-align: center;
+  background: #fff;
+  position: relative;
+  z-index: 510;
+}
+
+.filter view {
+  padding: 30rpx 0;
+  position: relative;
+}
+
+.city-list {
+  width: 100%;
+  background: #fff;
+  position: absolute;
+  top: 90rpx;
+  z-index: 510;
+}
+
+.city-list > view {
+  padding: 28rpx 40rpx;
+}

@@ -1,0 +1,106 @@
+<!--pages/travel/bill/bill.wxml-->
+<view class='main-wrap'>
+  <view>
+    <view class='pro-img'>
+      <image src=''></image>
+    </view>
+    <view></view>
+  </view>
+  <view>
+    <view>
+      <view>出行时间</view>
+      <view></view>
+    </view>
+    <view>
+      <view>起止时间</view>
+      <view></view>
+    </view>
+  </view>
+</view>
+
+<view class='main-wrap'>
+  <view class='pick-cnt'>
+    <view class='dp-flex jc-sb pick-item'>
+      <view class=''>成人</view>
+      <view class='dp-flex'>
+        <text class='pick-btn' data-t='minus' data-val='busAdultNum' bindtap='onBtn'>-</text>
+        <view class='pick-val'>{{busAdultNum.val}}</view>
+        <text class='pick-btn' data-t='add' data-val='busAdultNum' bindtap='onBtn'>+</text>
+      </view>
+    </view>
+    <view class='dp-flex jc-sb pick-item'>
+      <view class=''>儿童</view>
+      <view class='dp-flex'>
+        <text class='pick-btn' data-t='minus' data-val='busChildNum' bindtap='onBtn'>-</text>
+        <view class='pick-val'>{{busChildNum.val}}</view>
+        <text class='pick-btn' data-t='add' data-val='busChildNum' bindtap='onBtn'>+</text>
+      </view>
+    </view>
+    <view class='dp-flex jc-sb pick-item'>
+      <view class=''>行李</view>
+      <view class='dp-flex'>
+        <text class='pick-btn' data-t='minus' data-val='busChildNum' bindtap='onBtn'>-</text>
+        <view class='pick-val'>{{busChildNum.val}}</view>
+        <text class='pick-btn' data-t='add' data-val='busChildNum' bindtap='onBtn'>+</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='main-wrap main-form'>
+    <view class='item dp-flex'>
+      <view class='lab'>联系人</view>
+      <input placeholder='请填写联系人姓名'></input>
+      <text data-url='/pages/air/oneWayBill/contact/index/index' bindtap='go'>常用联系人</text>
+    </view>
+    <view class='item dp-flex'>
+      <view class='lab'>手机号</view>
+      <input placeholder='请填写手机号'></input>
+    </view>
+    <view class='item dp-flex'>
+      <view class='lab'>上车时间</view>
+      <input placeholder='上车时间'></input>
+    </view>
+    <view class='item dp-flex rgt-arr'>
+      <view class='lab'>上车地点</view>
+      <input placeholder='请添加上车地点'></input>
+    </view>
+    <view class='item dp-flex'>
+      <view class='lab'>微信号</view>
+      <input placeholder='可填写微信号做为备用联系方式'></input>
+    </view>
+    <view class='item dp-flex no-bor-b'>
+      <view class='lab'>备注</view>
+      <input placeholder='请添加上车地点'></input>
+    </view>
+  </view>
+
+  <view class='main-wrap main-form'>
+    <view class='item dp-flex rgt-arr'>
+      <view class='lab'>选择优惠券</view>
+      <input placeholder='不使用优惠券'></input>
+    </view>
+    <view class='item dp-flex no-bor-b'>
+      <view class='lab'>不使用优惠券</view>
+      <input placeholder='请输入优惠码'></input>
+    </view>
+  </view>
+
+<view>
+  <view>
+  <view class='bill-tit'>平台保障：</view>
+  <view>订单款项Sky-car车来了先行保管，服务完成才会支付给司导。如在服务过程中发生任何问题请及时联系我们的客服，您与司导在APP内的聊天内容可作为纠纷凭证；经查证如属司导违约，您可获得相应补偿。
+  </view>
+  </view>
+    <view>
+  <view class='bill-tit'>订单退改规则：</view>
+  <view>距离服务开始前48小时外取消订单，可免费取消；距离服务开始前48小时内24小时外取消订单，将会收取30%订单费用，用于补偿司导。距离服务开始前24小时外取消订单，将会收取50%订单费用，用于补偿司导。
+  </view>
+  </view>
+  <view>点击去支付表示已阅读并同意<text>《SkyCar-车来了用车协议》</text></view>
+</view>
+
+<view class='pay-btn'>
+  <view>￥<text>{{carIntro.price}}</text><text>价格明细</text></view>
+  <view>确认支付</view>
+</view>

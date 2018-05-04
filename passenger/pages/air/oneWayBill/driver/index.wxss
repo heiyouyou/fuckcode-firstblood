@@ -1,1 +1,29 @@
 /* pages/air/oneWayBill/driver/index.wxss */
+
+.search {
+  padding: 20rpx 30rpx;
+  background: #fff;
+  box-shadow: 6rpx 0 10rpx rgba(0, 0, 0, 0.1);
+  z-index: 20;
+}
+
+.search input {
+  flex: 2;
+  margin-right: 20rpx;
+  text-align: left;
+}
+
+.res {
+  width: 100%;
+  margin-top: 5rpx;
+  position: absolute;
+  z-index: 10;
+}
+
+image {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 10rpx;
+  background: #ccc;
+  margin-right: 30rpx;
+}

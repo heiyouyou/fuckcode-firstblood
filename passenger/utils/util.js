@@ -1,5 +1,5 @@
 // 服务器地址
-const server = 'https://api.dddyp.cn';
+const server = 'https://api.dddyp.cn'
 
 String.prototype.toDate = function ( /*format*/ ) {
   var str = this,
@@ -113,9 +113,9 @@ const toast = (msg, type) => {
 }
 
 const ajax = (url, param, cb, cbf) => {
-  let uid = getStorageSync('user') ? getStorageSync('user').UID : ''
+  let token = getStorageSync('user') ? getStorageSync('user').token : ''
   wx.request({
-    url: `${server}${url}?UID=${uid}`,
+    url: `${server}${url}?token=${token}`,
     data: param,
     success: function (res) {
       console.log(res.data)

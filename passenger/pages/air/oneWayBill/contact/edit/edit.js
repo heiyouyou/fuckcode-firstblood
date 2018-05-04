@@ -1,4 +1,4 @@
-// pages/air/oneWayBill/contact/index.js
+// pages/air/oneWayBill/contact/edit/edit.js
 Page({
 
   /**

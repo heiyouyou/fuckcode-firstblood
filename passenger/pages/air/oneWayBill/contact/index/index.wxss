@@ -1,1 +1,49 @@
 /* pages/air/oneWayBill/contact/index/index.wxss */
+
+.add {
+  padding: 35rpx 0;
+  text-align: center;
+}
+
+.tit {
+  margin: 34rpx auto 20rpx;
+}
+
+.main-form {
+  padding: 0 30rpx;
+}
+
+.main-form .item {
+  padding: 40rpx 0;
+  justify-content: space-between;
+}
+
+.name {
+  font-size: 30rpx;
+}
+
+.checkOrNot {
+  margin-right: 46rpx;
+}
+
+.checkOrNot text, .add text:first-of-type {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 50%;
+  border: 1px solid #666;
+  color: #fff;
+}
+
+.active .checkOrNot text, .add text:first-of-type {
+  width: 34rpx;
+  height: 34rpx;
+  background: #f1604f;
+  border: 0;
+}
+
+.add text:first-of-type {
+  margin-right: 10rpx;
+}
