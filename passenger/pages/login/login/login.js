@@ -1,5 +1,6 @@
 // pages/login/login/login.js
 let util = require('../../../utils/util')
+const app = getApp();
 
 Page({
 
@@ -9,16 +10,22 @@ Page({
   data: {
     
   },
-  getLoginData(e){
+  // 手机号登录
+  phoneLogin(e){
     let mobile = e.detail.value.phone;
     let password = e.detail.value.pwd;
+    wx.showLoading({
+      title: '登录中',
+    })
     wx.request({
       url: `${util.server}/account/login-phone`,
       method:'POST',
       data: { mobile,password},
       success: function(res) {
-        console.log(res)
-        if(res.data == 1){
+        wx.hideLoading();
+        if(res.data.status == 1){
+          wx.setStorageSync('skycar', res.data.data.token);
+          app.globalData.token = res.data.data.token;
           util.go('../../index/index',5)
         }else{
           wx.showToast({
@@ -29,47 +36,92 @@ Page({
       }
     })
   },
+  // 微信登录
   wechatLogin(){
-    let token = '27754a6b596ad524357f1ff9745499d6';
-    wx.getUserInfo({
-      success: function (res) {
-        console.log(res)
-        var userInfo = res.userInfo
-        var nickName = userInfo.nickName
-        var avatarUrl = userInfo.avatarUrl
-        var gender = userInfo.gender //性别 0：未知、1：男、2：女
-        var province = userInfo.province
-        var city = userInfo.city
-        var country = userInfo.country
-        let code = '';
-        let iv = res.iv;
-        let encrypteData = res.encrypteData;
-        let sign = '';
-        wx.request({
-          url: `${util.server}/account/bind`,
-          method: 'POST',
-          header:{token},
-          data: { code, iv, encrypteData, sign},
-          success: function (res) {
-            console.log(res)
-            if (res.data == 1) {
-              util.go('../../index/index', 5)
-            } else {
+    const that = this;
+    wx.login({
+      success: function(res) {
+        if(res.code){
+          let code = res.code;
+          that.getUserInfo().then((res)=>{
+            app.globalData.userInfo = res.userInfo;
+            let iv = app.globalData.iv = res.iv;
+            let encryptedData = app.globalData.encryptedData = res.encryptedData;
+            let sign = app.globalData.scene;
+            wx.showLoading({
+              title: '登录中',
+            })
+            wx.request({
+              url: `${util.server}/account/bind`,
+              method: 'POST',
+              data: {
+                code,
+                iv,
+                encryptedData,
+                sign
+              },
+              success: function (res) {
+                wx.hideLoading();
+                if (res.data.status == 1) {
+                  wx.setStorageSync('skycar', res.data.data.token);
+                  app.globalData.token = res.data.data.token;
+                  util.go('../../index/index', 5);
+                } else {
+                  wx.showToast({
+                    title: `${res.data.msg}`,
+                    icon: 'none',
+                  })
+                }
+              }
+            })
+          }).catch(()=>{
+            if (app.globalData.setting) {
               wx.showToast({
-                title: `${res.data.msg}`,
+                title: `由于您的拒绝，无法使用微信登录，请重新授权登录！`,
                 icon: 'none',
               })
+              app.globalData.setting = false;
+            } else {
+              wx.openSetting({
+                success: function (res) {
+                  console.log(res.authSetting)
+                }
+              })
             }
-          }
-        })
+          })
+        }else{
+          wx.showToast({
+            title: `${res.errMsg}`,
+            icon: 'none',
+          })
+        }
       }
+    });
+  },
+  // Promise获取用户信息
+  getUserInfo(){
+    return new Promise((resolve,reject)=>{
+      wx.authorize({
+        scope: 'scope.userInfo',
+        success(res) {
+          wx.getUserInfo({
+            withCredentials: true,
+            success: function (res) {
+              resolve(res);
+            }
+          })
+        },
+        fail: function () {
+          reject();
+        }
+      })
     })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+  
   },
 
   /**

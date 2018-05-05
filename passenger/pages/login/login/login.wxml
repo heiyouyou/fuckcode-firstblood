@@ -14,7 +14,7 @@
 			</view>
 		</view>
 		<view>
-			<form bindsubmit="getLoginData">
+			<form bindsubmit="phoneLogin">
 				<view class="mb35">
 					<input class="login-form-input" type="number" placeholder="输入手机号"  placeholder-class="login-placeholder" name="phone"/>
 				</view>
