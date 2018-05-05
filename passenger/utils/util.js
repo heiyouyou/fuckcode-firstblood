@@ -138,6 +138,21 @@ const ajax = (url, param, cb, cbf) => {
   })
 }
 
+const _ajax_ = ({ url='', method = 'GET', header = { 'Content-Type': 'application/json' }, success, data, fail}={}) => {
+  return wx.request({
+    url: url,
+    data:data,
+    header: header,
+    method:method,
+    success: function(res) {
+      success && success(res);
+    },
+    fail: function() {
+      fail && fail();
+    }
+  })
+}
+
 const getUserInfo = (cb) => {
   let uid = getStorageSync('user') ? getStorageSync('user').UID : ''
   ajax('/ccuser/getLoginUser', {
@@ -198,6 +213,7 @@ module.exports = {
   formatNoToCn,
   go,
   ajax,
+  _ajax_,
   getUserInfo,
   updImg,
   toast,
