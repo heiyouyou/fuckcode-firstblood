@@ -6,7 +6,7 @@
     </view>
     <view class='flex-two'>{{obj.name}}</view>
   </view>
-  <view>
+  <view class='travel-time'>
     <view class='dp-flex'>
       <view>出行时间</view>
       <view>{{obj.startTime}}（当地时间）</view>
@@ -14,6 +14,37 @@
     <view class='dp-flex'>
       <view>起止时间</view>
       <view>{{obj.startTime}}至{{obj.endTime}}</view>
+    </view>
+  </view>
+</view>
+
+<view class='main-wrap'>
+  <view>选择车型</view>
+  <view class='dp-flex car-type-btn'>
+    <view wx:for="{{carType}}">{{item.name}}</view>
+    <view>更多</view>
+  </view>
+  <view class='dp-flex ai-fs car-intro'>
+    <view class='car-img'>
+      <image mode='aspectFill' src="{{carIntro.img}}"></image>
+    </view>
+    <view class='flex-two'>
+      <view class='dp-flex jc-sb car-name'>
+        <view>{{carIntro.name}}</view>
+        <view class='car-price'>{{carIntro.price}}</view>
+      </view>
+      <view>{{carIntro.intro}}</view>
+      <view class='dp-flex'>
+        <view>可容纳</view>
+        <view class='dp-flex'>
+          <image class='icons'></image>
+          <text>×{{carIntro.peopleNum}}</text>
+        </view>
+        <view class='dp-flex'>
+          <image class='icons'></image>
+          <text>×{{carIntro.luggageNum}}</text>
+        </view>
+      </view>
     </view>
   </view>
 </view>

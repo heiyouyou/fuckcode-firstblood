@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/travel/bill/bill",
     "pages/login/index/index",
     "pages/login/login/login",
     "pages/index/index",
@@ -8,10 +9,8 @@
     "pages/route/payment/payment",        
     "pages/route/orderDetail/orderDetail",
     "pages/route/driver/driver",
-    "pages/travel/bill/bill",
     "pages/travel/calendar/calendar",
     "pages/travel/detail/detail",
-    "pages/travel/calendar/calendar",
     "pages/travel/index/index",
     "pages/travel/map/map",
     "pages/travel/city/city",
@@ -47,7 +46,6 @@
     "pages/my/message/message",
     "pages/air/index/index",
     "pages/air/oneWayBill/index/index",
-    "pages/air/index/index",
     "pages/air/next/next",
     "pages/air/check/check",
     "pages/air/oneWayBill/map/index",

@@ -23,6 +23,7 @@ Page({
     }],
     carIntro: {
       name: '紧凑5座+中文司导',
+      img: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1524338756279&di=badb5739139e7f0538e46e68a4c20b19&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimage%2Fc0%253Dshijue1%252C0%252C0%252C294%252C40%2Fsign%3Df072192f91504fc2b652b8468db48d64%2Fd4628535e5dde7114fb3d6d1adefce1b9d1661b0.jpg',
       intro: '丰田凯美瑞马自达等同级车',
       peopleNum: 5,
       luggageNum: 5,
