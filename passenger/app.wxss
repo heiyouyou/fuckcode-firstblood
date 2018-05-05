@@ -365,7 +365,9 @@ view {
 .dp-flex.flex-one > view, .dp-flex.flex-one > button {
   flex: 1;
 }
-
+.dp-flex .flex-two {
+  flex: 2;
+}
 .dp-flex.jc-sb {
   justify-content: space-between;
 }
