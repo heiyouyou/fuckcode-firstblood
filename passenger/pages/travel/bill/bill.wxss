@@ -16,40 +16,56 @@
 .travel-time .dp-flex {
   line-height: 45rpx;
 }
+
 .car-type-btn {
   padding: 30rpx 0 40rpx;
-  border-bottom: 1px solid #CCC;
+  border-bottom: 1px solid #ccc;
 }
+
 .car-type-btn > view:not(:last-of-type) {
   border: 1px solid #666;
   border-radius: 4rpx;
   padding: 12rpx 40rpx;
 }
+
 .car-type-btn > view + view {
   margin-left: 30rpx;
 }
+
+.car-type-btn .active {
+  color: #f1604f;
+  border: 1px solid #f1604f!important;
+}
+
 .car-intro {
   padding-top: 40rpx;
 }
+
 .car-img {
   margin-right: 30rpx;
 }
+
 .car-img image {
   width: 180rpx;
   height: 130rpx;
   border-radius: 6rpx;
   border: 1px solid #666;
 }
+
 .icons {
   width: 19rpx;
   height: 28rpx;
 }
+
 .car-name {
   margin-bottom: 23rpx;
 }
+
 .car-price {
-  color: #F1604F;
+  color: #f1604f;
+  font-weight: 600;
 }
+
 .pay-btn {
   display: flex;
   align-items: center;

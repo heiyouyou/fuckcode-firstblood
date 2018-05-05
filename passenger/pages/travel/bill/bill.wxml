@@ -21,7 +21,7 @@
 <view class='main-wrap'>
   <view>选择车型</view>
   <view class='dp-flex car-type-btn'>
-    <view wx:for="{{carType}}">{{item.name}}</view>
+    <view class='{{carTypeFlag == index ? "active" : ""}}' wx:for="{{carType}}" bindtap='onCarType' data-i='{{index}}'>{{item.name}}</view>
     <view>更多</view>
   </view>
   <view class='dp-flex ai-fs car-intro'>
@@ -31,7 +31,7 @@
     <view class='flex-two'>
       <view class='dp-flex jc-sb car-name'>
         <view>{{carIntro.name}}</view>
-        <view class='car-price'>{{carIntro.price}}</view>
+        <view class='car-price'>￥{{carIntro.price}}</view>
       </view>
       <view>{{carIntro.intro}}</view>
       <view class='dp-flex'>

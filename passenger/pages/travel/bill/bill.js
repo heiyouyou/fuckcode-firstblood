@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    carTypeFlag: '',
     obj: {
       name: '大洋路一日——行走在山与海的边缘，邂逅万年雕琢的石灰岩海岸风光',
       img: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1524338756279&di=badb5739139e7f0538e46e68a4c20b19&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimage%2Fc0%253Dshijue1%252C0%252C0%252C294%252C40%2Fsign%3Df072192f91504fc2b652b8468db48d64%2Fd4628535e5dde7114fb3d6d1adefce1b9d1661b0.jpg',
@@ -43,7 +44,12 @@ Page({
       couponNum: ''
     }
   },
-
+  onCarType(e) {
+    let i = e.currentTarget.dataset.i
+    this.setData({
+      carTypeFlag: i
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
