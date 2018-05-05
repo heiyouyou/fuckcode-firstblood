@@ -25,6 +25,7 @@ Page({
         wx.hideLoading();
         if(res.data.status == 1){
           wx.setStorageSync('skycar', res.data.data.token);
+          app.globalData.token = res.data.data.token;
           util.go('../../index/index',5)
         }else{
           wx.showToast({
@@ -63,6 +64,7 @@ Page({
                 wx.hideLoading();
                 if (res.data.status == 1) {
                   wx.setStorageSync('skycar', res.data.data.token);
+                  app.globalData.token = res.data.data.token;
                   util.go('../../index/index', 5);
                 } else {
                   wx.showToast({

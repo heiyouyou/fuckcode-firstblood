@@ -1,6 +1,5 @@
 // pages/my/CarOwnerCertification/index/index.js
 let util = require('../../../../utils/util')
-
 Page({
 
   /**

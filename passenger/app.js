@@ -6,6 +6,7 @@ App({
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     let token = wx.getStorageSync('skycar');
+    this.globalData.token = token;
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
     // 获取用户信息
@@ -32,7 +33,6 @@ App({
     })
     // token还存在，直接跳转到主页
     if (token){
-      console.log(token)
       util.go('pages/index/index',5)
     }
   },
@@ -42,6 +42,7 @@ App({
     encryptedData:'',
     scene:'',
     setting:true,
+    token:''
   },
   // 弹出层的显示与隐藏
   maskToggle(obj){
