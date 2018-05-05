@@ -4,7 +4,7 @@
         <view class="w710 mauto">
             <view class="pr">
                 <image class="icon-size-27 search-icon" src="../../imgs/common/search@2x.png"></image>
-                <input class="top-search-input pl35" type="" placeholder="输入结订单号或者名称"/>
+                <input class="top-search-input pl35" type="" placeholder="输入结订单号或者名称" bindinput='searchRoute'/>
             </view>
             <view class="displayf filter-tab fz15 color-666 altc jscb">
                 <view class="flex1 tc border-right-ccc lh15" data-type="1" bind:tap="chooseWay">
@@ -52,7 +52,7 @@
                         <view class="clearfix lh30">
                             <image class="icon-size-20 bg-F1604F mr5" src=""></image>
                             <text class="fz14 thiddennb250">{{item.descript}}</text>
-                            <text class="fr fz20 fwb color-F1604F">￥{{item.price}}</text>
+                            <text class="fr fz20 fwb {{status!=2&&status!=3?'color-F1604F':''}}">￥{{item.price}}</text>
                         </view>
                     </view>
                 </view>

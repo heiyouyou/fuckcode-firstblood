@@ -1,5 +1,9 @@
+import { goLogin } from "../common";
+
 // 服务器地址
-const server = 'https://api.dddyp.cn'
+const server = 'https://api.dddyp.cn';
+// token值
+const token = wx.getStorageSync('skycar');
 
 String.prototype.toDate = function ( /*format*/ ) {
   var str = this,
@@ -138,14 +142,33 @@ const ajax = (url, param, cb, cbf) => {
   })
 }
 
-const _ajax_ = ({ url='', method = 'GET', header = { 'Content-Type': 'application/json' }, success, data, fail}={}) => {
+const _ajax_ = ({ url='', method = 'GET', header = { 'Content-Type': 'application/json', 'token':token }, success, data, fail}={}) => {
+  wx.showLoading({
+    title: '加载中',
+  })
   return wx.request({
     url: url,
     data:data,
     header: header,
     method:method,
     success: function(res) {
-      success && success(res);
+      wx.hideLoading();
+      if (res.data.status == 1) {
+        success && success(res);
+      } else if(res.data.status == -90) {
+        wx.showToast({
+          title: res.data.msg,
+          icon: 'none',
+          success: function() {
+            goLogin();
+          }
+        })
+      } else {
+        wx.showToast({
+          title: res.data.msg,
+          icon: 'none'
+        })
+      }
     },
     fail: function() {
       fail && fail();

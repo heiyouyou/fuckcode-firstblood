@@ -1,5 +1,6 @@
 // pages/route/orderDetail/orderDetail.js
-let app = getApp()
+let util = require('../../../utils/util');
+let app = getApp();
 Page({
 
   /**
@@ -10,21 +11,25 @@ Page({
     success:false,
     star_level:0,
     hide:true,
+    orderDetailUrl:'/shuttle-bus/shuttle-detail',
+    orderId:0,
+    orderDetailObj:{},
     show_url:'../../imgs/common/stop@2x.png',
     show:true,
     // 控制地图容器的显示与隐藏，防止弹窗被地图组件遮盖
     map_hide:false,
     add_height:0,
+    testArr:[{a:1,b:[{b:2}]}],
     markers: [{
       iconPath: "../../imgs/common/starting@2x.png",
-      id: 0,
+      id: 1,
       longitude: 113.3245211,
       latitude: 23.10229,
       width: 22,
       height: 36
     },{
       iconPath: "../../imgs/common/end@2x.png",
-      id: 1,
+      id: 2,
       longitude: 113.324520,
       latitude: 23.21229,
       width: 22,
@@ -43,17 +48,6 @@ Page({
       borderColor:'#000',
       borderWidth:1,
     }],
-    // controls: [{
-    //   id: 1,
-    //   iconPath: '../../imgs/common/noaddress@2x.png',
-    //   position: {
-    //     left: 0,
-    //     top: 300 - 50,
-    //     width: 50,
-    //     height: 50
-    //   },
-    //   clickable: true
-    // }]
   },
   maskToggle(){
     app.maskToggle(this)
@@ -112,12 +106,33 @@ Page({
   controltap(e) {
     console.log(e.controlId)
   },
-
+  // 获取订单详情
+  getOrderDetail(){
+    const that = this;
+    util._ajax_({
+      data: { id: that.data.orderId},
+      url:util.server+that.data.orderDetailUrl,
+      success: function(res) {
+        let orderDetail = res.data.data;
+        that.setData({
+          'orderDetailObj': orderDetail,
+          'markers[0].longitude': orderDetail.departure.lng,
+          'markers[0].latitude': orderDetail.departure.lat,
+          'markers[1].longitude': orderDetail.destination.lng,
+          'markers[1].latitude': orderDetail.destination.lat,
+          'polyline[0].point[0].longitude': orderDetail.departure.lng,
+          'polyline[0].point[0].latitude': orderDetail.departure.lat,
+          'polyline[0].point[1].longitude': orderDetail.destination.lng,
+          'polyline[0].point[1].latitude': orderDetail.destination.lat
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    this.getOrderDetail();
   },
 
   /**

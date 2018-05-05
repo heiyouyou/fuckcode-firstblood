@@ -11,17 +11,28 @@ Page({
     // 无行程数据模板显示标示
     hideRoute:true,
     noMore:true,
+    searchFlag:true,
     // 1:结伴班车 2:预约用车 3:机场接送 4:包车旅游
     current:1,
     currentUrl: '/shuttle-bus/my-shuttle',
     // 结伴班车列表数据
     shuttle:[],
     shuttleNextPage:'',
+    // 预约用车
+    appointCar:[],
+    appointCarNextPage:''
   },
   chooseWay(e){
-    let type = e.currentTarget.dataset.type
+    let type = e.currentTarget.dataset.type;
+    let url = '';
+    if(type==1){
+      url = '/shuttle-bus/my-shuttle';
+    } else if (type == 2){
+      url = '/appoint-car/my';
+    }
     this.setData({
-      ['current']:type
+      ['current']:type,
+      'currentUrl':url
     })
   },
   // 订单详情页面
@@ -57,37 +68,51 @@ Page({
     })
   },
   // 获取行程列表数据接口
-  getListData(url,params){
+  getListData(url, params = {}, clearListFlag=false){
     const that = this;
+    wx.showNavigationBarLoading();
     util._ajax_({
       url: util.server +url,
       data:params,
-      header:{
-        token:app.globalData.token
-      },
       success(res){
-        if(res.data.status==1){ 
-          let setDataObj = {};
-          if (that.data.current==1){
-            let shuttleList = [...that.data.shuttle,...res.data.data.list]
-            setDataObj = {
-              shuttle: shuttleList,
-              hideRoute: !(shuttleList == 0),
-              shuttleNextPage: res.data.data.next_page || '',
-              noMore: !(shuttleList != 0 && !res.data.data.next_page)
-            }
+        wx.hideNavigationBarLoading();
+        wx.stopPullDownRefresh();
+        that.setData({
+          searchFlag:true
+        });
+        let setDataObj = {};
+        if (that.data.current == 1) { //结伴班车
+          clearListFlag && (that.data.shuttle = []);
+          let shuttleList = [...that.data.shuttle,...res.data.data.list]
+          setDataObj = {
+            shuttle: shuttleList,
+            hideRoute: !(shuttleList == 0),
+            shuttleNextPage: res.data.data.next_page || '',
+            noMore: !(shuttleList != 0 && !res.data.data.next_page)
           }
-          that.setData(setDataObj);
-        } else if (res.data.status==-90){
-          goLogin();
-        } else{
-          wx.showToast({
-            title: res.data.msg,
-            icon: 'none'
-          })
+        } else if (that.data.current == 2){ //预约用车
+          clearListFlag && (that.data.appointCar = []);
+          let appointCar = [...that.data.appointCar, ...res.data.data.list]
+          setDataObj = {
+            appointCar: appointCar,
+            hideRoute: !(appointCar == 0),
+            appointCarNextPage: res.data.data.next_page || '',
+            noMore: !(appointCar != 0 && !res.data.data.next_page)
+          }
         }
+        that.setData(setDataObj);
       }
     })
+  },
+  // 搜索过滤接口
+  searchRoute(e){
+    let keyword = e.detail.value;
+    if (this.data.searchFlag){
+      this.setData({
+        searchFlag: false
+      });
+      this.getListData(this.data.currentUrl, { keyword},true);
+    }
   },
   /**
    * 生命周期函数--监听页面加载
@@ -128,12 +153,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    wx.showNavigationBarLoading()
-    setTimeout(function () {
-      wx.hideNavigationBarLoading()
-    }, 2000)
-    console.log('onPullDownRefresh')
-    wx.stopPullDownRefresh()
+    this.getListData(this.data.currentUrl, {}, true);
   },
 
   /**
@@ -141,7 +161,7 @@ Page({
    */
   onReachBottom: function () {
     console.log('onReachBottom')
-    if (this.data.shuttleNextPage&this.data.current==1){
+    if (this.data.shuttleNextPage&&this.data.current==1){
       this.getListData(this.data.shuttleNextPage);
     }
   },

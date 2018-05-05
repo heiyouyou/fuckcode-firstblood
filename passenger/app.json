@@ -1,9 +1,9 @@
 {
   "pages": [
+    "pages/route/orderDetail/orderDetail",
     "pages/route/index/index",
     "pages/route/packOrderDetail/packOrderDetail",
     "pages/route/payment/payment",        
-    "pages/route/orderDetail/orderDetail",
     "pages/route/driver/driver",
     "pages/login/index/index",
     "pages/login/login/login",
