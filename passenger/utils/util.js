@@ -1,7 +1,7 @@
 // 服务器地址
 const server = 'https://api.dddyp.cn'
 
-String.prototype.toDate = function ( /*format*/ ) {
+String.prototype.toDate = function ( /*format*/) {
   var str = this,
     len = str.length,
     arg = (arguments.length ? arguments[0] || "" : ""),
@@ -14,7 +14,7 @@ String.prototype.toDate = function ( /*format*/ ) {
   return new Date(val('y'), val('M') - 1, val('d'), val('h'), val('m'), val('s'), val('S'));
 }
 
-Date.prototype.format = function ( /*format*/ ) {
+Date.prototype.format = function ( /*format*/) {
   var fmt = arguments.length ? arguments[0] : "yyyy-MM-dd hh:mm:ss";
   var o = {
     "M+": this.getMonth() + 1,
@@ -119,22 +119,17 @@ const ajax = (url, param, cb, cbf) => {
     data: param,
     success: function (res) {
       console.log(res.data)
-      let code = res.data.code
-      if (res.data.result == 'success') {
-        if (!code) {
-          cb && cb(res)
-        }
-      } else if (res.data.result == 'fail') {
-        if (code == 'E000') {
-          goto('/pages/login/login?code=' + code, 4)
-        } else {
-          console.error(res.data.msg)
-          cbf && cbf(res)
-        }
+      if (res.status == '1') {
+        cb && cb(res)
+      } else if (res.status -= '-90') {
+        go('/pages/login/login?code=' + code, 4)
+      } else {
+        cbf && cbf(res)
+        console.error(res.data.msg)
       }
     },
-    fail: function (res) {},
-    complete: function (res) {},
+    fail: function (res) { },
+    complete: function (res) { },
   })
 }
 
@@ -165,7 +160,7 @@ const getUserInfo = (cb) => {
   })
 }
 
-const updImg = ({count=1,sizeType=['original', 'compressed'],sourceType=['album', 'camera'],cb,url=server + '/upload'}={}) => {
+const updImg = ({ count = 1, sizeType = ['original', 'compressed'], sourceType = ['album', 'camera'], cb, url = server + '/upload' } = {}) => {
   let that = this
   wx.chooseImage({
     count: count, // 默认9

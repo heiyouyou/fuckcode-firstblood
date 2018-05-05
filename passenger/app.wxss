@@ -365,7 +365,9 @@ view {
 .dp-flex.flex-one > view, .dp-flex.flex-one > button {
   flex: 1;
 }
-
+.dp-flex .flex-two {
+  flex: 2;
+}
 .dp-flex.jc-sb {
   justify-content: space-between;
 }
@@ -844,7 +846,7 @@ view {
   border-bottom: 1px solid #ccc;
 }
 
-scroll-view {
+.comments-wrap scroll-view {
   padding: 0 50rpx;
   box-sizing: border-box;
 }
