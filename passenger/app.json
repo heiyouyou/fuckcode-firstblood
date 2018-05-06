@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/route/orderDetail/orderDetail",
     "pages/route/index/index",
+    "pages/route/orderDetail/orderDetail",
     "pages/route/packOrderDetail/packOrderDetail",
     "pages/route/payment/payment",        
     "pages/route/driver/driver",

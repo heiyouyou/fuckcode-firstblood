@@ -7,17 +7,8 @@
                 <input class="top-search-input pl35" type="" placeholder="输入结订单号或者名称" bindinput='searchRoute'/>
             </view>
             <view class="displayf filter-tab fz15 color-666 altc jscb">
-                <view class="flex1 tc border-right-ccc lh15" data-type="1" bind:tap="chooseWay">
-                    <text class="{{current==1?'color-F1604F':''}}">结伴班车</text>                   
-                </view>
-                <view class="flex1 tc border-right-ccc lh15" data-type="2" bind:tap="chooseWay">
-                    <text class="{{current==2?'color-F1604F':''}}">预约用车</text>                   
-                </view>
-                <view class="flex1 tc border-right-ccc lh15" data-type="3" bind:tap="chooseWay">
-                    <text class="{{current==3?'color-F1604F':''}}">机场接送</text>                   
-                </view>
-                <view class="flex1 tc" data-type="4" bind:tap="chooseWay">
-                    <text class="{{current==4?'color-F1604F':''}}">包车旅游</text> 
+                <view class="flex1 tc {{currentTypeArr.length==index+1?'':'border-right-ccc'}} lh15" wx:for="{{currentTypeArr}}" wx:key="{{*this}}" data-type="{{index+1}}" bind:tap="chooseWay" data-flag='true'>
+                    <text class="{{current==index+1?'color-F1604F':''}}">{{item}}</text>                   
                 </view>
             </view>
         </view>
@@ -81,8 +72,8 @@
         <!-- 结伴班车 end -->
         <!-- 预约用车 start -->
         <view wx:if="{{current==2?true:false}}">
-            <view class="w710 mauto bgw mb10 color-666 content-item boxb my-box-shadow">
-                <view class="content-padding" bindtap="detail" data-id="1">
+            <view class="w710 mauto bgw mb10 color-666 content-item boxb my-box-shadow" wx:for="{{appointCar}}" bindtap="detail" data-id="{{item.id}}" wx:key="{{item.id}}">
+                <view class="content-padding">
                     <view class="displayf jscb altc pr">
                         <view>
                             <text class="fz16 color-333">预约用车</text>
@@ -94,126 +85,37 @@
                     <view class="mt20">
                         <view class="mb10">
                             <image class="icon-size-16" src="../../imgs/common/time@2x.png"></image>
-                            <text class="fz14 ml10 vm">2017/08/09 8:00-9:00出发</text>
+                            <text class="fz14 ml10 vm">{{item.use_time}}</text>
                         </view>
                         <view class="mb5">
                             <text class="br50 bg-3CBCA3 icon-size-12 displayib mr10"></text>
-                            <text class="fz14 vm displayib w70 text-ellipsis">Clayton</text>
+                            <text class="fz14 vm displayib w70 text-ellipsis">{{item.departure}}</text>
                         </view>
-                        <view class="clearfix lh30">
+                        <view class="clearfix lh30 mb5">
                             <text class="br50 bg-F1604F icon-size-12 displayib mr10"></text>
-                            <text class="fz14 vm displayib w70 text-ellipsis">Caulfield  </text>
-                            <text class="fr fz20 fwb color-F1604F">￥30/$3</text>
+                            <text class="fz14 vm displayib w70 text-ellipsis">{{item.destination}}</text>
+                            <text class="fr fz20 fwb color-F1604F">￥{{item.price}}/${{item.price_aud}}</text>
                         </view>
-                    </view>
-                </view>
-                <view class="border-top-ccc mt15 displayf jscb altc h50 boxb parl15">
-                    <text class="color-F1604F fz14">等待上车</text>
-                    <view class="displayf jscb altc">
-                        <view class="item-btn">
-                            联系司机
-                        </view>
-                    </view>
-                </view>
-            </view>
-            <view class="w710 mauto bgw mb10 color-666 content-item boxb my-box-shadow">
-                <view class="content-padding" bindtap="detail" data-id="1">
-                    <view class="displayf jscb altc pr">
-                        <view>
-                            <text class="fz16 color-333">预约用车</text>
-                        </view>
-                    </view>
-                    <view class="mt20">
-                        <view class="mb10">
-                            <image class="icon-size-16" src="../../imgs/common/time@2x.png"></image>
-                            <text class="fz14 ml10 vm">2017/08/09 8:00-9:00出发</text>
-                        </view>
-                        <view class="mb5">
-                            <text class="br50 bg-3CBCA3 icon-size-12 displayib mr10"></text>
-                            <text class="fz14 vm displayib w70 text-ellipsis">Clayton</text>
-                        </view>
-                        <view class="clearfix lh30">
-                            <text class="br50 bg-F1604F icon-size-12 displayib mr10"></text>
-                            <text class="fz14 vm displayib w70 text-ellipsis">Caulfield  </text>
-                            <text class="fr fz20 fwb color-F1604F">￥30/$3</text>
-                        </view>
-                    </view>
-                </view>
-                <view class="border-top-ccc mt15 displayf jscb altc h50 boxb parl15">
-                    <text class="color-F1604F fz14">等待付款</text>
-                    <view class="displayf jscb altc">
-                        <view class="item-btn">
-                            取消订单
-                        </view>
-                        <view class="item-btn" bind:tap="nextPay">
-                            支付订单
-                        </view>
-                    </view>
-                </view>
-            </view>
-            <view class="w710 mauto bgw mb10 color-666 content-item boxb my-box-shadow">
-                <view class="content-padding" bindtap="detail" data-id="1">
-                    <view class="displayf jscb altc pr">
-                        <view>
-                            <text class="fz16 color-333">预约用车</text>
-                        </view>
-                    </view>
-                    <view class="mt20">
-                        <view class="mb10">
-                            <image class="icon-size-16" src="../../imgs/common/time@2x.png"></image>
-                            <text class="fz14 ml10 vm">每早8:00出发</text>
-                        </view>
-                        <view class="mb5">
-                            <text class="br50 bg-3CBCA3 icon-size-12 displayib mr10"></text>
-                            <text class="fz14 vm displayib w70 text-ellipsis">Clayton</text>
-                        </view>
-                        <view class="mb5">
-                            <text class="br50 bg-F1604F icon-size-12 displayib mr10"></text>
-                            <text class="fz14 vm displayib w70 text-ellipsis">Caulfield  </text>
-                        </view>
-                        <view class="clearfix lh30">
+                        <view class="clearfix lh30" hidden>
                             <image class="icon-size-20 mr5" src="../../imgs/common/thenumberof@2x.png"></image>
                             <text class="fz14 thiddennb250">2人与我同行，车上3人</text>
-                            <text class="fr fz20 fwb">￥3</text>
+                            <text class="fr fz20 fwb">￥3</text> 
                         </view>
                     </view>
                 </view>
                 <view class="border-top-ccc mt15 displayf jscb altc h50 boxb parl15">
-                    <text class="fz14">已完成</text>
-                    <view class="displayf jscb altc">
-                        <view class="item-btn">
+                    <text class="{{status!=2&&status!=3?'color-F1604F':''}} fz14">{{item.status}}</text>
+                    <view class="displayf jscb altc" catchtap="bubble">
+                        <view class="item-btn" wx:if="{{item.show_cancel==1?true:false}}">
+                            取消订单
+                        </view>
+                        <view class="item-btn" wx:if="{{item.show_pay==1?true:false}}">
+                            支付订单
+                        </view>
+                        <view class="item-btn" wx:if="{{item.show_driver==1?true:false}}">
                             联系司机
                         </view>
-                    </view>
-                </view>
-            </view>
-            <view class="w710 mauto bgw mb10 color-666 content-item boxb my-box-shadow">
-                <view class="content-padding" bindtap="detail" data-id="1">
-                    <view class="displayf jscb altc pr">
-                        <view>
-                            <text class="fz16 color-333">预约用车</text>
-                        </view>
-                    </view>
-                    <view class="mt20">
-                        <view class="mb10">
-                            <image class="icon-size-16" src="../../imgs/common/time@2x.png"></image>
-                            <text class="fz14 ml10 vm">每早8:00出发</text>
-                        </view>
-                        <view class="mb5">
-                            <text class="br50 bg-3CBCA3 icon-size-12 displayib mr10"></text>
-                            <text class="fz14 vm displayib w70 text-ellipsis">Clayton</text>
-                        </view>
-                        <view class="clearfix lh30">
-                            <text class="br50 bg-F1604F icon-size-12 displayib mr10"></text>
-                            <text class="fz14 vm displayib w70 text-ellipsis">Caulfield  </text>
-                            <text class="fr fz20 fwb">￥30/$3</text>
-                        </view>
-                    </view>
-                </view>
-                <view class="border-top-ccc mt15 displayf jscb altc h50 boxb parl15">
-                    <text class="fz14">已取消</text>
-                    <view class="displayf jscb altc">
-                        <view class="item-btn">
+                        <view class="item-btn" wx:if="{{item.show_del==1?true:false}}">
                             删除订单
                         </view>
                     </view>
@@ -223,191 +125,50 @@
         <!-- 预约用车 end -->
         <!-- 机场接送 start -->
         <view wx:if="{{current==3?true:false}}">
-            <view class="w710 mauto bgw mb10 color-666 content-item boxb my-box-shadow">
-                <view class="content-padding" bindtap="detail" data-id="1">
+            <view class="w710 mauto bgw mb10 color-666 content-item boxb my-box-shadow" wx:for="{{mission}}" bindtap="detail" data-id="{{item.out_trade_no}}" wx:key="{{item.id}}">
+                <view class="content-padding">
                     <view class="displayf jscb altc pr">
                         <view>
                             <text class="fz16 color-333 vm mr5">机场接送</text>
-                            <image mode="aspectFill" class="route-tag-img vm" src="../../imgs/common/gothereandback@2x.png"></image>
+                            <image mode="aspectFill" class="route-tag-img vm" src="../../imgs/common/airportpickup@2x.png" wx:if="item.type==1"></image>
+                            <image mode="aspectFill" class="route-tag-img vm" src="../../imgs/common/airportdrop_off@2x.png" wx:if="item.type==2"></image>
+                            <image mode="aspectFill" class="route-tag-img vm" src="../../imgs/common/gothereandback@2x.png" wx:if="item.type==3"></image>
                         </view>
-                        <view class="watermark">
+                        <view class="watermark" hidden>
                             <image class="watermark-img" src="../../imgs/common/payforthecar@2x.png"></image>
                         </view>
                     </view>
                     <view class="mt20">
-                        <view class="mb10">
+                        <view class="{{item.mission.length==index+1?'':'mb10'}}" wx:for="{{item.mission}}" wx:for-item="missionItem" wx:for-index="missionIndex" wx:key="{{*this}}">
                             <view class="mb10">
                                 <image class="icon-size-16" src="../../imgs/common/time@2x.png"></image>
-                                <text class="fz14 ml10 vm">2017/08/09 8:00-9:00出发</text>
+                                <text class="fz14 ml10 vm">{{missionItem.use_time}}</text>
                             </view>
                             <view class="mb5">
                                 <text class="br50 bg-3CBCA3 icon-size-12 displayib mr10"></text>
-                                <text class="fz14 vm displayib w70 text-ellipsis">Clayton</text>
+                                <text class="fz14 vm displayib w70 text-ellipsis">{{missionItem.departure[0]}}</text>
                             </view>
-                            <view class="lh30">
+                            <view class="lh30 clearfix">
                                 <text class="br50 bg-F1604F icon-size-12 displayib mr10"></text>
-                                <text class="fz14 vm displayib w70 text-ellipsis">Caulfield </text>
-                            </view>
-                        </view>
-                        <view>
-                            <view class="mb10">
-                                <image class="icon-size-16" src="../../imgs/common/time@2x.png"></image>
-                                <text class="fz14 ml10 vm">2017/08/09 8:00-9:00出发</text>
-                            </view>
-                            <view class="mb5">
-                                <text class="br50 bg-3CBCA3 icon-size-12 displayib mr10"></text>
-                                <text class="fz14 vm displayib w70 text-ellipsis">Clayton</text>
-                            </view>
-                            <view class="clearfix lh30">
-                                <text class="br50 bg-F1604F icon-size-12 displayib mr10"></text>
-                                <text class="fz14 vm displayib w70 text-ellipsis">Caulfield  </text>
-                                <text class="fr fz20 fwb color-F1604F">￥30/$3</text>
+                                <text class="fz14 vm displayib w70 text-ellipsis">{{missionItem.destination[0]}}</text>
+                                <text class="fr fz20 fwb color-F1604F" wx:if="{{missionIndex==item.mission.length-1}}">￥{{item.price}}/${{item.price_aud}}</text>
                             </view>
                         </view>
                     </view>
                 </view>
                 <view class="border-top-ccc mt15 displayf jscb altc h50 boxb parl15">
-                    <text class="color-F1604F fz14">等待上车</text>
+                    <text class="{{status!=2&&status!=3?'color-F1604F':''}} fz14">{{item.status}}</text>
                     <view class="displayf jscb altc">
-                        <view class="item-btn">
+                        <view class="item-btn" wx:if="{{item.show_driver==0?false:true}}">
                             联系司机
                         </view>
-                    </view>
-                </view>
-            </view>
-            <view class="w710 mauto bgw mb10 color-666 content-item boxb my-box-shadow">
-                <view class="content-padding" bindtap="detail" data-id="1">
-                    <view class="displayf jscb altc pr">
-                        <view>
-                            <text class="fz16 color-333 vm mr5">机场接送</text>
-                            <image mode="aspectFill" class="route-tag-img vm" src="../../imgs/common/airportdrop_off@2x.png"></image>
-                        </view>
-                        <view class="watermark">
-                            <image class="watermark-img" src="../../imgs/common/payforthecar@2x.png"></image>
-                        </view>
-                    </view>
-                    <view class="mt20">
-                        <view class="mb10">
-                            <image class="icon-size-16" src="../../imgs/common/time@2x.png"></image>
-                            <text class="fz14 ml10 vm">2017/08/09 8:00-9:00出发</text>
-                        </view>
-                        <view class="mb5">
-                            <text class="br50 bg-3CBCA3 icon-size-12 displayib mr10"></text>
-                            <text class="fz14 vm displayib w70 text-ellipsis">Clayton</text>
-                        </view>
-                        <view class="clearfix lh30">
-                            <text class="br50 bg-F1604F icon-size-12 displayib mr10"></text>
-                            <text class="fz14 vm displayib w70 text-ellipsis">Caulfield  </text>
-                            <text class="fr fz20 fwb color-F1604F">￥30/$3</text>
-                        </view>
-                    </view>
-                </view>
-                <view class="border-top-ccc mt15 displayf jscb altc h50 boxb parl15">
-                    <text class="color-F1604F fz14">等待上车</text>
-                    <view class="displayf jscb altc">
-                        <view class="item-btn">
-                            联系司机
-                        </view>
-                    </view>
-                </view>
-            </view>
-            <view class="w710 mauto bgw mb10 color-666 content-item boxb my-box-shadow">
-                <view class="content-padding" bindtap="detail" data-id="1">
-                    <view class="displayf jscb altc pr">
-                        <view>
-                            <text class="fz16 color-333 vm mr5">机场接送</text>
-                            <image mode="aspectFill" class="route-tag-img vm" src="../../imgs/common/airportpickup@2x.png"></image>
-                        </view>
-                    </view>
-                    <view class="mt20">
-                        <view class="mb10">
-                            <image class="icon-size-16" src="../../imgs/common/time@2x.png"></image>
-                            <text class="fz14 ml10 vm">2017/08/09 8:00-9:00出发</text>
-                        </view>
-                        <view class="mb5">
-                            <text class="br50 bg-3CBCA3 icon-size-12 displayib mr10"></text>
-                            <text class="fz14 vm displayib w70 text-ellipsis">Clayton</text>
-                        </view>
-                        <view class="clearfix lh30">
-                            <text class="br50 bg-F1604F icon-size-12 displayib mr10"></text>
-                            <text class="fz14 vm displayib w70 text-ellipsis">Caulfield  </text>
-                            <text class="fr fz20 fwb color-F1604F">￥30/$3</text>
-                        </view>
-                    </view>
-                </view>
-                <view class="border-top-ccc mt15 displayf jscb altc h50 boxb parl15">
-                    <text class="color-F1604F fz14">等待付款</text>
-                    <view class="displayf jscb altc">
-                        <view class="item-btn">
+                         <view class="item-btn" wx:if="{{item.show_cancel==0?false:true}}">
                             取消订单
                         </view>
-                        <view class="item-btn" bind:tap="nextPay">
+                        <view class="item-btn" bind:tap="nextPay" wx:if="{{item.show_pay==0?false:true}}"> 
                             支付订单
                         </view>
-                    </view>
-                </view>
-            </view>
-            <view class="w710 mauto bgw mb10 color-666 content-item boxb my-box-shadow">
-                <view class="content-padding" bindtap="detail" data-id="1">
-                    <view class="displayf jscb altc pr">
-                        <view>
-                            <text class="fz16 color-333 vm mr5">机场接送</text>
-                            <image mode="aspectFill" class="route-tag-img vm" src="../../imgs/common/airportpickup@2x.png"></image>
-                        </view>
-                    </view>
-                    <view class="mt20">
-                        <view class="mb10">
-                            <image class="icon-size-16" src="../../imgs/common/time@2x.png"></image>
-                            <text class="fz14 ml10 vm">2017/08/09 8:00-9:00出发</text>
-                        </view>
-                        <view class="mb5">
-                            <text class="br50 bg-3CBCA3 icon-size-12 displayib mr10"></text>
-                            <text class="fz14 vm displayib w70 text-ellipsis">Clayton</text>
-                        </view>
-                        <view class="clearfix lh30">
-                            <text class="br50 bg-F1604F icon-size-12 displayib mr10"></text>
-                            <text class="fz14 vm displayib w70 text-ellipsis">Caulfield  </text>
-                            <text class="fr fz20 fwb color-F1604F">￥30/$3</text>
-                        </view>
-                    </view>
-                </view>
-                <view class="border-top-ccc mt15 displayf jscb altc h50 boxb parl15">
-                    <text class="fz14">已完成</text>
-                    <view class="displayf jscb altc">
-                        <view class="item-btn">
-                            联系司机
-                        </view>
-                    </view>
-                </view>
-            </view>
-            <view class="w710 mauto bgw mb10 color-666 content-item boxb my-box-shadow">
-                <view class="content-padding" bindtap="detail" data-id="1">
-                    <view class="displayf jscb altc pr">
-                        <view>
-                            <text class="fz16 color-333 vm mr5">机场接送</text>
-                            <image mode="aspectFill" class="route-tag-img vm" src="../../imgs/common/airportdrop_off@2x.png"></image>
-                        </view>
-                    </view>
-                    <view class="mt20">
-                        <view class="mb10">
-                            <image class="icon-size-16" src="../../imgs/common/time@2x.png"></image>
-                            <text class="fz14 ml10 vm">每早8:00出发</text>
-                        </view>
-                        <view class="mb5">
-                            <text class="br50 bg-3CBCA3 icon-size-12 displayib mr10"></text>
-                            <text class="fz14 vm displayib w70 text-ellipsis">Clayton</text>
-                        </view>
-                        <view class="clearfix lh30">
-                            <text class="br50 bg-F1604F icon-size-12 displayib mr10"></text>
-                            <text class="fz14 vm displayib w70 text-ellipsis">Caulfield  </text>
-                            <text class="fr fz20 fwb">￥30/$3</text>
-                        </view>
-                    </view>
-                </view>
-                <view class="border-top-ccc mt15 displayf jscb altc h50 boxb parl15">
-                    <text class="fz14">已取消</text>
-                    <view class="displayf jscb altc">
-                        <view class="item-btn" bindtap="deleteOrder">
+                        <view class="item-btn" bindtap="deleteOrder" wx:if="{{item.show_del==0?false:true}}">
                             删除订单
                         </view>
                     </view>

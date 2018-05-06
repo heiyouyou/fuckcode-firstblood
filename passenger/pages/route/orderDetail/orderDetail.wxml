@@ -4,9 +4,7 @@
     <view class="my-box-shadow">
         <view class="bgw pl10">
             <view class="displayf h100 altc border-bottom-ccc boxb">
-                <navigator url="../driver/driver">
-                    <image class="icon-size-120 bg-F1604F br50" src=""></image>
-                </navigator>
+                <image class="icon-size-120 bg-F1604F br50" src="../../imgs/common/"></image>
                 <view class="ml10 flex1 pr">
                     <view class="mb10 pr20">
                         <text class="fz16 color-333">{{orderDetailObj.info.name}}</text>
@@ -203,17 +201,17 @@
     </view>
     <view class="bgw my-box-shadow">
         <view class="h50 lh50 tc boxb border-bottom-ccc pr">
-            <text class="color-F1604F fz20 fwb">￥30/$3</text>
+            <text class="color-F1604F fz20 fwb">{{orderDetailObj.info.price}}</text>
             <view class="contact-client-btn">
                 <image class="icon-size-22" src="../../imgs/common/service@2x.png"></image>
                 <text class="fz14 color-666 ml5">联系客服</text>
             </view>
         </view>
         <view class="tc">
-            <view class="w710 mauto patb10" hidden>
+            <view class="w710 mauto patb10">
                 <button class="save-btn cancel-btn-bg">取消订单</button>
             </view>
-            <view class="h50 lh50" bindtap="maskToggle">
+            <view class="h50 lh50" bindtap="maskToggle" hidden>
                 <text class="fz14 color-666 mr5">评价本次服务</text><image class="icon-size-12 vm" src="../../imgs/common/next@2x.png"></image>
             </view>
         </view>

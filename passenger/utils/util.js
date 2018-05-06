@@ -153,6 +153,8 @@ const _ajax_ = ({ url='', method = 'GET', header = { 'Content-Type': 'applicatio
     method:method,
     success: function(res) {
       wx.hideLoading();
+      wx.hideNavigationBarLoading();
+      wx.stopPullDownRefresh();
       if (res.data.status == 1) {
         success && success(res);
       } else if(res.data.status == -90) {
@@ -160,7 +162,9 @@ const _ajax_ = ({ url='', method = 'GET', header = { 'Content-Type': 'applicatio
           title: res.data.msg,
           icon: 'none',
           success: function() {
-            goLogin();
+            setTimeout(() => {
+              goLogin();
+            }, 1000);
           }
         })
       } else {

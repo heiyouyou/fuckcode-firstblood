@@ -14,31 +14,72 @@ Page({
     searchFlag:true,
     // 1:结伴班车 2:预约用车 3:机场接送 4:包车旅游
     current:1,
+    currentTypeArr: ['结伴班车', '预约用车', '机场接送','包车旅游'],
     currentUrl: '/shuttle-bus/my-shuttle',
     // 结伴班车列表数据
     shuttle:[],
     shuttleNextPage:'',
+    shuttleFlag:false,
     // 预约用车
     appointCar:[],
-    appointCarNextPage:''
+    appointCarFlag:true,
+    appointCarNextPage:'',
+    // 机场接送
+    mission: [],
+    missionFlag: true,
+    missionNextPage: ''
   },
   chooseWay(e){
     let type = e.currentTarget.dataset.type;
     let url = '';
     if(type==1){
       url = '/shuttle-bus/my-shuttle';
+      // 点击不同类型行程，进行切换回最后是否有行程数据或者下一页数据
+      this.setData({
+        hideRoute: !(this.data.shuttle.length == 0),
+        noMore: !(this.data.shuttle.length != 0 && !this.data.shuttleNextPage),
+      })
     } else if (type == 2){
       url = '/appoint-car/my';
+      this.setData({
+        hideRoute: !(this.data.appointCar.length == 0),
+        noMore: !(this.data.appointCar.length != 0 && !this.data.appointCarNextPage),
+      })
+    } else if (type == 3){
+      url = '/mission/lists';
+      this.setData({
+        hideRoute: !(this.data.mission.length == 0),
+        noMore: !(this.data.mission.length != 0 && !this.data.missionNextPage),
+      })
     }
     this.setData({
-      ['current']:type,
-      'currentUrl':url
+      'current': type,
+      'currentUrl': url
     })
+    if ((type == 1 && !this.data.shuttleFlag) || (type == 2 && !this.data.appointCarFlag) || (type == 3 && !this.data.missionFlag)){
+      return
+    }
+    this.getListData(this.data.currentUrl);
+    if(type==1){
+      this.setData({
+        shuttleFlag: false
+      })
+    } else if (type == 2){
+      this.setData({
+        appointCarFlag: false
+      })
+    } else if (type == 3) {
+      this.setData({
+        missionFlag: false
+      })
+    }
   },
   // 订单详情页面
   detail(e){
-    util.go('../orderDetail/orderDetail')
+    let id = e.currentTarget.dataset['id'];
+    util.go(`../orderDetail/orderDetail?id=${id}&type=${this.data.current}`);
   },
+  // 包车旅游订单详情页面
   packDetail(e){
     util.go('../packOrderDetail/packOrderDetail')
   },
@@ -75,29 +116,34 @@ Page({
       url: util.server +url,
       data:params,
       success(res){
-        wx.hideNavigationBarLoading();
-        wx.stopPullDownRefresh();
         that.setData({
           searchFlag:true
         });
         let setDataObj = {};
         if (that.data.current == 1) { //结伴班车
-          clearListFlag && (that.data.shuttle = []);
-          let shuttleList = [...that.data.shuttle,...res.data.data.list]
+          // 是否清除之前数据
+          let shuttleList = clearListFlag ? res.data.data.list : [...that.data.shuttle,...res.data.data.list];
           setDataObj = {
             shuttle: shuttleList,
-            hideRoute: !(shuttleList == 0),
+            hideRoute: !(shuttleList.length == 0),
             shuttleNextPage: res.data.data.next_page || '',
-            noMore: !(shuttleList != 0 && !res.data.data.next_page)
+            noMore: !(shuttleList.length != 0 && !res.data.data.next_page)
           }
         } else if (that.data.current == 2){ //预约用车
-          clearListFlag && (that.data.appointCar = []);
-          let appointCar = [...that.data.appointCar, ...res.data.data.list]
+          let appointCar = clearListFlag ? res.data.data.list : [...that.data.appointCar, ...res.data.data.list];
           setDataObj = {
             appointCar: appointCar,
-            hideRoute: !(appointCar == 0),
+            hideRoute: !(appointCar.length == 0),
             appointCarNextPage: res.data.data.next_page || '',
-            noMore: !(appointCar != 0 && !res.data.data.next_page)
+            noMore: !(appointCar.length != 0 && !res.data.data.next_page)
+          }
+        } else if (that.data.current == 3) { //机场接送
+          let mission = clearListFlag ? res.data.data.list : [...that.data.mission, ...res.data.data.list];
+          setDataObj = {
+            mission: mission,
+            hideRoute: !(mission.length == 0),
+            missionNextPage: res.data.data.next_page || '',
+            noMore: !(mission.length != 0 && !res.data.data.next_page)
           }
         }
         that.setData(setDataObj);
@@ -163,6 +209,8 @@ Page({
     console.log('onReachBottom')
     if (this.data.shuttleNextPage&&this.data.current==1){
       this.getListData(this.data.shuttleNextPage);
+    } else if (this.data.appointCarNextPage && this.data.current == 2){
+      this.getListData(this.data.appointCarNextPage);
     }
   },
 

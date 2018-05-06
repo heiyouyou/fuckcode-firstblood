@@ -7,19 +7,19 @@ Page({
    * 页面的初始数据
    */
   data: {
+    orderDetailUrl:'/shuttle-bus/shuttle-detail',
+    orderId:0,
+    orderDetailObj:{},
+    currentRouteType:0,
     textarea_content:'',
     success:false,
     star_level:0,
     hide:true,
-    orderDetailUrl:'/shuttle-bus/shuttle-detail',
-    orderId:0,
-    orderDetailObj:{},
     show_url:'../../imgs/common/stop@2x.png',
     show:true,
     // 控制地图容器的显示与隐藏，防止弹窗被地图组件遮盖
     map_hide:false,
     add_height:0,
-    testArr:[{a:1,b:[{b:2}]}],
     markers: [{
       iconPath: "../../imgs/common/starting@2x.png",
       id: 1,
@@ -132,6 +132,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options)
+    let url = '/shuttle-bus/shuttle-detail';
+    if(options.type==1){
+      url = '/shuttle-bus/shuttle-detail';
+    }
+    this.setData({
+      currentRouteType:options.type,
+      orderId:options.id,
+      orderDetailUrl:url
+    })
     this.getOrderDetail();
   },
 
