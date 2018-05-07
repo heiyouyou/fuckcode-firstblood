@@ -1,7 +1,7 @@
 <!--pages/route/orderDetail/orderDetail.wxml-->
 <view>
     <!-- 结伴班车 start -->
-    <view class="my-box-shadow">
+    <view class="my-box-shadow" wx:if="{{currentRouteType==1}}">
         <view class="bgw pl10">
             <view class="displayf h100 altc border-bottom-ccc boxb">
                 <image class="icon-size-120 bg-F1604F br50" src="../../imgs/common/"></image>
@@ -39,7 +39,7 @@
             <view id="toggle-block" hidden="{{!show}}">
                 <view class="mb5">
                     <image class="icon-size-20" src="../../imgs/common/thenumberof@2x.png"></image>
-                    <text class="ml10 vm">{{orderDetailObj.info.descript}}</text>
+                    <text class="ml10 vm">同行{{orderDetailObj.info.passenger}}人，{{orderDetailObj.info.big_luggage}}件大行李，{{orderDetailObj.info.small_luggage}}件小行李</text>
                 </view>
                 <view class="mb5">
                     <image class="icon-size-16" src="../../imgs/common/time@2x.png"></image>
@@ -56,6 +56,111 @@
         </view>
     </view>
     <!-- 结伴班车 end -->
+    <!-- 机场接送 star-->
+    <view class="my-box-shadow" wx:if="{{currentRouteType==3}}">
+        <view class="bgw pl10">
+            <view class="displayf h100 altc border-bottom-ccc boxb">
+                <navigator url="../driver/driver" hidden>
+                    <image class="icon-size-120 bg-F1604F br50" src=""></image>
+                </navigator>
+                <view class="ml10 flex1 pr">
+                    <view class="mb10 pr20">
+                        <text class="fz16 color-333">Kevin</text>
+                        <image class="route-tag-img vm ml5" mode="aspectFill" src="../../imgs/common/airportdrop_off@2x.png"></image>
+                        <text class="fz15 fr color-F1604F" wx:if="{{orderDetailObj.mission.length!=2}}">{{orderDetailObj.mission[0].status_text}}</text>
+                    </view>
+                    <view class="fz14 clearfix" hidden>
+                        <image class="route-tag-img vm fl mr5" mode="aspectFill" src="../../imgs/common/airportpickup@2x.png"></image>
+                        <text class="order-tag color-00A0E9 boxb fl border-00A0E9">4.9星</text>
+                        <view class="fl ml10">
+                            <image class="icon-size-24" src="../../imgs/common/star@2x.png"></image>
+                            <image class="icon-size-24" src="../../imgs/common/star@2x.png"></image>
+                            <image class="icon-size-24" src="../../imgs/common/star@2x.png"></image>
+                            <image class="icon-size-24" src="../../imgs/common/star@2x.png"></image>
+                            <image class="icon-size-24" src="../../imgs/common/star@2x.png"></image>
+                        </view>
+                    </view>
+                    <view wx:if="{{orderDetailObj.mission.length==2}}">
+                        <text class="fz12 color-F1604F">Sky-car承诺提前12小时下单，100%接单</text>
+                    </view>
+                    <view class="watermark" hidden>
+                        <image class="watermark-img" src="../../imgs/common/payforthecar@2x.png"></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <!-- 接送机 start-->
+        <view class="color-666 fz14 bgw pl30 pt15 pb10" wx:if="{{orderDetail.mission.length==1 && orderDetail.mission[0].mission_type!=3}}">
+            <view class="mb10">
+                <image class="icon-size-16" src="../../imgs/common/time@2x.png"></image>
+                <text class="ml10 vm">{{orderDetailObj.mission[0].use_time}}</text>
+            </view>
+            <view class="mb5">
+                <text class="br50 bg-3CBCA3 icon-size-12 displayib mr10"></text>
+                <text class="fz14 vm displayib">{{orderDetailObj.mission[0].departure[0]}}</text>
+            </view>
+            <view class="mb5">
+                <text class="br50 bg-F1604F icon-size-12 displayib mr10"></text>
+                <text class="fz14 vm displayib">{{orderDetailObj.mission[0].destination[0]}}</text>
+            </view>
+            <view id="toggle-block" hidden="{{!show}}">
+                <view class="mb5">
+                    <image class="icon-size-20" src="../../imgs/common/thenumberof@2x.png"></image>
+                    <text class="ml10 vm">同行{{orderDetailObj.mission[0].passenger}}人，{{orderDetailObj.mission[0].big_luggage}}件大行李，{{orderDetailObj.mission[0].small_luggage}}件小行李</text>
+                </view>
+                <view class="mb5">
+                    <image class="icon-size-16" src="../../imgs/common/time@2x.png"></image>
+                    <text class="ml10 vm">下单时间：{{orderDetailObj.mission[0].create_time}}</text>
+                </view>
+                <view class="mb5">
+                    <image class="icon-size-16" src="../../imgs/common/ordernumber@2x.png"></image>
+                    <text class="ml10 vm">订单编号：{{orderId}}</text>
+                </view>
+            </view>
+            <view class="tc" bindtap="toggle">
+                <image class="shrink-icon" src="{{show_url}}"></image>
+            </view>
+        </view>
+        <!-- 接送机 end-->
+        <!-- 往返 start-->
+        <view class="color-666 fz14 bgw pl30 pr20 pt15 pb10" wx:if="{{orderDetailObj.mission.length==2}}">
+            <view class="{{index==0?'border-bottom-ccc mb15 pb15':''}}" wx:for="{{orderDetailObj.mission}}">
+                <view class="mb10">
+                    <text class="fz14 color-333">{{index?'去程':'返程'}}</text>
+                    <text class="{{index==0?'color-F1604F':'color-3CBCA3'}} fr">{{item.status_text}}</text>
+                </view>
+                <view class="mb10">
+                    <image class="icon-size-16" src="../../imgs/common/time@2x.png"></image>
+                    <text class="ml10 vm">{{item.use_time}}</text>
+                </view>
+                <view class="mb5">
+                    <text class="br50 bg-3CBCA3 icon-size-12 displayib mr10"></text>
+                    <text class="fz14 vm displayib">{{item.departure[0]}}</text>
+                </view>
+                <view class="mb5">
+                    <text class="br50 bg-F1604F icon-size-12 displayib mr10"></text>
+                    <text class="fz14 vm displayib">{{item.destination[0]}}</text>
+                </view>
+                <view>
+                    <view class="mb5">
+                        <image class="icon-size-20" src="../../imgs/common/thenumberof@2x.png"></image>
+                        <text class="ml10 vm">同行{{item.passenger}}人，{{item.mission[0].big_luggage}}件大行李，{{item.small_luggage}}件小行李</text>
+                    </view>
+                    <view class="mb5">
+                        <image class="icon-size-16" src="../../imgs/common/telephone@2x.png"></image>
+                        <text class="ml10 vm">{{item.telphone}}</text>
+                    </view>
+                    <view class="mb5 mt20" wx:if="{{orderDetailObj.mission.length-1==index}}">
+                        <image class="icon-size-16" src="../../imgs/common/ordernumber@2x.png"></image>
+                        <text class="ml10 vm">订单编号：{{orderId}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <!-- 往返 end-->
+    </view>
+    <!-- 机场接送 end -->
+
     <view class="my-box-shadow" wx:if="{{false}}">
         <view class="bgw pl10">
             <view class="displayf h100 altc border-bottom-ccc boxb">
@@ -191,27 +296,30 @@
             </view>
         </view>
     </view>
-    <view class="pr" hidden="{{map_hide}}">
+    <view class="pr" wx:if="{{map_show}}">
         <map class="map-box pr" id="map" style="height:{{200+add_height}}px;" longitude="113.324520" latitude="23.099994" scale="14" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" show-location>
             <cover-view class="map-status-box displayf jscc altc">
                 <cover-image class="icon-size-30 vm" src="../../imgs/common/red@2x.png"></cover-image>
-                <cover-view class="fz15 vm color-F1604F ml10">{{orderDetailObj.info.status}}</cover-view>
+                <cover-view class="fz15 vm color-F1604F ml10">{{orderStatus}}</cover-view>
             </cover-view>
         </map>
     </view>
     <view class="bgw my-box-shadow">
         <view class="h50 lh50 tc boxb border-bottom-ccc pr">
-            <text class="color-F1604F fz20 fwb">{{orderDetailObj.info.price}}</text>
+            <text class="color-F1604F fz20 fwb">￥{{orderPrice}}</text>
             <view class="contact-client-btn">
                 <image class="icon-size-22" src="../../imgs/common/service@2x.png"></image>
                 <text class="fz14 color-666 ml5">联系客服</text>
             </view>
         </view>
         <view class="tc">
-            <view class="w710 mauto patb10">
+            <view class="w710 mauto patb10" wx:if="showCancel">
                 <button class="save-btn cancel-btn-bg">取消订单</button>
             </view>
-            <view class="h50 lh50" bindtap="maskToggle" hidden>
+            <view class="w710 mauto patb10" wx:if="showPay">
+                <button class="save-btn">支付订单</button>
+            </view>
+            <view class="h50 lh50" bindtap="maskToggle" wx:if="{{commentShow}}">
                 <text class="fz14 color-666 mr5">评价本次服务</text><image class="icon-size-12 vm" src="../../imgs/common/next@2x.png"></image>
             </view>
         </view>

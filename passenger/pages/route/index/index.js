@@ -60,6 +60,7 @@ Page({
       return
     }
     this.getListData(this.data.currentUrl);
+    // 首次点击请求数据有效
     if(type==1){
       this.setData({
         shuttleFlag: false

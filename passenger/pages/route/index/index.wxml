@@ -78,7 +78,7 @@
                         <view>
                             <text class="fz16 color-333">预约用车</text>
                         </view>
-                        <view class="watermark">
+                        <view class="watermark" wx:if="{{item.is_offline_pay==0?false:true}}">
                             <image class="watermark-img" src="../../imgs/common/payforthecar@2x.png"></image>
                         </view>
                     </view>
@@ -104,7 +104,7 @@
                     </view>
                 </view>
                 <view class="border-top-ccc mt15 displayf jscb altc h50 boxb parl15">
-                    <text class="{{status!=2&&status!=3?'color-F1604F':''}} fz14">{{item.status}}</text>
+                    <text class="{{status!=2&&status!=3?'color-F1604F':''}} fz14">{{item.status_text}}</text>
                     <view class="displayf jscb altc" catchtap="bubble">
                         <view class="item-btn" wx:if="{{item.show_cancel==1?true:false}}">
                             取消订单
@@ -134,7 +134,7 @@
                             <image mode="aspectFill" class="route-tag-img vm" src="../../imgs/common/airportdrop_off@2x.png" wx:if="item.type==2"></image>
                             <image mode="aspectFill" class="route-tag-img vm" src="../../imgs/common/gothereandback@2x.png" wx:if="item.type==3"></image>
                         </view>
-                        <view class="watermark" hidden>
+                        <view class="watermark" wx:if="{{item.is_offline_pay==0?false:true}}">
                             <image class="watermark-img" src="../../imgs/common/payforthecar@2x.png"></image>
                         </view>
                     </view>
