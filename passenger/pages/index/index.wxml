@@ -5,7 +5,7 @@
     <swiper indicator-dots autoplay interval="5000" duration="500" indicator-active-color="#fff">
       <block wx:for="{{imgUrls}}">
         <swiper-item>
-          <image src="{{item}}" class="slide-image" width="355" height="150" />
+          <image src="{{item.img}}" class="slide-image" width="355" height="150" />
         </swiper-item>
       </block>
     </swiper>
@@ -55,17 +55,17 @@
       <view class='comments' wx:for="{{list}}">
         <view class='dp-flex jc-sb comments-user'>
           <view class='user-info dp-flex'>
-            <image src="{{item.avatar}}"></image>
+            <image src="{{item.headimg}}"></image>
             <view>
-              <view>{{item.name}}</view>
-              <text>{{item.creTime}}</text>
+              <view>{{item.nickname}}</view>
+              <text>{{item.create_time}}</text>
             </view>
           </view>
           <view class='dp-flex star'>
             <image wx:for="{{item.star}}" src="/pages/imgs/common/score-star-red.png"></image>
           </view>
         </view>
-        <view class='comments-info'>{{item.txt}}</view>
+        <view class='comments-info'>{{item.comment}}</view>
       </view>
     </scroll-view>
   </view>
