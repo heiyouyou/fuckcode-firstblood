@@ -113,10 +113,14 @@ const toast = (msg, type) => {
 }
 
 const ajax = (url, param, cb, cbf) => {
-  let token = getStorageSync('user') ? getStorageSync('user').token : ''
+  let token = getStorageSync('skycar') || ''
   wx.request({
-    url: `${server}${url}?token=${token}`,
+    url: `${server}${url}`,
     data: param,
+    header: {
+      'Content-Type': 'application/json',
+      'token': token
+    },
     success: function (res) {
       let _res = res.data
       if (_res.status == '1') {
