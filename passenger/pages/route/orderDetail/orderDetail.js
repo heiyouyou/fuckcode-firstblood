@@ -7,14 +7,16 @@ Page({
    * 页面的初始数据
    */
   data: {
-    orderDetailUrl:'/shuttle-bus/shuttle-detail',
+    orderDetailUrl:'',
     orderId:0,
     orderDetailObj:{},
     orderStatus:'',
     orderPrice:'',
-    currentRouteType:3,
+    orderPriceAud:'',
+    currentRouteType:'',
     textarea_content:'',
     success:false,
+    score_start:[],
     star_level:0,
     hide:true,
     show_url:'../../imgs/common/stop@2x.png',
@@ -123,6 +125,7 @@ Page({
         if(that.data.currentRouteType==1){//结伴班车（地图）
           Object.assign(setDataObj, {
             'orderStatus': orderDetail.info.status,
+            'score_start': Math.round(orderDetail.info.score),
             'map_show': true,
             'orderPrice': orderDetailObj.info.price,
             'markers[0].longitude': orderDetail.departure.lng,
@@ -133,6 +136,18 @@ Page({
             'polyline[0].points[0].latitude': orderDetail.departure.lat,
             'polyline[0].points[1].longitude': orderDetail.destination.lng,
             'polyline[0].points[1].latitude': orderDetail.destination.lat
+          });
+        } else if (that.data.currentRouteType == 2) {//预约用车（地图）
+          Object.assign(setDataObj, {
+            'orderStatus': orderDetail.info.status_text,
+            'map_show': true,
+            'orderPrice': orderDetailObj.info.price.price_aud,
+            'orderPriceAud': orderDetailObj.info.price,
+            'markers[0].longitude': orderDetail.route.wayPoints[0].longitude,
+            'markers[0].latitude': orderDetail.route.wayPoints[0].latitude,
+            'markers[1].longitude': orderDetail.route.wayPoints[1].longitude,
+            'markers[1].latitude': orderDetail.route.wayPoints[1].latitude,
+            'polyline[0].points': orderDetail.route.waps
           });
         } else if (that.data.currentRouteType == 3 && orderDetail.mission.length==1 && orderDetail.mission[0].mission_type!=3){//机场接送（接机或者送机地图）
           Object.assign(setDataObj, {
@@ -146,13 +161,17 @@ Page({
             'polyline[0].points': orderDetail.mission[1].routes.waps
           });
         }
-        if (that.data.currentRouteType == 3) {//机场接送（支付、取消和评价按钮）
-          object.assign(setDataObj,{
-            'showCancel': orderDetail.show_cancel?true:false,
-            'showPay': orderDetail.show_pay ? true : false,
-            'commentShow': orderDetail.mission[0].pay_status?true:false,
-          })
+        if (that.data.currentRouteType == 3 && orderDetail.mission.length == 2){
+          Object.assign(setDataObj, {
+            'orderPrice': orderDetailObj.mission[0].price + orderDetailObj.mission[1].price,
+          });
         }
+
+        object.assign(setDataObj,{
+          'showCancel': orderDetail.show_cancel?true:false,
+          'showPay': orderDetail.show_pay ? true : false,
+          'commentShow': orderDetail.show_comment?true:false,
+        })
         that.setData(setDataObj);
       }
     })
@@ -167,8 +186,9 @@ Page({
     if(options.type==1){
       url = '/shuttle-bus/shuttle-detail';
       params = { id: options.id };
-    } else if (options.type == 2){
-      
+    } else if (options.type != 2){
+      url = '/appoint-car/detail';
+      params = { id: options.id };
     } else if (options.type == 3) {
       url = '/mission/detail';
       params = {out_trade_no:options.id};

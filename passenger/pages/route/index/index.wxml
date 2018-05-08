@@ -48,7 +48,7 @@
                     </view>
                 </view>
                 <view class="border-top-ccc mt15 displayf jscb altc h50 boxb parl15">
-                    <text class="{{status!=2&&status!=3?'color-F1604F':''}} fz14">{{item.status_text}}</text>
+                    <text class="{{status!=3&&status!=4?'color-F1604F':''}} fz14">{{item.status_text}}</text>
                     <view class="displayf jscb altc" catchtap="bubble">
                         <view class="item-btn" wx:if="{{item.find_friend==1?true:false}}">
                             邀请伙伴
@@ -104,7 +104,7 @@
                     </view>
                 </view>
                 <view class="border-top-ccc mt15 displayf jscb altc h50 boxb parl15">
-                    <text class="{{status!=2&&status!=3?'color-F1604F':''}} fz14">{{item.status_text}}</text>
+                    <text class="{{status!=3&&status!=4?'color-F1604F':''}} fz14">{{item.status_text}}</text>
                     <view class="displayf jscb altc" catchtap="bubble">
                         <view class="item-btn" wx:if="{{item.show_cancel==1?true:false}}">
                             取消订单
@@ -178,35 +178,44 @@
         <!-- 机场接送 end -->
         <!-- 包车旅游 start -->
         <view wx:if="{{current==4?true:false}}">
-            <view class="w710 mauto bgw mb10 color-666 content-item boxb my-box-shadow" wx:for="{{[1,2,3]}}">
-                <view class="content-padding" data-id="1" bindtap="packDetail">
+            <view class="w710 mauto bgw mb10 color-666 content-item boxb my-box-shadow"  wx:for="{{charterList}}" bindtap="packDetail" data-id="{{item.id}}" wx:key="{{item.id}}">
+                <view class="content-padding">
                     <view class="displayf jscb altc pr">
                         <view>
                             <text class="fz16 color-333 vm">包车旅游</text>
-                            <text class="fz12 colorf bg-FFE200 route-tag vm">包车</text>
-                            <text class="fz12 colorf bgw route-tag border-F1604F color-F1604F vm">紧凑5座</text>
+                            <text class="fz12 colorf {{item.type==1?'bg-FFE200':'bg-C490BF'}} route-tag vm">{{item.type_text}}</text>
+                            <text class="fz12 colorf bgw route-tag border-F1604F color-F1604F vm" wx:if="{{car_type?true:false}}">{{car_type}}</text>
                         </view>
                     </view>
                     <view class="mt20">
                         <view class="mb10">
                             <image class="icon-size-16" src="../../imgs/common/time@2x.png"></image>
-                            <text class="fz14 ml10 vm">2017年08月09日 周一 9:00  共2天</text>
+                            <text class="fz14 ml10 vm">{{item.date+item.week+item.time}}  共{{item.days}}天</text>
                         </view>
                         <view class="mb5">
                             <text class="br50 bg-F1604F icon-size-12 displayib mr10"></text>
-                            <text class="fz14 vm displayib">澳大利亚墨尔本</text>
+                            <text class="fz14 vm displayib">{{item.title}}</text>
                         </view>
                         <view class="clearfix lh30">
-                            <text class="fz12 vm displayib color-999 ml20">订单号：2018010202223401  </text>
-                            <text class="fr fz20 fwb color-F1604F">￥30/$3</text>
+                            <text class="fz12 vm displayib color-999 ml20">订单号：{{item.out_trade_no}}  </text>
+                            <text class="fr fz20 fwb color-F1604F">￥{{item.price}}</text>
                         </view>
                     </view>
                 </view>
                 <view class="border-top-ccc mt15 displayf jscb altc h50 boxb parl15">
-                    <text class="color-F1604F fz14">已完成</text>
-                    <view class="displayf jscb altc">
-                        <view class="item-btn">
+                    <text class="{{status!=3&&status!=4?'color-F1604F':''}} fz14">{{item.status_text}}</text>
+                    <view class="displayf jscb altc" catchtap="bubble">
+                        <view class="item-btn" wx:if="{{item.show_cancel==1?true:false}}">
+                            取消订单
+                        </view>
+                        <view class="item-btn" wx:if="{{item.show_pay==1?true:false}}">
+                            支付订单
+                        </view>
+                        <view class="item-btn" wx:if="{{item.show_driver==1?true:false}}">
                             联系司机
+                        </view>
+                        <view class="item-btn" wx:if="{{item.show_del==1?true:false}}">
+                            删除订单
                         </view>
                     </view>
                 </view>

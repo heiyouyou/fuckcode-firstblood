@@ -3,7 +3,7 @@ import { goLogin } from "../common";
 // 服务器地址
 const server = 'https://api.dddyp.cn';
 // token值
-const token = wx.getStorageSync('skycar');
+const TOKEN = wx.getStorageSync('skycar');
 
 String.prototype.toDate = function ( /*format*/ ) {
   var str = this,
@@ -142,7 +142,7 @@ const ajax = (url, param, cb, cbf) => {
   })
 }
 
-const _ajax_ = ({ url='', method = 'GET', header = { 'Content-Type': 'application/json', 'token':token }, success, data, fail}={}) => {
+const _ajax_ = ({ url = '', method = 'GET', header = { 'Content-Type': 'application/json', 'token': TOKEN }, success, data, fail}={}) => {
   wx.showLoading({
     title: '加载中',
   })

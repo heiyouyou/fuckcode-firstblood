@@ -27,7 +27,11 @@ Page({
     // 机场接送
     mission: [],
     missionFlag: true,
-    missionNextPage: ''
+    missionNextPage: '',
+    // 包车旅游
+    charterList: [],
+    charterFlag: true,
+    charterNextPage: ''
   },
   chooseWay(e){
     let type = e.currentTarget.dataset.type;
@@ -51,12 +55,18 @@ Page({
         hideRoute: !(this.data.mission.length == 0),
         noMore: !(this.data.mission.length != 0 && !this.data.missionNextPage),
       })
+    } else if (type == 4) {
+      url = '/charter/my-list';
+      this.setData({
+        hideRoute: !(this.data.charterList.length == 0),
+        noMore: !(this.data.charterList.length != 0 && !this.data.charterNextPage),
+      })
     }
     this.setData({
       'current': type,
       'currentUrl': url
     })
-    if ((type == 1 && !this.data.shuttleFlag) || (type == 2 && !this.data.appointCarFlag) || (type == 3 && !this.data.missionFlag)){
+    if ((type == 1 && !this.data.shuttleFlag) || (type == 2 && !this.data.appointCarFlag) || (type == 3 && !this.data.missionFlag) || (type == 4 && !this.data.charterFlag)){
       return
     }
     this.getListData(this.data.currentUrl);
@@ -72,6 +82,10 @@ Page({
     } else if (type == 3) {
       this.setData({
         missionFlag: false
+      })
+    } else if (type == 4) {
+      this.setData({
+        charterFlag: false
       })
     }
   },
@@ -146,6 +160,14 @@ Page({
             missionNextPage: res.data.data.next_page || '',
             noMore: !(mission.length != 0 && !res.data.data.next_page)
           }
+        } else if (that.data.current == 4) { //包车旅游
+          let charterList = clearListFlag ? res.data.data.list : [...that.data.charterList, ...res.data.data.list];
+          setDataObj = {
+            charterList: charterList,
+            hideRoute: !(charterList.length == 0),
+            charterNextPage: res.data.data.next_page || '',
+            noMore: !(charterList.length != 0 && !res.data.data.next_page)
+          }
         }
         that.setData(setDataObj);
       }
@@ -212,6 +234,10 @@ Page({
       this.getListData(this.data.shuttleNextPage);
     } else if (this.data.appointCarNextPage && this.data.current == 2){
       this.getListData(this.data.appointCarNextPage);
+    } else if (this.data.missionNextPage && this.data.current == 3) {
+      this.getListData(this.data.missionNextPage);
+    } else if (this.data.charterNextPage && this.data.current == 4) {
+      this.getListData(this.data.charterNextPage);
     }
   },
 

@@ -13,12 +13,11 @@
                         <text class="order-tag colorf bg-F1604F fl boxb mr5">{{orderDetailObj.info.type_text}}</text>
                         <text class="order-tag color-00A0E9 boxb fl border-00A0E9">{{orderDetailObj.info.score}}星</text>
                         <view class="fl ml10">
-                            <image class="icon-size-24" src="../../imgs/common/star@2x.png" wx:for="{{}}"></image>
-                            <image class="icon-size-24" src="../../imgs/common/star@2x.png"></image>
-                            <image class="icon-size-24" src="../../imgs/common/star@2x.png"></image>
-                            <image class="icon-size-24" src="../../imgs/common/star@2x.png"></image>
-                            <image class="icon-size-24" src="../../imgs/common/star@2x.png"></image>
+                            <image class="icon-size-24" src="../../imgs/common/star@2x.png" wx:for="{{score_start}}"></image>
                         </view>
+                    </view>
+                    <view class="watermark" wx:if="{{orderDetailObj.info.is_offline_pay?true:false}}">
+                        <image class="watermark-img" src="../../imgs/common/payforthecar@2x.png"></image>
                     </view>
                 </view>
             </view>
@@ -56,21 +55,89 @@
         </view>
     </view>
     <!-- 结伴班车 end -->
-    <!-- 机场接送 star-->
-    <view class="my-box-shadow" wx:if="{{currentRouteType==3}}">
+    <!-- 预约用车 start -->
+    <view class="my-box-shadow" wx:if="{{currentRouteType==2}}">
         <view class="bgw pl10">
             <view class="displayf h100 altc border-bottom-ccc boxb">
-                <navigator url="../driver/driver" hidden>
+                <navigator url="../driver/driver">
                     <image class="icon-size-120 bg-F1604F br50" src=""></image>
                 </navigator>
                 <view class="ml10 flex1 pr">
                     <view class="mb10 pr20">
                         <text class="fz16 color-333">Kevin</text>
-                        <image class="route-tag-img vm ml5" mode="aspectFill" src="../../imgs/common/airportdrop_off@2x.png"></image>
-                        <text class="fz15 fr color-F1604F" wx:if="{{orderDetailObj.mission.length!=2}}">{{orderDetailObj.mission[0].status_text}}</text>
+                    </view>
+                    <view class="fz14 clearfix">
+                        <text class="order-tag color-00A0E9 boxb fl border-00A0E9">4.9星</text>
+                        <view class="fl ml10">
+                            <image class="icon-size-24" src="../../imgs/common/star@2x.png"></image>
+                            <image class="icon-size-24" src="../../imgs/common/star@2x.png"></image>
+                            <image class="icon-size-24" src="../../imgs/common/star@2x.png"></image>
+                            <image class="icon-size-24" src="../../imgs/common/star@2x.png"></image>
+                            <image class="icon-size-24" src="../../imgs/common/star@2x.png"></image>
+                        </view>
+                    </view>
+                    <view class="watermark" wx:if="{{orderDetailObj.info.is_offline_pay?true:false}}">
+                        <image class="watermark-img" src="../../imgs/common/payforthecar@2x.png"></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="color-666 fz14 bgw pl30 pt15 pb10">
+            <view class="mb10">
+                <image class="icon-size-16" src="../../imgs/common/time@2x.png"></image>
+                <text class="ml10 vm">{{orderDetailObj.info.use_time}}出发</text>
+            </view>
+            <view class="mb5">
+                <text class="br50 bg-3CBCA3 icon-size-12 displayib mr10"></text>
+                <text class="fz14 vm displayib">{{orderDetailObj.info.departure[0]}}</text>
+            </view>
+            <view class="mb5" wx:if="{{false}}">
+                <text class="br50 bg-3CBCA3 icon-size-12 displayib mr10"></text>
+                <text class="fz14 vm displayib">601 clayton Rd clayton</text>
+            </view>
+            <view class="mb5">
+                <text class="br50 bg-F1604F icon-size-12 displayib mr10"></text>
+                <text class="fz14 vm displayib">{{orderDetailObj.info.destination[0]}}</text>
+            </view>
+            <view id="toggle-block" hidden="{{!show}}">
+                <view class="mb5">
+                    <image class="icon-size-20" src="../../imgs/common/thenumberof@2x.png"></image>
+                    <text class="ml10 vm">同行{{orderDetailObj.info.passenger}}人，{{orderDetailObj.info.big_luggage}}件大行李，{{orderDetailObj.info.small_luggage}}件小行李</text>
+                </view>
+                <view class="mb5">
+                    <image class="icon-size-16" src="../../imgs/common/time@2x.png"></image>
+                    <text class="ml10 vm">下单时间：{{orderDetailObj.info.create_time}}</text>
+                </view>
+                <view class="mb5">
+                    <image class="icon-size-16" src="../../imgs/common/ordernumber@2x.png"></image>
+                    <text class="ml10 vm">订单编号：{{orderDetailObj.info.out_trade_no}}</text>
+                </view>
+            </view>
+            <view class="tc" bindtap="toggle">
+                <image class="shrink-icon" src="{{show_url}}"></image>
+            </view>
+        </view>
+    </view>
+    <!-- 预约用车 end -->
+    <!-- 机场接送 star-->
+    <view class="my-box-shadow" wx:if="{{currentRouteType==3}}">
+        <view class="bgw pl10">
+            <view class="displayf patb15 altc border-bottom-ccc boxb">
+                <navigator url="../driver/driver" hidden>
+                    <image class="icon-size-120 bg-F1604F br50" src=""></image>
+                </navigator>
+                <view class="ml10 flex1 pr">
+                    <view class="pr20">
+                        <text class="fz16 color-333">机场接送</text>
+                        <image mode="aspectFill" class="route-tag-img vm ml5" src="../../imgs/common/airportpickup@2x.png" ></image>
+                        <image mode="aspectFill" class="route-tag-img vm ml5" src="../../imgs/common/airportdrop_off@2x.png" wx:if="{{orderDetailObj.mission[0].mission_type.type==2}}"></image>
+                        <image mode="aspectFill" class="route-tag-img vm ml5" src="../../imgs/common/gothereandback@2x.png" wx:if="{{orderDetailObj.mission.length==2}}"></image>
+                        <text class="fz15 fr color-F1604F" wx:if="{{orderDetailObj.mission.length==2}}">{{orderDetailObj.mission[0].status_text}}</text>
                     </view>
                     <view class="fz14 clearfix" hidden>
-                        <image class="route-tag-img vm fl mr5" mode="aspectFill" src="../../imgs/common/airportpickup@2x.png"></image>
+                        <image mode="aspectFill" class="route-tag-img vm ml5" src="../../imgs/common/airportpickup@2x.png" wx:if="{{orderDetailObj.mission[0].mission_type==1}}"></image>
+                        <image mode="aspectFill" class="route-tag-img vm ml5" src="../../imgs/common/airportdrop_off@2x.png" wx:if="{{orderDetailObj.mission[0].mission_type.type==2}}"></image>
+                        <image mode="aspectFill" class="route-tag-img vm ml5" src="../../imgs/common/gothereandback@2x.png" wx:if="{{orderDetailObj.mission.length==2}}"></image>
                         <text class="order-tag color-00A0E9 boxb fl border-00A0E9">4.9星</text>
                         <view class="fl ml10">
                             <image class="icon-size-24" src="../../imgs/common/star@2x.png"></image>
@@ -83,7 +150,7 @@
                     <view wx:if="{{orderDetailObj.mission.length==2}}">
                         <text class="fz12 color-F1604F">Sky-car承诺提前12小时下单，100%接单</text>
                     </view>
-                    <view class="watermark" hidden>
+                    <view class="watermark" wx:if="{{orderDetailObj.info.is_offline_pay?true:false}}">
                         <image class="watermark-img" src="../../imgs/common/payforthecar@2x.png"></image>
                     </view>
                 </view>
@@ -306,17 +373,17 @@
     </view>
     <view class="bgw my-box-shadow">
         <view class="h50 lh50 tc boxb border-bottom-ccc pr">
-            <text class="color-F1604F fz20 fwb">￥{{orderPrice}}</text>
+            <text class="color-F1604F fz20 fwb">￥{{orderPrice}}{{orderPriceAud?'/$'+orderPriceAud:''}}</text>
             <view class="contact-client-btn">
                 <image class="icon-size-22" src="../../imgs/common/service@2x.png"></image>
                 <text class="fz14 color-666 ml5">联系客服</text>
             </view>
         </view>
         <view class="tc">
-            <view class="w710 mauto patb10" wx:if="showCancel">
+            <view class="w710 mauto patb10" wx:if="{{showCancel}}">
                 <button class="save-btn cancel-btn-bg">取消订单</button>
             </view>
-            <view class="w710 mauto patb10" wx:if="showPay">
+            <view class="w710 mauto patb10" wx:if="{{showPay}}">
                 <button class="save-btn">支付订单</button>
             </view>
             <view class="h50 lh50" bindtap="maskToggle" wx:if="{{commentShow}}">
