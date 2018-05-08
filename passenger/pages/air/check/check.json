@@ -1,4 +1,7 @@
 {
+    "usingComponents": {
+      "datePick": "/pages/components/date-pick/date-pick"
+    },
     "navigationBarBackgroundColor": "#F1604F",
     "navigationBarTextStyle":"white",	
     "navigationBarTitleText":"按航班查询"

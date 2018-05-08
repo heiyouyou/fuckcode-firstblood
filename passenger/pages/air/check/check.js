@@ -1,4 +1,6 @@
 // pages/air/check/check.js
+const util = require('../../../utils/util.js')
+
 Page({
 
   /**
@@ -6,6 +8,10 @@ Page({
    */
   data: {
     showMask: false,
+    query: {
+      flightNo: 'MU212',
+      date: ''
+    },
     list: [{
       num: '3U601',
       date: '9月28日  周四',
@@ -51,6 +57,22 @@ Page({
   lower() {
     console.log('onLower')
   },
+  show(e) {
+    let id = e.currentTarget.dataset.id
+    this[id].show()
+  },
+  bindKeyInput(e) {
+    let that = this, value = e.detail.value, param = e.currentTarget.dataset.p
+    that.setData({
+      [param]: value
+    })
+  },
+  _onDatePickcfm() {
+    let qd = 'query.date'
+    this.setData({
+      [qd]: this.datePick.getDateVal().dates
+    })
+  },
   toggle(e) {
     let elem = e.currentTarget.dataset.elem
     let selem = this.data[elem]
@@ -63,7 +85,14 @@ Page({
     this.setData({
       showMask: !sm
     })
+    this.getFlight()
   },
+  getFlight() {
+    util.ajax('/tool/flight', this.query, res => {
+      console.log(res)
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -75,7 +104,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    this.datePick = this.selectComponent('#datePick')
   },
 
   /**
