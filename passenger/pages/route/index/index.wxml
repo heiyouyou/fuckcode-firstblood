@@ -59,11 +59,14 @@
                         <view class="item-btn" wx:if="{{item.share==1?true:false}}">
                             分享
                         </view>
-                        <view class="item-btn" wx:if="{{item.show_driver==1?true:false}}">
+                        <view class="item-btn" wx:if="{{item.show_driver==1?true:false}}" bindtap="driverInfo">
                             联系司机
                         </view>
-                        <view class="item-btn" wx:if="{{item.show_del==1?true:false}}">
+                        <view class="item-btn" wx:if="{{item.show_del==1?true:false}}" bindtap="deleteOrder" data-id="{{item.id}}">
                             删除订单
+                        </view>
+                        <view class="item-btn" wx:if="{{item.show_cancel==1?true:false}}" bindtap="cancelOrder" data-id="{{item.id}}">
+                            取消订单
                         </view>
                     </view>
                 </view>
@@ -106,16 +109,16 @@
                 <view class="border-top-ccc mt15 displayf jscb altc h50 boxb parl15">
                     <text class="{{status!=3&&status!=4?'color-F1604F':''}} fz14">{{item.status_text}}</text>
                     <view class="displayf jscb altc" catchtap="bubble">
-                        <view class="item-btn" wx:if="{{item.show_cancel==1?true:false}}">
+                        <view class="item-btn" wx:if="{{item.show_cancel==1?true:false}}" bindtap="cancelOrder" data-id="{{item.id}}">
                             取消订单
                         </view>
-                        <view class="item-btn" wx:if="{{item.show_pay==1?true:false}}">
+                        <view class="item-btn" wx:if="{{item.show_pay==1?true:false}}" bindtap="nextPay">
                             支付订单
                         </view>
-                        <view class="item-btn" wx:if="{{item.show_driver==1?true:false}}">
+                        <view class="item-btn" wx:if="{{item.show_driver==1?true:false}}" bindtap="driverInfo">
                             联系司机
                         </view>
-                        <view class="item-btn" wx:if="{{item.show_del==1?true:false}}">
+                        <view class="item-btn" wx:if="{{item.show_del==1?true:false}}" bindtap="deleteOrder" data-id="{{item.id}}">
                             删除订单
                         </view>
                     </view>
@@ -159,13 +162,13 @@
                 <view class="border-top-ccc mt15 displayf jscb altc h50 boxb parl15">
                     <text class="{{status!=2&&status!=3?'color-F1604F':''}} fz14">{{item.status}}</text>
                     <view class="displayf jscb altc">
-                        <view class="item-btn" wx:if="{{item.show_driver==0?false:true}}">
+                        <view class="item-btn" wx:if="{{item.show_driver==0?false:true}}" bindtap="driverInfo">
                             联系司机
                         </view>
-                         <view class="item-btn" wx:if="{{item.show_cancel==0?false:true}}">
+                         <view class="item-btn" wx:if="{{item.show_cancel==0?false:true}}" bindtap="cancelOrder" data-id="{{item.out_trade_no}}">
                             取消订单
                         </view>
-                        <view class="item-btn" bind:tap="nextPay" wx:if="{{item.show_pay==0?false:true}}"> 
+                        <view class="item-btn" bind:tap="nextPay" wx:if="{{item.show_pay==0?false:true}}" bindtap="nextPay"> 
                             支付订单
                         </view>
                         <view class="item-btn" bindtap="deleteOrder" wx:if="{{item.show_del==0?false:true}}">
@@ -208,10 +211,10 @@
                         <view class="item-btn" wx:if="{{item.show_cancel==1?true:false}}">
                             取消订单
                         </view>
-                        <view class="item-btn" wx:if="{{item.show_pay==1?true:false}}">
+                        <view class="item-btn" wx:if="{{item.show_pay==1?true:false}}" bindtap="nextPay">
                             支付订单
                         </view>
-                        <view class="item-btn" wx:if="{{item.show_driver==1?true:false}}">
+                        <view class="item-btn" wx:if="{{item.show_driver==1?true:false}}" bindtap="driverInfo">
                             联系司机
                         </view>
                         <view class="item-btn" wx:if="{{item.show_del==1?true:false}}">

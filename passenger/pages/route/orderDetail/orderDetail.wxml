@@ -364,7 +364,7 @@
         </view>
     </view>
     <view class="pr" wx:if="{{map_show}}">
-        <map class="map-box pr" id="map" style="height:{{200+add_height}}px;" longitude="113.324520" latitude="23.099994" scale="14" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" show-location>
+        <map class="map-box pr" id="map" style="height:{{200+add_height}}px;" longitude="113.324520" latitude="23.099994" scale="14" controls="{{controls}}" markers="{{markers}}" polyline="{{polyline}}" show-location>
             <cover-view class="map-status-box displayf jscc altc">
                 <cover-image class="icon-size-30 vm" src="../../imgs/common/red@2x.png"></cover-image>
                 <cover-view class="fz15 vm color-F1604F ml10">{{orderStatus}}</cover-view>
@@ -380,7 +380,7 @@
             </view>
         </view>
         <view class="tc">
-            <view class="w710 mauto patb10" wx:if="{{showCancel}}">
+            <view class="w710 mauto patb10" wx:if="{{showCancel}}" bindtap="cancelOrder">
                 <button class="save-btn cancel-btn-bg">取消订单</button>
             </view>
             <view class="w710 mauto patb10" wx:if="{{showPay}}">
@@ -406,7 +406,7 @@
                         <textarea bindblur="textareaBlur" value="{{textarea_content}}" class="comment-textarea bg-F4F4F5 border-radius-4rpx color-F1604F" placeholder="输入您对司机的评价" placeholder-class="comment-placeholder" />
                     </view>
                     <view class="mb40">
-                        <button class="comment-btn bg-F1604F" bind:tap="getCommentData">提交</button>
+                        <button class="comment-btn bg-F1604F" bind:tap="commitCommentData">提交</button>
                     </view>
                 </view>
                 <view class="tc" hidden="{{!success}}">

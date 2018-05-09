@@ -1,4 +1,3 @@
-import { goLogin } from "../../../common";
 let util = require('../../../utils/util')
 const app = getApp();
 // pages/route/index/index.js
@@ -102,26 +101,101 @@ Page({
   nextPay(){
     util.go('../payment/payment')
   },
+  // 司机信息页面
+  driverInfo(){
+    util.go('../driver/driver')
+  },
   // 阻止冒泡函数
   bubble(){
     console.log(2)
   },
   // 删除订单
-  deleteOrder(){
-    wx.showModal({
-      title: '确认删除',
-      content: '确定要删除订单吗？\r\n删除后无法找回哦！',
-      cancelText:'再想想',
-      cancelColor:'#999999',
-      confirmColor:'#F1604F',
-      success: function(res) {
-        if (res.confirm) {
-          console.log('用户点击确定')
-        } else if (res.cancel) {
-          console.log('用户点击取消')
-        }
+  deleteOrder(e){
+    let id = e.currentTarget.dataset('id');
+    let url = '';
+    if(this.current == 1){
+      url = '/shuttle-bus/del';
+    } else if (this.current == 2) {
+      url = '/appoint-car/del';
+    }
+    util.modal({
+      confirm(){
+        util._ajax_({
+          url: util.server + url,
+          method: 'POST',
+          data: {
+            id
+          },
+          success(res) {
+            if (res.data.status == 1) {
+              util.toast(res.data.msg);
+            } else {
+              util.toast(res.data.msg);
+            }
+          }
+        })
       }
-    })
+    });
+  },
+  // 取消订单
+  cancelOrder(){
+    let id = e.currentTarget.dataset('id');
+    let url = '';
+    if (this.current == 1) {
+      url = '/shuttle-bus/cancel'
+    } else if (this.current == 2) {
+      url = '/appoint-car/cancel'
+    } else if(this.current == 3){
+      url = '/mission/cancel-confirm'
+    }
+    // 机场接送
+    if (this.current == 3){
+      util._ajax_({
+        method:'POST',
+        url: util.server + '/mission/cancel',
+        data:{out_trade_no:id},
+        success(res){
+          let price = res.data.data.refund;
+          util.modal({
+            title: '确认取消',
+            content: `真的要取消该订单吗？\n将会退款￥${price}`,
+            confirm() {
+              util._ajax_({
+                url: util.server + url,
+                method: 'POST',
+                data: {out_trade_no:id},
+                success(res) {
+                  if (res.data.status == 1) {
+                    util.toast(res.data.msg);
+                  } else {
+                    util.toast(res.data.msg);
+                  }
+                }
+              })
+            }
+          });
+        }
+      })
+      return;
+    }
+    util.modal({
+      title:'确认取消',
+      content:'真的要取消该订单吗？',
+      confirm() {
+        util._ajax_({
+          url: util.server + url,
+          method: 'POST',
+          data: {id},
+          success(res) {
+            if (res.data.status == 1) {
+              util.toast(res.data.msg);
+            } else {
+              util.toast(res.data.msg);
+            }
+          }
+        })
+      }
+    });
   },
   // 获取行程列表数据接口
   getListData(url, params = {}, clearListFlag=false){

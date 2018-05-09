@@ -2,8 +2,6 @@ import { goLogin } from "../common";
 
 // 服务器地址
 const server = 'https://api.dddyp.cn';
-// token值
-const TOKEN = wx.getStorageSync('skycar');
 
 String.prototype.toDate = function ( /*format*/ ) {
   var str = this,
@@ -105,15 +103,38 @@ const toast = (msg, type) => {
     wx.showToast({
       title: msg || '成功',
       icon: 'success',
-      duration: 2000
+      duration: 1000
     })
   } else {
     wx.showToast({
       title: msg || '失败',
-      image: '/pages/imgs/warn.png',
-      duration: 2000
+      duration: 1000
     })
   }
+}
+
+const modal = ({
+    title,
+    content,
+    cancelText,
+    cancelColor,
+    confirmColor,
+    success
+  }) => {
+   wx.showModal({
+     title: '确认删除',
+     content: '确定要删除订单吗？\r\n删除后无法找回哦！',
+     cancelText: '再想想',
+     cancelColor: '#999999',
+     confirmColor: '#F1604F',
+     success: function (res) {
+       if (res.confirm) {
+        confirm&&confirm();
+       } else if (res.cancel) {
+        cancel&&cancel();
+       }
+     }
+   })
 }
 
 const ajax = (url, param, cb, cbf) => {
@@ -141,10 +162,9 @@ const ajax = (url, param, cb, cbf) => {
     complete: function (res) {},
   })
 }
-
-const _ajax_ = ({ url = '', method = 'GET', header = { 'Content-Type': 'application/json', 'token': TOKEN }, success, data, fail}={}) => {
-  wx.showLoading({
-    title: '加载中',
+const _ajax_ = ({ url = '', method = 'GET', header = { 'Content-Type': 'application/json', 'token': wx.getStorageSync('skycar') }, success, data, fail,loadingText,loadingShow=true}={}) => {
+  loadingShow&&wx.showLoading({
+    title: loadingText || '加载中',
   })
   return wx.request({
     url: url,
@@ -247,5 +267,6 @@ module.exports = {
   isEmptyObj,
   delEmptyKey,
   getStorageSync,
-  server
+  server,
+  modal
 }
