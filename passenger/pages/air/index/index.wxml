@@ -29,7 +29,7 @@
       </view>
       <view class='dp-flex item' wx:if="{{flag == 0}}">
         <text class='lab'>送达</text>
-        <input placeholder='请输入送达地'></input>
+        <input placeholder='请输入送达地' data-p='form.address' data-t="1" bindinput='bindKeyInput'></input>
       </view>
       <view class='dp-flex item' wx:else>
         <text class='lab'>出发</text>
@@ -39,7 +39,7 @@
     <view class='dp-flex flex-one sub-term'>
       <view class='dp-flex' data-id='cusPick' bindtap='show'>
         <image src='/pages/imgs/airplan_nav/num.png'></image>
-        <text>乘车人数</text>
+        <text>{{(form.passenger + form.children) || '乘车人数'}}</text>
       </view>
       <view class='dp-flex' data-id='subcusPick' bindtap='show'>
         <image src='/pages/imgs/airplan_nav/baggage.png' style='height: 22rpx;'></image>
@@ -50,7 +50,7 @@
         <text>降落时间</text>
       </view>
     </view>
-    <cusPick id="cusPick" title="乘客人数">
+    <cusPick id="cusPick" title="乘客人数" bind:confirm="_onConfirm">
       <view class='pick-cnt'>
         <view class='dp-flex jc-sb pick-item'>
           <view class=''>{{busAdultNum.name}}</view>
@@ -69,7 +69,7 @@
           </view>
         </view>
       </view>
-    </cusPick>
+    </cusPick> 
     <cusPick id="subcusPick" title="行李数量">
       <view class='pick-cnt'>
         <view class='dp-flex jc-sb pick-item'>
