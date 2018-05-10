@@ -138,19 +138,23 @@ const modal = ({
 }
 
 const ajax = (url, param, cb, cbf) => {
-  let token = getStorageSync('user') ? getStorageSync('user').token : ''
+  let token = getStorageSync('skycar') || ''
   wx.request({
-    url: `${server}${url}?token=${token}`,
+    url: `${server}${url}`,
     data: param,
+    header: {
+      'Content-Type': 'application/json',
+      'token': token
+    },
     success: function (res) {
-      console.log(res.data)
-      if (res.status == '1') {
-        cb && cb(res)
-      } else if (res.status -= '-90') {
+      let _res = res.data
+      if (_res.status == '1') {
+        cb && cb(_res)
+      } else if (_res.status -= '-90') {
         go('/pages/login/login?code=' + code, 4)
       } else {
-        cbf && cbf(res)
-        console.error(res.data.msg)
+        cbf && cbf(_res)
+        console.error(_res)
       }
     },
     fail: function (res) { },
