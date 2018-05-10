@@ -113,6 +113,9 @@
 .bg-FAFAFA{
     background:#FAFAFA;
 }
+.bg-3CBCFF{
+    background:#3CBCFF;
+}
 /* 背景色 end */
 
 /* 图标大小 start */
