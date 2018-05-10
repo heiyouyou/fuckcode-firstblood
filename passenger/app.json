@@ -1,11 +1,11 @@
 {
   "pages": [
+    "pages/route/packOrderDetail/packOrderDetail",
     "pages/index/index",
     "pages/login/index/index",
     "pages/login/login/login",
     "pages/route/index/index",
     "pages/route/orderDetail/orderDetail",
-    "pages/route/packOrderDetail/packOrderDetail",
     "pages/route/payment/payment",        
     "pages/route/driver/driver",
     "pages/travel/index/index",

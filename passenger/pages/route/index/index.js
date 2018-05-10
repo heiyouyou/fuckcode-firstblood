@@ -141,60 +141,46 @@ Page({
   cancelOrder(){
     let id = e.currentTarget.dataset('id');
     let url = '';
+    let cancel_url = '';
+    let params = {id};
     if (this.current == 1) {
-      url = '/shuttle-bus/cancel'
+      url = '/shuttle-bus/cancel-confirm';
+      cancel_url = '/shuttle-bus/cancel';
     } else if (this.current == 2) {
-      url = '/appoint-car/cancel'
+      url = '/appoint-car/cancel-confirm';
+      cancel_url = '/appoint-car/cancel';
     } else if(this.current == 3){
-      url = '/mission/cancel-confirm'
+      params = {out_trade_no:id};
+      url = '/mission/cancel-confirm';
+      cancel_url = '/mission/cancel';
+    } else if (this.current == 4) {
+      url = '/charter/cancel-confirm';
+      cancel_url = '/charter/cancel';
     }
-    // 机场接送
-    if (this.current == 3){
-      util._ajax_({
-        method:'POST',
-        url: util.server + '/mission/cancel',
-        data:{out_trade_no:id},
-        success(res){
-          let price = res.data.data.refund;
-          util.modal({
-            title: '确认取消',
-            content: `真的要取消该订单吗？\n将会退款￥${price}`,
-            confirm() {
-              util._ajax_({
-                url: util.server + url,
-                method: 'POST',
-                data: {out_trade_no:id},
-                success(res) {
-                  if (res.data.status == 1) {
-                    util.toast(res.data.msg);
-                  } else {
-                    util.toast(res.data.msg);
-                  }
-                }
-              })
-            }
-          });
-        }
-      })
-      return;
-    }
-    util.modal({
-      title:'确认取消',
-      content:'真的要取消该订单吗？',
-      confirm() {
-        util._ajax_({
-          url: util.server + url,
-          method: 'POST',
-          data: {id},
-          success(res) {
+    util._ajax_({
+      loadingShow:false,
+      method:'POST',
+      url: util.server + cancel_url,
+      data: params
+    }).then((res) => {
+      let price = res.data.data.refund;
+      util.modal({
+        title: '确认取消',
+        content: `真的要取消该订单吗？\n将会退款￥${price}`,
+        confirm() {
+          util._ajax_({
+            url: util.server + url,
+            method: 'POST',
+            data: params
+          }).then((res) => {
             if (res.data.status == 1) {
               util.toast(res.data.msg);
             } else {
               util.toast(res.data.msg);
             }
-          }
-        })
-      }
+          })
+        }
+      });
     });
   },
   // 获取行程列表数据接口

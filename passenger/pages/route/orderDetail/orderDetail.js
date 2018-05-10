@@ -74,7 +74,7 @@ Page({
     })
   },
   // 评论框内容获取
-  textareaBlur(e){
+  textareaInput(e){
     let content = e.detail.value
     this.setData({
       'textarea_content':content
@@ -88,7 +88,7 @@ Page({
     let id = this.data.orderId;
     let url = '';
     if (this.data.currentRouteType == 1) {
-      url = ''
+      url = '/shuttle-bus/comment'
     } else if (this.data.currentRouteType == 2) {
       url = '/appoint/comment'
     } else if (this.data.currentRouteType == 3) {
@@ -101,6 +101,9 @@ Page({
       data:{id,comment,star},
       success: function(res) {
         if(res.data.status==1){
+          that.setData({
+            'success': !that.data.success
+          })
           that.getCommentData();
         }else{
           util.toast(res.data.msg);
@@ -164,66 +167,46 @@ Page({
   cancelOrder() {
     const that = this;
     let url = '';
+    let cancel_url = '';
+    let params = {id:this.data.orderId};
     if (this.data.currentRouteType == 1) {
-      url = '/shuttle-bus/cancel'
+      url = '/shuttle-bus/cancel-confirm';
+      cancel_url = '/shuttle-bus/cancel';
     } else if (this.data.currentRouteType == 2) {
-      url = '/appoint-car/cancel'
+      url = '/appoint-car/cancel-confirm';
+      cancel_url = '/appoint-car/cancel';
     } else if (this.data.currentRouteType == 3) {
-      url = '/mission/cancel-confirm'
+      params = {out_trade_no:this.data.orderId};
+      url = '/mission/cancel-confirm';
+      cancel_url = '/mission/cancel';
+    } else if (this.data.currentRouteType == 4) {
+      url = '/charter/cancel-confirm';
+      cancel_url = '/charter/cancel';
     }
-    // 机场接送
-    if (this.data.currentRouteType == 3) {
-      util._ajax_({
-        method: 'POST',
-        url: util.server + '/mission/cancel',
-        data: {
-          out_trade_no: that.data.orderId
-        },
-        success(res) {
-          let price = res.data.data.refund;
-          util.modal({
-            title: '确认取消',
-            content: `真的要取消该订单吗？\n将会退款￥${price}`,
-            confirm() {
-              util._ajax_({
-                url: util.server + url,
-                method: 'POST',
-                data: {
-                  out_trade_no: that.data.orderId
-                },
-                success(res) {
-                  if (res.data.status == 1) {
-                    util.toast(res.data.msg);
-                  } else {
-                    util.toast(res.data.msg);
-                  }
-                }
-              })
-            }
-          });
-        }
-      })
-      return;
-    }
-    util.modal({
-      title: '确认取消',
-      content: '真的要取消该订单吗？',
-      confirm() {
-        util._ajax_({
-          url: util.server + url,
-          method: 'POST',
-          data: {
-            id: that.data.orderId
-          },
-          success(res) {
+    util._ajax_({
+      loadingShow:false,
+      method:'POST',
+      url: util.server + cancel_url,
+      data: params
+    }).then((res) => {
+      let price = res.data.data.refund;
+      util.modal({
+        title: '确认取消',
+        content: `真的要取消该订单吗？\n将会退款￥${price}`,
+        confirm() {
+          util._ajax_({
+            url: util.server + url,
+            method: 'POST',
+            data: params
+          }).then((res) => {
             if (res.data.status == 1) {
               util.toast(res.data.msg);
             } else {
               util.toast(res.data.msg);
             }
-          }
-        })
-      }
+          })
+        }
+      });
     });
   },
   // 获取订单详情

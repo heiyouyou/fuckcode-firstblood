@@ -165,38 +165,42 @@ const _ajax_ = ({ url = '', method = 'GET', header = { 'Content-Type': 'applicat
   loadingShow&&wx.showLoading({
     title: loadingText || '加载中',
   })
-  return wx.request({
-    url: url,
-    data:data,
-    header: header,
-    method:method,
-    success: function(res) {
-      wx.hideLoading();
-      wx.hideNavigationBarLoading();
-      wx.stopPullDownRefresh();
-      if (res.data.status == 1) {
-        success && success(res);
-      } else if(res.data.status == -90) {
-        wx.showToast({
-          title: res.data.msg,
-          icon: 'none',
-          success: function() {
-            setTimeout(() => {
-              goLogin();
-            }, 1000);
-          }
-        })
-      } else {
-        wx.showToast({
-          title: res.data.msg,
-          icon: 'none'
-        })
+  return new Promise((resolve,reject)=>{
+    wx.request({
+      url: url,
+      data: data,
+      header: header,
+      method: method,
+      success: function (res) {
+        wx.hideLoading();
+        wx.hideNavigationBarLoading();
+        wx.stopPullDownRefresh();
+        if (res.data.status == 1) {
+          success && success(res);
+          resolve(res);
+        } else if (res.data.status == -90) {
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'none',
+            success: function () {
+              setTimeout(() => {
+                goLogin();
+              }, 1000);
+            }
+          });
+        } else {
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'none'
+          })
+        }
+      },
+      fail: function () {
+        fail && fail();
+        reject();
       }
-    },
-    fail: function() {
-      fail && fail();
-    }
-  })
+    })
+  });
 }
 
 const getUserInfo = (cb) => {
