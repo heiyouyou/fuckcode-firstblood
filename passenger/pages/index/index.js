@@ -5,30 +5,11 @@ const app = getApp(),
 
 Page({
   data: {
-    imgUrls: [
-      'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
-    ],
-    list: [{
-      avatar: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
-      name: '张女士',
-      creTime: '1小时前',
-      txt: '挺好的，方便快捷，直接送到酒店门口',
-      star: 5
-    }, {
-      avatar: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
-      name: '张女士',
-      creTime: '1小时前',
-      txt: '挺好的，方便快捷，直接送到酒店门口',
-      star: 5
-    }, {
-      avatar: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
-      name: '张女士',
-      creTime: '1小时前',
-      txt: '挺好的，方便快捷，直接送到酒店门口',
-      star: 5
-    }]
+    query: {
+      page: 1
+    },
+    imgUrls: [],
+    list: []
   },
   go(e) {
     let url = e.currentTarget.dataset.url
@@ -36,14 +17,35 @@ Page({
   },
   lower() {
     console.log('onLower')
+    let page = this.data.query.page, qp = 'query.page'
+    this.setData({
+      [qp]: ++page
+    })
+    this.getComments()
   },
   getImgs() {
+    let self = this
     util.ajax('/index', {}, res => {
-
+      let _res = res.data
+      self.setData({
+        imgUrls: _res.adsList
+      })
+    })
+  },
+  getComments() {
+    let self = this, list = this.data.list
+    util.ajax('/index/comment', this.data.query, res => {
+      let _res = res.data
+      list = [...list, ..._res.commentList]
+      console.log(list)
+      self.setData({
+        list: list
+      })
     })
   },
   onLoad: function () {
     this.getImgs()
+    this.getComments()
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,

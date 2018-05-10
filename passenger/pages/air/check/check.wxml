@@ -5,11 +5,11 @@
     <view class='main-form'>
       <view class='item'>
         <view class='sub-lab'>航班号</view>
-        <input placeholder='请输入航班号，如3U601' placeholder-class='ph'></input>
+        <input placeholder='请输入航班号，如3U601' data-p="query.flightNo" bindinput="bindKeyInput" placeholder-class='ph'></input>
       </view>
       <view class='item'>
         <view class='sub-lab'>起飞时间（当地）</view>
-        <input></input>
+        <input value='{{query.date}}' data-id='datePick' bindtap='show'></input>
       </view>
     </view>
   </view>
@@ -18,6 +18,7 @@
     <button class='main-btn' bindtap='onCheck'>查询航班</button>
   </view>
 </view>
+<datePick id="datePick" title="飞机起飞时间" bind:onDatePickcfm="_onDatePickcfm"></datePick>
 <view class='mask' wx:if="{{showMask}}" data-elem='showMask' bindtap='toggle'>
   <view class='tips sub'>已显示全部航班</view>
   <scroll-view scroll-y style="height: 90%;" bindscrolltolower="lower">

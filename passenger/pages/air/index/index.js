@@ -28,14 +28,14 @@ Page({
     }],
     airplan: [{
       name: '墨尔本',
-      id: 1212
+      id: 3304
     }, {
       name: '悉尼',
       id: 1213
     }],
     index: 0,
     busAdultNum: {
-      name: '成人>7岁', 
+      name: '成人>7岁',
       val: 0
     },
     busChildNum: {
@@ -50,7 +50,17 @@ Page({
       name: '小行李',
       val: 0
     },
-    landDate: {}
+    landDate: {},
+    form: {
+      use_time: '', // 用车时间
+      address: [], // 出发地址，可以多个地址
+      airport_id: '', // 机场id
+      big_luggage: '', // 大行李数量
+      small_luggage: '', // 小行李数量
+      mission_type: '', // 1接机，2送机
+      passenger: '', // 成人数量
+      children: '' // 儿童数量
+    }
   },
   go(e) {
     let url = e.currentTarget.dataset.url
@@ -69,9 +79,25 @@ Page({
       [elem]: !selem
     })
   },
+  bindKeyInput(e) {
+    let that = this, value = e.detail.value, param = e.currentTarget.dataset.p, t = e.currentTarget.dataset.t
+    if (t) {
+      that.setData({
+        [param]: [value]
+      })
+    } else {
+      that.setData({
+        [param]: value
+      })
+    }
+  },
   bindPickerChange(e) {
+    let fai = 'form.airport_id',
+        airplan = this.data.airplan,
+        i = e.detail.value
     this.setData({
-      index: e.detail.value
+      index: i,
+      [fai]: airplan[i].id
     })
   },
   show(e) {
@@ -91,6 +117,16 @@ Page({
         [`${val}.val`]: ++v
       })
     }
+  },
+  _onConfirm() {
+    let an = this.data.busAdultNum.val,
+        cn = this.data.busChildNum.val,
+        fp = 'form.passenger',
+        fc = 'form.children'
+    this.setData({
+      [fp]: an,
+      [fc]: cn
+    })
   },
   _onDatePickcfm() {
     this.setData({

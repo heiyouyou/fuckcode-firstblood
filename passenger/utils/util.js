@@ -3,7 +3,7 @@ import { goLogin } from "../common";
 // 服务器地址
 const server = 'https://api.dddyp.cn';
 
-String.prototype.toDate = function ( /*format*/ ) {
+String.prototype.toDate = function ( /*format*/) {
   var str = this,
     len = str.length,
     arg = (arguments.length ? arguments[0] || "" : ""),
@@ -16,7 +16,7 @@ String.prototype.toDate = function ( /*format*/ ) {
   return new Date(val('y'), val('M') - 1, val('d'), val('h'), val('m'), val('s'), val('S'));
 }
 
-Date.prototype.format = function ( /*format*/ ) {
+Date.prototype.format = function ( /*format*/) {
   var fmt = arguments.length ? arguments[0] : "yyyy-MM-dd hh:mm:ss";
   var o = {
     "M+": this.getMonth() + 1,
@@ -138,66 +138,69 @@ const modal = ({
 }
 
 const ajax = (url, param, cb, cbf) => {
-  let token = getStorageSync('user') ? getStorageSync('user').token : ''
+  let token = getStorageSync('skycar') || ''
   wx.request({
-    url: `${server}${url}?token=${token}`,
+    url: `${server}${url}`,
     data: param,
+    header: {
+      'Content-Type': 'application/json',
+      'token': token
+    },
     success: function (res) {
-      console.log(res.data)
-      let code = res.data.code
-      if (res.data.result == 'success') {
-        if (!code) {
-          cb && cb(res)
-        }
-      } else if (res.data.result == 'fail') {
-        if (code == 'E000') {
-          goto('/pages/login/login?code=' + code, 4)
-        } else {
-          console.error(res.data.msg)
-          cbf && cbf(res)
-        }
+      let _res = res.data
+      if (_res.status == '1') {
+        cb && cb(_res)
+      } else if (_res.status -= '-90') {
+        go('/pages/login/login?code=' + code, 4)
+      } else {
+        cbf && cbf(_res)
+        console.error(_res)
       }
     },
-    fail: function (res) {},
-    complete: function (res) {},
+    fail: function (res) { },
+    complete: function (res) { },
   })
 }
 const _ajax_ = ({ url = '', method = 'GET', header = { 'Content-Type': 'application/json', 'token': wx.getStorageSync('skycar') }, success, data, fail,loadingText,loadingShow=true}={}) => {
   loadingShow&&wx.showLoading({
     title: loadingText || '加载中',
   })
-  return wx.request({
-    url: url,
-    data:data,
-    header: header,
-    method:method,
-    success: function(res) {
-      wx.hideLoading();
-      wx.hideNavigationBarLoading();
-      wx.stopPullDownRefresh();
-      if (res.data.status == 1) {
-        success && success(res);
-      } else if(res.data.status == -90) {
-        wx.showToast({
-          title: res.data.msg,
-          icon: 'none',
-          success: function() {
-            setTimeout(() => {
-              goLogin();
-            }, 1000);
-          }
-        })
-      } else {
-        wx.showToast({
-          title: res.data.msg,
-          icon: 'none'
-        })
+  return new Promise((resolve,reject)=>{
+    wx.request({
+      url: url,
+      data: data,
+      header: header,
+      method: method,
+      success: function (res) {
+        wx.hideLoading();
+        wx.hideNavigationBarLoading();
+        wx.stopPullDownRefresh();
+        if (res.data.status == 1) {
+          success && success(res);
+          resolve(res);
+        } else if (res.data.status == -90) {
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'none',
+            success: function () {
+              setTimeout(() => {
+                goLogin();
+              }, 1000);
+            }
+          });
+        } else {
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'none'
+          })
+        }
+      },
+      fail: function () {
+        fail && fail();
+        reject();
       }
-    },
-    fail: function() {
-      fail && fail();
-    }
-  })
+    })
+  });
 }
 
 const getUserInfo = (cb) => {
@@ -212,7 +215,7 @@ const getUserInfo = (cb) => {
   })
 }
 
-const updImg = ({count=1,sizeType=['original', 'compressed'],sourceType=['album', 'camera'],cb,url=server + '/upload'}={}) => {
+const updImg = ({ count = 1, sizeType = ['original', 'compressed'], sourceType = ['album', 'camera'], cb, url = server + '/upload' } = {}) => {
   let that = this
   wx.chooseImage({
     count: count, // 默认9

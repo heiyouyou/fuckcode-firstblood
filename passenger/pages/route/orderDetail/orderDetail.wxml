@@ -403,7 +403,7 @@
                 </view>
                 <view hidden="{{success}}">
                     <view class="mb50">
-                        <textarea bindblur="textareaBlur" value="{{textarea_content}}" class="comment-textarea bg-F4F4F5 border-radius-4rpx color-F1604F" placeholder="输入您对司机的评价" placeholder-class="comment-placeholder" />
+                        <textarea bindinput="textareaInput" value="{{textarea_content}}" class="comment-textarea bg-F4F4F5 border-radius-4rpx color-F1604F" placeholder="输入您对司机的评价" placeholder-class="comment-placeholder" />
                     </view>
                     <view class="mb40">
                         <button class="comment-btn bg-F1604F" bind:tap="commitCommentData">提交</button>
