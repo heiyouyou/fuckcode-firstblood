@@ -15,15 +15,8 @@ Page({
       src: 'https://pic.lanhuapp.com/FrJb4yGe1HjIiiUT4AIfjd89R06a',
       intro: '豪华车：卡罗拉、伊兰特、宝莱等同级车。'
     }],
-    form: {
-      time: '2017年8月1日 08:23',
-      start: '墨尔本上海路',
-      end: '墨尔本机场（大约18.2km）',
-      aduit: 1,
-      child: 1,
-      bigLuggage: 2,
-      smallLuggage: 3
-    },
+    form: {},
+    obj: {},
     price: {
       rmb: 28,
       usd: 2.8
@@ -34,16 +27,50 @@ Page({
     util.go(url)
   },
   onCar(e) {
-    let t = e.currentTarget.dataset.t
+    let t = e.currentTarget.dataset.t,
+      fct = 'form.car_type'
     this.setData({
-      flag: t
+      flag: t,
+      [fct]: t
+    })
+  },
+  bindTxtInput(e) {
+    let value = e.detail.value, param = e.currentTarget.dataset.p
+    this.setData({
+      [param]: value
+    })
+  },
+  switchChange (e) {
+    let val = e.detail.value,
+      param = e.currentTarget.dataset.p
+    if (val == 'checked') {
+      this.setData({
+        [param]: 1
+      })
+    } else {
+      this.setData({
+        [param]: 0
+      })
+    }
+  },
+  getPrice(form) {
+    let self = this
+    util.ajax('/mission/check-price', form, res => {
+      let _res = res.data
+      self.setData({
+        obj: _res
+      })
     })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    let form = JSON.parse(options.form)
+    this.setData({
+      form: form
+    })
+    this.getPrice(form)
   },
 
   /**

@@ -57,19 +57,27 @@ Page({
       airport_id: '', // 机场id
       big_luggage: '', // 大行李数量
       small_luggage: '', // 小行李数量
-      mission_type: '', // 1接机，2送机
+      mission_type: '1', // 1接机，2送机
       passenger: '', // 成人数量
       children: '' // 儿童数量
     }
   },
   go(e) {
-    let url = e.currentTarget.dataset.url
-    util.go(url)
+    let url = e.currentTarget.dataset.url,
+      t = e.currentTarget.dataset.t
+    if (t) {
+      let form = JSON.stringify(this.data.form)
+      util.go(`${url}?form=` + form)
+    } else {
+      util.go(url)
+    }
   },
   onNav(e) {
-    let i = e.currentTarget.dataset.i
+    let i = e.currentTarget.dataset.i,
+      fm = 'form.mission_type'
     this.setData({
-      flag: i
+      flag: i,
+      [fm]: i + 1
     })
   },
   toggle(e) {
@@ -118,7 +126,17 @@ Page({
       })
     }
   },
-  _onConfirm() {
+  _onLugConfirm() {
+    let bl = this.data.bigLuggage.val,
+      sl = this.data.smallLuggage.val,
+      fbl = 'form.big_luggage',
+      fsl = 'form.small_luggage'
+    this.setData({
+      [fbl]: bl,
+      [fsl]: sl
+    })
+  },
+  _onPerConfirm() {
     let an = this.data.busAdultNum.val,
         cn = this.data.busChildNum.val,
         fp = 'form.passenger',
@@ -129,8 +147,11 @@ Page({
     })
   },
   _onDatePickcfm() {
+    let time =  this.datePick.getDateVal(),
+        ft = 'form.use_time'
     this.setData({
-      landDate: this.datePick.getDateVal()
+      landDate: time,
+      [ft]: time.dates
     })
   },
   /**

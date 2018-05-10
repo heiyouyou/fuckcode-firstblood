@@ -7,14 +7,14 @@
   </view>
   <view class='main-wrap'>
     <view class='bill-info'>
-      <view>{{form.time}}</view>
-      <view class='start'>{{form.start}}</view>
-      <view class='end'>{{form.end}}</view>
+      <view>{{obj.mission.use_time}}</view>
+      <view class='start'>{{obj.mission.departure[0]}}</view>
+      <view class='end'>{{obj.mission.destination[0]}}</view>
       <view>
-        <text>{{form.aduit}}成人，</text>
-        <text>{{form.child}}儿童，</text>
-        <text>{{form.bigLuggage}}大行李，</text>
-        <text>{{form.smallLuggage}}小行李</text>
+        <text>{{obj.mission.passenger}}成人，</text>
+        <text>{{obj.mission.children}}儿童，</text>
+        <text>{{obj.mission.big_luggage}}大行李，</text>
+        <text>{{obj.mission.small_luggage}}小行李</text>
       </view>
       <view class='hover-btn' data-url='/pages/air/oneWayBill/map/index' bindtap='go'></view>
     </view>
@@ -50,7 +50,7 @@
   <view class='main-wrap'>
     <view class='bill-info dp-flex jc-sb'>
       <text class='no-pad'>查看拼车规则</text>
-      <switch checked></switch>
+      <switch data-p='is_carpooling' bindchange="switchChange" />
     </view>
     <view class='remark'>查看拼车规则</view>
   </view>
@@ -58,8 +58,8 @@
     <view class='bill-info dp-flex jc-sb'>
       <text class='no-pad'>举牌接机</text>
       <view class='no-mar'>
-        <text>￥120/次</text>
-        <switch checked></switch>
+        <text>￥{{obj.placards_price}}/次</text>
+        <switch data-p='form.is_attached' bindchange="switchChange"/>
       </view>
     </view>
   </view>
@@ -72,9 +72,9 @@
       <view class='lab'>指定司机</view>
       <input placeholder='如有指定司机，请选择您的司机'></input>
     </view>
-    <view class='item dp-flex ai-fs no-bor-b '>
+    <view class='item dp-flex ai-fs no-bor-b'>
       <view class='lab'>备注</view>
-      <textarea placeholder='请填写备注信息'></textarea>
+      <textarea placeholder='请填写备注信息' data-p="form.remark" bindinput='bindTxtInput'></textarea>
     </view>
   </view>
   <view class='main-wrap'>
