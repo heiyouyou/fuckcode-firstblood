@@ -121,12 +121,13 @@ const ajax = (url, param, cb, cbf) => {
       'Content-Type': 'application/json',
       'token': token
     },
+    method: param.method || 'GET',
     success: function (res) {
       let _res = res.data
       if (_res.status == '1') {
         cb && cb(_res)
-      } else if (_res.status -= '-90') {
-        go('/pages/login/login?code=' + code, 4)
+      } else if (_res.status == '-90') {
+        go('/pages/login/login', 4)
       } else {
         cbf && cbf(_res)
         console.error(_res)

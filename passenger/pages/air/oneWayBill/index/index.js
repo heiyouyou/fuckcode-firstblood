@@ -54,8 +54,10 @@ Page({
     }
   },
   getPrice(form) {
-    let self = this
-    util.ajax('/mission/check-price', form, res => {
+    let self = this,
+        f = form
+        f.method = 'POST'
+    util.ajax('/mission/check-price', f, res => {
       let _res = res.data
       self.setData({
         obj: _res

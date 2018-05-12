@@ -22,6 +22,9 @@
   </view>
 </view>
 <map show-location="true" class='minmap'></map>
+<view class='btn-wrap'>
+  <button class='main-btn' bindtap='onBtn'>预订</button>
+</view>
 <view class='sub-container'>
   <view class='dp-flex intro'>
     <view>￥{{price.rmb}}/${{price.usd}}</view>

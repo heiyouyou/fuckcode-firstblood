@@ -20,10 +20,10 @@
     </view>
     <view class='main-form'>
       <view class="item">
-        <picker bindchange="bindPickerChange" value="{{index}}" range="{{airplan}}" range-key="name">
+        <picker bindchange="bindPickerChange" value="{{index}}" range="{{airport}}" range-key="name">
           <view class="dp-flex">
             <text class="lab">机场</text>
-            <view class='info'>{{airplan[index].name}}</view>
+            <view class='info'>{{airport[index].name}}</view>
           </view>
         </picker>
       </view>
@@ -38,15 +38,15 @@
     </view>
     <view class='dp-flex flex-one sub-term'>
       <view class='dp-flex' data-id='cusPick' bindtap='show'>
-        <image src='/pages/imgs/airplan_nav/num.png'></image>
+        <image src='/pages/imgs/airport_nav/num.png'></image>
         <text>{{(form.passenger + form.children) || '乘车人数'}}</text>
       </view>
       <view class='dp-flex' data-id='subcusPick' bindtap='show'>
-        <image src='/pages/imgs/airplan_nav/baggage.png' style='height: 22rpx;'></image>
+        <image src='/pages/imgs/airport_nav/baggage.png' style='height: 22rpx;'></image>
         <text>{{form.big_luggage + form.small_luggage || '行李数量'}}</text>
       </view>
       <view class='dp-flex' data-id='datePick' bindtap='show'>
-        <image src='/pages/imgs/airplan_nav/time.png' style='height: 20rpx;'></image>
+        <image src='/pages/imgs/airport_nav/time.png' style='height: 20rpx;'></image>
         <text>{{form.use_time || '降落时间'}}</text>
       </view>
     </view>
@@ -99,9 +99,9 @@
       <view class='main-form located'>
         <view class='item'>
           <view class='sub-lab'>从机场</view>
-          <picker bindchange="bindPickerChange" value="{{index}}" range="{{airplan}}" range-key="name">
+          <picker bindchange="bindPickerChange" value="{{index}}" range="{{airport}}" range-key="name">
             <view class="dp-flex">
-              <view class='info'>{{airplan[index].name}}</view>
+              <view class='info'>{{airport[index].name}}</view>
             </view>
           </picker>
         </view>
@@ -122,9 +122,9 @@
         <view class='main-form located'>
           <view class='item'>
             <view class='sub-lab'>从机场</view>
-            <picker bindchange="bindPickerChange" value="{{index}}" range="{{airplan}}" range-key="name">
+            <picker bindchange="bindPickerChange" value="{{index}}" range="{{airport}}" range-key="name">
               <view class="dp-flex">
-                <view class='info'>{{airplan[index].name}}</view>
+                <view class='info'>{{airport[index].name}}</view>
               </view>
             </picker>
           </view>

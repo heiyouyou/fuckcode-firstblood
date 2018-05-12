@@ -26,13 +26,7 @@ Page({
       activeSrc: '',
       name: '往返'
     }],
-    airplan: [{
-      name: '墨尔本',
-      id: 3304
-    }, {
-      name: '悉尼',
-      id: 1213
-    }],
+    airport: [],
     index: 0,
     busAdultNum: {
       name: '成人>7岁',
@@ -101,11 +95,11 @@ Page({
   },
   bindPickerChange(e) {
     let fai = 'form.airport_id',
-        airplan = this.data.airplan,
+        airport = this.data.airport,
         i = e.detail.value
     this.setData({
       index: i,
-      [fai]: airplan[i].id
+      [fai]: airport[i].id
     })
   },
   show(e) {
@@ -151,14 +145,23 @@ Page({
         ft = 'form.use_time'
     this.setData({
       landDate: time,
-      [ft]: time.dates
+      [ft]: `${time.dates} ${time.hours}:${time.mins}`
+    })
+  },
+  getAirportList() {
+    let self = this
+    util.ajax('/index/airport-list', {}, res => {
+      let _res = res.data
+      self.setData({
+        airport: _res
+      })
     })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getAirportList()
   },
 
   /**
