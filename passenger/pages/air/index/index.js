@@ -47,7 +47,7 @@ Page({
     landDate: {},
     form: {
       use_time: '', // 用车时间
-      address: [], // 出发地址，可以多个地址
+      address: [], // 出发地址，可以多个地址 420 spencer street,Melbourne station
       airport_id: '', // 机场id
       big_luggage: '', // 大行李数量
       small_luggage: '', // 小行李数量

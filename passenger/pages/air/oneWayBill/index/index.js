@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    flag: '',
+    flag: '1',
     car: [{
       type: 1,
       src: 'https://pic.lanhuapp.com/FliHx2wk49s_O3Q-Y6SmzeQyRQXH',
@@ -34,7 +34,7 @@ Page({
       [fct]: t
     })
   },
-  bindTxtInput(e) {
+  bindInput(e) {
     let value = e.detail.value, param = e.currentTarget.dataset.p
     this.setData({
       [param]: value
@@ -43,7 +43,7 @@ Page({
   switchChange (e) {
     let val = e.detail.value,
       param = e.currentTarget.dataset.p
-    if (val == 'checked') {
+    if (val) {
       this.setData({
         [param]: 1
       })
@@ -64,11 +64,16 @@ Page({
       })
     })
   },
+  onBtn(e) {
+    let t = e.currentTarget.dataset.t
+
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     let form = JSON.parse(options.form)
+    form.car_type = 1
     this.setData({
       form: form
     })
