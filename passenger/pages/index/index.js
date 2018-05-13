@@ -37,7 +37,6 @@ Page({
     util.ajax('/index/comment', this.data.query, res => {
       let _res = res.data
       list = [...list, ..._res.commentList]
-      console.log(list)
       self.setData({
         list: list
       })

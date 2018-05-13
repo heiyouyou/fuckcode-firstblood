@@ -44,7 +44,7 @@ Page({
       name: '小行李',
       val: 0
     },
-    landDate: {},
+    userTime: {},
     form: {
       use_time: '', // 用车时间
       address: [], // 出发地址，可以多个地址 420 spencer street,Melbourne station
@@ -81,7 +81,7 @@ Page({
       [elem]: !selem
     })
   },
-  bindKeyInput(e) {
+  bindInput(e) {
     let that = this, value = e.detail.value, param = e.currentTarget.dataset.p, t = e.currentTarget.dataset.t
     if (t) {
       that.setData({
@@ -144,7 +144,7 @@ Page({
     let time =  this.datePick.getDateVal(),
         ft = 'form.use_time'
     this.setData({
-      landDate: time,
+      userTime: time,
       [ft]: `${time.dates} ${time.hours}:${time.mins}`
     })
   },

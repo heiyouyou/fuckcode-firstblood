@@ -33,6 +33,7 @@ Page({
       flag: t,
       [fct]: t
     })
+    this.getPrice()
   },
   bindInput(e) {
     let value = e.detail.value, param = e.currentTarget.dataset.p
@@ -55,7 +56,7 @@ Page({
   },
   getPrice(form) {
     let self = this,
-        f = form
+        f = form || this.data.form
         f.method = 'POST'
     util.ajax('/mission/check-price', f, res => {
       let _res = res.data

@@ -29,7 +29,7 @@
       </view>
       <view class='dp-flex item' wx:if="{{flag == 0}}">
         <text class='lab'>送达</text>
-        <input placeholder='请输入送达地' data-p='form.address' data-t="1" bindinput='bindKeyInput'></input>
+        <input placeholder='请输入送达地' data-p='form.address' data-t="1" bindinput='bindInput'></input>
       </view>
       <view class='dp-flex item' wx:else>
         <text class='lab'>出发</text>
