@@ -3,16 +3,16 @@
 	<view class="login-wrap">
 		<view class="w mb50">
 			<text class="fwb login-form-title displayb">输入验证码</text>
-			<text class="fz12 displayb color-333" style="width:292px;">已给手机号<text class="highlight-text">+86 15699723602</text>发送了一个6位数验证码</text>
+			<text class="fz12 displayb color-333" style="width:292px;">已给手机号<text class="highlight-text">{{areaCode+' '+phone}} </text>发送了一个6位数验证码</text>
 		</view>
 		<view>
-			<form bindsubmit="getData">
+			<form bindsubmit="register">
 				<view class="pr mb25">
-					<input class="login-form-input mb5" placeholder="输入6位验证码" placeholder-class="login-placeholder" name="code"/>
-          <text class="fz12 highlight-text ml15">重新发送</text>
+					<input class="login-form-input mb5" type="number" placeholder="输入6位验证码" placeholder-class="login-placeholder" name="code"/>
+          			<text class="fz12 highlight-text ml15">重新发送</text>
 				</view>
 				<view>
-					<button formType="submit" class="login-form-btn register-next-btn" bind:tap="next">下一步</button>
+					<button formType="submit" class="login-form-btn register-next-btn">下一步</button>
 				</view>
 			</form>
 		</view>

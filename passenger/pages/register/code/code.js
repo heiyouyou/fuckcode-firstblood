@@ -7,16 +7,38 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    areaCode: '',
+    phone:'',
   },
-  next(){
-    util.go('../info/info',1)
+  register(data) {
+    const that = this;
+    let areaCode = this.data.areaCode;
+    let mobile = this.data.phone;
+    let code = data.detail.value.code;
+    util._ajax_({
+      loadingText: '提交中',
+      method: 'POST',
+      url: util.server + '/user/register-validate',
+      data: {
+        areaCode,
+        mobile,
+        code
+      },
+      success(res) {
+        if (res.data.status == 1) {
+          util.go(`../info/info`, 1)
+        }
+      }
+    })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    this.setData({
+      areaCode: options.areaCode,
+      phone: options.phone,
+    })
   },
 
   /**

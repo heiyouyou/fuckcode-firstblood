@@ -33,6 +33,7 @@ App({
     })
     // token还存在，直接跳转到主页
     if (token){
+      console.log('index...')
       util.go('pages/index/index',5)
     }
   },

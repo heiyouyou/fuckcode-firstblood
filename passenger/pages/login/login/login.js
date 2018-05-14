@@ -43,7 +43,7 @@ Page({
       success: function(res) {
         if(res.code){
           let code = res.code;
-          that.getUserInfo().then((res)=>{
+          util._getUserInfo_().then((res) => {
             app.globalData.userInfo = res.userInfo;
             let iv = app.globalData.iv = res.iv;
             let encryptedData = app.globalData.encryptedData = res.encryptedData;
@@ -75,19 +75,19 @@ Page({
               }
             })
           }).catch(()=>{
-            if (app.globalData.setting) {
-              wx.showToast({
-                title: `由于您的拒绝，无法使用微信登录，请重新授权登录！`,
-                icon: 'none',
-              })
-              app.globalData.setting = false;
-            } else {
-              wx.openSetting({
-                success: function (res) {
-                  console.log(res.authSetting)
-                }
-              })
-            }
+            wx.showToast({
+              title: `由于您的拒绝，无法使用微信登录，请重新授权获取用户信息！`,
+              icon: 'none',
+              success(){
+                setTimeout(() => {
+                  wx.openSetting({
+                    success: function (res) {
+                      console.log(res.authSetting)
+                    }
+                  })
+                }, 2000);
+              }
+            })
           })
         }else{
           wx.showToast({
@@ -95,27 +95,11 @@ Page({
             icon: 'none',
           })
         }
+      },
+      fail(res) {
+        util.toast(res.errMsg)
       }
     });
-  },
-  // Promise获取用户信息
-  getUserInfo(){
-    return new Promise((resolve,reject)=>{
-      wx.authorize({
-        scope: 'scope.userInfo',
-        success(res) {
-          wx.getUserInfo({
-            withCredentials: true,
-            success: function (res) {
-              resolve(res);
-            }
-          })
-        },
-        fail: function () {
-          reject();
-        }
-      })
-    })
   },
   /**
    * 生命周期函数--监听页面加载
