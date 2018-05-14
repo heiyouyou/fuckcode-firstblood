@@ -5,19 +5,19 @@
 			<text class="fwb login-form-title displayb">设置个人信息</text>
 		</view>
 		<view>
-			<form bindsubmit="getData">
+			<form bindsubmit="register">
 				<view class="pr mb35">
-					<input class="login-form-input mb5" placeholder="设置您的昵称" placeholder-class="login-placeholder" name="code" style="width:190px;"/>
+					<input class="login-form-input mb5" placeholder="设置您的昵称" placeholder-class="login-placeholder" name="nickname" style="width:190px;"/>
 					<view class="sex-box">
 						<image class="sex-img mr10" src="{{male_src}}" data-sex="1" catchtap="tabImg"></image>
 						<image class="sex-img" src="{{female_src}}" data-sex="2" catchtap="tabImg"></image>
 					</view>
 				</view>
 				<view class="pr mb50">
-					<input class="login-form-input" placeholder="输入您的邮箱" placeholder-class="login-placeholder" name="code"/>
+					<input class="login-form-input" placeholder="输入您的邮箱" placeholder-class="login-placeholder" name="email"/>
 				</view>
 				<view>
-					<button formType="submit" class="login-form-btn register-next-btn" bind:tap="next">下一步</button>
+					<button formType="submit" class="login-form-btn register-next-btn">下一步</button>
 				</view>
 			</form>
 		</view>

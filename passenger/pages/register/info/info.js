@@ -10,9 +10,6 @@ Page({
     female_src:'../../imgs/female_unchecked@2x.png',
     sex:1,
   },
-  next(){
-    util.go('../password/password',1)
-  },
   /**
    * 选择性别
    * @param {*} e 
@@ -32,6 +29,27 @@ Page({
         sex:2
       })
     }
+  },
+  register(data) {
+    const that = this;
+    let nickname = data.detail.value.nickname;
+    let email = data.detail.value.email;
+    let sex = this.data.sex;
+    util._ajax_({
+      loadingText: '提交中',
+      method: 'POST',
+      url: util.server + '/user/register-info',
+      data: {
+        nickname,
+        email,
+        sex
+      },
+      success(res) {
+        if (res.data.status == 1) {
+          util.go(`'../password/password`, 1)
+        }
+      }
+    })
   },
   /**
    * 生命周期函数--监听页面加载

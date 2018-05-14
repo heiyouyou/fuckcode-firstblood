@@ -214,6 +214,25 @@ const getUserInfo = (cb) => {
     }
   })
 }
+// Promise获取用户信息
+const  _getUserInfo_ = ()=>{
+  return new Promise((resolve, reject) => {
+    wx.authorize({
+      scope: 'scope.userInfo',
+      success(res) {
+        wx.getUserInfo({
+          withCredentials: true,
+          success: function (res) {
+            resolve(res);
+          }
+        })
+      },
+      fail: function () {
+        reject();
+      }
+    })
+  })
+}
 
 const updImg = ({ count = 1, sizeType = ['original', 'compressed'], sourceType = ['album', 'camera'], cb, url = server + '/upload' } = {}) => {
   let that = this
@@ -265,6 +284,7 @@ module.exports = {
   ajax,
   _ajax_,
   getUserInfo,
+  _getUserInfo_,
   updImg,
   toast,
   isEmptyObj,

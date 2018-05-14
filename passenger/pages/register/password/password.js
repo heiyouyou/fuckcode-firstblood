@@ -15,8 +15,28 @@ Page({
   onLoad: function (options) {
   
   },
-  next(){
-    util.go('../../login/login/login?v=1.0',4)
+  register(data) {
+    const that = this;
+    let password = data.detail.value.password;
+    let password_confirmation = data.detail.value.password_confirmation;
+    if (password != password_confirmation){
+      util.toast('确认密码不正确！')
+      return;
+    }
+    util._ajax_({
+      loadingText: '提交中',
+      method: 'POST',
+      url: util.server + '/user/register-validate',
+      data: {
+        password,
+        password_confirmation
+      },
+      success(res) {
+        if (res.data.status == 1) {
+          util.go('../../login/login/login', 4)
+        }
+      }
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
