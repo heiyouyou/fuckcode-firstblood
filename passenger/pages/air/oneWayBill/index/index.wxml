@@ -7,14 +7,14 @@
   </view>
   <view class='main-wrap'>
     <view class='bill-info'>
-      <view>{{form.time}}</view>
-      <view class='start'>{{form.start}}</view>
-      <view class='end'>{{form.end}}</view>
+      <view>{{obj.mission.use_time}}</view>
+      <view class='start'>{{obj.mission.departure[0]}}</view>
+      <view class='end'>{{obj.mission.destination[0]}}</view>
       <view>
-        <text>{{form.aduit}}成人，</text>
-        <text>{{form.child}}儿童，</text>
-        <text>{{form.bigLuggage}}大行李，</text>
-        <text>{{form.smallLuggage}}小行李</text>
+        <text>{{obj.mission.passenger}}成人，</text>
+        <text>{{obj.mission.children}}儿童，</text>
+        <text>{{obj.mission.big_luggage}}大行李，</text>
+        <text>{{obj.mission.small_luggage}}小行李</text>
       </view>
       <view class='hover-btn' data-url='/pages/air/oneWayBill/map/index' bindtap='go'></view>
     </view>
@@ -22,10 +22,10 @@
       <text>取消规则</text> </view>
   </view>
   <view class='main-wrap dp-flex flex-one car-type'>
-    <view wx:for="{{car}}" class="{{flag == index ? 'active' : ''}}" data-t='{{index}}' bindtap='onCar'>
+    <view wx:for="{{car}}" class="{{flag == index + 1 ? 'active' : ''}}" data-t='{{index + 1}}' bindtap='onCar'>
       <image src="{{item.src}}"></image>
       <view class='car-type-txt'>{{item.type == 1 ? '经济车' : '豪华车'}}</view>
-      <view class='remarks' wx:if="{{flag == index}}">{{item.intro}}</view>
+      <view class='remarks' wx:if="{{flag == index + 1}}">{{item.intro}}</view>
     </view>
   </view>
   <view class='main-wrap main-form'>
@@ -36,11 +36,11 @@
     </view>
     <view class='item dp-flex'>
       <view class='lab'>手机号</view>
-      <input placeholder='请填写手机号'></input>
+      <input placeholder='请填写手机号' data-p='form.phone' bindinput='bindInput'></input>
     </view>
     <view class='item dp-flex'>
       <view class='lab'>备用手机号</view>
-      <input placeholder='请填写手机号'></input>
+      <input placeholder='请填写手机号'  data-p='form.extra_mobile' bindinput='bindInput'></input>
     </view>
     <view class='item dp-flex no-bor-b'>
       <view class='lab'>航班号</view>
@@ -49,8 +49,8 @@
   </view>
   <view class='main-wrap'>
     <view class='bill-info dp-flex jc-sb'>
-      <text class='no-pad'>查看拼车规则</text>
-      <switch checked></switch>
+      <text class='no-pad'>拼车</text>
+      <switch data-p='form.is_carpooling' bindchange="switchChange" />
     </view>
     <view class='remark'>查看拼车规则</view>
   </view>
@@ -58,8 +58,8 @@
     <view class='bill-info dp-flex jc-sb'>
       <text class='no-pad'>举牌接机</text>
       <view class='no-mar'>
-        <text>￥120/次</text>
-        <switch checked></switch>
+        <text>￥{{obj.placards_price}}/次</text>
+        <switch data-p='form.is_attached' bindchange="switchChange"/>
       </view>
     </view>
   </view>
@@ -72,9 +72,9 @@
       <view class='lab'>指定司机</view>
       <input placeholder='如有指定司机，请选择您的司机'></input>
     </view>
-    <view class='item dp-flex ai-fs no-bor-b '>
+    <view class='item dp-flex ai-fs no-bor-b'>
       <view class='lab'>备注</view>
-      <textarea placeholder='请填写备注信息'></textarea>
+      <textarea placeholder='请填写备注信息' data-p="form.remark" bindinput='bindInput'></textarea>
     </view>
   </view>
   <view class='main-wrap'>
@@ -101,11 +101,11 @@
     </view>
   </view>
   <view class='btn-wrap-two'>
-    <button class='main-btn'>
-      <view>￥{{price.rmb}}</view>
+    <button class='main-btn' data-t='1' bindtap='onBtn'>
+      <view>￥{{obj.mission.price}}</view>
       <view class='xs-font'>在线预约，9.8折</view>
     </button>
-    <button class='sub-btn'>
+    <button class='sub-btn' data-t='2' bindtap='onBtn'>
       <view>${{price.usd}}</view>
       <view class='xs-font'>上车付</view>
     </button>

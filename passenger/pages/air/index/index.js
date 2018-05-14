@@ -26,13 +26,7 @@ Page({
       activeSrc: '',
       name: '往返'
     }],
-    airplan: [{
-      name: '墨尔本',
-      id: 3304
-    }, {
-      name: '悉尼',
-      id: 1213
-    }],
+    airport: [],
     index: 0,
     busAdultNum: {
       name: '成人>7岁',
@@ -50,26 +44,34 @@ Page({
       name: '小行李',
       val: 0
     },
-    landDate: {},
+    userTime: {},
     form: {
       use_time: '', // 用车时间
-      address: [], // 出发地址，可以多个地址
+      address: [], // 出发地址，可以多个地址 420 spencer street,Melbourne station
       airport_id: '', // 机场id
       big_luggage: '', // 大行李数量
       small_luggage: '', // 小行李数量
-      mission_type: '', // 1接机，2送机
+      mission_type: '1', // 1接机，2送机
       passenger: '', // 成人数量
       children: '' // 儿童数量
     }
   },
   go(e) {
-    let url = e.currentTarget.dataset.url
-    util.go(url)
+    let url = e.currentTarget.dataset.url,
+      t = e.currentTarget.dataset.t
+    if (t) {
+      let form = JSON.stringify(this.data.form)
+      util.go(`${url}?form=` + form)
+    } else {
+      util.go(url)
+    }
   },
   onNav(e) {
-    let i = e.currentTarget.dataset.i
+    let i = e.currentTarget.dataset.i,
+      fm = 'form.mission_type'
     this.setData({
-      flag: i
+      flag: i,
+      [fm]: i + 1
     })
   },
   toggle(e) {
@@ -79,7 +81,7 @@ Page({
       [elem]: !selem
     })
   },
-  bindKeyInput(e) {
+  bindInput(e) {
     let that = this, value = e.detail.value, param = e.currentTarget.dataset.p, t = e.currentTarget.dataset.t
     if (t) {
       that.setData({
@@ -93,11 +95,11 @@ Page({
   },
   bindPickerChange(e) {
     let fai = 'form.airport_id',
-        airplan = this.data.airplan,
+        airport = this.data.airport,
         i = e.detail.value
     this.setData({
       index: i,
-      [fai]: airplan[i].id
+      [fai]: airport[i].id
     })
   },
   show(e) {
@@ -118,7 +120,17 @@ Page({
       })
     }
   },
-  _onConfirm() {
+  _onLugConfirm() {
+    let bl = this.data.bigLuggage.val,
+      sl = this.data.smallLuggage.val,
+      fbl = 'form.big_luggage',
+      fsl = 'form.small_luggage'
+    this.setData({
+      [fbl]: bl,
+      [fsl]: sl
+    })
+  },
+  _onPerConfirm() {
     let an = this.data.busAdultNum.val,
         cn = this.data.busChildNum.val,
         fp = 'form.passenger',
@@ -129,15 +141,27 @@ Page({
     })
   },
   _onDatePickcfm() {
+    let time =  this.datePick.getDateVal(),
+        ft = 'form.use_time'
     this.setData({
-      landDate: this.datePick.getDateVal()
+      userTime: time,
+      [ft]: `${time.dates} ${time.hours}:${time.mins}`
+    })
+  },
+  getAirportList() {
+    let self = this
+    util.ajax('/index/airport-list', {}, res => {
+      let _res = res.data
+      self.setData({
+        airport: _res
+      })
     })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getAirportList()
   },
 
   /**
