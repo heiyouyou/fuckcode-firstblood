@@ -107,7 +107,7 @@
         </view>
         <view class='item no-bor-b'>
           <view class='sub-lab'>到地点</view>
-          <input placeholder='您往返的地点' placeholder-class='ph'></input>
+          <input placeholder='您往返的地点' data-p='subForm.leave.address' data-t='1' bindinput='bindInput' placeholder-class='ph'></input>
         </view>
       </view>
       <view class='to-back'>wf</view>

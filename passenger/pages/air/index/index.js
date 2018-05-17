@@ -125,13 +125,13 @@ Page({
     })
   },
   bindInput(e) {
-    let that = this, value = e.detail.value, param = e.currentTarget.dataset.p, t = e.currentTarget.dataset.t
+    let value = e.detail.value, param = e.currentTarget.dataset.p, t = e.currentTarget.dataset.t
     if (t) {
-      that.setData({
+      this.setData({
         [param]: [value]
       })
     } else {
-      that.setData({
+      this.setData({
         [param]: value
       })
     }
@@ -141,8 +141,8 @@ Page({
         airport = this.data.airport,
         i = e.detail.value
     
-    if (mt == 3) {
-      fai = 'SubForm.leave.airport_id'
+    if (mt == 2) {
+      fai = 'subForm.leave.airport_id'
     } else {
       fai = 'form.airport_id'
     }
