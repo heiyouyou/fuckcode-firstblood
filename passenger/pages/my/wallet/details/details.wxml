@@ -1,59 +1,23 @@
 <!--pages/my/wallet/details/details.wxml-->
 <view>
-    <view class="border-bottom-ccc h60 boxb bgw displayf altc parl15">
+    <view class="{{index==detailList.length-1?'':'border-bottom-ccc'}} h60 boxb bgw displayf altc parl15" wx:for="{{detailList}}" wx:key="{{*this}}">
         <view class="mr15 tc">
-            <text class="color-333 fz15">收入</text>
+            <text class="color-333 fz15">{{item.type}}</text>
         </view>
         <view class="mr30 lh20">
-            <text class="displayb color-666 fz12 thidden200 w200">完成接送机任务，订单编号：完成接送机任务，订单编号：完成接送机任务，订单编号：完成接送机任务，订单编号：</text>
-            <text class="displayb color-999 fz10">2017-08-09 19:34:54</text>
+            <text class="displayb color-666 fz12 thidden200 w200">{{item.remark}}</text>
+            <text class="displayb color-999 fz10">{{item.create_time}}</text>
         </view>
         <view class="lh20">
-            <text class="displayb color-F1604F fz15 fwb">+200.00</text>
-            <text class="displayb color-999 fz10">余额：5000</text>
-        </view>
-    </view>
-    <view class="border-bottom-ccc h60 boxb bgw displayf altc parl15">
-        <view class="mr15 tc">
-            <text class="color-333 fz15">提现</text>
-        </view>
-        <view class="mr30 lh20">
-            <text class="displayb color-666 fz12 thidden200 w200">提现失败</text>
-            <text class="displayb color-999 fz10">2017-08-09 19:34:54</text>
-        </view>
-        <view class="lh20">
-            <text class="displayb color-F1604F fz15 fwb">+200.00</text>
-            <text class="displayb color-999 fz10">余额：5000</text>
-        </view>
-    </view>
-    <view class="border-bottom-ccc h60 boxb bgw displayf altc parl15">
-        <view class="mr15 tc">
-            <text class="color-333 fz15">支出</text>
-        </view>
-        <view class="mr30 lh20">
-            <text class="displayb color-666 fz12 thidden200 w200">预约用车，订单编号：434468...</text>
-            <text class="displayb color-999 fz10">2017-08-09 19:34:54</text>
-        </view>
-        <view class="lh20">
-            <text class="displayb color-F1604F fz15 fwb">+200.00</text>
-            <text class="displayb color-999 fz10">余额：5000</text>
-        </view>
-    </view>
-    <view class="h60 boxb bgw displayf altc parl15">
-        <view class="mr15 tc">
-            <text class="color-333 fz15">充值</text>
-        </view>
-        <view class="mr30 lh20">
-            <text class="displayb color-666 fz12 thidden200 w200">充值成功</text>
-            <text class="displayb color-999 fz10">2017-08-09 19:34:54</text>
-        </view>
-        <view class="lh20">
-            <text class="displayb color-F1604F fz15 fwb">+200.00</text>
-            <text class="displayb color-999 fz10">余额：5000</text>
+            <text class="displayb color-F1604F fz15 fwb">{{item.money>0?'+'+item.money:item.money}}</text>
+            <text class="displayb color-999 fz10">余额：{{item.balance}}</text>
         </view>
     </view>
 </view>
-<view class="displayf altc jscc flexdirec h w" hidden>
-    <image class="icon-size-100 displayb mb15" src="../../imgs/common/norevenueandexpenditure@2x.png"></image>
+<view class="displayf altc jscc flexdirec h w" wx:if="{{noData}}">
+    <image class="icon-size-100 displayb mb15" src="../../../imgs/common/norevenueandexpenditure@2x.png"></image>
     <text class="fz14 color-333 mt">暂时没有收支明细~</text>
+</view>
+<view class="tc pb30 pt15" wx:if="{{noMore}}">
+    <text class="color-C7C7CC fz15">没有更多了~</text>
 </view>

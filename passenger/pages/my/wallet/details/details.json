@@ -1,5 +1,7 @@
 {
     "navigationBarBackgroundColor": "#F1604F",
     "navigationBarTextStyle":"white",	
-    "navigationBarTitleText":"收支明细"
+    "navigationBarTitleText":"收支明细",
+    "enablePullDownRefresh": true,
+    "onReachBottomDistance": "20px"
 }

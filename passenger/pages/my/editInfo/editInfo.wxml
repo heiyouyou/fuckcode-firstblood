@@ -3,12 +3,12 @@
     <view class="w750">
         <view class="bgw my-box-shadow mb10 pl15">
             <view class="fz14 color-666 border-bottom-ccc boxb displayf altc" style="height:160rpx;" bindtap="editAvator">
-                <image class="bg-F1604F br50 edit-avator mr20" src=""></image>
+                <image class="br50 edit-avator mr20" src="{{avatorUrl}}"></image>
                 <text class="color-999">修改头像</text>
             </view>
             <view class="fz14 border-bottom-ccc h50 boxb displayf altc pr">
                 <text class="color-666 edit-name mr20">昵称</text>
-                <input class="displayib color-333 w" placeholder="" value="Kevin"/>
+                <input class="displayib color-333 w" placeholder="" value="{{nickname}}" bindinput="getNick"/>
             </view>
             <picker bindchange="bindPickerChangeSex" value="{{sexIndex}}" range="{{sexArry}}">
                 <view class="fz14 border-bottom-ccc h50 boxb displayf altc pr">
@@ -21,11 +21,11 @@
             </picker>
             <view class="fz14 h50 boxb displayf altc pr">
                 <text class="color-666 edit-name mr20">手机号</text>
-                <input class="displayib color-333 w" type="number" value="12345678909"/>
+                <input class="displayib color-333 w" type="number" value="{{mobile}}" bindinput="getPhone"/>
             </view>
         </view>
         <view class="bgw my-box-shadow mb10 pl15">
-            <picker bindchange="bindPickerChangeCity" value="{{cityIndex}}" range="{{cityArry}}">
+            <picker bindchange="bindPickerChangeCity" value="{{cityIndex}}" range="{{cityArry}}"  range-key="name">
                 <view class="fz14 h50 boxb displayf altc pr">
                     <text class="color-666 edit-name mr20">城市</text>
                     <input class="displayib color-333" disabled value="{{city}}"/>
@@ -37,6 +37,6 @@
         </view>
     </view>
     <view class="w710 mb10" style="margin-top:406rpx;">
-        <button class="save-btn">保存</button>
+        <button class="save-btn" bindtap="updateInfo">保存</button>
     </view>
 </view>

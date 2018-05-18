@@ -1,6 +1,6 @@
-<!--pages/my/addressAndContact/addAddress/addAddress.wxml-->
+<!--pages/my/addressAndContact/updateAddress/updateAddress.wxml-->
 <view class="ohidden">
-    <form bindsubmit="add">
+    <form bindsubmit="update">
         <view class="bgw my-box-shadow mt10 border-radius-4rpx w710 mauto pl15 boxb">
             <view class="h50 lh50 border-bottom-ccc boxb color-666">
                 <picker bindchange="bindPickerContinentChange" value="{{continentIndex}}" range="{{continentArray}}">
@@ -22,11 +22,11 @@
             </view>
             <view class="h100 displayf pt20 border-bottom-ccc boxb color-666 pr15">
                 <text class="fz14 input-des-text">详细地址</text>
-                <textarea class="fz14 h" placeholder="请输入您的详细地址" placeholder-class="color-BBB" name="address" />
+                <textarea class="fz14 h" placeholder="请输入您的详细地址" placeholder-class="color-BBB" name="address" value="{{address}}" />
             </view>
             <view class="h50 displayf altc boxb color-666">
                 <text class="fz14 input-des-text">邮编</text>
-                <input class="fz14 w" type="number" placeholder="请输入您当地的邮政编码" placeholder-class="color-BBB" name="zipCode"/>
+                <input class="fz14 w" type="number" placeholder="请输入您当地的邮政编码" placeholder-class="color-BBB" name="zipCode" value="{{zipCode}}"/>
             </view>
         </view>
         <view class="mauto mt50 h-88rpx w450 ohidden border-radius-4rpx">

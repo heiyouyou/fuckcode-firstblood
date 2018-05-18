@@ -32,9 +32,7 @@ Page({
         password_confirmation
       },
       success(res) {
-        if (res.data.status == 1) {
           util.go('../../login/login/login', 4)
-        }
       }
     })
   },

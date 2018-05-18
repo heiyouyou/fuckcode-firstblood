@@ -1,17 +1,34 @@
 // pages/my/index/index.js
+let util = require('../../../utils/util')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    userInfo:{},
+    starNum:2,
+  },
+  // 获取用户信息
+  getUserInfo(){
+    const that = this;
+    util._ajax_({
+      url:util.server+'/user/my',
+      success(res){
+        let starNum = Math.round(res.data.comment);
+        wx.setStorageSync('userInfo', res.data.data);
+        that.setData({
+          userInfo:res.data.data,
+          starNum
+        })
+      }
+    })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    this.getUserInfo();
   },
 
   /**
@@ -46,7 +63,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+    this.getUserInfo();
   },
 
   /**

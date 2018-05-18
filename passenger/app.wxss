@@ -15,10 +15,6 @@ map {
   width: 100%;
 }
 
-view {
-  box-sizing: border-box;
-}
-
 /** by youyou start **/
 
 /* 登录、注册 start */
@@ -105,6 +101,7 @@ view {
   top: 0;
   right: 0;
   left: 0;
+  z-index:99;
   background: rgba(255, 255, 255, 1);
   box-shadow: 4px px 10px rgba(0, 0, 0, 0.1);
 }

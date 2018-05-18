@@ -42,9 +42,7 @@ Page({
             url: util.server+'/user/register-phone',
             data:{areaCode,mobile},
             success(res) {
-              if(res.data.status==1){
-                util.go(`../code/code?phone=${mobile}&areaCode=${areaCode}`, 1)
-              }
+              util.go(`../code/code?phone=${mobile}&areaCode=${areaCode}`, 1)
             }
           })
         }
@@ -56,7 +54,6 @@ Page({
     const that = this;
     wx.login({
       success: function (res) {
-        console.log('login')
         if (res.code) {
           let code = res.code;
           util._getUserInfo_().then((res) => {
@@ -110,14 +107,12 @@ Page({
         data: params,
         url: util.server + '/account/register',
         success(res) {
-          if (res.data.status == 1) {
-            wx.setStorageSync('skycar', res.data.data.token);
-            that.setData({
-              countryArray:res.data.data.country,
-              country: res.data.data.country[0].name,
-              country_code: res.data.data.country[0].code
-            })
-          }
+          wx.setStorageSync('skycar', res.data.data.token);
+          that.setData({
+            countryArray:res.data.data.country,
+            country: res.data.data.country[0].name,
+            country_code: res.data.data.country[0].code
+          })
         }
       })
     });

@@ -45,9 +45,7 @@ Page({
         sex
       },
       success(res) {
-        if (res.data.status == 1) {
-          util.go(`'../password/password`, 1)
-        }
+        util.go(`'../password/password`, 1)
       }
     })
   },

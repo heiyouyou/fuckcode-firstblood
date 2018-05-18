@@ -2,6 +2,7 @@
 let util = require('./utils/util');
 App({
   onLaunch: function (options) {
+    const that = this;
     this.globalData.scene = options.scene; 
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
@@ -9,6 +10,13 @@ App({
     this.globalData.token = token;
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
+    // 获取城市列表
+    util._ajax_({
+      url: util.server + '/index/city-list',
+      success(res){
+        that.globalData.cityList = res.data.data;
+      }
+    })
     // 获取用户信息
     wx.getSetting({
       success: res => {
@@ -43,7 +51,8 @@ App({
     encryptedData:'',
     scene:'',
     setting:true,
-    token:''
+    token:'',
+    cityList:[],
   },
   // 弹出层的显示与隐藏
   maskToggle(obj){

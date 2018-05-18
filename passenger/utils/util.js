@@ -162,18 +162,31 @@ const ajax = (url, param, cb, cbf) => {
     complete: function (res) { },
   })
 }
-const _ajax_ = ({ url = '', method = 'GET', header = { 'Content-Type': 'application/json', 'token': wx.getStorageSync('skycar') }, success, data, fail,loadingText,loadingShow=true}={}) => {
+const _ajax_ = ({
+    url = '',
+    method = 'GET',
+    header = {
+      'Content-Type': 'application/json',
+      'token': wx.getStorageSync('skycar')
+    },
+    success,
+    data,
+    fail,
+    loadingText,
+    loadingShow = true,
+    host = false
+  } = {}) => {
   loadingShow&&wx.showLoading({
     title: loadingText || '加载中',
   })
   return new Promise((resolve,reject)=>{
     wx.request({
-      url: url,
+      url: (host?server+url:url),
       data: data,
       header: header,
       method: method,
       success: function (res) {
-        wx.hideLoading();
+        loadingShow&&wx.hideLoading();
         wx.hideNavigationBarLoading();
         wx.stopPullDownRefresh();
         if (res.data.status == 1) {
@@ -194,6 +207,7 @@ const _ajax_ = ({ url = '', method = 'GET', header = { 'Content-Type': 'applicat
             title: res.data.msg,
             icon: 'none'
           })
+          reject(res);
         }
       },
       fail: function () {
@@ -235,7 +249,16 @@ const  _getUserInfo_ = ()=>{
   })
 }
 
-const updImg = ({ count = 1, sizeType = ['original', 'compressed'], sourceType = ['album', 'camera'], cb, url = server + '/upload' } = {}) => {
+const updImg = ({
+    count = 1,
+    sizeType = ['original', 'compressed'],
+    sourceType = ['album', 'camera'],
+    cb,
+    url = server + '/file/upload',
+    header = {
+      'token': wx.getStorageSync('skycar')
+    }
+  } = {}) => {
   let that = this
   wx.chooseImage({
     count: count, // 默认9
@@ -244,13 +267,31 @@ const updImg = ({ count = 1, sizeType = ['original', 'compressed'], sourceType =
     success: function (res) {
       // 返回选定照片的本地文件路径列表，imgPath可以作为img标签的src属性显示图片
       let ips = res.tempFilePaths
-
       wx.uploadFile({
         url: url,
         filePath: ips[0],
+        header:header,
         name: 'file',
         success: function (res) {
-          cb && cb(res)
+          let data = JSON.parse(res.data);
+          if (data.status == 1) {
+            cb && cb(res);
+          } else if (data.status == -90) {
+            wx.showToast({
+              title: data.msg,
+              icon: 'none',
+              success: function () {
+                setTimeout(() => {
+                  goLogin();
+                }, 1000);
+              }
+            });
+          } else {
+            wx.showToast({
+              title: data.msg,
+              icon: 'none'
+            })
+          }
         }
       })
     }

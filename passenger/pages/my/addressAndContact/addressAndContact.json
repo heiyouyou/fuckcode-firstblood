@@ -1,5 +1,7 @@
 {
     "navigationBarBackgroundColor": "#F1604F",
     "navigationBarTextStyle":"white",	
-    "navigationBarTitleText":"地址、联系人管理"
+    "navigationBarTitleText":"地址、联系人管理",
+    "enablePullDownRefresh": true,
+    "onReachBottomDistance": "20px"
 }

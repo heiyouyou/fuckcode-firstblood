@@ -4,27 +4,25 @@
         <view class="bgw patrbl15 br4 my-box-shadow mb10">
                 <navigator url="../editInfo/editInfo">
                     <view class="displayf altc">
-                        <image class="my-avatar bg-F1604F br50" src=""></image>
+                        <image class="my-avatar bg-F1604F br50" src="{{userInfo.info.headimgurl}}"></image>
                         <view class="displayf jscc ml20 flexdirec flex1">
                             <view class="displayf altc pr">
-                                    <image src="../../imgs/male_unchecked@2x.png" style="width:26rpx;height:26rpx;"></image>
-                                    <text class="fz18 ml10 thiddennb100">Kevin</text>
+                                    <image src="{{userInfo.info.sex==1?'../../imgs/male_unchecked@2x.png':'../../imgs/female_unchecked@2x.png'}}" style="width:26rpx;height:26rpx;"></image>
+                                    <text class="fz18 ml10 thiddennb100">{{userInfo.info.nickname}}</text>
                                     <text class="fz12 color-666" style="margin-left:35rpx;">（普通会员）</text>
                                     <view class="pa navigator-choice" style="right:0px;">
                                         <image class="choice-size" src="../../imgs/common/choice@2x.png"></image>
                                     </view>
                             </view> 
                             <view class="lh10">
-                                <image class="start-img displayib" src="../../imgs/home_comments/star.png"></image>
-                                <image class="start-img displayib" src="../../imgs/home_comments/star.png"></image>
-                                <image class="start-img displayib" src="../../imgs/home_comments/star.png"></image>
+                                <image class="start-img displayib" src="../../imgs/common/score-star-red.png" wx:for="{{starNum}}"></image>
                             </view>
                         </view>
                     </view>
                 </navigator>
             <view class="mt30 lh10">
                 <image class="bg-F1604F icon-size" src=""></image>
-                <text class="fz15 color-333 ml10">可用余额：10元</text>
+                <text class="fz15 color-333 ml10">可用余额：{{userInfo.account}}元</text>
             </view>
         </view>
         <view class="bgw br4 my-box-shadow mb10">

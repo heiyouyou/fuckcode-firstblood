@@ -25,9 +25,7 @@ Page({
         code
       },
       success(res) {
-        if (res.data.status == 1) {
-          util.go(`../info/info`, 1)
-        }
+        util.go(`../info/info`, 1)
       }
     })
   },

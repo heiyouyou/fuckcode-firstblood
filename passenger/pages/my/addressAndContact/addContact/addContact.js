@@ -1,4 +1,6 @@
 // pages/my/addressAndContact/addContact/addContact.js
+let util = require('../../../../utils/util');
+
 Page({
 
   /**
@@ -14,7 +16,25 @@ Page({
   onLoad: function (options) {
   
   },
-
+  // 添加
+  add(e){
+    console.log(e)
+    let name = e.detail.value.name;
+    let mobile = e.detail.value.mobile;
+    util._ajax_({
+      loadingText: '提交中',
+      host:true,
+      method:'POST',
+      url: '/contacts/add',
+      data:{
+        mobile,
+        name
+      },
+      success(res){
+        util.toast(res.data.msg,1);
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
