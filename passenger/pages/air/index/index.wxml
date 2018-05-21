@@ -122,15 +122,15 @@
         <view class='main-form located'>
           <view class='item'>
             <view class='sub-lab'>从机场</view>
-            <picker bindchange="bindPickerChange" value="{{index}}" range="{{airport}}" range-key="name">
+            <picker bindchange="bindSubPickerChange" value="{{subIdx}}" range="{{subAirport}}" range-key="name">
               <view class="dp-flex">
-                <view class='info'>{{airport[index].name}}</view>
+                <view class='info'>{{subAirport[subIdx].name}}</view>
               </view>
             </picker>
           </view>
           <view class='item no-bor-b'>
             <view class='sub-lab'>到地点</view>
-            <input placeholder='您往返的地点' placeholder-class='ph'></input>
+            <input placeholder='您往返的地点' placeholder-class='ph' data-p='subForm.back.address' data-t='1' bindinput='bindInput' ></input>
           </view>
         </view>
         <view class='to-back'>wf</view>

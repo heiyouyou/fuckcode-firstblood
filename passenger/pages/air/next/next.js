@@ -17,7 +17,27 @@ Page({
       src: 'https://pic.lanhuapp.com/FrJb4yGe1HjIiiUT4AIfjd89R06a',
       intro: '豪华车：卡罗拉、伊兰特、宝莱等同级车。'
     }],
-    form: {}
+    form: {},
+    busAdultNum: {
+      name: '成人>7岁',
+      val: 0
+    },
+    busChildNum: {
+      name: '儿童<7岁',
+      val: 0
+    },
+    bigLuggage: {
+      name: '大行李',
+      val: 0
+    },
+    smallLuggage: {
+      name: '小行李',
+      val: 0
+    },
+  },
+  show(e) {
+    let id = e.currentTarget.dataset.id
+    this[id].show()
   },
   onCar (e) {
     let t = e.currentTarget.dataset.t
@@ -37,7 +57,10 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+    // 获取弹框组件
+    this.cusPick = this.selectComponent('#cusPick')
+    this.subcusPick = this.selectComponent('#subcusPick')
+    this.datePick = this.selectComponent('#datePick')
   },
 
   /**

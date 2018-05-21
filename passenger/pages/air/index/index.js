@@ -152,7 +152,7 @@ Page({
     })
   },
   bindSubPickerChange(e) {
-    let fai = 'SubForm.back.airport_id',
+    let fai = 'subForm.back.airport_id',
       subAirport = this.data.subAirport,
       i = e.detail.value
     this.setData({
@@ -211,7 +211,8 @@ Page({
     util.ajax('/index/airport-list', {}, res => {
       let _res = res.data
       self.setData({
-        airport: _res
+        airport: _res,
+        subAirport: _res
       })
     })
   },
