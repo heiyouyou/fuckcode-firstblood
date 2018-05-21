@@ -66,6 +66,9 @@
 .h150{
     height:150rpx;
 }
+.h-leave{
+    height:calc(100% - 44px);
+}
 .h-70rpx{
     height:70rpx;
 }

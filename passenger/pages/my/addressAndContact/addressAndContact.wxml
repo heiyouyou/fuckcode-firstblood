@@ -63,7 +63,7 @@
         <text class="fwb fz14 colorf">客服</text>
     </view>
 </view>
-<view class="displayf altc jscc flexdirec w" wx:if="{{noData}}" style="margin-top:100px;">
+<view class="displayf altc jscc flexdirec w h-leave" wx:if="{{noData}}">
     <image class="icon-size-100 displayb mb15" src="../../imgs/common/{{current==1?'noone@2x.png':'noaddress@2x.png'}}"></image>
     <text class="fz14 color-333 mt">{{current==1?'还没有常用乘车人哦~':'还没有常用地址哦~'}}</text>
 </view>

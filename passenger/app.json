@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/my/index/index",
+    "pages/my/message/message",
     "pages/my/addressAndContact/updateAddress/updateAddress",
     "pages/my/addressAndContact/updateContact/updateContact",
     "pages/my/addressAndContact/addAddress/addAddress",
@@ -17,7 +18,6 @@
     "pages/my/CarOwnerCertification/info/info",
     "pages/my/CarOwnerCertification/index/index",
     "pages/my/evaluate/evaluate",
-    "pages/my/message/message",
     "pages/index/index",
     "pages/login/index/index",
     "pages/login/login/login",
