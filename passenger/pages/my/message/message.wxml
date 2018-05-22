@@ -1,22 +1,22 @@
 <!--pages/my/message/message.wxml-->
 <view>
-    <view>
+    <view class="ohidden">
         <view class="tab-head displayf altc jsca">
-            <view class="pr">
-                <text class="{{current==1?'color-F1604F':''}} fz15" data-type='1' bindtap="chooseWay">订单消息</text> 
+            <view class="pr displayf altc h" data-type='1' bindtap="chooseWay">
+                <text class="{{current==1?'color-F1604F':''}} fz15">订单消息</text> 
                 <text class="bg-F1604F fz10 colorf message-num-icon" wx:if="{{unreadOrderTotal!=0}}">{{unreadOrderTotal}}</text>
             </view>
-            <view class="pr">
-                <text class="{{current==2?'color-F1604F':''}} fz15" data-type='2' bindtap="chooseWay">系统消息</text>
+            <view class="pr displayf altc h" data-type='2' bindtap="chooseWay">
+                <text class="{{current==2?'color-F1604F':''}} fz15">系统消息</text>
                 <text class="bg-F1604F fz10 colorf message-num-icon" wx:if="{{unreadSystemTotal!=0}}">{{unreadSystemTotal}}</text>
             </view>
-            <view class="pr">
-                <text class="{{current==3?'color-F1604F':''}} fz15" data-type='3' bindtap="chooseWay">聊天消息</text> 
+            <view class="pr displayf altc h" data-type='3' bindtap="chooseWay">
+                <text class="{{current==3?'color-F1604F':''}} fz15">聊天消息</text> 
                 <text class="bg-F1604F fz10 colorf message-num-icon" wx:if="{{unreadChatTotal!=0}}">{{unreadChatTotal}}</text>
             </view>
         </view>
         <!-- 订单消息 start -->
-        <view class="tab-body mt10" hidden="{{current==1?false:true}}">
+        <view class="tab-body" hidden="{{current==1?false:true}}">
             <view class="pl15 color-333 bgw mb10" wx:for="{{orderList}}" wx:key="*this">
                 <view class="border-bottom-ccc pt15 pb15 pr15" data-id="{{item.id}}">
                     <text class="fz14 fwb">订单状态更新</text>
@@ -34,7 +34,7 @@
         </view>
         <!-- 订单消息 end -->
         <!-- 系统消息 start -->
-        <view class="tab-body mt10" hidden="{{current==2?false:true}}">
+        <view class="tab-body" hidden="{{current==2?false:true}}">
             <view class="pl15 color-333 bgw mb10" wx:for="{{systemList}}" wx:key="*this">
                 <view class="border-bottom-ccc pt15 pb15 pr15">
                     <view class="mb10">
@@ -56,7 +56,7 @@
         </view>
         <!-- 系统消息 end -->
         <!-- 聊天消息 start -->
-        <view class="tab-body mt10" hidden="{{current==3?false:true}}">
+        <view class="tab-body" hidden="{{current==3?false:true}}">
             <view class="pl15 color-333 bgw mb10">
                 <view class="{{index==chatList.length-1?'':'border-bottom-ccc'}} pt10 pb10 pr10 displayf altc jscb boxb" wx:for="{{chatList}}" wx:key="*this" data-id="{{item.chat_user_id}}">
                     <view class="displayf altc">

@@ -207,7 +207,7 @@ const _ajax_ = ({
             title: res.data.msg,
             icon: 'none'
           })
-          reject(res);
+          fail && fail(res);
         }
       },
       fail: function () {
@@ -227,25 +227,6 @@ const getUserInfo = (cb) => {
       let _res = res.data.data
       wx.setStorageSync('user_info', _res)
     }
-  })
-}
-// Promise获取用户信息
-const  _getUserInfo_ = ()=>{
-  return new Promise((resolve, reject) => {
-    wx.authorize({
-      scope: 'scope.userInfo',
-      success(res) {
-        wx.getUserInfo({
-          withCredentials: true,
-          success: function (res) {
-            resolve(res);
-          }
-        })
-      },
-      fail: function () {
-        reject();
-      }
-    })
   })
 }
 
@@ -326,7 +307,6 @@ module.exports = {
   ajax,
   _ajax_,
   getUserInfo,
-  _getUserInfo_,
   updImg,
   toast,
   isEmptyObj,

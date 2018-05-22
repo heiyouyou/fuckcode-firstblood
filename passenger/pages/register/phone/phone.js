@@ -56,28 +56,26 @@ Page({
       success: function (res) {
         if (res.code) {
           let code = res.code;
-          util._getUserInfo_().then((res) => {
-            app.globalData.userInfo = res.userInfo;
-            app.globalData.iv = res.iv;
-            app.globalData.encryptedData = res.encryptedData;
-            callback && callback(code);
-          }).catch(() => {
-            wx.showToast({
-              title: `由于您的拒绝，无法进行注册，请重新授权获取用户信息！`,
-              icon: 'none',
-              success(){
-                setTimeout(() => {
-                  wx.openSetting({
-                    success: function (res) {
-                      console.log(res.authSetting)
-                      if (res.authSetting['scope.userInfo']) {
-                        that.getCountryData();
-                      }
+          wx.getSetting({
+            success: res => {
+              if (!res.authSetting['scope.userInfo']) {
+                wx.openSetting({
+                  success: function (res) {
+                    if (res.authSetting['scope.userInfo']) {
+                      wx.getUserInfo({
+                        success: function (res) {
+                          app.globalData.iv = res.iv;
+                          app.globalData.encryptedData = res.encryptedData;
+                          callback && callback(code);
+                        }
+                      })
                     }
-                  })
-                }, 2000);
+                  }
+                })
+              }else{
+                callback && callback(code);
               }
-            })
+            }
           })
         } else {
           wx.showToast({
@@ -99,7 +97,7 @@ Page({
         code: code,
         iv: app.globalData.iv,
         encryptedData: app.globalData.encryptedData,
-        sign: app.globalData.sign
+        sign: app.globalData.scene
       }
       util._ajax_({
         loadingShow: false,

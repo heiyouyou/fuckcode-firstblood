@@ -2,14 +2,14 @@
 <view>
     <view class="displayf jscc">
         <view class="tab-head displayf altc jsca">
-            <view class="tc flex1">
-                <text class="{{current==1?'color-F1604F':''}} fz15" data-type='1' bindtap="chooseWay">联系人管理</text> 
+            <view class="jscc flex1 displayf altc h" data-type='1' bindtap="chooseWay">
+                <text class="{{current==1?'color-F1604F':''}} fz15">联系人管理</text> 
             </view>
-            <view class="tc flex1">
-                <text class="{{current==2?'color-F1604F':''}} fz15" data-type='2' bindtap="chooseWay">地址管理</text> 
+            <view class="jscc flex1 displayf altc h" data-type='2' bindtap="chooseWay">
+                <text class="{{current==2?'color-F1604F':''}} fz15">地址管理</text> 
             </view>
         </view>
-        <view class="tab-body w710 mt10" hidden="{{current==1?false:true}}">
+        <view class="tab-body w710" hidden="{{current==1?false:true}}">
             <view class="ohidden">
                 <navigator url="./addContact/addContact">
                     <button class="h50 border-radius-4rpx fz15 color-333 lh50 borderNone my-box-shadow bgw" type="default"><image class="icon-size-30 br50 bg-F1604F vm mr5" src=""></image>新增乘车人</button>
@@ -30,7 +30,7 @@
                 </view>
             </view>
         </view>
-        <view class="tab-body w710 mt10" hidden="{{current==2?false:true}}">
+        <view class="tab-body w710" hidden="{{current==2?false:true}}">
             <view class="ohidden">
                 <navigator url="./addAddress/addAddress">
                     <button class="h50 border-radius-4rpx fz15 color-333 lh50 borderNone my-box-shadow bgw" type="default"><image class="icon-size-30 br50 bg-F1604F vm mr5" src=""></image>新增地址</button>

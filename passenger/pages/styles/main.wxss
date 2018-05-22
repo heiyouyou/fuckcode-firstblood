@@ -67,7 +67,7 @@
     height:150rpx;
 }
 .h-leave{
-    height:calc(100% - 44px);
+    height:calc(100% - 108rpx);
 }
 .h-70rpx{
     height:70rpx;
@@ -256,7 +256,7 @@
     line-height:24rpx;
     border-radius: 12rpx;
     position:absolute;
-    top:-8px;
+    top:5px;
     right:-20px;
 }
 .border-radius-4rpx{

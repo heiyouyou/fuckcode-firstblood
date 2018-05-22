@@ -4,9 +4,9 @@
 		<view class="w">
 			<text class="fwb login-form-title">登录</text>
 		</view>
-		<view class="wechat-login displayf jscc altc pr" bindtap="wechatLogin">
+		<view class="pr wechat-login-box displayf altc">
+			<button class="wechat-login fwb fz18 colorf" open-type="getUserInfo" bindgetuserinfo="wechatLogin">微信登录</button>
 			<image class="wechat-img" src="../../imgs/common/wechat@2x.png" style="width:36rpx;height:30rpx;" />
-			<text class="fwb fz18">微信登录</text>
 		</view>
 		<view class="pr displayf altc jscc or-box">
 			<text class="or-text pa">OR</text>

@@ -107,9 +107,9 @@ Page({
           chatNextPage: res.data.data.next_page || '',
           noData: list.length == 0,
           noMore: (list.length != 0 && !res.data.data.next_page),
-          unreadOrderTotal: res.data.data.unreadOrderTotal,
-          unreadSystemTotal: res.data.data.unreadSystemTotal,
-          unreadChatTotal: res.data.data.unreadChatTotal,
+          unreadOrderTotal: res.data.data.unreadOrderTotal || 0,
+          unreadSystemTotal: res.data.data.unreadSystemTotal || 0,
+          unreadChatTotal: res.data.data.unreadChatTotal || 0,
         })
       }
     })

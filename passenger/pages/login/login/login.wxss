@@ -3,18 +3,21 @@ page{
 	color:#fff;
 	background:#fff;
 }
-.wechat-login{
+.wechat-login-box{
 	margin:100rpx 0;
+}
+.wechat-login{
 	width:550rpx;
 	height:100rpx; 
 	background:rgba(74,76,91,1);
 	border-radius: 50rpx;
 	box-shadow:0 -1px 5px rgba(74,76,91,1); 
 }
-.wechat-login .wechat-img{
+.wechat-img{
 	position:absolute;
 	left:50rpx;
 	font-weight:middle;
+	z-index:22;
 }
 .or-box{
 	margin-bottom:154rpx;

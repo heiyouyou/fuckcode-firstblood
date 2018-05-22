@@ -37,17 +37,18 @@ Page({
     })
   },
   // 微信登录
-  wechatLogin(){
+  wechatLogin(e){
     const that = this;
-    wx.login({
-      success: function(res) {
-        if(res.code){
-          let code = res.code;
-          util._getUserInfo_().then((res) => {
-            app.globalData.userInfo = res.userInfo;
-            let iv = app.globalData.iv = res.iv;
-            let encryptedData = app.globalData.encryptedData = res.encryptedData;
-            let sign = app.globalData.scene;
+    const userInfo = e.detail.userInfo;
+    if (userInfo){
+      app.globalData.userInfo = userInfo;
+      let iv = app.globalData.iv = e.detail.iv;
+      let encryptedData = app.globalData.encryptedData = e.detail.encryptedData;
+      let sign = app.globalData.scene;
+      wx.login({
+        success: function(res) {
+          if(res.code){
+            let code = res.code;
             wx.showLoading({
               title: '登录中',
             })
@@ -74,38 +75,42 @@ Page({
                 }
               }
             })
-          }).catch(()=>{
+          }else{
             wx.showToast({
-              title: `由于您的拒绝，无法使用微信登录，请重新授权获取用户信息！`,
+              title: `${res.errMsg}`,
               icon: 'none',
-              success(){
-                setTimeout(() => {
-                  wx.openSetting({
-                    success: function (res) {
-                      console.log(res.authSetting)
-                    }
-                  })
-                }, 2000);
+            })
+          }
+        },
+        fail(res) {
+          util.toast(res.errMsg)
+        }
+      });
+    }else{
+      wx.showToast({
+        title: `由于您的拒绝，无法使用微信登录，请重新授权获取用户信息！`,
+        icon: 'none',
+        success(){
+          setTimeout(() => {
+            wx.openSetting({
+              success: function (res) {
+                console.log(res.authSetting)
               }
             })
-          })
-        }else{
-          wx.showToast({
-            title: `${res.errMsg}`,
-            icon: 'none',
-          })
+          }, 2000);
         }
-      },
-      fail(res) {
-        util.toast(res.errMsg)
-      }
-    });
+      })
+    }
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+          wx.openSetting({
+            success: function (res) {
+              console.log(res.authSetting)
+            }
+          })
   },
 
   /**
