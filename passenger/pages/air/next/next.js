@@ -39,13 +39,57 @@ Page({
     let id = e.currentTarget.dataset.id
     this[id].show()
   },
-  onCar (e) {
-    let t = e.currentTarget.dataset.t
+  onBtn(e) {
+    let t = e.currentTarget.dataset.t,
+      val = e.currentTarget.dataset.val,
+      v = this.data[val].val
+    if (t == 'minus' && v > 0) {
+      this.setData({
+        [`${val}.val`]: --v
+      })
+    } else if (t == 'add') {
+      this.setData({
+        [`${val}.val`]: ++v
+      })
+    }
+  },
+  _onLugConfirm() {
+    let bl = this.data.bigLuggage.val,
+      sl = this.data.smallLuggage.val,
+      fbl = 'form.big_luggage',
+      fsl = 'form.small_luggage'
     this.setData({
-      flag: t
+      [fbl]: bl,
+      [fsl]: sl
     })
   },
-
+  _onPerConfirm() {
+    let an = this.data.busAdultNum.val,
+      cn = this.data.busChildNum.val,
+      fp = 'form.passenger',
+      fc = 'form.children'
+    this.setData({
+      [fp]: an,
+      [fc]: cn
+    })
+  },
+  _onDatePickcfm() {
+    let time = this.datePick.getDateVal(),
+      ft = 'form.use_time'
+    this.setData({
+      userTime: time,
+      [ft]: `${time.dates} ${time.hours}:${time.mins}`
+    })
+  },
+  onCar (e) {
+    let t = e.currentTarget.dataset.t,
+      // fct = 'form.leave.car_type',
+      fct = 'form.back.car_type'
+    this.setData({
+      flag: t,
+      [fct]: t + 1
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

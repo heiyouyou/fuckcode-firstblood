@@ -43,6 +43,18 @@ Page({
     let id = e.currentTarget.dataset.id
     this[id].show()
   },
+  bindInput(e) {
+    let value = e.detail.value, param = e.currentTarget.dataset.p, t = e.currentTarget.dataset.t
+    if (t) {
+      this.setData({
+        [param]: [value]
+      })
+    } else {
+      this.setData({
+        [param]: value
+      })
+    }
+  },
   onBtn(e) {
     let t = e.currentTarget.dataset.t,
       val = e.currentTarget.dataset.val,
