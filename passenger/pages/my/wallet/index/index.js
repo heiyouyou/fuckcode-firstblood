@@ -13,7 +13,7 @@ Page({
   getMoneyData(){
     const that = this;
     util._ajax_({
-      url: util.server + '/user/my-wallet',
+      url: '/user/my-wallet',
       success(res){
         console.log(res)
         that.setData({

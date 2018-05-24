@@ -97,7 +97,7 @@ Page({
     util._ajax_({
       loadingText:'提交中',
       method:'POST',
-      url:util.server+url,
+      url:url,
       data:{id,comment,star},
       success: function(res) {
         if(res.data.status==1){
@@ -126,7 +126,7 @@ Page({
     util._ajax_({
       loadingShow:false,
       method: 'GET',
-      url: util.server + url,
+      url:  url,
       data: {
         id
       },
@@ -186,7 +186,7 @@ Page({
     util._ajax_({
       loadingShow:false,
       method:'POST',
-      url: util.server + cancel_url,
+      url: cancel_url,
       data: params
     }).then((res) => {
       let price = res.data.data.refund;
@@ -195,7 +195,7 @@ Page({
         content: `真的要取消该订单吗？\n将会退款￥${price}`,
         confirm() {
           util._ajax_({
-            url: util.server + url,
+            url: url,
             method: 'POST',
             data: params
           }).then((res) => {
@@ -214,7 +214,7 @@ Page({
     const that = this;
     util._ajax_({
       data: params,
-      url:util.server+that.data.orderDetailUrl,
+      url:that.data.orderDetailUrl,
       success: function(res) {
         let orderDetail = res.data.data;
         let setDataObj = { 'orderDetailObj': orderDetail};

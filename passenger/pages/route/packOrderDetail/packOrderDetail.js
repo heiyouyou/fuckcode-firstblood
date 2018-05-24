@@ -20,80 +20,80 @@ Page({
   },
   // 评论弹窗
   maskToggle() {
-      app.maskToggle(this)
-      this.setData({
-        'textarea_content': '',
-        'success': false,
-        'star_level': 0,
-      })
-    },
-    // 评论点赞
-    commentStar(e) {
-      let level = e.currentTarget.dataset.level
-      this.setData({
-        'star_level': level
-      })
-    },
-    // 评论框内容获取
-    textareaInput(e) {
-      let content = e.detail.value
-      this.setData({
-        'textarea_content': content
-      })
-    },
-    // 提交评论的内容
-    commitCommentData() {
-      const that = this;
-      let comment = this.data.textarea_content;
-      let star = this.data.star_level;
-      let id = this.data.orderId;
-      let url = '/charter/comment';
-      util._ajax_({
-        loadingText: '提交中',
-        method: 'POST',
-        url: util.server + url,
-        data: {
-          id,
-          comment,
-          star
-        },
-        success: function (res) {
-          if (res.data.status == 1) {
-            that.setData({
-              'success': !that.data.success
-            })
-            that.getCommentData();
-          } else {
-            util.toast(res.data.msg);
-          }
+    app.maskToggle(this)
+    this.setData({
+      'textarea_content': '',
+      'success': false,
+      'star_level': 0,
+    })
+  },
+  // 评论点赞
+  commentStar(e) {
+    let level = e.currentTarget.dataset.level
+    this.setData({
+      'star_level': level
+    })
+  },
+  // 评论框内容获取
+  textareaInput(e) {
+    let content = e.detail.value
+    this.setData({
+      'textarea_content': content
+    })
+  },
+  // 提交评论的内容
+  commitCommentData() {
+    const that = this;
+    let comment = this.data.textarea_content;
+    let star = this.data.star_level;
+    let id = this.data.orderId;
+    let url = '/charter/comment';
+    util._ajax_({
+      loadingText: '提交中',
+      method: 'POST',
+      url: url,
+      data: {
+        id,
+        comment,
+        star
+      },
+      success: function (res) {
+        if (res.data.status == 1) {
+          that.setData({
+            'success': !that.data.success
+          })
+          that.getCommentData();
+        } else {
+          util.toast(res.data.msg);
         }
-      })
-    },
-    // 获取评论的数据
-    getCommentData() {
-      const that = this;
-      let id = this.data.orderId;
-      let url = '';
-      util._ajax_({
-        loadingShow: false,
-        method: 'GET',
-        url: util.server + url,
-        data: {
-          id
-        },
-        success: function (res) {
-          if (res.data.status == 1) {
-            that.setData({
-              'star_level': res.data.data.score,
-              'textarea_content': res.data.comment,
-              'success': !that.data.success
-            })
-          } else {
-            util.toast(res.data.msg);
-          }
+      }
+    })
+  },
+  // 获取评论的数据
+  getCommentData() {
+    const that = this;
+    let id = this.data.orderId;
+    let url = '';
+    util._ajax_({
+      loadingShow: false,
+      method: 'GET',
+      url: url,
+      data: {
+        id
+      },
+      success: function (res) {
+        if (res.data.status == 1) {
+          that.setData({
+            'star_level': res.data.data.score,
+            'textarea_content': res.data.comment,
+            'success': !that.data.success
+          })
+        } else {
+          util.toast(res.data.msg);
         }
-      })
-    },
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

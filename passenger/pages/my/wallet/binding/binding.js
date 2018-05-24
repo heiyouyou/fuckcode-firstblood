@@ -37,7 +37,6 @@ Page({
     const that = this;
     util._ajax_({
       loadingShow:false,
-      host:true,
       url: '/user/bind-withdraw',
       success(res){
         console.log(res)
@@ -57,7 +56,6 @@ Page({
     let bsb = e.detail.value.bsb;
     let ABN = e.detail.value.ABN;
     util._ajax_({
-      host:true,
       method:'POST',
       url: '/user/bind-withdraw',
       data:type==1?{

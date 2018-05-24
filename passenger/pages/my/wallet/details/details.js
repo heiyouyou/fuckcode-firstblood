@@ -16,6 +16,7 @@ Page({
   getList(){
     const that = this;
     util._ajax_({
+      host:false,
       url: that.data.nextPage,
       success(res){
         let list = that.data.clearList ? res.data.data.list : [...that.data.detailList, ...res.data.data.list];

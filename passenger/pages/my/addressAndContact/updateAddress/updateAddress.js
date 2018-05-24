@@ -36,7 +36,6 @@ Page({
   get() {
     const that = this;
     util._ajax_({
-      host: true,
       url: '/address/info',
       data: {
         id: that.data.id
@@ -58,7 +57,6 @@ Page({
     let id = this.data.id;
     util._ajax_({
       loadingText: '提交中',
-      host: true,
       method: 'POST',
       url: '/address/edit',
       data: {

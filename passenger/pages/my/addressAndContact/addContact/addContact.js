@@ -23,7 +23,6 @@ Page({
     let mobile = e.detail.value.mobile;
     util._ajax_({
       loadingText: '提交中',
-      host:true,
       method:'POST',
       url: '/contacts/add',
       data:{

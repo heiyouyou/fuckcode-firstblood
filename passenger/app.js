@@ -12,7 +12,7 @@ App({
     wx.setStorageSync('logs', logs)
     // 获取城市列表
     util._ajax_({
-      url: util.server + '/index/city-list',
+      url: '/index/city-list',
       success(res){
         that.globalData.cityList = res.data.data;
       }
@@ -41,7 +41,6 @@ App({
     })
     // token还存在，直接跳转到主页
     if (token){
-      console.log('index...')
       util.go('pages/index/index',5)
     }
   },

@@ -1,40 +1,44 @@
 <!--pages/my/CarOwnerCertification/info/info.wxml-->
-<view class="displayf flexdirec jscb h"> 
-    <view class="mt10">
-        <view class="bgw my-box-shadow mb10">
-            <view class="h50 displayf altc color-666 pl20 border-bottom-ccc">
-                <text class="fz14 input-des-text">姓名</text>
-                <input class="fz14 color-333" placeholder="请输入您的真实姓名" placeholder-class="color-BBB"/>
+<form bindsubmit="commit">
+    <view class="displayf flexdirec jscb h"> 
+        <view class="mt10">
+            <view class="bgw my-box-shadow mb10">
+                <view class="h50 displayf altc color-666 pl20 border-bottom-ccc">
+                    <text class="fz14 input-des-text">姓名</text>
+                    <input class="fz14 color-333 flex1" placeholder="请输入您的真实姓名" placeholder-class="color-BBB" name="real_name"/>
+                </view>
+                <view class="h50 displayf altc color-666 pl20">
+                    <text class="fz14 input-des-text">城市</text>
+                    <picker bindchange="bindPickerChangeCity" value="{{cityIndex}}" range="{{cityArry}}"  range-key="name">
+                        <input class="fz14 color-333 flex1" placeholder="请输入您常驻的城市" placeholder-class="color-BBB" value="{{city_name}}" disabled/>
+                    </picker>
+                </view>
             </view>
-            <view class="h50 displayf altc color-666 pl20">
-                <text class="fz14 input-des-text">城市</text>
-                <input class="fz14 color-333" placeholder="请输入您常驻的城市" placeholder-class="color-BBB"/>
+            <view class="bgw my-box-shadow mb10">
+                <view class="h50 displayf altc color-666 pl20 border-bottom-ccc">
+                    <text class="fz14 input-des-text">手机</text>
+                    <input class="fz14 color-333 flex1" placeholder="请输入您的手机号码" placeholder-class="color-BBB" name="mobile"/>
+                </view>
+                <view class="h50 displayf altc color-666 pl20">
+                    <text class="fz14 input-des-text">邮箱</text>
+                    <input class="fz14 color-333 flex1" placeholder="请输入您的邮箱号码" placeholder-class="color-BBB" name="email"/>
+                </view>
+            </view>
+            <view class="bgw my-box-shadow">
+                <view class="h50 displayf altc color-666 pl20">
+                    <text class="fz14 input-des-text">护照</text>
+                    <input class="fz14 color-333 flex1" placeholder="请输入您的身份证或者护照号码" placeholder-class="color-BBB" name="id_card"/>
+                </view>
             </view>
         </view>
-        <view class="bgw my-box-shadow mb10">
-            <view class="h50 displayf altc color-666 pl20 border-bottom-ccc">
-                <text class="fz14 input-des-text">手机</text>
-                <input class="fz14 color-333" placeholder="请输入您的手机号码" value="156 6582 3364" placeholder-class="color-BBB"/>
+        <view class="w710 mb10 mt15 mauto">
+            <view class="tc mb15 color-666">
+                提交资料代表同意
+                <text class="color-F1604F">Meet使用协议</text>
+                和
+                <text class="color-F1604F">隐私条款</text>
             </view>
-            <view class="h50 displayf altc color-666 pl20">
-                <text class="fz14 input-des-text">邮箱</text>
-                <input class="fz14 color-333" placeholder="请输入您的邮箱号码" placeholder-class="color-BBB"/>
-            </view>
-        </view>
-        <view class="bgw my-box-shadow">
-            <view class="h50 displayf altc color-666 pl20">
-                <text class="fz14 input-des-text">护照</text>
-                <input class="fz14 color-333" placeholder="请输入您的护照号码" placeholder-class="color-BBB"/>
-            </view>
+            <button class="save-btn" form-type="submit">下一步</button>
         </view>
     </view>
-    <view class="w710 mb10 mt15 mauto">
-        <view class="tc mb15 color-666">
-            提交资料代表同意
-            <text class="color-F1604F">Meet使用协议</text>
-            和
-            <text class="color-F1604F">隐私条款</text>
-        </view>
-        <button class="save-btn" bindtap="next">下一步</button>
-    </view>
-</view>
+</form>

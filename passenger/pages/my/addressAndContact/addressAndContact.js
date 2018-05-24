@@ -51,6 +51,7 @@ Page({
   getAddressList(clear=false){
     const that = this;
     util._ajax_({
+      host:false,
       url: that.data.addressNextPage ? that.data.addressNextPage:util.server + '/address/lists',
       success(res){
         let list = clear ? res.data.data : [...that.data.addressList, ...res.data.data];
@@ -67,6 +68,7 @@ Page({
   getContactsList(clear=false) {
     const that = this;
     util._ajax_({
+      host:false,
       url: that.data.contactsNextPage ? that.data.contactsNextPage : util.server + '/contacts/lists',
       success(res) {
         let list = clear ? res.data.data : [...that.data.contactsList, ...res.data.data];

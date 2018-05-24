@@ -39,7 +39,6 @@ Page({
     console.log(c_address);
     util._ajax_({
       loadingText:'提交中',
-      host: true,
       method: 'POST',
       url: '/address/add',
       data: {

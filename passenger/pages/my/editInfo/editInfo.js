@@ -54,7 +54,7 @@ Page({
     let img_id = this.data.avatorId;
     let city_id = this.data.cityId;
     util._ajax_({
-      url: util.server + '/user/info',
+      url: '/user/info',
       method:'POST',
       data:{
         mobile,

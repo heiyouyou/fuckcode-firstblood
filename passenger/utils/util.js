@@ -108,7 +108,8 @@ const toast = (msg, type) => {
   } else {
     wx.showToast({
       title: msg || '失败',
-      duration: 1000
+      duration: 1000,
+      icon: 'none',
     })
   }
 }
@@ -174,7 +175,7 @@ const _ajax_ = ({
     fail,
     loadingText,
     loadingShow = true,
-    host = false
+    host = true
   } = {}) => {
   loadingShow&&wx.showLoading({
     title: loadingText || '加载中',
@@ -208,6 +209,7 @@ const _ajax_ = ({
             icon: 'none'
           })
           fail && fail(res);
+          reject(res);
         }
       },
       fail: function () {
@@ -238,7 +240,9 @@ const updImg = ({
     url = server + '/file/upload',
     header = {
       'token': wx.getStorageSync('skycar')
-    }
+    },
+    loadingShow=true,
+    fail
   } = {}) => {
   let that = this
   wx.chooseImage({
@@ -248,12 +252,16 @@ const updImg = ({
     success: function (res) {
       // 返回选定照片的本地文件路径列表，imgPath可以作为img标签的src属性显示图片
       let ips = res.tempFilePaths
+      loadingShow && wx.showLoading({
+        title:'上传中',
+      })
       wx.uploadFile({
         url: url,
         filePath: ips[0],
         header:header,
         name: 'file',
         success: function (res) {
+          loadingShow && wx.hideLoading();
           let data = JSON.parse(res.data);
           if (data.status == 1) {
             cb && cb(res);
@@ -272,6 +280,7 @@ const updImg = ({
               title: data.msg,
               icon: 'none'
             })
+            fail && fail(res);
           }
         }
       })

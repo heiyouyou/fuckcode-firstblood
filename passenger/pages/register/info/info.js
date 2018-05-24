@@ -38,7 +38,7 @@ Page({
     util._ajax_({
       loadingText: '提交中',
       method: 'POST',
-      url: util.server + '/user/register-info',
+      url: '/user/register-info',
       data: {
         nickname,
         email,

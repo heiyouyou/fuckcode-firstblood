@@ -13,7 +13,7 @@ Page({
   getUserInfo(){
     const that = this;
     util._ajax_({
-      url:util.server+'/user/my',
+      url:'/user/my',
       success(res){
         let starNum = Math.round(res.data.comment);
         wx.setStorageSync('userInfo', res.data.data);

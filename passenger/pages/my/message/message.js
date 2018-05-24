@@ -61,6 +61,7 @@ Page({
   getOrderList(clear = false) {
     const that = this;
     util._ajax_({
+      host:false,
       url: that.data.orderNextPage ? that.data.orderNextPage : util.server + '/msg/order',
       success(res) {
         let list = clear ? res.data.data.list : [...that.data.orderList, ...res.data.data.list];
@@ -80,6 +81,7 @@ Page({
   getSystemList(clear = false) {
     const that = this;
     util._ajax_({
+      host:false,
       url: that.data.systemNextPage ? that.data.systemNextPage : util.server + '/msg/system',
       success(res) {
         let list = clear ? res.data.data.list : [...that.data.systemList, ...res.data.data.list];
@@ -99,6 +101,7 @@ Page({
   getChatList(clear = false) {
     const that = this;
     util._ajax_({
+      host:false,
       url: that.data.chatNextPage ? that.data.chatNextPage : util.server + '/msg/chat',
       success(res) {
         let list = clear ? res.data.data.list : [...that.data.chatList, ...res.data.data.list];

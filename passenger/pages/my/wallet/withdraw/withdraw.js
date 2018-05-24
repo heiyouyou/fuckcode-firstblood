@@ -52,7 +52,6 @@ Page({
   getOverage(){
     const that = this;
     util._ajax_({
-      host:true,
       url: '/user/withdraw',
       success: function(res) {
         that.setData({
@@ -75,7 +74,6 @@ Page({
         ABN
       },
       method:'POST',
-      host: true,
       url: '/user/withdraw',
       success(res){
         util.toast(res.data.msg,1);

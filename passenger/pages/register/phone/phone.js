@@ -39,7 +39,7 @@ Page({
           util._ajax_({
             loadingText:'提交中',
             method:'POST',
-            url: util.server+'/user/register-phone',
+            url: '/user/register-phone',
             data:{areaCode,mobile},
             success(res) {
               util.go(`../code/code?phone=${mobile}&areaCode=${areaCode}`, 1)
@@ -89,7 +89,7 @@ Page({
       }
     });
   },
-  // 获取国家和代号数据
+  // 获取国家和区号数据
   getCountryData(){
     const that = this;
     this.getWxCode((code) => {
@@ -103,9 +103,10 @@ Page({
         loadingShow: false,
         method: 'POST',
         data: params,
-        url: util.server + '/account/register',
+        url: '/account/register',
         success(res) {
           wx.setStorageSync('skycar', res.data.data.token);
+          wx.setStorageSync('countryCode', res.data.data.country);
           that.setData({
             countryArray:res.data.data.country,
             country: res.data.data.country[0].name,
