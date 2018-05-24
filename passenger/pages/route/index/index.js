@@ -102,8 +102,9 @@ Page({
     util.go('../payment/payment')
   },
   // 司机信息页面
-  driverInfo(){
-    util.go('../driver/driver')
+  driverInfo(e){
+    let id = e.currentTarget.dataset('id');
+    util.go('../driver/driver?id='+id);
   },
   // 阻止冒泡函数
   bubble(){

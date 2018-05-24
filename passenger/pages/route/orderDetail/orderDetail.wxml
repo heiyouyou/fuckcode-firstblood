@@ -59,9 +59,7 @@
     <view class="my-box-shadow" wx:if="{{currentRouteType==2}}">
         <view class="bgw pl10">
             <view class="displayf h100 altc border-bottom-ccc boxb">
-                <navigator url="../driver/driver">
-                    <image class="icon-size-120 bg-F1604F br50" src=""></image>
-                </navigator>
+                <image class="icon-size-120 bg-F1604F br50" src="" bindtap="driverInfo"></image>
                 <view class="ml10 flex1 pr">
                     <view class="mb10 pr20">
                         <text class="fz16 color-333">Kevin</text>
@@ -123,9 +121,7 @@
     <view class="my-box-shadow" wx:if="{{currentRouteType==3}}">
         <view class="bgw pl10">
             <view class="displayf patb15 altc border-bottom-ccc boxb">
-                <navigator url="../driver/driver" hidden>
-                    <image class="icon-size-120 bg-F1604F br50" src=""></image>
-                </navigator>
+                <image class="icon-size-120 bg-F1604F br50" src="" bindtap="driverInfo" hidden></image>
                 <view class="ml10 flex1 pr">
                     <view class="pr20">
                         <text class="fz16 color-333">机场接送</text>
@@ -228,6 +224,7 @@
     </view>
     <!-- 机场接送 end -->
 
+    <!-- 模板 start -->
     <view class="my-box-shadow" wx:if="{{false}}">
         <view class="bgw pl10">
             <view class="displayf h100 altc border-bottom-ccc boxb">
@@ -363,6 +360,7 @@
             </view>
         </view>
     </view>
+    <!-- 模板 end -->
     <view class="pr" wx:if="{{map_show}}">
         <map class="map-box pr" id="map" style="height:{{200+add_height}}px;" longitude="113.324520" latitude="23.099994" scale="14" controls="{{controls}}" markers="{{markers}}" polyline="{{polyline}}" show-location>
             <cover-view class="map-status-box displayf jscc altc">

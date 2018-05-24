@@ -56,6 +56,10 @@ Page({
       borderWidth:1,
     }],
   },
+  // 司机信息页面
+  driverInfo() {
+    util.go('../driver/driver?id=' + this.data.orderId);
+  },
   // 评论弹窗
   maskToggle(){
     app.maskToggle(this)
