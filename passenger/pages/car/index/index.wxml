@@ -1,10 +1,10 @@
 <!--pages/reserve/index/index.wxml-->
 <view class='main-form'>
   <view class='item start'>
-    <input placeholder='您从哪出发'></input>
+    <input placeholder='您从哪出发' data-p='form.departure' data-t='1' bindinput='bindInput'></input>
   </view>
   <view class='item end'>
-    <input placeholder='您想要去哪'></input>
+    <input placeholder='您想要去哪' data-p='form.destination' data-t='1' bindinput='bindInput'></input>
   </view>
   <view class='dp-flex flex-one sub-term'>
     <view class='dp-flex' data-id='cusPick' bindtap='show'>
@@ -66,7 +66,7 @@
 <view class='btn-wrap'>
   <button class='main-btn' bindtap='onBtn'>预订</button>
 </view>
-<view class='sub-container'>
+<!-- <view class='sub-container'>
   <view class='dp-flex intro'>
     <view>￥{{price.rmb}}/${{price.usd}}</view>
     <text class='xs-font'>计价规则</text>
@@ -81,4 +81,4 @@
       <view class='xs-font'>上车付</view>
     </button>
   </view>
-</view>
+</view> -->

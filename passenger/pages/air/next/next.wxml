@@ -2,14 +2,17 @@
 <view class='container'>
   <view class='main-wrap ad-pad'>
     <view class='main-form'>
-      <view class='item'>
+      <view class='item' data-id='cusPick' bindtap='show'>
         <view class='lab'>人数</view>
+        <text>{{(form.passenger + form.children) || '乘车人数'}}</text>
       </view>
-      <view class='item'>
+      <view class='item' data-id='subcusPick' bindtap='show'>
         <view class='lab'>行李</view>
+        <text>{{form.big_luggage + form.small_luggage || '行李数量'}}</text>
       </view>
-      <view class='item no-bor-b'>
+      <view class='item no-bor-b' data-id='datePick' bindtap='show'>
         <view class='lab'>时间</view>
+        <text>{{form.use_time || '降落时间'}}</text>
       </view>
     </view>
   </view>
@@ -34,3 +37,44 @@
     <button class='main-btn'>继续</button>
   </view>
 </view>
+<cusPick id="cusPick" title="乘客人数" bind:confirm="_onPerConfirm">
+  <view class='pick-cnt'>
+    <view class='dp-flex jc-sb pick-item'>
+      <view class=''>{{busAdultNum.name}}</view>
+      <view class='dp-flex'>
+        <text class='pick-btn' data-t='minus' data-val='busAdultNum' bindtap='onBtn'>-</text>
+        <view class='pick-val'>{{busAdultNum.val}}</view>
+        <text class='pick-btn' data-t='add' data-val='busAdultNum' bindtap='onBtn'>+</text>
+      </view>
+    </view>
+    <view class='dp-flex jc-sb pick-item'>
+      <view class=''>{{busChildNum.name}}</view>
+      <view class='dp-flex'>
+        <text class='pick-btn' data-t='minus' data-val='busChildNum' bindtap='onBtn'>-</text>
+        <view class='pick-val'>{{busChildNum.val}}</view>
+        <text class='pick-btn' data-t='add' data-val='busChildNum' bindtap='onBtn'>+</text>
+      </view>
+    </view>
+  </view>
+</cusPick>
+<cusPick id="subcusPick" title="行李数量" bind:confirm="_onLugConfirm">
+  <view class='pick-cnt'>
+    <view class='dp-flex jc-sb pick-item'>
+      <view class=''>{{bigLuggage.name}}</view>
+      <view class='dp-flex'>
+        <text class='pick-btn' data-t='minus' data-val='bigLuggage' bindtap='onBtn'>-</text>
+        <view class='pick-val'>{{bigLuggage.val}}</view>
+        <text class='pick-btn' data-t='add' data-val='bigLuggage' bindtap='onBtn'>+</text>
+      </view>
+    </view>
+    <view class='dp-flex jc-sb pick-item'>
+      <view class=''>{{smallLuggage.name}}</view>
+      <view class='dp-flex'>
+        <text class='pick-btn' data-t='minus' data-val='smallLuggage' bindtap='onBtn'>-</text>
+        <view class='pick-val'>{{smallLuggage.val}}</view>
+        <text class='pick-btn' data-t='add' data-val='smallLuggage' bindtap='onBtn'>+</text>
+      </view>
+    </view>
+  </view>
+</cusPick>
+<datePick id="datePick" title="飞机降落时间" bind:onDatePickcfm="_onDatePickcfm"></datePick>
