@@ -27,7 +27,9 @@ Page({
       name: '往返'
     }],
     airport: [],
+    subAirport: [],
     index: 0,
+    subIdx: 0,
     busAdultNum: {
       name: '成人>7岁',
       val: 0
@@ -54,6 +56,47 @@ Page({
       mission_type: '1', // 1接机，2送机
       passenger: '', // 成人数量
       children: '' // 儿童数量
+    },
+    subForm: {
+      leave: {
+        use_time: '',
+        address: [],
+        airport_id: '',
+        children: '',
+        big_luggage: '',
+        small_luggage: '',
+        car_type: '',
+        mission_type: '',
+        is_carpooling: '',
+        flight_type: '',
+        passenger: '',
+        mobile_area_code: '',
+        is_attached: '',
+        planecode: '',
+        phone: ''
+      },
+      back: {
+        use_time: '',
+        address: [],
+        airport_id: '',
+        big_luggage: '',
+        small_luggage: '',
+        car_type: '',
+        mission_type: '',
+        is_carpooling: '',
+        flight_type: '',
+        passenger: '',
+        children: '',
+        is_attached: '',
+        remark: '',
+        mobile_area_code: '',
+        planecode: '',
+        sign: '',
+        phone: '',
+        coupon: ''
+      },
+      coupon_id: '',
+      payment: ''
     }
   },
   go(e) {
@@ -82,24 +125,39 @@ Page({
     })
   },
   bindInput(e) {
-    let that = this, value = e.detail.value, param = e.currentTarget.dataset.p, t = e.currentTarget.dataset.t
+    let value = e.detail.value, param = e.currentTarget.dataset.p, t = e.currentTarget.dataset.t
     if (t) {
-      that.setData({
+      this.setData({
         [param]: [value]
       })
     } else {
-      that.setData({
+      this.setData({
         [param]: value
       })
     }
   },
   bindPickerChange(e) {
-    let fai = 'form.airport_id',
+      let mt = this.data.flag, fai,
         airport = this.data.airport,
         i = e.detail.value
+    
+    if (mt == 2) {
+      fai = 'subForm.leave.airport_id'
+    } else {
+      fai = 'form.airport_id'
+    }
     this.setData({
       index: i,
       [fai]: airport[i].id
+    })
+  },
+  bindSubPickerChange(e) {
+    let fai = 'subForm.back.airport_id',
+      subAirport = this.data.subAirport,
+      i = e.detail.value
+    this.setData({
+      subIdx: i,
+      [fai]: subAirport[i].id
     })
   },
   show(e) {
@@ -153,7 +211,8 @@ Page({
     util.ajax('/index/airport-list', {}, res => {
       let _res = res.data
       self.setData({
-        airport: _res
+        airport: _res,
+        subAirport: _res
       })
     })
   },
