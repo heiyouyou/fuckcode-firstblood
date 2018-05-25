@@ -39,12 +39,10 @@ Page({
           util._ajax_({
             loadingText:'提交中',
             method:'POST',
-            url: util.server+'/user/register-phone',
+            url: '/user/register-phone',
             data:{areaCode,mobile},
             success(res) {
-              if(res.data.status==1){
-                util.go(`../code/code?phone=${mobile}&areaCode=${areaCode}`, 1)
-              }
+              util.go(`../code/code?phone=${mobile}&areaCode=${areaCode}`, 1)
             }
           })
         }
@@ -56,31 +54,28 @@ Page({
     const that = this;
     wx.login({
       success: function (res) {
-        console.log('login')
         if (res.code) {
           let code = res.code;
-          util._getUserInfo_().then((res) => {
-            app.globalData.userInfo = res.userInfo;
-            app.globalData.iv = res.iv;
-            app.globalData.encryptedData = res.encryptedData;
-            callback && callback(code);
-          }).catch(() => {
-            wx.showToast({
-              title: `由于您的拒绝，无法进行注册，请重新授权获取用户信息！`,
-              icon: 'none',
-              success(){
-                setTimeout(() => {
-                  wx.openSetting({
-                    success: function (res) {
-                      console.log(res.authSetting)
-                      if (res.authSetting['scope.userInfo']) {
-                        that.getCountryData();
-                      }
+          wx.getSetting({
+            success: res => {
+              if (!res.authSetting['scope.userInfo']) {
+                wx.openSetting({
+                  success: function (res) {
+                    if (res.authSetting['scope.userInfo']) {
+                      wx.getUserInfo({
+                        success: function (res) {
+                          app.globalData.iv = res.iv;
+                          app.globalData.encryptedData = res.encryptedData;
+                          callback && callback(code);
+                        }
+                      })
                     }
-                  })
-                }, 2000);
+                  }
+                })
+              }else{
+                callback && callback(code);
               }
-            })
+            }
           })
         } else {
           wx.showToast({
@@ -94,7 +89,7 @@ Page({
       }
     });
   },
-  // 获取国家和代号数据
+  // 获取国家和区号数据
   getCountryData(){
     const that = this;
     this.getWxCode((code) => {
@@ -102,22 +97,21 @@ Page({
         code: code,
         iv: app.globalData.iv,
         encryptedData: app.globalData.encryptedData,
-        sign: app.globalData.sign
+        sign: app.globalData.scene
       }
       util._ajax_({
         loadingShow: false,
         method: 'POST',
         data: params,
-        url: util.server + '/account/register',
+        url: '/account/register',
         success(res) {
-          if (res.data.status == 1) {
-            wx.setStorageSync('skycar', res.data.data.token);
-            that.setData({
-              countryArray:res.data.data.country,
-              country: res.data.data.country[0].name,
-              country_code: res.data.data.country[0].code
-            })
-          }
+          wx.setStorageSync('skycar', res.data.data.token);
+          wx.setStorageSync('countryCode', res.data.data.country);
+          that.setData({
+            countryArray:res.data.data.country,
+            country: res.data.data.country[0].name,
+            country_code: res.data.data.country[0].code
+          })
         }
       })
     });

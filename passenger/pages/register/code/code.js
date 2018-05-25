@@ -18,16 +18,14 @@ Page({
     util._ajax_({
       loadingText: '提交中',
       method: 'POST',
-      url: util.server + '/user/register-validate',
+      url: '/user/register-validate',
       data: {
         areaCode,
         mobile,
         code
       },
       success(res) {
-        if (res.data.status == 1) {
-          util.go(`../info/info`, 1)
-        }
+        util.go(`../info/info`, 1)
       }
     })
   },

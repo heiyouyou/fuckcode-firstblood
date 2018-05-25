@@ -108,7 +108,8 @@ const toast = (msg, type) => {
   } else {
     wx.showToast({
       title: msg || '失败',
-      duration: 1000
+      duration: 1000,
+      icon: 'none',
     })
   }
 }
@@ -162,18 +163,31 @@ const ajax = (url, param, cb, cbf) => {
     complete: function (res) { },
   })
 }
-const _ajax_ = ({ url = '', method = 'GET', header = { 'Content-Type': 'application/json', 'token': wx.getStorageSync('skycar') }, success, data, fail,loadingText,loadingShow=true}={}) => {
+const _ajax_ = ({
+    url = '',
+    method = 'GET',
+    header = {
+      'Content-Type': 'application/json',
+      'token': wx.getStorageSync('skycar')
+    },
+    success,
+    data,
+    fail,
+    loadingText,
+    loadingShow = true,
+    host = true
+  } = {}) => {
   loadingShow&&wx.showLoading({
     title: loadingText || '加载中',
   })
   return new Promise((resolve,reject)=>{
     wx.request({
-      url: url,
+      url: (host?server+url:url),
       data: data,
       header: header,
       method: method,
       success: function (res) {
-        wx.hideLoading();
+        loadingShow&&wx.hideLoading();
         wx.hideNavigationBarLoading();
         wx.stopPullDownRefresh();
         if (res.data.status == 1) {
@@ -194,6 +208,8 @@ const _ajax_ = ({ url = '', method = 'GET', header = { 'Content-Type': 'applicat
             title: res.data.msg,
             icon: 'none'
           })
+          fail && fail(res);
+          reject(res);
         }
       },
       fail: function () {
@@ -215,27 +231,19 @@ const getUserInfo = (cb) => {
     }
   })
 }
-// Promise获取用户信息
-const  _getUserInfo_ = ()=>{
-  return new Promise((resolve, reject) => {
-    wx.authorize({
-      scope: 'scope.userInfo',
-      success(res) {
-        wx.getUserInfo({
-          withCredentials: true,
-          success: function (res) {
-            resolve(res);
-          }
-        })
-      },
-      fail: function () {
-        reject();
-      }
-    })
-  })
-}
 
-const updImg = ({ count = 1, sizeType = ['original', 'compressed'], sourceType = ['album', 'camera'], cb, url = server + '/upload' } = {}) => {
+const updImg = ({
+    count = 1,
+    sizeType = ['original', 'compressed'],
+    sourceType = ['album', 'camera'],
+    cb,
+    url = server + '/file/upload',
+    header = {
+      'token': wx.getStorageSync('skycar')
+    },
+    loadingShow=true,
+    fail
+  } = {}) => {
   let that = this
   wx.chooseImage({
     count: count, // 默认9
@@ -244,13 +252,36 @@ const updImg = ({ count = 1, sizeType = ['original', 'compressed'], sourceType =
     success: function (res) {
       // 返回选定照片的本地文件路径列表，imgPath可以作为img标签的src属性显示图片
       let ips = res.tempFilePaths
-
+      loadingShow && wx.showLoading({
+        title:'上传中',
+      })
       wx.uploadFile({
         url: url,
         filePath: ips[0],
+        header:header,
         name: 'file',
         success: function (res) {
-          cb && cb(res)
+          loadingShow && wx.hideLoading();
+          let data = JSON.parse(res.data);
+          if (data.status == 1) {
+            cb && cb(res);
+          } else if (data.status == -90) {
+            wx.showToast({
+              title: data.msg,
+              icon: 'none',
+              success: function () {
+                setTimeout(() => {
+                  goLogin();
+                }, 1000);
+              }
+            });
+          } else {
+            wx.showToast({
+              title: data.msg,
+              icon: 'none'
+            })
+            fail && fail(res);
+          }
         }
       })
     }
@@ -285,7 +316,6 @@ module.exports = {
   ajax,
   _ajax_,
   getUserInfo,
-  _getUserInfo_,
   updImg,
   toast,
   isEmptyObj,

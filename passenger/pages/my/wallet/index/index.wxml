@@ -8,24 +8,24 @@
             </navigator>
         </view>
         <view class="mt15">
-            <text class="fwb" style="font-size:100rpx;">0.00</text>
+            <text class="fwb" style="font-size:100rpx;">{{moneyData.account_money}}</text>
         </view>
         <view>
-            <text class="fz12" style="margin-top:35rpx;">即将到账 0.00元</text>            
+            <text class="fz12" style="margin-top:35rpx;">即将到账 {{moneyData.freeze}}元</text>            
         </view>
     </view>
     <view class="pr">
         <view class="w710 br4 my-box-shadow h150 pa mauto bgw displayf" style="top:-80rpx;right:0;left:0;">
             <view class="displayf flexdirec jscc altc flexgrow1">
-                <text class="color-F1604F fwb fz20">0.00</text>
+                <text class="color-F1604F fwb fz20">{{moneyData.recharge}}</text>
                 <text class="color-999 fz12">充值</text>
             </view>
             <view class="displayf flexdirec jscc altc flexgrow1">
-                <text class="color-F1604F fwb fz20">0.00</text>
+                <text class="color-F1604F fwb fz20">{{moneyData.income}}</text>
                 <text class="color-999 fz12">收入</text>
             </view>
             <view class="displayf flexdirec jscc altc flexgrow1">
-                <text class="color-F1604F fwb fz20">0.00</text>
+                <text class="color-F1604F fwb fz20">{{moneyData.withdraw}}</text>
                 <text class="color-999 fz12">提现</text>
             </view>
         </view>

@@ -17,6 +17,12 @@ input{
     color:#fff;
     background:rgba(0,0,0,0.5);
 }
+.review-img{
+    position:absolute;
+    background:#ccc;
+    left:0;
+    top:0;
+}
 .waring-info-box{
     position:absolute;
     left:0;

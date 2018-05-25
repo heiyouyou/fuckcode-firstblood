@@ -1,18 +1,60 @@
 // pages/route/driver/driver.js
+let util = require('../../../utils/util');
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    driverInfo:{},
+    shuttleBus:[]
   },
-
+  callDriver(e){
+    let phoneNumber = e.currentTarget.dataset.phone;
+    wx.makePhoneCall({
+      phoneNumber,
+      fail(){
+        util.toast('调用拨打电话功能失败！')
+      }
+    })
+  },
+  // 加入班车
+  joinBus(e){
+    let id = e.currentTarget.dataset.id;
+    util._ajax_({
+      loadingShow:false,
+      url: '/appoint-car/driver-info',
+      data:{
+        id
+      },
+      method:'POST',
+      success(res){
+        util.toast(res.data.msg,1);
+      }
+    })
+  },
+  // 获取司机信息
+  getDriverInfo(id){
+    const that = this;
+    util._ajax_({
+      url:'/appoint-car/driver-info?id='+id,
+      success(res){
+        let driverInfo = res.data.data.info;
+        let shuttleBus = res.data.data.shuttle-bus;
+        that.setData({
+          driverInfo,
+          shuttleBus
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    let id = options.id;
+    this.getDriverInfo(id);
   },
 
   /**

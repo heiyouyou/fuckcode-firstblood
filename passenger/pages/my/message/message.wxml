@@ -1,23 +1,24 @@
 <!--pages/my/message/message.wxml-->
 <view>
-    <view>
+    <view class="ohidden">
         <view class="tab-head displayf altc jsca">
-            <view class="pr">
-                <text class="{{current==1?'color-F1604F':''}} fz15" data-type='1' bindtap="chooseWay">联系人管理</text> 
-                <text class="bg-F1604F fz10 colorf message-num-icon">51</text>
+            <view class="pr displayf altc h" data-type='1' bindtap="chooseWay">
+                <text class="{{current==1?'color-F1604F':''}} fz15">订单消息</text> 
+                <text class="bg-F1604F fz10 colorf message-num-icon" wx:if="{{unreadOrderTotal!=0}}">{{unreadOrderTotal}}</text>
             </view>
-            <view class="pr">
-                <text class="{{current==2?'color-F1604F':''}} fz15" data-type='2' bindtap="chooseWay">系统消息</text>
-                <text class="bg-F1604F fz10 colorf message-num-icon">51</text>
+            <view class="pr displayf altc h" data-type='2' bindtap="chooseWay">
+                <text class="{{current==2?'color-F1604F':''}} fz15">系统消息</text>
+                <text class="bg-F1604F fz10 colorf message-num-icon" wx:if="{{unreadSystemTotal!=0}}">{{unreadSystemTotal}}</text>
             </view>
-            <view class="pr">
-                <text class="{{current==3?'color-F1604F':''}} fz15" data-type='3' bindtap="chooseWay">聊天消息</text> 
-                <text class="bg-F1604F fz10 colorf message-num-icon">51</text>
+            <view class="pr displayf altc h" data-type='3' bindtap="chooseWay">
+                <text class="{{current==3?'color-F1604F':''}} fz15">聊天消息</text> 
+                <text class="bg-F1604F fz10 colorf message-num-icon" wx:if="{{unreadChatTotal!=0}}">{{unreadChatTotal}}</text>
             </view>
         </view>
-        <view class="tab-body mt10" hidden="{{current==1?false:true}}">
-            <view class="pl15 color-333 bgw mb10">
-                <view class="border-bottom-ccc pt15 pb15 pr15">
+        <!-- 订单消息 start -->
+        <view class="tab-body" hidden="{{current==1?false:true}}">
+            <view class="pl15 color-333 bgw mb10" wx:for="{{orderList}}" wx:key="*this">
+                <view class="border-bottom-ccc pt15 pb15 pr15" data-id="{{item.id}}">
                     <text class="fz14 fwb">订单状态更新</text>
                     <view class="fr">
                         <image class="choice-size" src="../../imgs/common/choice@2x.png"></image>
@@ -25,57 +26,27 @@
                 </view>
                 <view class="pt15 pb15 pr15">
                     <view class="mb10">
-                        <text class="fz14 hline">详情信息fwerewrewr详情信息fwerewrewr详情信息fwerewrewr详情信息fwerewrewr详情信息fwerewrewr详情信息fwerewrewr详情信息fwerewrewr详情信息</text>
+                        <text class="fz14 hline">{{item.msg}}</text>
                     </view>
-                    <text class="color-BBB fz12">昨天 11:30</text>
-                </view>
-            </view>
-            <view class="pl15 color-333 bgw mb10">
-                <view class="border-bottom-ccc pt15 pb15 pr15">
-                    <text class="fz14 fwb">订单状态更新</text>
-                    <view class="fr">
-                        <image class="choice-size" src="../../imgs/common/choice@2x.png"></image>
-                    </view>
-                </view>
-                <view class="pt15 pb15 pr15">
-                    <view class="mb10">
-                        <text class="fz14 hline">详情信息详情信息详情信息详情信息详情信息详情信息详情信息详情信息详情信息详情信息详情信息详情信息详情信息详情信息详情信息</text>
-                    </view>
-                    <text class="color-BBB fz12">昨天 11:30</text>
+                    <text class="color-BBB fz12">{{item.create_time}}</text>
                 </view>
             </view>
         </view>
-        <view class="tab-body mt10" hidden="{{current==2?false:true}}">
-            <view class="pl15 color-333 bgw mb10">
+        <!-- 订单消息 end -->
+        <!-- 系统消息 start -->
+        <view class="tab-body" hidden="{{current==2?false:true}}">
+            <view class="pl15 color-333 bgw mb10" wx:for="{{systemList}}" wx:key="*this">
                 <view class="border-bottom-ccc pt15 pb15 pr15">
                     <view class="mb10">
-                        <text class="fz14 displayb mb5 fwb">十一钜惠来袭！</text>
-                        <text class="color-BBB fz12 displayb">昨天 11:30</text>
+                        <text class="fz14 displayb mb5 fwb">{{item.title}}</text>
+                        <text class="color-BBB fz12 displayb">{{item.create_time}}</text>
                     </view>
-                    <view class="mb15 bg-53B6FD h100 br5">
+                    <view class="mb15 bg-53B6FD h100 br5" hidden>
                         
                     </view>
-                    <text class="fz14">详情信息文稿。</text>
+                    <text class="fz14" hidden>详情信息文稿。</text>
                 </view>
-                <view class="pt15 pb15 pr15">
-                    <text class="fz14">查看详情</text>
-                    <view class="fr">
-                        <image class="choice-size" src="../../imgs/common/choice@2x.png"></image>
-                    </view>
-                </view>
-            </view>
-            <view class="pl15 color-333 bgw mb10">
-                <view class="border-bottom-ccc pt15 pb15 pr15">
-                    <view class="mb10">
-                        <text class="fz14 displayb mb5 fwb">十一钜惠来袭！</text>
-                        <text class="color-BBB fz12 displayb">昨天 11:30</text>
-                    </view>
-                    <view class="mb15 bg-53B6FD h100 br5">
-                        
-                    </view>
-                    <text class="fz14">详情信息文稿。</text>
-                </view>
-                <view class="pt15 pb15 pr15">
+                <view class="pt15 pb15 pr15" data-id="{{item.id}}">
                     <text class="fz14">查看详情</text>
                     <view class="fr">
                         <image class="choice-size" src="../../imgs/common/choice@2x.png"></image>
@@ -83,74 +54,42 @@
                 </view>
             </view>
         </view>
-        <view class="tab-body mt10" hidden="{{current==3?false:true}}">
+        <!-- 系统消息 end -->
+        <!-- 聊天消息 start -->
+        <view class="tab-body" hidden="{{current==3?false:true}}">
             <view class="pl15 color-333 bgw mb10">
-                <view class="border-bottom-ccc pt10 pb10 pr15 displayf altc jscb boxb">
+                <view class="{{index==chatList.length-1?'':'border-bottom-ccc'}} pt10 pb10 pr10 displayf altc jscb boxb" wx:for="{{chatList}}" wx:key="*this" data-id="{{item.chat_user_id}}">
                     <view class="displayf altc">
                         <view class="mr15">
-                            <image class="icon-size-126 bg-F1604F br50" src=""></image>
+                            <image class="icon-size-126 bg-F1604F br50" src="{{item.headImg}}"></image>
                         </view>
                         <view>
                             <text class="displayb fwb fz15 color-333">Kevin</text>                        
-                            <text class="color-666 displayib maxW200 fz12">我会准时过去的亲。</text> 
+                            <text class="color-666 displayib thiddennb150 fz12">{{item.content}}</text> 
                         </view>
                     </view>
                     <view>
-                        <text class="fz12 color-999">今天08:00</text>
+                        <text class="fz12 color-999">{{item.time}}</text>
                         <view class="mt10 tr">
                             <text class="displayib fz10 icon-size-30 bg-F1604F br50 lh5 colorf tc">
-                                11
-                            </text>
-                        </view>
-                    </view>
-                </view>
-                <view class="border-bottom-ccc pt10 pb10 pr15 displayf altc jscb boxb">
-                    <view class="displayf altc">
-                        <view class="mr15">
-                            <image class="icon-size-126 bg-F1604F br50" src=""></image>
-                        </view>
-                        <view>
-                            <text class="displayb fwb fz15 color-333">Kevin</text>                        
-                            <text class="color-666 displayib maxW200 fz12">我会准时过去的亲。</text>                        
-                        </view>
-                    </view>
-                    <view>
-                        <text class="fz12 color-999">今天08:00</text>
-                        <view class="mt10 tr">
-                            <text class="displayib fz10 icon-size-30 bg-F1604F br50 colorf tc lh5">
-                                11
-                            </text>
-                        </view>
-                    </view>
-                </view>
-                <view class="pt10 pb10 pr15 displayf altc jscb boxb">
-                    <view class="displayf altc">
-                        <view class="mr15">
-                            <image class="icon-size-126 bg-F1604F br50" src=""></image>
-                        </view>
-                        <view>
-                            <text class="displayb fwb fz15 color-333">Kevin</text>                        
-                            <text class="color-666 displayib maxW200 fz12">我会准时过去的亲。我会准时过去的亲。我会准时过去的亲。我会准时过去的亲。我会准时过去的亲。我会准时过去的亲。我会准时过去的亲。我会准时过去的亲。我会准时过去的亲。</text>                        
-                        </view>
-                    </view>
-                    <view>
-                        <text class="fz12 color-999">今天08:00</text>
-                        <view class="mt10 tr">
-                            <text class="displayib fz10 icon-size-30 bg-F1604F br50 colorf tc lh5">
-                                11
+                                {{item.unread}}
                             </text>
                         </view>
                     </view>
                 </view>
             </view>
         </view>
-    </view>
-    <view class="h50 w50 br50 bg-F1604F pa displayf altc jscc flexdirec message-circle">
-        <image class="icon-size bgw displayb mb5" src="" ></image>
-        <text class="fwb fz14 colorf">客服</text>
+        <!-- 聊天消息 end -->
     </view>
 </view>
-<view class="displayf altc jscc flexdirec h w" hidden>
+<view class="h50 w50 br50 bg-F1604F pa displayf altc jscc flexdirec message-circle">
+    <image class="icon-size bgw displayb mb5" src="" ></image>
+    <text class="fwb fz14 colorf">客服</text>
+</view>
+<view class="displayf altc jscc flexdirec w h-leave" wx:if="{{noData}}">
     <image class="icon-size-100 displayb mb15" src="../../imgs/common/nonews@2x.png"></image>
     <text class="fz14 color-333 mt15">没有消息~</text>
+</view>
+<view class="tc pb30 pt15" wx:if="{{noMore}}">
+    <text class="color-C7C7CC fz15">没有更多了~</text>
 </view>

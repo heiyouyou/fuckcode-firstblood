@@ -14,20 +14,20 @@
         <view>
             <text class="color-333 fz14 mb25 mt25 displayib padding-left-15rpx">提现金额</text>
             <view class="border-bottom-ccc fz15 lh30 pb15 clearfix mb15 padding-left-15rpx">
-                <text class="fl" style="margin-right:54rpx;" placeholder="输入RMB">RMB</text>
-                <input class="h30 fl color-F1604F" type="digit" placeholder="输入RMB" placeholder-class="color-BBB" disabled="{{!disabled}}"/>
+                <text class="fl" style="margin-right:54rpx;">{{withdrawText}}</text>
+                <input class="h30 fl color-F1604F" type="digit" placeholder="输入{{withdrawText}}" value="{{withdrawWayCount}}" placeholder-class="color-BBB" bindinput="getCount"/>
             </view>
             <view class="border-bottom-ccc fz15 lh30 pb15 clearfix padding-left-15rpx">
                 <text class="fl" style="margin-right:54rpx;">ABN</text>
-                <input class="h30 fl color-F1604F" type="digit" placeholder="输入ABN" placeholder-class="color-BBB" disabled="{{disabled}}"/>
+                <input class="h30 fl color-F1604F" placeholder="输入ABN" value="{{ABN}}" placeholder-class="color-BBB" bindinput="getABN"/>
             </view>
             <view class="fz12 pt20 padding-left-15rpx">
-                <text class="color-999">零钱余额￥10.00，</text><text class="highlight-text">全部提现</text>
+                <text class="color-999">零钱余额￥{{moneyData.account}}/${{moneyData.AUD}}，</text><text class="highlight-text" data-aud='{{moneyData.AUD}}' data-rmb='{{moneyData.account}}' bindtap="getAllOverage">全部提现</text>
             </view>
         </view>
     </view>
     <view class="w710 mb10 mt15">
-        <button class="save-btn">确认提现</button>
+        <button class="save-btn" bindtap="withdraw">确认提现</button>
     </view>
     <view class="mask-no-padding displayf altend" hidden="{{hide}}">
         <view class="bgw w">

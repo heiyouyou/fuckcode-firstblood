@@ -102,8 +102,9 @@ Page({
     util.go('../payment/payment')
   },
   // 司机信息页面
-  driverInfo(){
-    util.go('../driver/driver')
+  driverInfo(e){
+    let id = e.currentTarget.dataset('id');
+    util.go('../driver/driver?id='+id);
   },
   // 阻止冒泡函数
   bubble(){
@@ -121,7 +122,8 @@ Page({
     util.modal({
       confirm(){
         util._ajax_({
-          url: util.server + url,
+          loadingShow:false,
+          url: url,
           method: 'POST',
           data: {
             id
@@ -160,7 +162,7 @@ Page({
     util._ajax_({
       loadingShow:false,
       method:'POST',
-      url: util.server + cancel_url,
+      url: cancel_url,
       data: params
     }).then((res) => {
       let price = res.data.data.refund;
@@ -169,7 +171,7 @@ Page({
         content: `真的要取消该订单吗？\n将会退款￥${price}`,
         confirm() {
           util._ajax_({
-            url: util.server + url,
+            url: url,
             method: 'POST',
             data: params
           }).then((res) => {
@@ -188,7 +190,8 @@ Page({
     const that = this;
     wx.showNavigationBarLoading();
     util._ajax_({
-      url: util.server +url,
+      loadingShow:false,
+      url: url,
       data:params,
       success(res){
         that.setData({

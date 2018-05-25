@@ -1,20 +1,33 @@
 // pages/my/wallet/index/index.js
+let util = require('../../../../utils/util');
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    moneyData:null
   },
-
+  // 获取金额详情
+  getMoneyData(){
+    const that = this;
+    util._ajax_({
+      url: '/user/my-wallet',
+      success(res){
+        console.log(res)
+        that.setData({
+          moneyData: res.data.data
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    this.getMoneyData();
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -47,7 +60,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+    this.getMoneyData();
   },
 
   /**

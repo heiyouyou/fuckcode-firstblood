@@ -2,101 +2,53 @@
 <view>
     <view class="displayf jscc">
         <view class="tab-head displayf altc jsca">
-            <view>
-                <text class="{{current==1?'color-F1604F':''}} fz15" data-type='1' bindtap="chooseWay">联系人管理</text> 
+            <view class="jscc flex1 displayf altc h" data-type='1' bindtap="chooseWay">
+                <text class="{{current==1?'color-F1604F':''}} fz15">联系人管理</text> 
             </view>
-            <view>
-                <text class="{{current==2?'color-F1604F':''}} fz15" data-type='2' bindtap="chooseWay">地址管理</text> 
+            <view class="jscc flex1 displayf altc h" data-type='2' bindtap="chooseWay">
+                <text class="{{current==2?'color-F1604F':''}} fz15">地址管理</text> 
             </view>
         </view>
-        <view class="tab-body w710 mt10" hidden="{{current==1?false:true}}">
+        <view class="tab-body w710" hidden="{{current==1?false:true}}">
             <view class="ohidden">
                 <navigator url="./addContact/addContact">
                     <button class="h50 border-radius-4rpx fz15 color-333 lh50 borderNone my-box-shadow bgw" type="default"><image class="icon-size-30 br50 bg-F1604F vm mr5" src=""></image>新增乘车人</button>
                 </navigator>
             </view>
             <view class="mt15">
-                <text class="fz14 color-666">常用乘车人</text>
+                <text class="fz14 color-666" wx:if="{{!noData}}">常用乘车人</text>
                 <view class="bgw parl15 my-box-shadow mt10">
-                    <view class="h75 boxb border-bottom-ccc displayf jscb altc">
+                    <view class="h75 boxb {{index==contactsList.length-1?'':'border-bottom-ccc'}} displayf jscb altc" wx:for="{{contactsList}}" wx:key="{{*this}}">
                         <view class="color-333">
-                            <text class="fz15 displayb">小红</text>
-                            <text class="fz12 displayb mt5">+86 18335295207</text>
+                            <text class="fz15 displayb">{{item.name}}</text>
+                            <text class="fz12 displayb mt5">{{item.mobile}}</text>
                         </view>
-                        <view>
-                            <image class="bg-494C5B icon-size-30" src=""></image>
-                        </view>
-                    </view>
-                    <view class="h75 boxb border-bottom-ccc displayf jscb altc">
-                        <view class="color-333">
-                            <text class="fz15 displayb">海蓝</text>
-                            <text class="fz12 displayb mt5">+86 18335295207</text>
-                        </view>
-                        <view>
-                            <image class="bg-494C5B icon-size-30" src=""></image>
-                        </view>
-                    </view>
-                    <view class="h75 boxb displayf jscb altc">
-                        <view class="color-333">
-                            <text class="fz15 displayb">岳东明</text>
-                            <text class="fz12 displayb mt5">+86 18335295207</text>
-                        </view>
-                        <view>
+                        <view data-id="{{item.id}}" bindtap='updateContact'>
                             <image class="bg-494C5B icon-size-30" src=""></image>
                         </view>
                     </view>
                 </view>
             </view>
         </view>
-        <view class="tab-body w710 mt10" hidden="{{current==2?false:true}}">
+        <view class="tab-body w710" hidden="{{current==2?false:true}}">
             <view class="ohidden">
                 <navigator url="./addAddress/addAddress">
                     <button class="h50 border-radius-4rpx fz15 color-333 lh50 borderNone my-box-shadow bgw" type="default"><image class="icon-size-30 br50 bg-F1604F vm mr5" src=""></image>新增地址</button>
                 </navigator>
             </view>
             <view class="mt15">
-                <text class="fz14 color-666">常用地址</text>
+                <text class="fz14 color-666" wx:if="{{!noData}}">常用地址</text>
                 <view class="mt10">
-                    <view class="h100 boxb displayf parl15 bgw my-box-shadow flexdirec jscc altc mb10 border-radius-4rpx">
+                    <view class="h100 boxb displayf parl15 bgw my-box-shadow flexdirec jscc altc mb10 border-radius-4rpx" wx:for="{{addressList}}" wx:key="{{*this}}">
                         <view class="color-333 border-bottom-ccc w mb15 pb20">
-                            <text class="fz14 thidden300">601 little lonsdale st,Melboune,VIC,3000601 little lonsdale st,Melboune,VIC,3000</text>
+                            <text class="fz14 thidden300">{{item.address}}</text>
                         </view>
                         <view class="displayf jscb altc fz14 w">
-                            <view>
-                                <icon class="br50 border-ccc" type="success" size="15" color="#F1604F" />
+                            <view data-id="{{item.id}}">
+                                <icon class="br50 border-ccc" type="success" size="15" color="{{index==0?'#F1604F':'#fff'}}" />
                                 <text class="color-F1604F ml5">设为默认</text>
                             </view>
-                            <view>
-                                <image class="bg-494C5B icon-size-30 mr5" src=""></image>
-                                <text class="color-666">编辑</text>
-                            </view>
-                        </view>
-                    </view>
-                    <view class="h100 boxb displayf parl15 bgw my-box-shadow flexdirec jscc altc mb10 border-radius-4rpx">
-                        <view class="color-333 border-bottom-ccc w mb15 pb20">
-                            <text class="fz14 thidden300">601 little lonsdale st,Melboune,VIC,3000601 little lonsdale st,Melboune,VIC,3000</text>
-                        </view>
-                        <view class="displayf jscb altc fz14 w">
-                            <view>
-                                <icon class="br50 border-ccc" type="success" size="15" color="#fff" />
-                                <text class="color-F1604F ml5">设为默认</text>
-                            </view>
-                            <view>
-                                <image class="bg-494C5B icon-size-30 mr5" src=""></image>
-                                <text class="color-666">编辑</text>
-                            </view>
-                        </view>
-                    </view>
-                    <view class="h100 boxb displayf parl15 bgw my-box-shadow flexdirec jscc altc mb10 border-radius-4rpx">
-                        <view class="color-333 border-bottom-ccc w mb15 pb20">
-                            <text class="fz14 thidden300">601 little lonsdale st,Melboune,VIC,3000601 little lonsdale st,Melboune,VIC,3000</text>
-                        </view>
-                        <view class="displayf jscb altc fz14 w">
-                            <view>
-                                <icon class="border-ccc br50" type="success" size="15" color="#fff" />
-                                <text class="color-F1604F ml5">设为默认</text>
-                            </view>
-                            <view>
+                            <view data-id="{{item.id}}" bindtap='updateAddress'>
                                 <image class="bg-494C5B icon-size-30 mr5" src=""></image>
                                 <text class="color-666">编辑</text>
                             </view>
@@ -111,8 +63,10 @@
         <text class="fwb fz14 colorf">客服</text>
     </view>
 </view>
-<view class="displayf altc jscc flexdirec h w" hidden>
-    <image class="icon-size-100 displayb mb15" src="../../imgs/common/noone@2x.png"></image>
-    <text class="fz14 color-333 mt">还没有常用乘车人哦~</text>
+<view class="displayf altc jscc flexdirec w h-leave" wx:if="{{noData}}">
+    <image class="icon-size-100 displayb mb15" src="../../imgs/common/{{current==1?'noone@2x.png':'noaddress@2x.png'}}"></image>
+    <text class="fz14 color-333 mt">{{current==1?'还没有常用乘车人哦~':'还没有常用地址哦~'}}</text>
 </view>
-<!-- noaddress@2x.png 还没有常用地址哦~-->
+<view class="tc pb30 pt15" wx:if="{{noMore}}">
+    <text class="color-C7C7CC fz15">没有更多了~</text>
+</view>
