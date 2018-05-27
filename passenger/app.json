@@ -1,5 +1,8 @@
 {
   "pages": [
+    "pages/index/index",
+    "pages/login/index/index",
+    "pages/login/login/login",
     "pages/my/index/index",
     "pages/my/message/message",
     "pages/my/CarOwnerCertification/license/license",
@@ -18,9 +21,6 @@
     "pages/my/wallet/recharge/recharge",
     "pages/my/editInfo/editInfo",
     "pages/my/evaluate/evaluate",
-    "pages/index/index",
-    "pages/login/index/index",
-    "pages/login/login/login",
     "pages/register/phone/phone",
     "pages/register/info/info",
     "pages/register/password/password",
@@ -61,9 +61,9 @@
     "pages/air/oneWayBill/driver/index",
     "pages/air/oneWayBill/discount/index",
     "pages/air/toFromBill/toFromBill",
-    "pages/trip/index/index",
     "pages/results/licenseCertified/licenseCertified",
     "pages/results/success/success",
+    "pages/trip/index/index",
     "pages/reserve/index/index",
     "pages/car/index/index",
     "pages/flight/index/index"
