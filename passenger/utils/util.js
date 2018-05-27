@@ -288,26 +288,6 @@ const updImg = ({
   })
 }
 
-const isEmptyObj = (key, cb) => {
-  let val
-  for (val in key) {
-    if (!key[val]) {
-      cb && cb()
-      return false
-    }
-  }
-  return true
-}
-
-const delEmptyKey = obj => {
-  let i
-  for (i in obj) {
-    if (!obj[i]) {
-      delete obj[i]
-    }
-  }
-}
-
 module.exports = {
   formatTime,
   formatNumber,
@@ -318,8 +298,6 @@ module.exports = {
   getUserInfo,
   updImg,
   toast,
-  isEmptyObj,
-  delEmptyKey,
   getStorageSync,
   server,
   modal
